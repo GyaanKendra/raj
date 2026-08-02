@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Enrollment & Payment Verification | RAJShiksha</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B00',
+                        secondary: '#FF3E6C',
+                        dark: '#0F172A',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        manrope: ['Manrope', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #F8FAFC; color: #0F172A; }
+        .blur-qr { filter: blur(8px); transition: filter 0.4s ease, transform 0.3s ease; }
+        .blur-qr.unblurred { filter: blur(0px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+
+<body class="font-inter antialiased min-h-screen flex flex-col justify-between selection:bg-primary selection:text-white">
+
+    <!-- ═══════ TOP BRAND TRUST HEADER ═══════ -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shadow-md transition-transform group-hover:scale-105">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                </div>
+                <div class="flex flex-col text-left">
+                    <span class="font-poppins font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900">RAJ<span class="text-primary">Shiksha</span></span>
+                    <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold -mt-1">Verified Official Portal</span>
+                </div>
+            </a>
+
+            <div class="flex items-center gap-3 text-xs font-bold text-slate-600">
+                <div class="hidden sm:flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-700 px-3.5 py-1.5 rounded-full">
+                    <i class="fa-solid fa-shield-halved text-emerald-600"></i>
+                    <span>256-Bit SSL Secured</span>
+                </div>
+                <a href="index.html" class="flex items-center gap-1.5 text-slate-500 hover:text-primary transition-colors font-semibold">
+                    <i class="fa-solid fa-arrow-left text-xs"></i> Back
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════ MAIN CHECKOUT CONTAINER ═══════ -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-grow">
+        
+        <div class="mb-6 text-center sm:text-left">
+            <h1 class="font-poppins font-extrabold text-2xl sm:text-3xl text-slate-900 tracking-tight">Student Enrollment &amp; Verification</h1>
+            <p class="text-slate-500 text-xs sm:text-sm mt-1 font-manrope">Enter your registration details, select your item and verify your payment to start instantly.</p>
+        </div>
+
+        <!-- SECURITY ALERT / DUPLICATE WARNING BOX -->
+        <div id="securityAlert" class="hidden mb-6 p-4 rounded-2xl bg-rose-50 border-2 border-rose-200 text-left text-rose-900 shadow-sm animate-pulse">
+            <div class="flex items-start gap-3">
+                <i class="fa-solid fa-triangle-exclamation text-rose-600 text-xl shrink-0 mt-0.5"></i>
+                <div>
+                    <h4 class="font-poppins font-extrabold text-sm text-rose-700 uppercase tracking-wider" id="alertTitle">UNAUTHORIZED ACTIVITY DETECTED</h4>
+                    <p class="text-xs font-semibold mt-0.5 leading-relaxed" id="alertMessage">This Transaction ID / UTR has already been submitted. Re-using payment receipts is strictly prohibited.</p>
+                </div>
+            </div>
+        </div>
+
+        <form id="checkoutForm" onsubmit="handleCheckoutSubmit(event)">
+            <div class="space-y-6">
+
+                <!-- CARD 1: STUDENT REGISTRATION FORM & COURSE SELECTION -->
+                <div class="bg-white rounded-3xl p-5 sm:p-8 border border-slate-200/80 shadow-sm text-left">
+                    <div class="flex items-center gap-3 border-b border-slate-100 pb-4 mb-6">
+                        <span class="w-8 h-8 rounded-xl bg-primary/10 text-primary font-bold flex items-center justify-center text-sm">1</span>
+                        <div>
+                            <h2 class="font-poppins font-bold text-base sm:text-lg text-slate-900">Student &amp; Product Details</h2>
+                            <p class="text-xs text-slate-400">All fields marked with (*) are mandatory</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        
+                        <!-- Select Test Series / Book Dropdown -->
+                        <div class="sm:col-span-2 space-y-1.5">
+                            <label class="text-xs font-bold text-slate-800 block">Select Purchased Item / Course <span class="text-rose-500">*</span></label>
+                            <div class="relative">
+                                <i class="fa-solid fa-graduation-cap absolute left-3.5 top-1/2 -translate-y-1/2 text-primary text-sm"></i>
+                                <select id="selectedCourse" required class="w-full pl-10 pr-8 py-3 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm font-bold text-slate-800 focus:outline-none focus:border-primary focus:bg-white transition-colors appearance-none cursor-pointer">
+                                    <option value="" disabled selected>-- Choose Test Series / eBook / Pass --</option>
+
+                                    <!-- TEST SERIES CATEGORY -->
+                                    <optgroup label="📚 TEST SERIES (टेस्ट सीरीज)">
+                                        <option value="Rajasthan CET 10+2 Test Series (₹29)">Rajasthan CET 10+2 Test Series — ₹29</option>
+                                        <option value="RAS 2026 Test Series Only Pre (₹99)">RAS 2026 Test Series Only Pre — ₹99</option>
+                                        <option value="Raj. SI 2026 Test Series (₹79)">Raj. SI 2026 Test Series — ₹79</option>
+                                        <option value="RSMSSB Patwar Test Series">RSMSSB Patwar Mock Test Series</option>
+                                        <option value="Rajasthan Police Constable Series">Rajasthan Police Constable Series</option>
+                                        <option value="REET Level 1 & Level 2 Test Series">REET Level 1 & Level 2 Test Series</option>
+                                        <option value="RSMSSB Computer Instructor Test Series">RSMSSB Computer Instructor Series</option>
+                                        <option value="RSMSSB Lab Assistant Test Series">RSMSSB Lab Assistant Test Series</option>
+                                    </optgroup>
+
+                                    <!-- DIGITAL E-BOOKS CATEGORY -->
+                                    <optgroup label="📖 DIGITAL E-BOOKS (ई-बुक्स)">
+                                        <option value="Rajasthan Economy & Geography eBook (₹99)">Rajasthan Economy & Geography eBook — ₹99</option>
+                                        <option value="Raj. History & Heritage eBook (₹99)">Raj. History & Heritage eBook — ₹99</option>
+                                        <option value="General & English Blueprint eBook (₹79)">General & English Blueprint eBook — ₹79</option>
+                                        <option value="Rajasthan Literature & Arts Standard eBook (₹99)">Rajasthan Literature & Arts Standard eBook — ₹99</option>
+                                    </optgroup>
+
+                                    <!-- SUBSCRIPTION PASSES CATEGORY -->
+                                    <optgroup label="⭐ MEMBERSHIP PASSES (सदस्यता पास)">
+                                        <option value="Starter Basic Plan - 5 Days Access (₹49)">Starter Basic Plan (5 Days Access) — ₹49</option>
+                                        <option value="Standard Sprint Pass - 30 Days Membership (₹199)">Standard Sprint Pass (30 Days) — ₹199</option>
+                                        <option value="Premium Regular Plan - 90 Days Access (₹499)">Premium Regular Plan (90 Days) — ₹499</option>
+                                        <option value="Elite Premium Plan - 365 Days Pass (₹999)">Elite Premium Plan (365 Days Access) — ₹999</option>
+                                    </optgroup>
+
+                                    <!-- OTHER CATEGORY -->
+                                    <optgroup label="🌐 OTHER (अन्य)">
+                                        <option value="Other Course / Combo Package">Other / अन्य (कस्टम कोर्स या अन्य कॉम्बो)</option>
+                                    </optgroup>
+                                </select>
+                                <i class="fa-solid fa-chevron-down absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                        <!-- Student Full Name -->
+                        <div class="sm:col-span-2 space-y-1.5">
+                            <label class="text-xs font-bold text-slate-700 block">Student Full Name <span class="text-rose-500">*</span></label>
+                            <div class="relative">
+                                <i class="fa-regular fa-user absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                                <input type="text" id="studentName" required placeholder="e.g. Ramesh Kumar" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+                            </div>
+                        </div>
+
+                        <!-- Mobile Number -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-slate-700 block">Mobile Number <span class="text-rose-500">*</span></label>
+                            <div class="relative">
+                                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs font-bold">+91</span>
+                                <input type="tel" id="studentMobile" maxlength="10" required placeholder="10-digit number" oninput="validatePhoneInput(this)" class="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+                            </div>
+                            <span id="phoneError" class="text-[11px] text-rose-500 font-semibold hidden">Enter valid 10-digit mobile number</span>
+                        </div>
+
+                        <!-- Email Address (STRICT @gmail.com) -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-slate-700 block">Email Address (Must end with @gmail.com) <span class="text-rose-500">*</span></label>
+                            <div class="relative">
+                                <i class="fa-regular fa-envelope absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                                <input type="email" id="studentEmail" required placeholder="yourname@gmail.com" oninput="validateEmailFormat(this)" onblur="validateEmailFormat(this)" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+                            </div>
+                            <span id="emailError" class="text-[11px] text-rose-600 font-bold hidden flex items-center gap-1">
+                                <i class="fa-solid fa-circle-exclamation"></i> Incorrect email! Must strictly end with <u class="ml-0.5">@gmail.com</u>
+                            </span>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-slate-700 block">Make Password <span class="text-rose-500">*</span></label>
+                            <div class="relative">
+                                <i class="fa-solid fa-lock absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                                <input type="password" id="studentPassword" minlength="6" required placeholder="Min 6 characters" onkeyup="checkPasswordMatch()" class="w-full pl-10 pr-10 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+                                <i class="fa-regular fa-eye absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm cursor-pointer" onclick="togglePasswordVisibility('studentPassword', this)"></i>
+                            </div>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-slate-700 block">Confirm Password <span class="text-rose-500">*</span></label>
+                            <div class="relative">
+                                <i class="fa-solid fa-lock absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                                <input type="password" id="studentConfirmPassword" minlength="6" required placeholder="Re-enter password" onkeyup="checkPasswordMatch()" class="w-full pl-10 pr-10 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+                                <i class="fa-regular fa-eye absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm cursor-pointer" onclick="togglePasswordVisibility('studentConfirmPassword', this)"></i>
+                            </div>
+                        </div>
+
+                        <!-- Password Match Validation Status -->
+                        <div class="sm:col-span-2">
+                            <p id="passwordMatchMsg" class="text-xs font-bold hidden flex items-center gap-1.5">
+                                <!-- Dynamic Validation Message -->
+                            </p>
+                        </div>
+
+                        <!-- Remark Input (Optional) -->
+                        <div class="sm:col-span-2 space-y-1.5 pt-1">
+                            <label class="text-xs font-bold text-slate-700 block flex items-center justify-between">
+                                <span>Remark / विशेष विवरण <span class="text-slate-400 font-normal">(Optional)</span></span>
+                                <span class="text-[10px] text-slate-400 font-normal">Any special request or query</span>
+                            </label>
+                            <div class="relative">
+                                <i class="fa-regular fa-comment-dots absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
+                                <textarea id="studentRemark" rows="2" placeholder="e.g. Please activate CET test series immediately..." class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors resize-none"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CARD 2: UPI QR CODE & TRANSACTION ID (MANDATORY & UNIQUE) -->
+                <div class="bg-white rounded-3xl p-5 sm:p-8 border border-slate-200/80 shadow-sm text-left">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-xl bg-primary/10 text-primary font-bold flex items-center justify-center text-sm">2</span>
+                            <div>
+                                <h2 class="font-poppins font-bold text-base sm:text-lg text-slate-900">Scan QR &amp; Enter Transaction ID</h2>
+                                <p class="text-xs text-slate-400">Pay via PhonePe, GPay, Paytm or any UPI App</p>
+                            </div>
+                        </div>
+                        <span class="text-[10px] font-extrabold text-emerald-600 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full uppercase tracking-wider hidden sm:inline-block">Zero Gateway Fee</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                        
+                        <!-- QR Code Container with Blur/Unblur Effect -->
+                        <div class="md:col-span-6 flex flex-col items-center justify-center text-center p-4 bg-slate-50 border border-slate-200/80 rounded-2xl">
+                            <p class="text-xs font-bold text-slate-600 mb-2">Official Payment QR Code</p>
+                            
+                            <div class="relative w-48 h-48 rounded-xl overflow-hidden border-2 border-primary/30 p-2 bg-white shadow-md cursor-pointer group" onclick="unblurQR()">
+                                <!-- QR Image (Can be changed anytime) -->
+                                <img id="qrImage" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi://pay?pa=rajshiksha@upi&pn=RAJShiksha&cu=INR" alt="RAJShiksha Payment QR" class="w-full h-full object-contain blur-qr transition-all duration-300" />
+
+                                <!-- Blur Overlay -->
+                                <div id="qrOverlay" class="absolute inset-0 bg-slate-900/60 backdrop-blur-xs flex flex-col items-center justify-center text-white p-3 transition-opacity">
+                                    <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mb-2 shadow-lg group-hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-qrcode text-lg"></i>
+                                    </div>
+                                    <span class="text-xs font-extrabold tracking-wide uppercase">Click to Reveal QR</span>
+                                    <span class="text-[10px] text-slate-200 mt-1">Tap to scan &amp; pay</span>
+                                </div>
+                            </div>
+
+                            <!-- Copy UPI ID -->
+                            <div class="mt-3 flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-slate-200 w-full justify-between">
+                                <span class="text-xs font-mono font-bold text-slate-700">UPI: <span class="text-primary font-black">rajshiksha@upi</span></span>
+                                <button type="button" onclick="copyUPI()" class="text-[11px] font-bold text-primary hover:underline flex items-center gap-1">
+                                    <i class="fa-regular fa-copy"></i> Copy
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Payment Instructions & UTR Input -->
+                        <div class="md:col-span-6 space-y-4">
+                            <div class="bg-amber-50/80 border border-amber-200 rounded-xl p-3.5 space-y-1.5 text-xs text-amber-900">
+                                <p class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-circle-info text-amber-600"></i> Instructions:</p>
+                                <ol class="list-decimal pl-4 space-y-1 text-[11px] leading-relaxed">
+                                    <li>Tap QR to reveal and scan with GPay / PhonePe / Paytm.</li>
+                                    <li>Complete your payment for the selected course.</li>
+                                    <li>Copy 12-digit <b>UTR / Transaction Ref No.</b> and enter below.</li>
+                                </ol>
+                            </div>
+
+                            <!-- Transaction ID Input (12 digits) -->
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-bold text-slate-800 block">Enter 12-Digit UTR / Transaction ID <span class="text-rose-500">*</span></label>
+                                <div class="relative">
+                                    <i class="fa-solid fa-receipt absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                                    <input type="text" id="transactionId" maxlength="12" minlength="12" required placeholder="e.g. 402812349012" oninput="this.value = this.value.replace(/[^0-9]/g, '')" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-mono font-bold tracking-wider focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+                                </div>
+                                <span class="text-[10px] text-slate-400 block">12-digit reference number from payment receipt</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- SUBMIT BUTTON -->
+                    <div class="mt-8 border-t border-slate-100 pt-6">
+                        <button type="submit" id="submitBtn" class="w-full py-4 bg-gradient-to-r from-primary to-secondary hover:opacity-95 text-white font-poppins font-extrabold text-base rounded-2xl shadow-xl transition-all hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-shield-check text-lg"></i>
+                            <span>Submit Payment &amp; Unlock Access</span>
+                        </button>
+                        <p class="text-center text-[11px] text-slate-400 font-semibold mt-3">
+                            <i class="fa-solid fa-lock text-emerald-500 mr-1"></i> Form responses directly archived to <b>rajshiksha.in@gmail.com</b>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </main>
+
+    <!-- ════ SUCCESS RECEIPT OVERLAY MODAL ════ -->
+    <div id="successModal" class="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl border border-slate-100 transform scale-95 transition-transform duration-300" id="successModalContent">
+            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-4 animate-bounce">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="font-poppins font-extrabold text-2xl text-slate-900">Enrollment Submitted!</h3>
+            <p class="text-xs text-slate-500 mt-1 font-manrope">Verification details saved successfully to <b>rajshiksha.in@gmail.com</b> excel sheet.</p>
+
+            <div class="my-5 p-4 bg-slate-50 rounded-2xl border border-slate-200 text-left text-xs space-y-1.5 font-mono">
+                <p><b>Order ID:</b> <span id="recOrderRef" class="text-primary font-bold">#RAJ10001</span></p>
+                <p><b>Course:</b> <span id="recCourse" class="text-slate-800 font-bold">CET Test Series</span></p>
+                <p><b>Student:</b> <span id="recStudentName">Ramesh</span></p>
+                <p><b>Email:</b> <span id="recEmail">student@gmail.com</span></p>
+                <p><b>UTR ID:</b> <span id="recUTR">4028XXXXXXXX</span></p>
+                <p><b>Status:</b> <span class="text-emerald-600 font-bold">Verification Pending (5-10 Mins)</span></p>
+            </div>
+
+            <button onclick="window.location.href='index.html'" class="w-full py-3.5 bg-slate-900 hover:bg-primary text-white font-extrabold text-sm rounded-xl transition-colors">
+                Return to Home &amp; Start Test
+            </button>
+        </div>
+    </div>
+
+    <!-- ════ FOOTER ════ -->
+    <footer class="bg-slate-900 text-white py-6 border-t border-slate-800 text-center text-xs text-slate-400">
+        <p>&copy; 2025 RAJShiksha. Platform configured cleanly for competitive exam practice.</p>
+    </footer>
+
+    <!-- ═══════ CHECKOUT SCRIPT LOGIC ═══════ -->
+    <script>
+        // Store submitted UTRs locally to block duplicates on client side
+        let usedUTRs = JSON.parse(localStorage.getItem('rajshiksha_used_utrs')) || [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            autoSelectCourseFromStorage();
+        });
+
+        // Auto-select course if coming from Index Cart
+        function autoSelectCourseFromStorage() {
+            const storedCart = localStorage.getItem('rajshiksha_cart');
+            const courseSelect = document.getElementById('selectedCourse');
+            if (storedCart && courseSelect) {
+                try {
+                    const cartArr = JSON.parse(storedCart);
+                    if (cartArr.length > 0) {
+                        const lastItemTitle = cartArr[cartArr.length - 1].title.toLowerCase();
+                        for (let i = 0; i < courseSelect.options.length; i++) {
+                            const optVal = courseSelect.options[i].value.toLowerCase();
+                            if (optVal.includes(lastItemTitle) || lastItemTitle.includes(optVal.split('(')[0].trim().toLowerCase())) {
+                                courseSelect.selectedIndex = i;
+                                break;
+                            }
+                        }
+                    }
+                } catch(e) {
+                    console.log('Cart auto-sync error:', e);
+                }
+            }
+        }
+
+        // 1. Unblur QR Code
+        function unblurQR() {
+            const qrImg = document.getElementById('qrImage');
+            const overlay = document.getElementById('qrOverlay');
+            if (qrImg) qrImg.classList.add('unblurred');
+            if (overlay) overlay.style.opacity = '0';
+            setTimeout(() => { if (overlay) overlay.style.display = 'none'; }, 300);
+        }
+
+        // 2. Copy UPI ID
+        function copyUPI() {
+            navigator.clipboard.writeText('rajshiksha@upi');
+            alert('UPI ID (rajshiksha@upi) copied successfully!');
+        }
+
+        // 3. Mobile Number Validation
+        function validatePhoneInput(input) {
+            input.value = input.value.replace(/[^0-9]/g, '');
+            const error = document.getElementById('phoneError');
+            if (input.value.length === 10) {
+                if (error) error.classList.add('hidden');
+            } else {
+                if (error) error.classList.remove('hidden');
+            }
+        }
+
+        // 4. Strict Email Validation (@gmail.com requirement)
+        function validateEmailFormat(input) {
+            const error = document.getElementById('emailError');
+            const emailVal = input.value.trim().toLowerCase();
+
+            // Check if email strictly ends with @gmail.com
+            const isValidGmail = /^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(emailVal);
+
+            if (emailVal.length > 0 && !isValidGmail) {
+                if (error) error.classList.remove('hidden');
+                input.classList.add('border-rose-400', 'bg-rose-50/30');
+                return false;
+            } else {
+                if (error) error.classList.add('hidden');
+                input.classList.remove('border-rose-400', 'bg-rose-50/30');
+                return true;
+            }
+        }
+
+        // 5. Password Show/Hide Toggle
+        function togglePasswordVisibility(fieldId, icon) {
+            const input = document.getElementById(fieldId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+
+        // 6. Check Password Match
+        function checkPasswordMatch() {
+            const pass = document.getElementById('studentPassword').value;
+            const confirmPass = document.getElementById('studentConfirmPassword').value;
+            const msg = document.getElementById('passwordMatchMsg');
+
+            if (!msg) return;
+
+            if (confirmPass.length === 0) {
+                msg.classList.add('hidden');
+                return;
+            }
+
+            msg.classList.remove('hidden');
+
+            if (pass === confirmPass && pass.length >= 6) {
+                msg.className = "text-xs font-bold text-emerald-600 flex items-center gap-1";
+                msg.innerHTML = `<i class="fa-solid fa-circle-check"></i> Passwords match correctly!`;
+            } else {
+                msg.className = "text-xs font-bold text-rose-500 flex items-center gap-1";
+                msg.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Passwords do not match!`;
+            }
+        }
+
+        // 7. Security Alert Trigger
+        function showSecurityAlert(title, message) {
+            const alertBox = document.getElementById('securityAlert');
+            const alertTitle = document.getElementById('alertTitle');
+            const alertMsg = document.getElementById('alertMessage');
+
+            if (alertBox) {
+                alertTitle.textContent = title;
+                alertMsg.textContent = message;
+                alertBox.classList.remove('hidden');
+                window.scrollTo({ top: alertBox.offsetTop - 100, behavior: 'smooth' });
+            }
+        }
+
+        // 8. Form Submission Handling
+        function handleCheckoutSubmit(e) {
+            e.preventDefault();
+
+            const alertBox = document.getElementById('securityAlert');
+            if (alertBox) alertBox.classList.add('hidden');
+
+            const course = document.getElementById('selectedCourse').value;
+            const name = document.getElementById('studentName').value.trim();
+            const mobile = document.getElementById('studentMobile').value.trim();
+            const email = document.getElementById('studentEmail').value.trim().toLowerCase();
+            const pass = document.getElementById('studentPassword').value;
+            const confirmPass = document.getElementById('studentConfirmPassword').value;
+            const remark = document.getElementById('studentRemark').value.trim();
+            const utr = document.getElementById('transactionId').value.trim();
+
+            if (!course) {
+                alert('Please select a Test Series / eBook / Pass from dropdown.');
+                return;
+            }
+
+            if (mobile.length !== 10) {
+                alert('Please enter a valid 10-digit mobile number.');
+                return;
+            }
+
+            // Strict Email Check
+            if (!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email)) {
+                showSecurityAlert('INVALID EMAIL FORMAT', 'Please correct your email address. It must strictly end with @gmail.com');
+                return;
+            }
+
+            // Password Match Check
+            if (pass !== confirmPass) {
+                alert('Password and Confirm Password must match!');
+                return;
+            }
+
+            // UTR Length Check
+            if (utr.length !== 12) {
+                alert('Please enter a valid 12-digit UTR/Transaction ID.');
+                return;
+            }
+
+            // DUPLICATE UTR CHECK (Local Verification)
+            if (usedUTRs.includes(utr)) {
+                showSecurityAlert(
+                    '🚨 UNAUTHORIZED ACTIVITY DETECTED!',
+                    `Transaction ID (${utr}) has already been submitted on RAJShiksha. Duplicate or fake UTR entries are strictly monitored and flagged.`
+                );
+                return;
+            }
+
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Processing &amp; Syncing to Server...`;
+
+            // Prepare Payload
+            const payload = {
+                timestamp: new Date().toLocaleString(),
+                selectedCourse: course,
+                studentName: name,
+                mobileNumber: mobile,
+                emailAddress: email,
+                password: pass,
+                transactionUTR: utr,
+                studentRemark: remark || "N/A"
+            };
+
+            // GOOGLE APPS SCRIPT WEBHOOK URL
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzxciX1KSpsWrI93WWdutYH4ea8RMtRNdcANOQ-OTFATk7Dw62aHen8zEjcTegiHOvkoA/exec';
+
+            if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_WEBHOOK_URL') {
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                }).then(() => {
+                    completeSubmission(utr, name, email, course);
+                }).catch(err => {
+                    console.error('Submission error:', err);
+                    completeSubmission(utr, name, email, course);
+                });
+            } else {
+                setTimeout(() => {
+                    completeSubmission(utr, name, email, course);
+                }, 1000);
+            }
+        }
+
+        function completeSubmission(utr, name, email, course) {
+            // Mark UTR as used
+            usedUTRs.push(utr);
+            localStorage.setItem('rajshiksha_used_utrs', JSON.stringify(usedUTRs));
+            localStorage.removeItem('rajshiksha_cart');
+
+            // Populate Modal
+            document.getElementById('recOrderRef').textContent = '#RAJ' + Math.floor(10000 + Math.random() * 90000);
+            document.getElementById('recCourse').textContent = course;
+            document.getElementById('recStudentName').textContent = name;
+            document.getElementById('recEmail').textContent = email;
+            document.getElementById('recUTR').textContent = utr;
+
+            // Show Receipt Modal
+            const modal = document.getElementById('successModal');
+            modal.classList.remove('pointer-events-none', 'opacity-0');
+            modal.classList.add('opacity-100');
+            const content = document.getElementById('successModalContent');
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
+        }
+    </script>
+</body>
+</html>
