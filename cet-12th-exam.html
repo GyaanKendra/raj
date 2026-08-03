@@ -3633,7 +3633,7 @@
 
         // ── Redirect Functions ──
         function redirectToLogin() {
-            window.location.href = '/login.html';
+            window.location.href = 'login.html';
         }
 
         function redirectToCETGraduation(e) {
@@ -3643,7 +3643,7 @@
 
         function handlePurchase(plan, price) {
             alert(`You selected the ${plan} Plan (₹${price}). Redirecting to checkout...`);
-            window.location.href = '/checkout.html?plan=' + encodeURIComponent(plan) + '&price=' + price;
+            window.location.href = '/payment.html?plan=' + encodeURIComponent(plan) + '&price=' + price;
         }
     </script>
 </body>
