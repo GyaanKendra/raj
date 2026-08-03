@@ -406,8 +406,8 @@
             <!-- Desktop Nav -->
             <div class="hidden lg:flex items-center gap-8 font-manrope font-semibold text-base text-muted dark:text-slate-300">
                 <a href="index.html" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">Home</a>
-                <a href="index.html#about" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">About</a>
-                <a href="test-series.html" class="text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary/60">Test Series</a>
+                <a href="about.html" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">About</a>
+                <a href="testseries.html" class="text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary/60">Test Series</a>
                 <a href="notes.html" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">Notes</a>
                 <a href="contact.html" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">Contact</a>
             </div>
@@ -419,8 +419,8 @@
                     <i class="fa-regular fa-moon moon-icon text-slate-400 text-[15px]"></i>
                 </button>
 
-                <a href="#enroll" class="hidden lg:inline-flex items-center justify-center px-5 py-2.5 font-manrope font-extrabold text-[15px] text-white bg-slate-900 dark:bg-primary rounded-xl hover:bg-primary dark:hover:bg-primary/90 transition-all shadow-subtleCard group">
-                    <span class="mr-2">Enroll Now</span>
+                <a href="payment.html" class="hidden lg:inline-flex items-center justify-center px-5 py-2.5 font-manrope font-extrabold text-[15px] text-white bg-slate-900 dark:bg-primary rounded-xl hover:bg-primary dark:hover:bg-primary/90 transition-all shadow-subtleCard group">
+                    <span class="mr-2">Buy Now</span>
                     <i class="fa-solid fa-arrow-right text-[11px] transition-transform group-hover:translate-x-1"></i>
                 </a>
 
@@ -436,13 +436,13 @@
         <div id="mobileMenu" class="hidden lg:hidden fixed inset-x-0 top-20 bg-white dark:bg-[#1a1a2e] border-b border-slate-100 dark:border-slate-800 shadow-xl px-6 py-8 transition-all duration-300">
             <div class="flex flex-col gap-4 font-manrope font-bold text-lg text-dark/85 dark:text-white/85">
                 <a href="index.html" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">Home</a>
-                <a href="index.html#about" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">About</a>
-                <a href="test-series.html" class="text-primary py-2 border-b border-slate-50 dark:border-slate-800">Test Series</a>
+                <a href="about.html" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">About</a>
+                <a href="testseries.html" class="text-primary py-2 border-b border-slate-50 dark:border-slate-800">Test Series</a>
                 <a href="notes.html" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">Notes</a>
                 <a href="contact.html" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">Contact</a>
                 <div class="flex items-center gap-4 mt-2 pt-2 border-t border-slate-100 dark:border-slate-800">
-                    <a href="#enroll" class="flex-1 inline-flex items-center justify-center px-6 py-4 text-white bg-gradient-to-r from-primary to-secondary rounded-xl text-center shadow-premium font-extrabold text-base">
-                        Enroll Now
+                    <a href="payment.html" class="flex-1 inline-flex items-center justify-center px-6 py-4 text-white bg-gradient-to-r from-primary to-secondary rounded-xl text-center shadow-premium font-extrabold text-base">
+                        Buy Now
                     </a>
                 </div>
             </div>
@@ -571,6 +571,35 @@
                 <!-- Test Series Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="testGrid">
 
+                    <!-- Card 5: CET 10+2 -->
+                    <div class="test-card bg-white dark:bg-[#1a1a2e] rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 hover:-translate-y-1.5 group" data-category="cet12">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="test-icon w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-secondary text-white flex items-center justify-center text-2xl shadow-md">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </div>
+                            <span class="text-[10px] font-extrabold text-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 dark:text-emerald-400 px-2.5 py-1 rounded-full uppercase tracking-wider">Most Popular</span>
+                        </div>
+                        <h3 class="font-poppins font-extrabold text-xl text-dark dark:text-white mb-1 text-left">CET 10+2 Test Series</h3>
+                        <p class="text-xs text-muted dark:text-slate-400 font-semibold mb-3 text-left">RSMSSB CET Senior Secondary</p>
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300 mb-4">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i> <span>07 Minor Tests</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i> <span>02 Major Tests</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i> <span>03 Final Tests</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i> <span>Live Rank &amp; Topic-wise Analysis</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i> <span>Bilingual (Hindi &amp; English) </span></li>
+                        </ul>
+                        <div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-4">
+                            <div>
+                                <span class="text-2xl font-black text-primary">₹29</span>
+                                <span class="text-xs text-slate-400 line-through ml-2 font-bold">₹199</span>
+                            </div>
+                            <a href="cet-12th-exam.html" class="inline-flex items-center gap-1.5 text-sm font-extrabold text-primary hover:text-primary/80 transition-colors group">
+                                Enroll Now <i class="fa-solid fa-arrow-right btn-arrow text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    
                     <!-- Card 1: VDO -->
                     <div class="test-card bg-white dark:bg-[#1a1a2e] rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 hover:-translate-y-1.5 group" data-category="vdo">
                         <div class="flex items-start justify-between mb-4">
@@ -596,7 +625,6 @@
                             </a>
                         </div>
                     </div>
-
                     <!-- Card 2: Patwar -->
                     <div class="test-card bg-white dark:bg-[#1a1a2e] rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 hover:-translate-y-1.5 group" data-category="patwar">
                         <div class="flex items-start justify-between mb-4">
@@ -670,32 +698,6 @@
                                 <span class="text-xs text-slate-400 line-through ml-2 font-bold">₹149</span>
                             </div>
                             <a href="#enroll" class="inline-flex items-center gap-1.5 text-sm font-extrabold text-support hover:text-support/80 transition-colors group">
-                                Enroll Now <i class="fa-solid fa-arrow-right btn-arrow text-[10px]"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Card 5: CET 10+2 -->
-                    <div class="test-card bg-white dark:bg-[#1a1a2e] rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 hover:-translate-y-1.5 group" data-category="cet12">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="test-icon w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-secondary text-white flex items-center justify-center text-2xl shadow-md">
-                                <i class="fa-solid fa-user-graduate"></i>
-                            </div>
-                            <span class="text-[10px] font-extrabold text-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 dark:text-emerald-400 px-2.5 py-1 rounded-full uppercase tracking-wider">Most Popular</span>
-                        </div>
-                        <h3 class="font-poppins font-extrabold text-xl text-dark dark:text-white mb-1 text-left">CET 10+2 Test Series</h3>
-                        <p class="text-xs text-muted dark:text-slate-400 font-semibold mb-3 text-left">RSMSSB CET Senior Secondary</p>
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300 mb-4">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i> <span>25 Full-Length Mock Tests</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i> <span>Complete 10+2 Syllabus Coverage</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i> <span>Live Rank &amp; Topic-wise Analysis</span></li>
-                        </ul>
-                        <div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-4">
-                            <div>
-                                <span class="text-2xl font-black text-primary">₹99</span>
-                                <span class="text-xs text-slate-400 line-through ml-2 font-bold">₹399</span>
-                            </div>
-                            <a href="#enroll" class="inline-flex items-center gap-1.5 text-sm font-extrabold text-primary hover:text-primary/80 transition-colors group">
                                 Enroll Now <i class="fa-solid fa-arrow-right btn-arrow text-[10px]"></i>
                             </a>
                         </div>
@@ -830,12 +832,12 @@
                         <h3 class="font-poppins font-bold text-xl text-dark dark:text-white mb-0.5">Starter Basic Plan</h3>
                         <p class="text-xs text-muted dark:text-slate-400">Perfect for trial &amp; experience</p>
                         <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300 text-left flex-grow">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i> <span>Access to 1 exam test series</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i> <span>5 mock tests included</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i> <span>Basic performance analytics</span></li>
-                            <li class="flex items-start gap-2 opacity-50"><i class="fa-solid fa-xmark text-slate-300 mt-0.5 text-xs"></i> <span>No PDF downloads</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i> <span>Access to All Available Test Series</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i> <span>Basic Performance Report</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-primary mt-0.5 text-xs"></i> <span>Mobile & Desktop Access</span></li>
+                            <li class="flex items-start gap-2 opacity-50"><i class="fa-solid fa-xmark text-slate-300 mt-0.5 text-xs"></i> <span>5 Days Validity</span></li>
                         </ul>
-                        <a href="#" class="mt-5 w-full inline-flex items-center justify-center py-3 px-4 rounded-xl text-sm font-bold text-white bg-primary hover:bg-primary/95 transition-all shadow-premium hover:scale-[1.02]">
+                        <a href="payment.html" class="mt-5 w-full inline-flex items-center justify-center py-3 px-4 rounded-xl text-sm font-bold text-white bg-primary hover:bg-primary/95 transition-all shadow-premium hover:scale-[1.02]">
                             Get Started – ₹49
                         </a>
                     </div>
@@ -849,12 +851,14 @@
                         <h3 class="font-poppins font-bold text-xl text-dark dark:text-white mb-0.5">Standard Sprint Pass</h3>
                         <p class="text-xs text-muted dark:text-slate-400">30 Days membership</p>
                         <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300 text-left flex-grow">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-0.5 text-xs"></i> <span>Access to 3 exam test series</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-0.5 text-xs"></i> <span>All mock tests included</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-0.5 text-xs"></i> <span>Performance analytics &amp; rank</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-0.5 text-xs"></i> <span>PDF solutions available</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-0.5 text-xs"></i> <span>30 Days Unlimited Access</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-0.5 text-xs"></i> <span>Unlimited Test Attempts</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-0.5 text-xs"></i> <span>Accuracy &amp; Time Analysis</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-0.5 text-xs"></i> <span>Weekly Current Affairs Quiz Free Access</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-0.5 text-xs"></i> <span> Bookmark Questions</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-0.5 text-xs"></i> <span>New Test Series Added During Validity</span></li>
                         </ul>
-                        <a href="#" class="mt-5 w-full inline-flex items-center justify-center py-3 px-4 rounded-xl text-sm font-bold text-white bg-secondary hover:bg-secondary/95 transition-all shadow-premium hover:scale-[1.02]">
+                        <a href="payment.html" class="mt-5 w-full inline-flex items-center justify-center py-3 px-4 rounded-xl text-sm font-bold text-white bg-secondary hover:bg-secondary/95 transition-all shadow-premium hover:scale-[1.02]">
                             Enroll Now – ₹199
                         </a>
                     </div>
@@ -869,12 +873,13 @@
                         <h3 class="font-poppins font-bold text-xl text-dark dark:text-white mb-0.5">Premium Regular Plan</h3>
                         <p class="text-xs text-muted dark:text-slate-400">Complete 90 Days access</p>
                         <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300 text-left flex-grow">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent mt-0.5 text-xs"></i> <span>Access to all 6 exam test series</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent mt-0.5 text-xs"></i> <span>All mock tests + practice sets</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent mt-0.5 text-xs"></i> <span>Advanced analytics &amp; reports</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent mt-0.5 text-xs"></i> <span>PDF downloads + priority support</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent mt-0.5 text-xs"></i> <span>90 Days Unlimited Access</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent mt-0.5 text-xs"></i> <span>Practice Set Collection</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent mt-0.5 text-xs"></i> <span>Every New Test Series During Membership</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent mt-0.5 text-xs"></i> <span>Daily &amp; Weekly Current Affairs Quiz Free Access</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent mt-0.5 text-xs"></i> <span>Faster Student Support</span></li>
                         </ul>
-                        <a href="#" class="mt-5 w-full inline-flex items-center justify-center py-3 px-4 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-primary to-secondary hover:opacity-95 transition-all shadow-premium hover:scale-[1.02]">
+                        <a href="payment.html" class="mt-5 w-full inline-flex items-center justify-center py-3 px-4 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-primary to-secondary hover:opacity-95 transition-all shadow-premium hover:scale-[1.02]">
                             Enroll Now – ₹499
                         </a>
                     </div>
@@ -888,12 +893,15 @@
                         <h3 class="font-poppins font-bold text-xl text-dark dark:text-white mb-0.5">Elite Premium Plan</h3>
                         <p class="text-xs text-muted dark:text-slate-400">Complete yearly access</p>
                         <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300 text-left flex-grow">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-support mt-0.5 text-xs"></i> <span>Unlimited access to all test series</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-support mt-0.5 text-xs"></i> <span>All mock tests + new additions</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-support mt-0.5 text-xs"></i> <span>Premium analytics &amp; reports</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-support mt-0.5 text-xs"></i> <span>PDF downloads + priority support</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-support mt-0.5 text-xs"></i> <span>365 Days Complete Access</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-support mt-0.5 text-xs"></i> <span>All Available Test Series</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-support mt-0.5 text-xs"></i> <span>Every New Test Series During Membership</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-support mt-0.5 text-xs"></i> <span>Unlimited Test Attempts</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-support mt-0.5 text-xs"></i> <span>Premium Performance Analytics</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-support mt-0.5 text-xs"></i> <span>Priority Student Support</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-support mt-0.5 text-xs"></i> <span>One Membership for Complete Year Preparation</span></li>
                         </ul>
-                        <a href="#" class="mt-5 w-full inline-flex items-center justify-center py-3 px-4 rounded-xl text-sm font-bold text-white bg-support hover:bg-support/95 transition-all shadow-premium hover:scale-[1.02]">
+                        <a href="payment.html" class="mt-5 w-full inline-flex items-center justify-center py-3 px-4 rounded-xl text-sm font-bold text-white bg-support hover:bg-support/95 transition-all shadow-premium hover:scale-[1.02]">
                             Get Yearly Pass – ₹999
                         </a>
                     </div>
@@ -1019,8 +1027,8 @@
                     <h4 class="font-poppins font-bold text-xs tracking-widest text-slate-300 uppercase mb-4">Quick Links</h4>
                     <div class="flex flex-col gap-2.5 text-slate-400 font-manrope font-semibold text-xs">
                         <a href="index.html" class="hover:text-primary transition-colors">Home</a>
-                        <a href="index.html#about" class="hover:text-primary transition-colors">About Us</a>
-                        <a href="test-series.html" class="hover:text-primary transition-colors">Test Series</a>
+                        <a href="about.html" class="hover:text-primary transition-colors">About Us</a>
+                        <a href="testseries.html" class="hover:text-primary transition-colors">Test Series</a>
                         <a href="notes.html" class="hover:text-primary transition-colors">Notes</a>
                     </div>
                 </div>
@@ -1028,11 +1036,11 @@
                 <div class="lg:col-span-2 flex flex-col items-start text-left">
                     <h4 class="font-poppins font-bold text-xs tracking-widest text-slate-300 uppercase mb-4">Exams</h4>
                     <div class="flex flex-col gap-2.5 text-slate-400 font-manrope font-semibold text-xs">
+                        <a href="cet-12th-exam.html" class="hover:text-primary transition-colors">CET 10+2</a>
                         <a href="#exams" class="hover:text-primary transition-colors">VDO</a>
                         <a href="#exams" class="hover:text-primary transition-colors">Patwar</a>
                         <a href="#exams" class="hover:text-primary transition-colors">LDC</a>
                         <a href="#exams" class="hover:text-primary transition-colors">Fourth Grade</a>
-                        <a href="#exams" class="hover:text-primary transition-colors">CET 10+2</a>
                         <a href="#exams" class="hover:text-primary transition-colors">CET Graduation</a>
                     </div>
                 </div>
