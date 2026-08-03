@@ -3339,7 +3339,7 @@
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> PYQs Access</li>
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> All New Tests FREE Added</li>
                         </ul>
-                        <a href="#plans" onclick="handlePurchase('Starter', 29)" class="mt-4 w-full py-2.5 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-sm rounded-xl hover:bg-primary hover:text-white transition-all text-center">Buy Now</a>
+                        <a href="payment.html" onclick="handlePurchase('Starter', 29)" class="mt-4 w-full py-2.5 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-sm rounded-xl hover:bg-primary hover:text-white transition-all text-center">Buy Now</a>
                     </div>
 
                     <!-- Plan: 1 Month (Popular) -->
@@ -3641,10 +3641,16 @@
             window.location.href = '/cet-graduation.html';
         }
 
-        function handlePurchase(plan, price) {
-            alert(`You selected the ${plan} Plan (₹${price}). Redirecting to checkout...`);
-            window.location.href = '/payment.html?plan=' + encodeURIComponent(plan) + '&price=' + price;
-        }
-    </script>
+function handlePurchase(event, plan, price) {
+    // 1. Anchor tag ke default '#plans' behavior ko rokta hai
+    if (event) event.preventDefault(); 
+
+    // 2. Alert popup show karega
+    alert(`You selected the ${plan} Plan (₹${price}). Redirecting to checkout...`);
+
+    // 3. Complete payment.html par redirect karega (relative path)
+    window.location.href = 'payment.html?plan=' + encodeURIComponent(plan) + '&price=' + price;
+}
+	</script>
 </body>
 </html>
