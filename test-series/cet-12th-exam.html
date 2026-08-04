@@ -3368,7 +3368,7 @@
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> All New Tests FREE Added</li>
                         </ul>
              <!--           <a href="payment.html" onclick="handlePurchase('Starter', 29)" class="mt-4 w-full py-2.5 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-sm rounded-xl hover:bg-primary hover:text-white transition-all text-center">Buy Now</a>-->
-						<a href="payment.html" onclick="handlePurchase(event, 'Starter', 29)" class="mt-4 w-full py-2.5 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-sm rounded-xl hover:bg-primary hover:text-white transition-all text-center">Buy Now</a>
+						<a href="../payment.html" onclick="handlePurchase(event, 'Starter', 29)" class="mt-4 w-full py-2.5 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-sm rounded-xl hover:bg-primary hover:text-white transition-all text-center">Buy Now</a>
                     </div>
                     <!-- Plan: 1 Month (Popular) -->
                     <div class="bg-white dark:bg-[#1a1a2e] rounded-2xl border-2 border-primary/30 dark:border-primary/20 p-6 shadow-premium hover:shadow-cardHover transition-all duration-300 flex flex-col relative">
@@ -3389,7 +3389,7 @@
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> PYQs Access</li>
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> All New Tests FREE Added</li>
                         </ul>
-				<a href="payment.html" onclick="handlePurchase(event, 'Standard', 39)" class="mt-4 w-full py-2.5 bg-gradient-to-r from-primary to-secondary text-white font-bold text-sm rounded-xl hover:opacity-95 transition-all text-center shadow-premium">Buy Now</a>                    </div>
+				<a href="../payment.html" onclick="handlePurchase(event, 'Standard', 39)" class="mt-4 w-full py-2.5 bg-gradient-to-r from-primary to-secondary text-white font-bold text-sm rounded-xl hover:opacity-95 transition-all text-center shadow-premium">Buy Now</a>                    </div>
 
                     <!-- Plan: 3 Months -->
                     <div class="bg-slate-50 dark:bg-[#1a1a2e] rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 flex flex-col">
@@ -3409,7 +3409,7 @@
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> PDF Download</li>
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> All New Tests FREE Added</li>
                         </ul>
-                        <a href="payment.html" onclick="handlePurchase(event, 'Premium', 49)" class="mt-4 w-full py-2.5 bg-accent hover:bg-accent/90 text-white font-bold text-sm rounded-xl transition-all text-center">Buy Now</a>
+                        <a href="../payment.html" onclick="handlePurchase(event, 'Premium', 49)" class="mt-4 w-full py-2.5 bg-accent hover:bg-accent/90 text-white font-bold text-sm rounded-xl transition-all text-center">Buy Now</a>
                     </div>
 
                     <!-- Plan: 1 Year -->
@@ -3430,7 +3430,7 @@
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> Unlimited Attempt</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> PDF Download</li>
                         </ul>
-                        <a href="payment.html" onclick="handlePurchase(event, 'Elite', 199)" class="mt-4 w-full py-2.5 bg-support hover:bg-support/90 text-white font-bold text-sm rounded-xl transition-all text-center">Buy Now</a>
+                        <a href="../payment.html" onclick="handlePurchase(event, 'Elite', 199)" class="mt-4 w-full py-2.5 bg-support hover:bg-support/90 text-white font-bold text-sm rounded-xl transition-all text-center">Buy Now</a>
                     </div>
 
                 </div>
@@ -3676,7 +3676,7 @@ function handlePurchase(event, plan, price) {
     alert(`You selected the ${plan} Plan (₹${price}). Redirecting to checkout...`);
 
     // 3. Complete payment.html par redirect karega (relative path)
-    window.location.href = 'payment.html?plan=' + encodeURIComponent(plan) + '&price=' + price;
+    window.location.href = '../payment.html?plan=' + encodeURIComponent(plan) + '&price=' + price;
 }
 	</script>
 </body>
