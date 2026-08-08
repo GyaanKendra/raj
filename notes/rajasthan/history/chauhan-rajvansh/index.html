@@ -1246,37 +1246,7 @@
         </a>
     </div>
 
-    <!-- ═══════ SCRIPTS ═══════ --
-<script>
-// Event Delegation: यह 1000+ पेजेस के लिए सबसे फ़ास्ट और लाइटवेट तरीका है
-document.addEventListener('click', function (e) {
-    // चेक करें कि क्या क्लिक किया गया एलिमेंट <a> टैग है और उसका href '#' से शुरू होता है
-    const link = e.target.closest('a[href^="#"]');
-    
-    if (link) {
-        const targetId = link.getAttribute('href');
-        
-        // अगर सिर्फ href="#" है तो कुछ मत करो
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            e.preventDefault(); // डिफ़ॉल्ट होमपेज रिडायरेक्ट रोकेगा
-            
-            // सही जगह स्क्रॉल करेगा
-            targetElement.scrollIntoView({
-                behavior: 'smooth'
-            });
-            
-            // URL के पीछे #id जोड़ देगा
-            history.pushState(null, null, targetId);
-        }
-    }
-});
-</script>
-
-    
+    <!-- ═══════ SCRIPTS ═══════ --   
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Preloader
