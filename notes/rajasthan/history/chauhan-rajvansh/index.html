@@ -1248,6 +1248,21 @@
 
     <!-- ═══════ SCRIPTS ═══════ --   
     <script>
+document.addEventListener('click', function (e) {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (anchor) {
+        const targetId = anchor.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+            history.pushState(null, null, targetId);
+        }
+    }
+});
+</script>
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Preloader
             const loader = document.getElementById('loader');
