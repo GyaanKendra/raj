@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="hi" class="scroll-smooth">
 <head>
+    <base href="/raj/">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>बैराठ (Bairath) – प्राचीन विराटनगर: ऐतिहासिक एवं पुरातात्विक अध्ययन | RAJShiksha</title>
@@ -1672,6 +1673,21 @@
             });
         });
   </script>
-
+// # tag use के लिए
+<script>
+document.addEventListener('click', function (e) {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (anchor) {
+        const targetId = anchor.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+            history.pushState(null, null, targetId);
+        }
+    }
+});
+</script>
 </body>
 </html>
