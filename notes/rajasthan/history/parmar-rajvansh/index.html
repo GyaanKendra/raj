@@ -2,6 +2,7 @@
 <html lang="hi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8" />
+    <base href="/raj/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>राजस्थान का परमार राजवंश – इतिहास, प्रमुख शाखाएँ, धारावर्ष, राजा भोज, भूमिज शैली व संपूर्ण अभिलेख | RAJShiksha</title>
     <meta name="description" content="राजस्थान का परमार राजवंश (Parmar rajvansh) – उत्पत्ति, आबू के परमार, वागड़ (अर्थूणा), किराडू, जालौर परमार, राजा भोज, भूमिज शैली स्थापत्य, पटनारायण/वसंतगढ़ अभिलेख व पतन का संपूर्ण अध्ययन।" />
@@ -1296,6 +1297,21 @@
             });
         });
     </script>
-
+// # tag use के लिए
+<script>
+document.addEventListener('click', function (e) {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (anchor) {
+        const targetId = anchor.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+            history.pushState(null, null, targetId);
+        }
+    }
+});
+</script>
 </body>
 </html>
