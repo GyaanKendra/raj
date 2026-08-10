@@ -43,6 +43,34 @@
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
+    <!-- PERMANENT ANTI-DEVTOOLS & INSPECT DISABLE SCRIPT -->
+<script>
+    // 1. Disable Right Click
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    // 2. Disable Keyboard Shortcuts (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S)
+    window.addEventListener('keydown', function(e) {
+        if (
+            e.key === 'F12' ||
+            (e.ctrlKey && e.shiftKey && ['I', 'i', 'J', 'j', 'C', 'c'].includes(e.key)) ||
+            (e.ctrlKey && ['u', 'U', 's', 'S', 'c', 'C', 'a', 'A', 'p', 'P'].includes(e.key))
+        ) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+    }, true);
+
+    // 3. Anti-DevTools Trap (Browser menu se Inspect kholne par Screen Blank ho jayegi)
+    setInterval(function() {
+        const startTime = performance.now();
+        debugger;
+        const endTime = performance.now();
+        if (endTime - startTime > 100) {
+            document.body.innerHTML = "<div style='display:flex;justify-content:center;align-items:center;height:100vh;background:#0F172A;color:#ffffff;font-family:sans-serif;font-weight:bold;text-align:center;padding:20px;'>⚠️ Developer Tools &amp; Inspect Element are strictly restricted on RAJShiksha Portal!</div>";
+        }
+    }, 1000);
+</script>
 </head>
 
 <body class="font-inter antialiased min-h-screen flex flex-col justify-between selection:bg-primary selection:text-white">
@@ -93,19 +121,28 @@
             </div>
         </div>
 
-        <form id="checkoutForm" onsubmit="handleCheckoutSubmit(event)">
+ <form id="checkoutForm" onsubmit="handleCheckoutSubmit(event)">
             <div class="space-y-6">
 
                 <!-- CARD 1: STUDENT REGISTRATION FORM & COURSE SELECTION -->
                 <div class="bg-white rounded-3xl p-5 sm:p-8 border border-slate-200/80 shadow-sm text-left">
-                    <div class="flex items-center gap-3 border-b border-slate-100 pb-4 mb-6">
-                        <span class="w-8 h-8 rounded-xl bg-primary/10 text-primary font-bold flex items-center justify-center text-sm">1</span>
-                        <div>
-                            <h2 class="font-poppins font-bold text-base sm:text-lg text-slate-900">Student &amp; Product Details</h2>
-                            <p class="text-xs text-slate-400">All fields marked with (*) are mandatory</p>
+                    
+                    <!-- HEADER WITH BUTTON EXACTLY ON THE RIGHT CORNER -->
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-xl bg-primary/10 text-primary font-bold flex items-center justify-center text-sm">1</span>
+                            <div>
+                                <h2 class="font-poppins font-bold text-base sm:text-lg text-slate-900">Student &amp; Product Details</h2>
+                                <p class="text-xs text-slate-400">All fields marked with (*) are mandatory</p>
+                            </div>
                         </div>
-                    </div>
 
+                        <!-- RIGHT CORNER BUTTON -->
+                        <a href="student.html" class="ml-auto inline-flex items-center gap-2 bg-slate-900 hover:bg-primary text-white px-3.5 py-2 rounded-xl transition-all text-xs font-bold shadow-md shrink-0">
+                            <i class="fa-solid fa-key text-primary"></i>
+                            <span>Student Exam Portal</span>
+                        </a>
+                    </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         
                         <!-- Select Test Series / Book Dropdown -->
@@ -122,6 +159,8 @@
 <!--                                        <option value="RAS 2026 Test Series Only Pre (₹99)">RAS 2026 Test Series Only Pre — ₹99</option>-->
                                         <option value="Raj. SI 2026 Test Series (₹29)">Raj. SI 2026 Test Series <small>(Paper-II)</small>— ₹29 </option>
                                         <option value="Rajasthan PTI Paper 1 Test Series (₹29)">Rajasthan PTI Paper 1 Test Series 2026 <small>(Paper-I)</small>— ₹29 </option>
+
+					<option value="rajasthan-culture-durg-(₹19)">Rajasthan Durg & Culture Test Series — ₹19</option>
    <!--                                        <option value="RSMSSB Patwar Test Series">RSMSSB Patwar Mock Test Series</option>
                                         <option value="Rajasthan Police Constable Series">Rajasthan Police Constable Series</option>
                                         <option value="REET Level 1 & Level 2 Test Series">REET Level 1 & Level 2 Test Series</option>
@@ -135,7 +174,7 @@
                                         <option value="Raj. History & Heritage eBook (₹99)">Raj. History & Heritage eBook — ₹99</option>
                                         <option value="General & English Blueprint eBook (₹79)">General & English Blueprint eBook — ₹79</option>
                                         <option value="Rajasthan Literature & Arts Standard eBook (₹99)">Rajasthan Literature & Arts Standard eBook — ₹99</option>
-                                    </optgroup>
+                                    </optgroup>-->
 
                                     <!-- SUBSCRIPTION PASSES CATEGORY -->
                                     <optgroup label="⭐ MEMBERSHIP PASSES (सदस्यता पास)">
@@ -309,29 +348,50 @@
         </form>
     </main>
 
-    <!-- ════ SUCCESS RECEIPT OVERLAY MODAL ════ -->
-    <div id="successModal" class="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
-        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl border border-slate-100 transform scale-95 transition-transform duration-300" id="successModalContent">
-            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-4 animate-bounce">
-                <i class="fa-solid fa-circle-check"></i>
-            </div>
-            <h3 class="font-poppins font-extrabold text-2xl text-slate-900">Enrollment Submitted!</h3>
-            <p class="text-xs text-slate-500 mt-1 font-manrope">Verification details saved successfully to <b>rajshiksha.in@gmail.com</b> excel sheet.</p>
-
-            <div class="my-5 p-4 bg-slate-50 rounded-2xl border border-slate-200 text-left text-xs space-y-1.5 font-mono">
-                <p><b>Order ID:</b> <span id="recOrderRef" class="text-primary font-bold">#RAJ10001</span></p>
-                <p><b>Course:</b> <span id="recCourse" class="text-slate-800 font-bold">CET Test Series</span></p>
-                <p><b>Student:</b> <span id="recStudentName">Ramesh</span></p>
-                <p><b>Email:</b> <span id="recEmail">student@gmail.com</span></p>
-                <p><b>UTR ID:</b> <span id="recUTR">4028XXXXXXXX</span></p>
-                <p><b>Status:</b> <span class="text-emerald-600 font-bold">Verification Pending (5-10 Mins)</span></p>
-            </div>
-
-            <button onclick="window.location.href='index.html'" class="w-full py-3.5 bg-slate-900 hover:bg-primary text-white font-extrabold text-sm rounded-xl transition-colors">
-                Return to Home &amp; Start Test
-            </button>
+<!-- ════ UPDATED SUCCESS RECEIPT OVERLAY MODAL ════ -->
+<div id="successModal" class="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl border border-slate-100 transform scale-95 transition-transform duration-300" id="successModalContent">
+        
+        <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-4 animate-bounce">
+            <i class="fa-solid fa-circle-check"></i>
         </div>
+        
+        <h3 class="font-poppins font-extrabold text-2xl text-slate-900">Enrollment Submitted!</h3>
+        
+        <!-- OFFICIAL SUBTITLE -->
+        <p class="text-xs text-slate-500 mt-1 font-manrope">Your enrollment &amp; verification details have been logged securely with <b>RAJShiksha Examination Cell</b>.</p>
+
+        <!-- RECEIPT DETAILS BOX -->
+        <div class="my-4 p-4 bg-slate-50 rounded-2xl border border-slate-200 text-left text-xs space-y-1.5 font-mono">
+            <p><b>Order ID:</b> <span id="recOrderRef" class="text-primary font-bold">#RAJ10001</span></p>
+            <p><b>Course:</b> <span id="recCourse" class="text-slate-800 font-bold">Rajasthan Culture Test Series</span></p>
+            <p><b>Student:</b> <span id="recStudentName">Ramesh</span></p>
+            <p><b>Email:</b> <span id="recEmail">student@gmail.com</span></p>
+            <p><b>UTR ID:</b> <span id="recUTR">4028XXXXXXXX</span></p>
+            <p><b>Status:</b> <span class="text-emerald-600 font-bold">Verification Pending (5-10 Mins)</span></p>
+        </div>
+
+        <!-- 2-STEP GUIDANCE BOX -->
+        <div class="mb-5 p-3 rounded-xl bg-amber-50 border border-amber-200 text-left text-[11px] text-amber-900 space-y-1 font-manrope">
+            <p class="font-bold text-amber-950 flex items-center gap-1">📌 What to do next?</p>
+            <p>1. Open Exam Portal using button below.</p>
+            <p>2. Login using Email (<b id="guidanceEmail">your email</b>) &amp; Password.</p>
+        </div>
+
+        <!-- 2 ACTION BUTTONS (PRIMARY + SECONDARY WHATSAPP) -->
+        <div class="space-y-2.5">
+            <button onclick="window.location.href='student.html'" class="w-full py-3.5 bg-slate-900 hover:bg-primary text-white font-extrabold text-sm rounded-xl transition-all shadow-md flex items-center justify-center gap-2">
+                <span>🚀 Open Examination Portal (student.html)</span>
+            </button>
+
+            <a id="whatsappHelpBtn" href="#" target="_blank" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs rounded-xl transition-all shadow-sm flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-base"></i>
+                <span>Get Instant Activation on WhatsApp</span>
+            </a>
+        </div>
+
     </div>
+</div>
 
     <!-- ════ FOOTER ════ -->
     <footer class="bg-slate-900 text-white py-6 border-t border-slate-800 text-center text-xs text-slate-400">
@@ -343,32 +403,27 @@
         // Store submitted UTRs locally to block duplicates on client side
         let usedUTRs = JSON.parse(localStorage.getItem('rajshiksha_used_utrs')) || [];
 
-        document.addEventListener('DOMContentLoaded', () => {
-            autoSelectCourseFromStorage();
-        });
+ document.addEventListener('DOMContentLoaded', () => {
+    autoSelectCourseFromURL();
+});
 
-        // Auto-select course if coming from Index Cart
-        function autoSelectCourseFromStorage() {
-            const storedCart = localStorage.getItem('rajshiksha_cart');
-            const courseSelect = document.getElementById('selectedCourse');
-            if (storedCart && courseSelect) {
-                try {
-                    const cartArr = JSON.parse(storedCart);
-                    if (cartArr.length > 0) {
-                        const lastItemTitle = cartArr[cartArr.length - 1].title.toLowerCase();
-                        for (let i = 0; i < courseSelect.options.length; i++) {
-                            const optVal = courseSelect.options[i].value.toLowerCase();
-                            if (optVal.includes(lastItemTitle) || lastItemTitle.includes(optVal.split('(')[0].trim().toLowerCase())) {
-                                courseSelect.selectedIndex = i;
-                                break;
-                            }
-                        }
-                    }
-                } catch(e) {
-                    console.log('Cart auto-sync error:', e);
-                }
+// URL Parameter Auto-Select Logic
+function autoSelectCourseFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const courseParam = urlParams.get('course');
+    const courseSelect = document.getElementById('selectedCourse');
+
+    if (courseParam && courseSelect) {
+        const decodedParam = decodeURIComponent(courseParam).toLowerCase().trim();
+        for (let i = 0; i < courseSelect.options.length; i++) {
+            const optVal = courseSelect.options[i].value.toLowerCase().trim();
+            if (optVal === decodedParam || optVal.includes(decodedParam) || decodedParam.includes(optVal.split('(')[0].trim().toLowerCase())) {
+                courseSelect.selectedIndex = i;
+                break;
             }
         }
+    }
+}
 
         // 1. Unblur QR Code
         function unblurQR() {
@@ -558,27 +613,39 @@
             }
         }
 
-        function completeSubmission(utr, name, email, course) {
-            // Mark UTR as used
-            usedUTRs.push(utr);
-            localStorage.setItem('rajshiksha_used_utrs', JSON.stringify(usedUTRs));
-            localStorage.removeItem('rajshiksha_cart');
+       function completeSubmission(utr, name, email, course) {
+    usedUTRs.push(utr);
+    localStorage.setItem('rajshiksha_used_utrs', JSON.stringify(usedUTRs));
 
-            // Populate Modal
-            document.getElementById('recOrderRef').textContent = '#RAJ' + Math.floor(10000 + Math.random() * 90000);
-            document.getElementById('recCourse').textContent = course;
-            document.getElementById('recStudentName').textContent = name;
-            document.getElementById('recEmail').textContent = email;
-            document.getElementById('recUTR').textContent = utr;
+    const orderId = '#RAJ' + Math.floor(10000 + Math.random() * 90000);
 
-            // Show Receipt Modal
-            const modal = document.getElementById('successModal');
-            modal.classList.remove('pointer-events-none', 'opacity-0');
-            modal.classList.add('opacity-100');
-            const content = document.getElementById('successModalContent');
+    document.getElementById('recOrderRef').textContent = orderId;
+    document.getElementById('recCourse').textContent = course;
+    document.getElementById('recStudentName').textContent = name;
+    document.getElementById('recEmail').textContent = email;
+    document.getElementById('recUTR').textContent = utr;
+
+    // Update Guidance Email
+    const gEmail = document.getElementById('guidanceEmail');
+    if (gEmail) gEmail.textContent = email;
+
+    // Configure WhatsApp Direct Help Link with Order Details
+    const waText = encodeURIComponent(`Hello Rajshiksha, I have paid for ${course}.\n\nName: ${name}\nEmail: ${email}\nOrder ID: ${orderId}\nUTR ID: ${utr}\n\nPlease activate my account for student exam portal!`);
+    const waBtn = document.getElementById('whatsappHelpBtn');
+    if (waBtn) waBtn.href = `https://wa.me/919950399752?text=${waText}`;
+
+    // Show Success Modal
+    const modal = document.getElementById('successModal');
+    if (modal) {
+        modal.classList.remove('pointer-events-none', 'opacity-0');
+        modal.classList.add('opacity-100');
+        const content = document.getElementById('successModalContent');
+        if (content) {
             content.classList.remove('scale-95');
             content.classList.add('scale-100');
         }
+    }
+}
     </script>
 </body>
 </html>
