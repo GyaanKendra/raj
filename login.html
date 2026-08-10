@@ -552,91 +552,134 @@
     }
 
     async function handleCandidateLogin(e) {
-      e.preventDefault();
-      
-      const candidateName = document.getElementById('candidate-name').value.trim();
-      const email = document.getElementById('candidate-email').value.trim();
-      const password = document.getElementById('candidate-password').value.trim();
-      const submitBtn = document.getElementById('login-submit-btn');
+  e.preventDefault();
+  
+  const candidateName = document.getElementById('candidate-name').value.trim();
+  const email = document.getElementById('candidate-email').value.trim();
+  const password = document.getElementById('candidate-password').value.trim();
+  const submitBtn = document.getElementById('login-submit-btn');
 
-      submitBtn.innerText = "Authenticating Candidate...";
-      submitBtn.disabled = true;
+  submitBtn.innerText = "Authenticating Candidate...";
+  submitBtn.disabled = true;
 
-      const { data: candData, error: candError } = await db
-        .from('allowed_candidates')
-        .select('*')
-        .eq('email', email)
-        .eq('password', password)
-        .single();
+  const { data: candData, error: candError } = await db
+    .from('allowed_candidates')
+    .select('*')
+    .eq('email', email)
+    .eq('password', password)
+    .single();
 
-      if (candError || !candData) {
+  if (candError || !candData) {
+    submitBtn.innerText = "Authenticate & Load Tests →";
+    submitBtn.disabled = false;
+    alert("❌ Access Denied: Invalid Email or Password!");
+    return;
+  }
+
+  const isAdmin = candData.role === 'admin';
+  const currentDeviceId = getOrCreateDeviceId();
+
+  // =========================================================
+  // 1-DEVICE BINDING + 40-DAY RULE LOGIC (FOR STUDENTS ONLY)
+  // =========================================================
+  if (!isAdmin) {
+    const registeredDevice = candData.device_id;
+    const lastChange = candData.last_device_change ? new Date(candData.last_device_change) : null;
+    const now = new Date();
+
+    if (!registeredDevice) {
+      // First Time Login: Lock/Bind this Device
+      await db.from('allowed_candidates').update({
+        device_id: currentDeviceId,
+        last_device_change: now.toISOString()
+      }).eq('id', candData.id);
+    } 
+    else if (registeredDevice !== currentDeviceId) {
+      // Different Device Attempt Detected!
+      const daysDiff = lastChange ? Math.floor((now - lastChange) / (1000 * 60 * 60 * 24)) : 40;
+
+      if (daysDiff < 40) {
+        const remainingDays = 40 - daysDiff;
         submitBtn.innerText = "Authenticate & Load Tests →";
         submitBtn.disabled = false;
-        alert("❌ Access Denied: Invalid Email or Password!");
+        alert(`❌ Security Policy: Aapka account pehle se kisi dusre device par registered hai.\n\nAap ${remainingDays} din baad hi device badal sakte hain, ya Support/Admin se Device Reset karwayein.`);
         return;
-      }
-
-      state.candidateName = candidateName || candData.full_name;
-      state.user = candData;
-      state.profile = candData;
-
-      const enrolledCourses = candData.enrolled_courses || [];
-      const isAdmin = candData.role === 'admin';
-
-      const { data: testData, error: testErr } = await db.from('tests').select('*').order('created_at', { ascending: false });
-
-      if (testErr || !testData || testData.length === 0) {
-        submitBtn.innerText = "Authenticate & Load Tests →";
-        submitBtn.disabled = false;
-        alert("⚠️ No tests available in system yet!");
-        return;
-      }
-
-      let filteredTests = [];
-
-      if (isAdmin) {
-        filteredTests = testData;
       } else {
-        filteredTests = testData.filter(t => {
-          const testId = (t.id || '').trim().toLowerCase();
-          const testTitle = (t.title || '').trim().toLowerCase();
-          const testCategory = (t.category || '').trim().toLowerCase();
-
-          return enrolledCourses.some(assignedCourse => {
-            const assigned = assignedCourse.trim().toLowerCase();
-            if (!assigned) return false;
-
-            return (
-              assigned === testTitle || 
-              assigned === testCategory || 
-              assigned === testId
-            );
-          });
-        });
+        // 40 Days Passed: Self-Service Device Change
+        if (confirm(`⚠️ Aap Naye Device se Login kar rahe hain.\n\n40 din poore ho chuke hain, kya aap is Naye Device ko apna Primary Device banana chahte hain?`)) {
+          await db.from('allowed_candidates').update({
+            device_id: currentDeviceId,
+            last_device_change: now.toISOString()
+          }).eq('id', candData.id);
+        } else {
+          submitBtn.innerText = "Authenticate & Load Tests →";
+          submitBtn.disabled = false;
+          return;
+        }
       }
-
-      if (filteredTests.length === 0) {
-        submitBtn.innerText = "Authenticate & Load Tests →";
-        submitBtn.disabled = false;
-        alert(`⚠️ Access Restricted: No active tests found for your assigned series ("${enrolledCourses.join(', ')}").`);
-        return;
-      }
-
-      state.tests = filteredTests;
-
-      const dropdown = document.getElementById('test-dropdown');
-      dropdown.innerHTML = filteredTests.map(t => 
-        `<option value="${t.id}">${t.title} (${t.duration_minutes} Mins)</option>`
-      ).join('');
-
-      dropdown.value = filteredTests[0].id;
-      submitBtn.innerText = "Authenticated Successfully ✔";
-      
-      document.getElementById('login-form').classList.add('hidden');
-      document.getElementById('test-selection-box').classList.remove('hidden');
-
-      saveSessionToStorage('test_selection');
     }
+  }
+
+  state.candidateName = candidateName || candData.full_name;
+  state.user = candData;
+  state.profile = candData;
+
+  const enrolledCourses = candData.enrolled_courses || [];
+
+  const { data: testData, error: testErr } = await db.from('tests').select('*').order('created_at', { ascending: false });
+
+  if (testErr || !testData || testData.length === 0) {
+    submitBtn.innerText = "Authenticate & Load Tests →";
+    submitBtn.disabled = false;
+    alert("⚠️ No tests available in system yet!");
+    return;
+  }
+
+  let filteredTests = [];
+
+  if (isAdmin) {
+    filteredTests = testData;
+  } else {
+    filteredTests = testData.filter(t => {
+      const testId = (t.id || '').trim().toLowerCase();
+      const testTitle = (t.title || '').trim().toLowerCase();
+      const testCategory = (t.category || '').trim().toLowerCase();
+
+      return enrolledCourses.some(assignedCourse => {
+        const assigned = assignedCourse.trim().toLowerCase();
+        if (!assigned) return false;
+
+        return (
+          assigned === testTitle || 
+          assigned === testCategory || 
+          assigned === testId
+        );
+      });
+    });
+  }
+
+  if (filteredTests.length === 0) {
+    submitBtn.innerText = "Authenticate & Load Tests →";
+    submitBtn.disabled = false;
+    alert(`⚠️ Access Restricted: No active tests found for your assigned series ("${enrolledCourses.join(', ')}").`);
+    return;
+  }
+
+  state.tests = filteredTests;
+
+  const dropdown = document.getElementById('test-dropdown');
+  dropdown.innerHTML = filteredTests.map(t => 
+    `<option value="${t.id}">${t.title} (${t.duration_minutes} Mins)</option>`
+  ).join('');
+
+  dropdown.value = filteredTests[0].id;
+  submitBtn.innerText = "Authenticated Successfully ✔";
+  
+  document.getElementById('login-form').classList.add('hidden');
+  document.getElementById('test-selection-box').classList.remove('hidden');
+
+  saveSessionToStorage('test_selection');
+}
 
     async function proceedToExamInstructions() {
       try {
@@ -1031,6 +1074,18 @@
       });
     }
 
+
+// Unique Device Identification Engine
+function getOrCreateDeviceId() {
+  let deviceId = localStorage.getItem('candidate_device_uuid');
+  if (!deviceId) {
+    deviceId = 'DEV-' + Math.random().toString(36).substring(2, 15) + Date.now().toString(36);
+    localStorage.setItem('candidate_device_uuid', deviceId);
+  }
+  return deviceId;
+}
+
+    
     // ===================================================
     // COMPACT & SMALL FONT SIZE MOBILE PDF GENERATOR
     // ===================================================
