@@ -577,12 +577,19 @@
   }
 
   const isAdmin = candData.role === 'admin';
+  
+  // ===================================================================
+  // DEMO ACCOUNT BYPASS CHECK (DEMO ACCOUNTS PAR DEVICE LIMIT NAHI HOGI)
+  // ===================================================================
+  const isDemoAccount = candData.role === 'demo' || 
+                        candData.email.toLowerCase().includes('demo');
+
   const currentDeviceId = getOrCreateDeviceId();
 
-  // =========================================================
-  // 1-DEVICE BINDING + 40-DAY RULE LOGIC (FOR STUDENTS ONLY)
-  // =========================================================
-  if (!isAdmin) {
+  // ===================================================================
+  // DEVICE BINDING LOGIC (SIRF REAL PAID STUDENTS PAR CHALEGI)
+  // ===================================================================
+  if (!isAdmin && !isDemoAccount) {
     const registeredDevice = candData.device_id;
     const lastChange = candData.last_device_change ? new Date(candData.last_device_change) : null;
     const now = new Date();
