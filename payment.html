@@ -140,7 +140,7 @@
                         <!-- RIGHT CORNER BUTTON -->
                         <a href="login.html" class="ml-auto inline-flex items-center gap-2 bg-slate-900 hover:bg-primary text-white px-3.5 py-2 rounded-xl transition-all text-xs font-bold shadow-md shrink-0">
                             <i class="fa-solid fa-key text-primary"></i>
-                            <span>Student Exam Portal</span>
+                            <span>Candidate Exam login</span>
                         </a>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -157,7 +157,8 @@
                                     <optgroup label="📚 TEST SERIES (टेस्ट सीरीज)">
                                         <option value="Rajasthan CET 10+2 Test Series (₹29)">Rajasthan CET 10+2 Test Series — ₹29</option>
 <!--                                        <option value="RAS 2026 Test Series Only Pre (₹99)">RAS 2026 Test Series Only Pre — ₹99</option>-->
-                                        <option value="Raj. SI 2026 Test Series (₹29)">Raj. SI 2026 Test Series <small>(Paper-II)</small>— ₹29 </option>
+                                        <option value="Raj. SI 2026 Test Series (₹29)">Raj. SI 2026 Hindi Test Series <small>(Paper-I)</small>— ₹29 </option>
+                                        <option value="Raj. SI 2026 Test Series (₹29)">Raj. SI 2026 G.K. Test Series <small>(Paper-II)</small>— ₹29 </option>
                                         <option value="Rajasthan PTI Paper 1 Test Series (₹29)">Rajasthan PTI Paper 1 Test Series 2026 <small>(Paper-I)</small>— ₹29 </option>
 
 					<option value="rajasthan-culture-durg-(₹19)">Rajasthan Durg & Culture Test Series — ₹19</option>
@@ -168,7 +169,7 @@
                                         <option value="RSMSSB Lab Assistant Test Series">RSMSSB Lab Assistant Test Series</option>-->
                                     </optgroup>
 
-                                    <!-- DIGITAL E-BOOKS CATEGORY -->
+                                    <!-- DIGITAL E-BOOKS CATEGORY 
                                     <optgroup label="📖 DIGITAL E-BOOKS (ई-बुक्स)">
                                         <option value="Rajasthan Economy & Geography eBook (₹99)">Rajasthan Economy & Geography eBook — ₹99</option>
                                         <option value="Raj. History & Heritage eBook (₹99)">Raj. History & Heritage eBook — ₹99</option>
@@ -630,7 +631,7 @@ function autoSelectCourseFromURL() {
     if (gEmail) gEmail.textContent = email;
 
     // Configure WhatsApp Direct Help Link with Order Details
-    const waText = encodeURIComponent(`Hello Rajshiksha, I have paid for ${course}.\n\nName: ${name}\nEmail: ${email}\nOrder ID: ${orderId}\nUTR ID: ${utr}\n\nPlease activate my account for student exam portal!`);
+    const waText = encodeURIComponent(`Hello Rajshiksha, I have paid for ${course}.\n\nName: ${name}\nEmail: ${email}\nOrder ID: ${orderId}\nUTR ID: ${utr}\n\nPlease activate my account for candidate exam login!`);
     const waBtn = document.getElementById('whatsappHelpBtn');
     if (waBtn) waBtn.href = `https://wa.me/919950399752?text=${waText}`;
 
