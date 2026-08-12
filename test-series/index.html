@@ -344,13 +344,13 @@
                     <!-- Card 1: CET 10+2 -->
                     <div class="test-card bg-white dark:bg-[#1a1a2e] rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between group" data-category="cet12">
                         <div>
-                            <!-- Hourly Price Hike Timer -->
-                            <div class="mb-4 px-3 py-1.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200/60 dark:border-rose-800/50 flex items-center justify-between text-xs font-bold text-rose-700 dark:text-rose-300">
-                                <span class="flex items-center gap-1.5">
-                                    <i class="fa-solid fa-clock animate-spin" style="animation-duration:6s;"></i>
-                                    <span>Price Hike In:</span>
+                            <!-- Real Calendar Campaign Timer Banner -->
+                            <div class="timer-banner mb-4 px-3 py-1.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200/60 dark:border-rose-800/50 flex items-center justify-between text-xs font-bold text-rose-700 dark:text-rose-300">
+                                <span class="timer-label flex items-center gap-1.5">
+                                    <i class="fa-solid fa-clock animate-spin timer-icon" style="animation-duration:6s;"></i>
+                                    <span class="timer-title">Price Hike In (01 Sept.):</span>
                                 </span>
-                                <span class="font-mono font-black text-rose-600 dark:text-rose-400 countdown-timer" data-time="18000">04h 59m 50s</span>
+                                <span class="font-mono font-black text-rose-600 dark:text-rose-400 campaign-timer" data-target-date="2026-09-01T23:59:59+05:30" data-expired-text="Offer Expired" data-closed-btn-text="Offer Expired">Calculating...</span>
                             </div>
 
                             <div class="flex items-start justify-between mb-3">
@@ -372,7 +372,7 @@
                             </ul>
                         </div>
 
-                        <!-- Mobile-Friendly Price & Buttons (Modal Trigger Integrated) -->
+                        <!-- Price & Buttons -->
                         <div class="border-t border-slate-100 dark:border-slate-800 pt-4 flex flex-col gap-3">
                             <div class="flex items-baseline justify-between flex-wrap gap-1">
                                 <div class="flex items-baseline gap-2">
@@ -387,9 +387,9 @@
                                     <i class="fa-regular fa-circle-play text-primary text-xs"></i>
                                     <span>Try 1 Free Test</span>
                                 </button>
-                                <a href="test-series/cet-12th-test-series" class="px-3 py-2.5 text-center text-xs font-extrabold text-white bg-gradient-to-r from-primary to-secondary rounded-xl hover:opacity-95 transition-all shadow-sm flex items-center justify-center gap-1 group/btn">
-                                    <span>View Complete Detail &amp; Enroll</span>
-                                    <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
+                                <a href="test-series/cet-12th-test-series" class="main-cta-btn px-3 py-2.5 text-center text-xs font-extrabold text-white bg-gradient-to-r from-primary to-secondary rounded-xl hover:opacity-95 transition-all shadow-sm flex items-center justify-center gap-1 group/btn" data-default-text="View Complete Detail &amp; Enroll">
+                                    <span class="btn-text">View Complete Detail &amp; Enroll</span>
+                                    <i class="fa-solid fa-arrow-right btn-icon text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
                                 </a>
                             </div>
                         </div>
@@ -398,9 +398,12 @@
                     <!-- Card 2: Rajasthan PTI Paper 1 -->
                     <div class="test-card bg-white dark:bg-[#1a1a2e] rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between group" data-category="pti">
                         <div>
-                            <div class="mb-4 px-3 py-1.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200/60 dark:border-amber-800/50 flex items-center justify-between text-xs font-bold text-amber-800 dark:text-amber-300">
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-clock"></i><span>Offer Ends Soon:</span></span>
-                                <span class="font-mono font-black text-rose-600 dark:text-rose-400 countdown-timer" data-time="14200">03h 56m 40s</span>
+                            <div class="timer-banner mb-4 px-3 py-1.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200/60 dark:border-amber-800/50 flex items-center justify-between text-xs font-bold text-amber-800 dark:text-amber-300">
+                                <span class="timer-label flex items-center gap-1.5">
+                                    <i class="fa-solid fa-clock timer-icon"></i>
+                                    <span class="timer-title">Offer Ends Soon (01 Sept.):</span>
+                                </span>
+                                <span class="font-mono font-black text-rose-600 dark:text-rose-400 campaign-timer" data-target-date="2026-09-01T23:59:59+05:30" data-expired-text="Offer Expired" data-closed-btn-text="Offer Expired">Calculating...</span>
                             </div>
 
                             <div class="flex items-start justify-between mb-3">
@@ -435,9 +438,9 @@
                                     <i class="fa-regular fa-circle-play text-primary text-xs"></i>
                                     <span>Try 1 Free Test</span>
                                 </button>
-                                <a href="test-series/rajasthan-pti-paper-1-test-series" class="px-3 py-2.5 text-center text-xs font-extrabold text-white bg-gradient-to-r from-primary to-secondary rounded-xl hover:opacity-95 transition-all shadow-sm flex items-center justify-center gap-1 group/btn">
-                                    <span>View Complete Detail &amp; Enroll</span>
-                                    <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
+                                <a href="test-series/rajasthan-pti-paper-1-test-series" class="main-cta-btn px-3 py-2.5 text-center text-xs font-extrabold text-white bg-gradient-to-r from-primary to-secondary rounded-xl hover:opacity-95 transition-all shadow-sm flex items-center justify-center gap-1 group/btn" data-default-text="View Complete Detail &amp; Enroll">
+                                    <span class="btn-text">View Complete Detail &amp; Enroll</span>
+                                    <i class="fa-solid fa-arrow-right btn-icon text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
                                 </a>
                             </div>
                         </div>
@@ -446,9 +449,12 @@
                     <!-- Card 3: Rajasthan SI Paper-II (GK) -->
                     <div class="test-card bg-white dark:bg-[#1a1a2e] rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between group" data-category="si">
                         <div>
-                            <div class="mb-4 px-3 py-1.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200/60 dark:border-rose-800/50 flex items-center justify-between text-xs font-bold text-rose-700 dark:text-rose-300">
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-clock"></i><span>Price Hike In:</span></span>
-                                <span class="font-mono font-black text-rose-600 dark:text-rose-400 countdown-timer" data-time="19500">05h 25m 00s</span>
+                            <div class="timer-banner mb-4 px-3 py-1.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200/60 dark:border-rose-800/50 flex items-center justify-between text-xs font-bold text-rose-700 dark:text-rose-300">
+                                <span class="timer-label flex items-center gap-1.5">
+                                    <i class="fa-solid fa-clock timer-icon"></i>
+                                    <span class="timer-title">Offer Ends Soon (05 Sept.):</span>
+                                </span>
+                                <span class="font-mono font-black text-rose-600 dark:text-rose-400 campaign-timer" data-target-date="2026-09-05T23:59:59+05:30" data-expired-text="Offer Expired" data-closed-btn-text="Offer Expired">Calculating...</span>
                             </div>
 
                             <div class="flex items-start justify-between mb-3">
@@ -482,9 +488,9 @@
                                     <i class="fa-regular fa-circle-play text-primary text-xs"></i>
                                     <span>Try 1 Free Test</span>
                                 </button>
-                                <a href="test-series/rajasthan-si-gk-test-series" class="px-3 py-2.5 text-center text-xs font-extrabold text-white bg-gradient-to-r from-primary to-secondary rounded-xl hover:opacity-95 transition-all shadow-sm flex items-center justify-center gap-1 group/btn">
-                                    <span>View Complete Detail &amp; Enroll</span>
-                                    <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
+                                <a href="test-series/rajasthan-si-gk-test-series" class="main-cta-btn px-3 py-2.5 text-center text-xs font-extrabold text-white bg-gradient-to-r from-primary to-secondary rounded-xl hover:opacity-95 transition-all shadow-sm flex items-center justify-center gap-1 group/btn" data-default-text="View Complete Detail &amp; Enroll">
+                                    <span class="btn-text">View Complete Detail &amp; Enroll</span>
+                                    <i class="fa-solid fa-arrow-right btn-icon text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
                                 </a>
                             </div>
                         </div>
@@ -493,9 +499,12 @@
                     <!-- Card 4: Rajasthan SI Paper-I (Hindi) -->
                     <div class="test-card bg-white dark:bg-[#1a1a2e] rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between group" data-category="si">
                         <div>
-                            <div class="mb-4 px-3 py-1.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200/60 dark:border-amber-800/50 flex items-center justify-between text-xs font-bold text-amber-800 dark:text-amber-300">
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-clock"></i><span>Offer Ends Soon:</span></span>
-                                <span class="font-mono font-black text-rose-600 dark:text-rose-400 countdown-timer" data-time="11000">03h 03m 20s</span>
+                            <div class="timer-banner mb-4 px-3 py-1.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200/60 dark:border-amber-800/50 flex items-center justify-between text-xs font-bold text-amber-800 dark:text-amber-300">
+                                <span class="timer-label flex items-center gap-1.5">
+                                    <i class="fa-solid fa-clock timer-icon"></i>
+                                    <span class="timer-title">Offer Ends Soon (10 Sept.):</span>
+                                </span>
+                                <span class="font-mono font-black text-rose-600 dark:text-rose-400 campaign-timer" data-target-date="2026-09-10T23:59:59+05:30" data-expired-text="Offer Expired" data-closed-btn-text="Offer Expired">Calculating...</span>
                             </div>
 
                             <div class="flex items-start justify-between mb-3">
@@ -529,24 +538,23 @@
                                     <i class="fa-regular fa-circle-play text-primary text-xs"></i>
                                     <span>Try 1 Free Test</span>
                                 </button>
-                                <a href="test-series/rajasthan-si-hindi-test-series" class="px-3 py-2.5 text-center text-xs font-extrabold text-white bg-gradient-to-r from-primary to-secondary rounded-xl hover:opacity-95 transition-all shadow-sm flex items-center justify-center gap-1 group/btn">
-                                    <span>View Complete Detail &amp; Enroll</span>
-                                    <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
+                                <a href="test-series/rajasthan-si-hindi-test-series" class="main-cta-btn px-3 py-2.5 text-center text-xs font-extrabold text-white bg-gradient-to-r from-primary to-secondary rounded-xl hover:opacity-95 transition-all shadow-sm flex items-center justify-center gap-1 group/btn" data-default-text="View Complete Detail &amp; Enroll">
+                                    <span class="btn-text">View Complete Detail &amp; Enroll</span>
+                                    <i class="fa-solid fa-arrow-right btn-icon text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 5: VDO Test Series (Pre-Book @ ₹19 + 10-Day Timer) -->
+                    <!-- Card 5: VDO Test Series (Pre-Book @ ₹19) -->
                     <div class="test-card bg-white dark:bg-[#1a1a2e] rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between group" data-category="vdo">
                         <div>
-                            <!-- 10-Day Pre-Booking Timer Banner -->
-                            <div class="mb-4 px-3 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200/60 dark:border-purple-800/50 flex items-center justify-between text-xs font-bold text-purple-800 dark:text-purple-300">
-                                <span class="flex items-center gap-1.5">
-                                    <i class="fa-solid fa-hourglass-half text-purple-600 animate-bounce"></i>
-                                    <span>Pre-Booking Closes In:</span>
+                            <div class="timer-banner mb-4 px-3 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200/60 dark:border-purple-800/50 flex items-center justify-between text-xs font-bold text-purple-800 dark:text-purple-300">
+                                <span class="timer-label flex items-center gap-1.5">
+                                    <i class="fa-solid fa-hourglass-half text-purple-600 animate-bounce timer-icon"></i>
+                                    <span class="timer-title">Pre-Booking Closes In (15 Sept.):</span>
                                 </span>
-                                <span class="font-mono font-black text-purple-700 dark:text-purple-300 prebook-timer" data-days="10">09d 23h 59m</span>
+                                <span class="font-mono font-black text-purple-700 dark:text-purple-300 campaign-timer" data-target-date="2026-09-15T23:59:59+05:30" data-expired-text="Pre-Booking Closed" data-closed-btn-text="Pre-Booking Closed">Calculating...</span>
                             </div>
 
                             <div class="flex items-start justify-between mb-3">
@@ -559,9 +567,10 @@
                             <p class="text-xs text-muted dark:text-slate-400 font-semibold mb-3 text-left">Rajasthan Gramin Vikas Adhikari</p>
                             
                             <ul class="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 mb-6">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> <span>15 Full-Length Mock Tests</span></li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> <span>Latest VDO Syllabus &amp; Pattern</span></li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> <span>Detailed Solutions &amp; Analysis</span></li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> <span>07 Minor Tests</span></li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> <span>02 Major Tests</span></li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> <span>03 Final Tests</span></li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> <span>Instant Rank &amp; Performance Analysis</span></li>
                             </ul>
                         </div>
 
@@ -575,27 +584,23 @@
                             </div>
 
                             <div class="w-full flex flex-col gap-2">
-                                <!-- COMMENTED SAMPLE TEST BUTTON AS REQUESTED -->
-                                <!-- <a href="test-series" class="px-3 py-2.5 text-center text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 rounded-xl hover:bg-slate-200 transition-colors flex items-center justify-center gap-1.5"><i class="fa-regular fa-circle-play text-primary text-xs"></i><span>Try Sample Test</span></a> -->
-                                
-                                <a href="payment" class="w-full py-3 text-center text-xs font-extrabold text-white bg-gradient-to-r from-primary to-secondary rounded-xl hover:opacity-95 transition-all shadow-md flex items-center justify-center gap-1.5 group/btn">
-                                    <span>View Complete Detail &amp; Pre-Book @ ₹19</span>
-                                    <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
+                                <a href="payment" class="main-cta-btn w-full py-3 text-center text-xs font-extrabold text-white bg-gradient-to-r from-primary to-secondary rounded-xl hover:opacity-95 transition-all shadow-md flex items-center justify-center gap-1.5 group/btn" data-default-text="View Complete Detail &amp; Pre-Book @ ₹19">
+                                    <span class="btn-text">View Complete Detail &amp; Pre-Book @ ₹19</span>
+                                    <i class="fa-solid fa-arrow-right btn-icon text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 6: Patwar (Pre-Book @ ₹19 + 10-Day Timer) -->
+                    <!-- Card 6: Patwar (Pre-Book @ ₹19) -->
                     <div class="test-card bg-white dark:bg-[#1a1a2e] rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between group" data-category="patwar">
                         <div>
-                            <!-- 10-Day Pre-Book Countdown Banner -->
-                            <div class="mb-4 px-3 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200/60 dark:border-purple-800/50 flex items-center justify-between text-xs font-bold text-purple-800 dark:text-purple-300">
-                                <span class="flex items-center gap-1.5">
-                                    <i class="fa-solid fa-hourglass-half text-purple-600 animate-bounce"></i>
-                                    <span>Pre-Booking Closes In:</span>
+                            <div class="timer-banner mb-4 px-3 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200/60 dark:border-purple-800/50 flex items-center justify-between text-xs font-bold text-purple-800 dark:text-purple-300">
+                                <span class="timer-label flex items-center gap-1.5">
+                                    <i class="fa-solid fa-hourglass-half text-purple-600 animate-bounce timer-icon"></i>
+                                    <span class="timer-title">Pre-Booking Closes In (17 Sept.):</span>
                                 </span>
-                                <span class="font-mono font-black text-purple-700 dark:text-purple-300 prebook-timer" data-days="10">09d 23h 59m</span>
+                                <span class="font-mono font-black text-purple-700 dark:text-purple-300 campaign-timer" data-target-date="2026-09-17T23:59:59+05:30" data-expired-text="Pre-Booking Closed" data-closed-btn-text="Pre-Booking Closed">Calculating...</span>
                             </div>
 
                             <div class="flex items-start justify-between mb-3">
@@ -608,9 +613,10 @@
                             <p class="text-xs text-muted dark:text-slate-400 font-semibold mb-3 text-left">Rajasthan Patwar Recruitment</p>
                             
                             <ul class="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 mb-6">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-secondary text-xs"></i> <span>20 Full-Length Mock Tests</span></li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-secondary text-xs"></i> <span>Rajasthan GK &amp; Geography Special</span></li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-secondary text-xs"></i> <span>All-India Rank Tracker</span></li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> <span>07 Minor Tests</span></li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> <span>02 Major Tests</span></li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> <span>03 Final Tests</span></li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> <span>Instant Rank &amp; Performance Analysis</span></li>
                             </ul>
                         </div>
 
@@ -624,27 +630,23 @@
                             </div>
 
                             <div class="w-full flex flex-col gap-2">
-                                <!-- COMMENTED SAMPLE TEST BUTTON AS REQUESTED -->
-                                <!-- <a href="test-series" class="px-3 py-2.5 text-center text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 rounded-xl hover:bg-slate-200 transition-colors flex items-center justify-center gap-1.5"><i class="fa-regular fa-circle-play text-secondary text-xs"></i><span>Try Sample Test</span></a> -->
-                                
-                                <a href="payment" class="w-full py-3 text-center text-xs font-extrabold text-white bg-gradient-to-r from-secondary to-accent rounded-xl hover:opacity-95 transition-all shadow-md flex items-center justify-center gap-1.5 group/btn">
-                                    <span>View Complete Detail &amp; Pre-Book @ ₹19</span>
-                                    <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
+                                <a href="payment" class="main-cta-btn w-full py-3 text-center text-xs font-extrabold text-white bg-gradient-to-r from-secondary to-accent rounded-xl hover:opacity-95 transition-all shadow-md flex items-center justify-center gap-1.5 group/btn" data-default-text="View Complete Detail &amp; Pre-Book @ ₹19">
+                                    <span class="btn-text">View Complete Detail &amp; Pre-Book @ ₹19</span>
+                                    <i class="fa-solid fa-arrow-right btn-icon text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 7: LDC (Pre-Book @ ₹19 + 10-Day Timer) -->
+                    <!-- Card 7: LDC (Pre-Book @ ₹19) -->
                     <div class="test-card bg-white dark:bg-[#1a1a2e] rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between group" data-category="ldc">
                         <div>
-                            <!-- 10-Day Pre-Book Countdown Banner -->
-                            <div class="mb-4 px-3 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200/60 dark:border-purple-800/50 flex items-center justify-between text-xs font-bold text-purple-800 dark:text-purple-300">
-                                <span class="flex items-center gap-1.5">
-                                    <i class="fa-solid fa-hourglass-half text-purple-600 animate-bounce"></i>
-                                    <span>Pre-Booking Closes In:</span>
+                            <div class="timer-banner mb-4 px-3 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200/60 dark:border-purple-800/50 flex items-center justify-between text-xs font-bold text-purple-800 dark:text-purple-300">
+                                <span class="timer-label flex items-center gap-1.5">
+                                    <i class="fa-solid fa-hourglass-half text-purple-600 animate-bounce timer-icon"></i>
+                                    <span class="timer-title">Pre-Booking Closes In:</span>
                                 </span>
-                                <span class="font-mono font-black text-purple-700 dark:text-purple-300 prebook-timer" data-days="10">09d 23h 59m</span>
+                                <span class="font-mono font-black text-purple-700 dark:text-purple-300 campaign-timer" data-target-date="2026-04-28T23:59:59+05:30" data-expired-text="Pre-Booking Closed" data-closed-btn-text="Pre-Booking Closed">Calculating...</span>
                             </div>
 
                             <div class="flex items-start justify-between mb-3">
@@ -673,12 +675,9 @@
                             </div>
 
                             <div class="w-full flex flex-col gap-2">
-                                <!-- COMMENTED SAMPLE TEST BUTTON AS REQUESTED -->
-                                <!-- <a href="test-series" class="px-3 py-2.5 text-center text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 rounded-xl hover:bg-slate-200 transition-colors flex items-center justify-center gap-1.5"><i class="fa-regular fa-circle-play text-accent text-xs"></i><span>Try Sample Test</span></a> -->
-                                
-                                <a href="payment" class="w-full py-3 text-center text-xs font-extrabold text-white bg-accent hover:bg-accent/90 rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 group/btn">
-                                    <span>View Complete Detail &amp; Pre-Book @ ₹19</span>
-                                    <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
+                                <a href="payment" class="main-cta-btn w-full py-3 text-center text-xs font-extrabold text-white bg-accent hover:bg-accent/90 rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 group/btn" data-default-text="View Complete Detail &amp; Pre-Book @ ₹19">
+                                    <span class="btn-text">View Complete Detail &amp; Pre-Book @ ₹19</span>
+                                    <i class="fa-solid fa-arrow-right btn-icon text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
                                 </a>
                             </div>
                         </div>
@@ -687,12 +686,12 @@
                     <!-- Card 8: Fourth Grade (Pre-Book Special @ ₹19) -->
                     <div class="test-card bg-white dark:bg-[#1a1a2e] rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between group" data-category="fourth">
                         <div>
-                            <div class="mb-4 px-3 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200/60 dark:border-purple-800/50 flex items-center justify-between text-xs font-bold text-purple-800 dark:text-purple-300">
-                                <span class="flex items-center gap-1.5">
-                                    <i class="fa-solid fa-hourglass-half text-purple-600 animate-bounce"></i>
-                                    <span>Pre-Booking Closes In:</span>
+                            <div class="timer-banner mb-4 px-3 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200/60 dark:border-purple-800/50 flex items-center justify-between text-xs font-bold text-purple-800 dark:text-purple-300">
+                                <span class="timer-label flex items-center gap-1.5">
+                                    <i class="fa-solid fa-hourglass-half text-purple-600 animate-bounce timer-icon"></i>
+                                    <span class="timer-title">Pre-Booking Closes In:</span>
                                 </span>
-                                <span class="font-mono font-black text-purple-700 dark:text-purple-300 prebook-timer" data-days="10">09d 23h 59m</span>
+                                <span class="font-mono font-black text-purple-700 dark:text-purple-300 campaign-timer" data-target-date="2026-04-29T23:59:59+05:30" data-expired-text="Pre-Booking Closed" data-closed-btn-text="Pre-Booking Closed">Calculating...</span>
                             </div>
 
                             <div class="flex items-start justify-between mb-3">
@@ -721,12 +720,9 @@
                             </div>
 
                             <div class="w-full flex flex-col gap-2">
-                                <!-- COMMENTED SAMPLE TEST BUTTON AS REQUESTED -->
-                                <!-- <a href="test-series" class="px-3 py-2.5 text-center text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 rounded-xl hover:bg-slate-200 transition-colors flex items-center justify-center gap-1.5"><i class="fa-regular fa-circle-play text-support text-xs"></i><span>Try Sample Test</span></a> -->
-                                
-                                <a href="payment" class="w-full py-3 text-center text-xs font-extrabold text-white bg-support hover:bg-support/90 rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 group/btn">
-                                    <span>View Complete Detail &amp; Pre-Book @ ₹19</span>
-                                    <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
+                                <a href="payment" class="main-cta-btn w-full py-3 text-center text-xs font-extrabold text-white bg-support hover:bg-support/90 rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 group/btn" data-default-text="View Complete Detail &amp; Pre-Book @ ₹19">
+                                    <span class="btn-text">View Complete Detail &amp; Pre-Book @ ₹19</span>
+                                    <i class="fa-solid fa-arrow-right btn-icon text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
                                 </a>
                             </div>
                         </div>
@@ -735,12 +731,12 @@
                     <!-- Card 9: CET Graduation (Pre-Book Special @ ₹19) -->
                     <div class="test-card bg-white dark:bg-[#1a1a2e] rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between group" data-category="cetgrad">
                         <div>
-                            <div class="mb-4 px-3 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200/60 dark:border-purple-800/50 flex items-center justify-between text-xs font-bold text-purple-800 dark:text-purple-300">
-                                <span class="flex items-center gap-1.5">
-                                    <i class="fa-solid fa-hourglass-half text-purple-600 animate-bounce"></i>
-                                    <span>Pre-Booking Closes In:</span>
+                            <div class="timer-banner mb-4 px-3 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200/60 dark:border-purple-800/50 flex items-center justify-between text-xs font-bold text-purple-800 dark:text-purple-300">
+                                <span class="timer-label flex items-center gap-1.5">
+                                    <i class="fa-solid fa-hourglass-half text-purple-600 animate-bounce timer-icon"></i>
+                                    <span class="timer-title">Pre-Booking Closes In:</span>
                                 </span>
-                                <span class="font-mono font-black text-purple-700 dark:text-purple-300 prebook-timer" data-days="10">09d 23h 59m</span>
+                                <span class="font-mono font-black text-purple-700 dark:text-purple-300 campaign-timer" data-target-date="2026-04-30T23:59:59+05:30" data-expired-text="Pre-Booking Closed" data-closed-btn-text="Pre-Booking Closed">Calculating...</span>
                             </div>
 
                             <div class="flex items-start justify-between mb-3">
@@ -769,12 +765,9 @@
                             </div>
 
                             <div class="w-full flex flex-col gap-2">
-                                <!-- COMMENTED SAMPLE TEST BUTTON AS REQUESTED -->
-                                <!-- <a href="test-series" class="px-3 py-2.5 text-center text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 rounded-xl hover:bg-slate-200 transition-colors flex items-center justify-center gap-1.5"><i class="fa-regular fa-circle-play text-secondary text-xs"></i><span>Try Sample Test</span></a> -->
-                                
-                                <a href="payment" class="w-full py-3 text-center text-xs font-extrabold text-white bg-gradient-to-r from-secondary to-accent rounded-xl hover:opacity-95 transition-all shadow-md flex items-center justify-center gap-1.5 group/btn">
-                                    <span>View Complete Detail &amp; Pre-Book @ ₹19</span>
-                                    <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
+                                <a href="payment" class="main-cta-btn w-full py-3 text-center text-xs font-extrabold text-white bg-gradient-to-r from-secondary to-accent rounded-xl hover:opacity-95 transition-all shadow-md flex items-center justify-center gap-1.5 group/btn" data-default-text="View Complete Detail &amp; Pre-Book @ ₹19">
+                                    <span class="btn-text">View Complete Detail &amp; Pre-Book @ ₹19</span>
+                                    <i class="fa-solid fa-arrow-right btn-icon text-[10px] transition-transform group-hover/btn:translate-x-1"></i>
                                 </a>
                             </div>
                         </div>
@@ -784,7 +777,7 @@
             </div>
         </section>
 
-        <!-- ─── NEW HIGH-VALUE CONTENT SECTION 1: WHY TEST SERIES IS ESSENTIAL ─── -->
+        <!-- ─── HIGH-VALUE CONTENT SECTION 1: WHY TEST SERIES IS ESSENTIAL ─── -->
         <section class="py-16 bg-slateBg dark:bg-[#12121f] border-y border-slate-100 dark:border-slate-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -918,7 +911,7 @@
             </div>
         </section>
 
-        <!-- ─── ENROLL / PRICING SECTION (Plans from Index Page) ─── -->
+        <!-- ─── ENROLL / PRICING SECTION ─── -->
         <section id="enroll" class="py-20 bg-white dark:bg-[#0f0f1a] relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16 reveal">
@@ -1161,7 +1154,7 @@
         </div>
     </div>
 
-    <!-- ═══════ FOOTER (User Snippet Integrated) ═══════ -->
+    <!-- ═══════ FOOTER ═══════ -->
     <footer class="bg-slate-900 dark:bg-[#0a0a16] text-white pt-16 pb-8 relative overflow-hidden border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b border-white/10">
@@ -1222,7 +1215,7 @@
         </div>
     </footer>
 
-    <!-- ═══════ FLOATING WIDGETS (User Snippet Integrated) ═══════ -->
+    <!-- ═══════ FLOATING WIDGETS ═══════ -->
     <div class="fixed bottom-6 right-6 z-[90] flex flex-col items-center gap-3">
         <!-- Scroll To Top Button -->
         <button id="scrollToTop" class="w-11 h-11 rounded-full bg-slate-900 dark:bg-primary text-white shadow-premium hover:bg-primary dark:hover:bg-primary/90 transition-all duration-300 flex items-center justify-center translate-y-10 opacity-0 pointer-events-none" aria-label="Scroll to top">
@@ -1274,7 +1267,7 @@
                 topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
             }
 
-            // ── Original Dark Mode Toggle System ──
+            // Dark Mode Toggle System
             const themeToggle = document.getElementById('themeToggle');
             const setTheme = (dark) => {
                 document.documentElement.classList.toggle('dark', dark);
@@ -1338,44 +1331,77 @@
                 });
             });
 
-            // ── Price Hike Timers (Hourly Ticking) ──
-            const priceTimers = document.querySelectorAll('.countdown-timer');
-            priceTimers.forEach(timer => {
-                let timeInSeconds = parseInt(timer.dataset.time) || 18000;
-                setInterval(() => {
-                    if (timeInSeconds <= 0) {
-                        timeInSeconds = 18000;
-                    } else {
-                        timeInSeconds--;
-                    }
-                    const hours = Math.floor(timeInSeconds / 3600);
-                    const minutes = Math.floor((timeInSeconds % 3600) / 60);
-                    const seconds = timeInSeconds % 60;
-                    const pad = (n) => n < 10 ? '0' + n : n;
-                    
-                    timer.textContent = `${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
-                }, 1000);
-            });
+            // ════════════════════════════════════════════════════════════════
+            // ── UNIFIED REAL CALENDAR CAMPAIGN TIMER LOGIC (REAL-TIME IST) ──
+            // ════════════════════════════════════════════════════════════════
+            const updateCampaignTimers = () => {
+                const now = new Date().getTime();
+                const timerElements = document.querySelectorAll('.campaign-timer');
 
-            // ── 10-Day Pre-Booking Timers ──
-            const prebookTimers = document.querySelectorAll('.prebook-timer');
-            prebookTimers.forEach(timer => {
-                let totalSecs = (parseInt(timer.dataset.days) || 10) * 86400 - 150; 
-                setInterval(() => {
-                    if (totalSecs <= 0) {
-                        totalSecs = 864000;
-                    } else {
-                        totalSecs--;
-                    }
-                    const days = Math.floor(totalSecs / (3600 * 24));
-                    const hours = Math.floor((totalSecs % (3600 * 24)) / 3600);
-                    const minutes = Math.floor((totalSecs % 3600) / 60);
-                    const seconds = totalSecs % 60;
-                    const pad = (n) => n < 10 ? '0' + n : n;
+                timerElements.forEach(timerEl => {
+                    const targetDateStr = timerEl.dataset.targetDate;
+                    if (!targetDateStr) return;
 
-                    timer.textContent = `${pad(days)}d ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
-                }, 1000);
-            });
+                    const targetTime = new Date(targetDateStr).getTime();
+                    const diff = targetTime - now;
+
+                    const card = timerEl.closest('.test-card');
+                    const ctaBtn = card ? card.querySelector('.main-cta-btn') : null;
+                    const btnTextSpan = ctaBtn ? ctaBtn.querySelector('.btn-text') : null;
+                    const btnIcon = ctaBtn ? ctaBtn.querySelector('.btn-icon') : null;
+                    const timerTitle = card ? card.querySelector('.timer-title') : null;
+                    const timerIcon = card ? card.querySelector('.timer-icon') : null;
+
+                    const expiredText = timerEl.dataset.expiredText || "Offer Expired";
+                    const closedBtnText = timerEl.dataset.closedBtnText || "Offer Expired";
+
+                    if (diff <= 0) {
+                        // ── EXPIRED STATE (जब तारीख खत्म हो जाए) ──
+                        timerEl.textContent = expiredText;
+                        if (timerTitle) timerTitle.style.display = 'none';
+                        if (timerIcon) {
+                            timerIcon.className = "fa-solid fa-circle-xmark text-rose-500 mr-1";
+                            timerIcon.classList.remove('animate-spin', 'animate-bounce');
+                        }
+
+                        if (ctaBtn) {
+                            ctaBtn.classList.add('pointer-events-none', 'opacity-60', 'cursor-not-allowed');
+                            ctaBtn.classList.remove('hover:opacity-95');
+                            ctaBtn.removeAttribute('href');
+                            if (btnTextSpan) btnTextSpan.textContent = closedBtnText;
+                            if (btnIcon) btnIcon.style.display = 'none';
+                        }
+                    } else {
+                        // ── ACTIVE COUNTDOWN STATE (जब ऑफर लाइव हो) ──
+                        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                        const pad = (n) => n < 10 ? '0' + n : n;
+
+                        if (days > 0) {
+                            timerEl.textContent = `${pad(days)}d ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
+                        } else {
+                            timerEl.textContent = `${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
+                        }
+
+                        // Automatic Reactivation if date updated back to future
+                        if (timerTitle) timerTitle.style.display = 'inline';
+                        if (ctaBtn) {
+                            ctaBtn.classList.remove('pointer-events-none', 'opacity-60', 'cursor-not-allowed');
+                            if (ctaBtn.dataset.defaultText && btnTextSpan) {
+                                btnTextSpan.textContent = ctaBtn.dataset.defaultText;
+                            }
+                            if (btnIcon) btnIcon.style.display = 'inline-block';
+                        }
+                    }
+                });
+            };
+
+            // Initial call and 1-second Interval tick
+            updateCampaignTimers();
+            setInterval(updateCampaignTimers, 1000);
 
             // ── Demo Free Test Instructions Modal Logic ──
             const demoModal = document.getElementById('demoModal');
