@@ -2799,7 +2799,7 @@
         });
     </script>
 
-    <!-- Daily MCQ Quiz Logic -->
+<!-- Daily MCQ Quiz Logic -->
     <script>
     (function() {
         const mcqData = [
@@ -2808,31 +2808,35 @@
                 question: "राजस्थान में 'कीर्ति स्तम्भ' का निर्माण निम्नलिखित में से किसके द्वारा करवाया गया था?",
                 options: ["राणा सांगा", "महाराणा कुंभा", "राणा प्रताप", "रावल रतन सिंह"],
                 correct: 1,
-                explanation: "चित्तौड़गढ़ दुर्ग में स्थित कीर्ति स्तम्भ (या विजय स्तम्भ) का निर्माण महाराणा कुंभा ने मालवा के सुल्तान महमूद खिलजी पर अपनी विजय की स्मृति में करवाया था।"
+                explanation: "चित्तौड़गढ़ दुर्ग में स्थित कीर्ति स्तम्भ का निर्माण महाराणा कुंभा ने मालवा के सुल्तान महमूद खिलजी पर अपनी विजय की स्मृति में करवाया था।"
             },
             {
                 id: 2,
                 question: "भारतीय संविधान का कौन सा अनुच्छेद अस्पृश्यता (Untouchability) के उन्मूलन से संबंधित है?",
                 options: ["अनुच्छेद 14", "अनुच्छेद 15", "अनुच्छेद 17", "अनुच्छेद 19"],
                 correct: 2,
-                explanation: "भारतीय संविधान का अनुच्छेद 17 अस्पृश्यता को समाप्त करता है और किसी भी रूप में इसके आचरण को दंडनीय अपराध घोषित करता है।"
+                explanation: "भारतीय संविधान का अनुच्छेद 17 अस्पृश्यता को समाप्त करता है और इसे दंडनीय अपराध घोषित करता है।"
             },
             {
                 id: 3,
                 question: "भारतीय रिजर्व बैंक (RBI) द्वारा रेपो रेट (Repo Rate) बढ़ाए जाने पर बाजार पर क्या प्रभाव पड़ता है?",
                 options: ["तरलता बढ़ती है", "तरलता घटती है", "कोई प्रभाव नहीं पड़ता", "मुद्रास्फीति तेजी से बढ़ती है"],
                 correct: 1,
-                explanation: "रेपो रेट बढ़ने से बैंकों को केंद्रीय बैंक से महंगे ब्याज पर लोन मिलता है। इस कारण बैंक भी आम जनता के लिए ऋण की दरें बढ़ाते हैं, जिससे बाजार में तरलता (मुद्रा प्रवाह) घट जाती है।"
+                explanation: "रेपो रेट बढ़ने से बैंक लोन महंगे कर देते हैं, जिससे बाजार में तरलता (मुद्रा प्रवाह) घट जाती है।"
             }
         ];
 
         let currentIndex = 0;
         let selectedAnswers = Array(mcqData.length).fill(null);
         let bookmarks = Array(mcqData.length).fill(false);
-        let timerSeconds = 30;
+        let timerSeconds = 40; // 40 सेकंड का टाइमर
         let timerId = null;
+        let isFinished = false;
 
         function init() {
+            isFinished = false;
+            currentIndex = 0;
+            selectedAnswers = Array(mcqData.length).fill(null);
             renderQuestion();
             startTimer();
         }
@@ -2852,11 +2856,13 @@
                 const userChoice = selectedAnswers[idx];
                 const correct = mcqData[idx].correct;
 
-                if (idx === currentIndex) {
+                if (idx === currentIndex && !isFinished) {
                     dot.style.backgroundColor = "#FF6B00";
                     dot.style.boxShadow = "0 0 4px #ff6b00";
-                } else if (userChoice !== null) {
+                } else if (userChoice !== null && userChoice !== -1) {
                     dot.style.backgroundColor = (userChoice === correct) ? "#10b981" : "#ef4444";
+                } else if (userChoice === -1) {
+                    dot.style.backgroundColor = "#f59e0b"; // टाइमआउट/छोड़ा गया
                 } else {
                     dot.style.backgroundColor = "#cbd5e1";
                 }
@@ -2866,6 +2872,11 @@
         }
 
         function renderQuestion() {
+            if (isFinished) {
+                showScorecard();
+                return;
+            }
+
             const currentQ = mcqData[currentIndex];
             const progText = document.getElementById("mcq-prog-text");
             const qTitle = document.getElementById("mcq-question-title");
@@ -2881,11 +2892,11 @@
             if (!container) return;
             container.innerHTML = "";
 
-            currentQ.options.forEach((option, idx) => {
-                const isSelected = selectedAnswers[currentIndex] !== null;
-                const userChoice = selectedAnswers[currentIndex];
-                const isCorrect = idx === currentQ.correct;
+            const isSelected = selectedAnswers[currentIndex] !== null;
+            const userChoice = selectedAnswers[currentIndex];
 
+            currentQ.options.forEach((option, idx) => {
+                const isCorrect = idx === currentQ.correct;
                 let classes = "border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300";
                 let badge = `<span class="h-6 w-6 text-xs flex items-center justify-center font-bold bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 rounded mr-2">${String.fromCharCode(65 + idx)}</span>`;
 
@@ -2914,24 +2925,24 @@
                 container.appendChild(btn);
             });
 
+            // नेविगेशन बटन अपडेट
             const prevBtn = document.getElementById("mcq-prev-btn");
             if (prevBtn) prevBtn.disabled = currentIndex === 0;
 
             const nextBtn = document.getElementById("mcq-next-btn");
             if (nextBtn) {
-                nextBtn.innerHTML = currentIndex === mcqData.length - 1 ? `Result <i class="fa-solid fa-flag-checkered ml-1"></i>` : `अगला <i class="fa-solid fa-arrow-right ml-1"></i>`;
-            }
-
-            const expBox = document.getElementById("mcq-explanation-card");
-            const expDesc = document.getElementById("mcq-explanation-desc");
-            if (expBox && expDesc) {
-                if (isSelected) {
-                    expBox.style.display = "block";
-                    expDesc.innerText = currentQ.explanation;
+                if (currentIndex === mcqData.length - 1) {
+                    nextBtn.innerHTML = `सबमिट करें <i class="fa-solid fa-check-double ml-1"></i>`;
+                    nextBtn.className = "flex items-center px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-semibold shadow-sm";
                 } else {
-                    expBox.style.display = "none";
+                    nextBtn.innerHTML = `अगला <i class="fa-solid fa-arrow-right ml-1"></i>`;
+                    nextBtn.className = "flex items-center px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-semibold shadow-sm";
                 }
             }
+
+            // व्याख्या (Explanation) पूरी तरह हटा दी गई है
+            const expBox = document.getElementById("mcq-explanation-card");
+            if (expBox) expBox.style.display = "none";
 
             updateProgressBar();
         }
@@ -2945,7 +2956,7 @@
 
         function startTimer() {
             clearInterval(timerId);
-            timerSeconds = 30;
+            timerSeconds = 40; // हर सवाल बदलने पर 40 सेकंड रिसेट
             const counter = document.getElementById("mcq-timer-count");
             const timerBox = document.getElementById("mcq-timer-box");
             if (!counter || !timerBox) return;
@@ -2961,19 +2972,88 @@
             timerId = setInterval(() => {
                 timerSeconds--;
                 counter.innerText = `${timerSeconds}s`;
+                
                 if (timerSeconds <= 10) {
                     timerBox.className = "flex items-center bg-rose-100 border border-rose-200 text-rose-700 px-2.5 py-1 rounded-full text-xs font-black animate-pulse";
                 }
 
                 if (timerSeconds <= 0) {
                     clearInterval(timerId);
-                    selectedAnswers[currentIndex] = -1;
-                    renderQuestion();
-                    setTimeout(() => {
+                    if (selectedAnswers[currentIndex] === null) {
+                        selectedAnswers[currentIndex] = -1; // उत्तर न देने पर -1
+                    }
+                    if (currentIndex < mcqData.length - 1) {
                         premiumMcqNext();
-                    }, 2500);
+                    } else {
+                        finishQuiz();
+                    }
                 }
             }, 1000);
+        }
+
+        function finishQuiz() {
+            clearInterval(timerId);
+            isFinished = true;
+            alert("🎯 आज का डेली MCQ क्विज पूरा हुआ!");
+            showScorecard();
+        }
+
+        function showScorecard() {
+            let correct = 0;
+            let wrong = 0;
+            let unattempted = 0;
+
+            selectedAnswers.forEach((ans, idx) => {
+                if (ans === mcqData[idx].correct) correct++;
+                else if (ans === -1 || ans === null) unattempted++;
+                else wrong++;
+            });
+
+            const qTitle = document.getElementById("mcq-question-title");
+            const container = document.getElementById("mcq-options-container");
+            const timerBox = document.getElementById("mcq-timer-box");
+            
+            if (timerBox) timerBox.style.display = "none";
+            if (qTitle) qTitle.innerText = "📊 क्विज परिणाम (Quiz Scorecard)";
+
+            if (container) {
+                container.innerHTML = `
+                    <div class="bg-slate-50 dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 text-center space-y-3">
+                        <div class="inline-block bg-indigo-100 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 px-3 py-1 rounded-full text-xs font-bold">
+                            कुल स्कोर: ${correct} / ${mcqData.length}
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 text-center pt-2">
+                            <div class="p-2 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900 rounded-lg">
+                                <span class="text-[10px] text-emerald-600 font-bold block">सही</span>
+                                <span class="text-base font-black text-emerald-700 dark:text-emerald-400">${correct}</span>
+                            </div>
+                            <div class="p-2 bg-rose-50 dark:bg-rose-955 border border-rose-200 dark:border-rose-900 rounded-lg">
+                                <span class="text-[10px] text-rose-600 font-bold block">गलत</span>
+                                <span class="text-base font-black text-rose-700 dark:text-rose-400">${wrong}</span>
+                            </div>
+                            <div class="p-2 bg-amber-50 dark:bg-amber-955 border border-amber-200 dark:border-amber-900 rounded-lg">
+                                <span class="text-[10px] text-amber-600 font-bold block">छोड़ा</span>
+                                <span class="text-base font-black text-amber-700 dark:text-amber-400">${unattempted}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // नीचे के बटन को 'पुनः प्रयास करें' और छोटे 'Buy Test Series' बटन से बदलें
+            const footer = document.querySelector("#premium-mcq-card .p-3.border-t");
+            if (footer) {
+                footer.innerHTML = `
+                    <button onclick="premiumMcqRestart()" class="flex items-center px-3 py-1.5 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-semibold">
+                        <i class="fa-solid fa-rotate-right mr-1"></i> पुनः प्रयास
+                    </button>
+                    <a href="payment" class="flex items-center px-3 py-1.5 bg-gradient-to-r from-primary to-secondary text-white rounded-lg text-xs font-bold shadow-md hover:opacity-95">
+                        <i class="fa-solid fa-bolt mr-1 text-[10px]"></i> Buy Test Series
+                    </a>
+                `;
+            }
+
+            updateProgressBar();
         }
 
         window.premiumMcqNext = function() {
@@ -2982,7 +3062,7 @@
                 renderQuestion();
                 startTimer();
             } else {
-                alert("🎯 आज का डेली MCQ क्विज पूरा हुआ!");
+                finishQuiz();
             }
         };
 
@@ -2994,6 +3074,10 @@
             }
         };
 
+        window.premiumMcqRestart = function() {
+            location.reload(); // क्विज को रीसेट करें
+        };
+
         window.premiumMcqToggleBookmark = function() {
             bookmarks[currentIndex] = !bookmarks[currentIndex];
             renderQuestion();
@@ -3001,7 +3085,7 @@
 
         window.premiumMcqShare = function() {
             const currentQ = mcqData[currentIndex];
-            const messageText = `*📝 RAJShiksha Daily MCQ Quiz* \n\n*Q:* ${currentQ.question}\n\n*A)* ${currentQ.options[0]}\n*B)* ${currentQ.options[1]}\n*C)* ${currentQ.options[2]}\n*D)* ${currentQ.options[3]}\n\n👉 इसे हल करने के लिए RAJShiksha लिंक खोलें: ${window.location.href}`;
+            const messageText = `*📝 RAJShiksha Daily MCQ Quiz* \n\n*Q:* ${currentQ.question}\n\n👉 इसे हल करें: ${window.location.href}`;
             const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(messageText)}`;
             window.open(whatsappUrl, '_blank');
         };
