@@ -2043,6 +2043,36 @@
             });
         });
     </script>
+    <!-- POP-UP MODAL SCRIPT -->
+<script>
+    function openOfferModal() {
+        const modal = document.getElementById('offerModal');
+        const content = document.getElementById('offerModalContent');
+        if (modal && content) {
+            modal.classList.remove('pointer-events-none', 'opacity-0');
+            modal.classList.add('opacity-100');
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
+        }
+    }
+
+    function closeOfferModal() {
+        const modal = document.getElementById('offerModal');
+        const content = document.getElementById('offerModalContent');
+        if (modal && content) {
+            modal.classList.add('pointer-events-none', 'opacity-0');
+            modal.classList.remove('opacity-100');
+            content.classList.add('scale-95');
+            content.classList.remove('scale-100');
+        }
+    }
+
+    function proceedToPaymentPage() {
+        // Redirects to payment.html with exact specified course tag
+        const courseTag = "rajasthan-culture-durg-(₹19)";
+        window.location.href = `payment.html?course=${encodeURIComponent(courseTag)}`;
+    }
+</script>
 // # tag use के लिए
 <script>
 document.addEventListener('click', function (e) {
