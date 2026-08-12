@@ -2833,7 +2833,25 @@
         let timerId = null;
         let isFinished = false;
 
+        function restoreOriginalFooterUI() {
+            // फुटर बटन और टाइमर बॉक्स को मूल स्थिति में लाएं
+            const footer = document.querySelector("#premium-mcq-card .p-3.border-t");
+            if (footer) {
+                footer.innerHTML = `
+                    <button id="mcq-prev-btn" onclick="premiumMcqPrev()" class="flex items-center px-3 py-1.5 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-semibold disabled:opacity-40 disabled:pointer-events-none">
+                        <i class="fa-solid fa-arrow-left mr-1"></i> पिछला
+                    </button>
+                    <button id="mcq-next-btn" onclick="premiumMcqNext()" class="flex items-center px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-semibold shadow-sm">
+                        अगला <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                `;
+            }
+            const timerBox = document.getElementById("mcq-timer-box");
+            if (timerBox) timerBox.style.display = "flex";
+        }
+
         function init() {
+            restoreOriginalFooterUI();
             isFinished = false;
             currentIndex = 0;
             selectedAnswers = Array(mcqData.length).fill(null);
@@ -2940,7 +2958,6 @@
                 }
             }
 
-            // व्याख्या (Explanation) पूरी तरह हटा दी गई है
             const expBox = document.getElementById("mcq-explanation-card");
             if (expBox) expBox.style.display = "none";
 
@@ -3040,7 +3057,7 @@
                 `;
             }
 
-            // नीचे के बटन को 'पुनः प्रयास करें' और छोटे 'Buy Test Series' बटन से बदलें
+            // फुटर में 'पुनः प्रयास' और 'Buy Test Series' बटन सेट करें
             const footer = document.querySelector("#premium-mcq-card .p-3.border-t");
             if (footer) {
                 footer.innerHTML = `
@@ -3074,8 +3091,9 @@
             }
         };
 
+        // बिना पेज रीलोड किए सिर्फ क्विज रीसेट करें
         window.premiumMcqRestart = function() {
-            location.reload(); // क्विज को रीसेट करें
+            init();
         };
 
         window.premiumMcqToggleBookmark = function() {
