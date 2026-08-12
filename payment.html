@@ -631,7 +631,7 @@ function autoSelectCourseFromURL() {
     if (gEmail) gEmail.textContent = email;
 
     // Configure WhatsApp Direct Help Link with Order Details
-    const waText = encodeURIComponent(`Hello Rajshiksha, I have paid for ${course}.\n\nName: ${name}\nEmail: ${email}\nOrder ID: ${orderId}\nUTR ID: ${utr}\n\nPlease activate my account for candidate exam login!`);
+    const waText = encodeURIComponent(`Hello Rajshiksha Team, I have paid for ${course}.\n\nName: ${name}\nEmail: ${email}\nOrder ID: ${orderId}\nUTR ID: ${utr}\n\nPlease activate my account for candidate exam login!`);
     const waBtn = document.getElementById('whatsappHelpBtn');
     if (waBtn) waBtn.href = `https://wa.me/919950399752?text=${waText}`;
 
