@@ -146,6 +146,35 @@ body { transition: background-color 0.4s ease, color 0.3s ease; }
 .comparison-table-wrap tr:nth-child(even) { background: rgba(16, 185, 129, 0.03); }
 .dark .comparison-table-wrap tr:nth-child(even) { background: rgba(16, 185, 129, 0.06); }
 </style>
+	<style>
+    body, html {
+        -webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;
+    }
+
+    img {
+        -webkit-user-drag: none !important;
+        user-drag: none !important;
+        pointer-events: none !important;
+    }
+</style>
+	<style>
+    body, html {
+        -webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;
+    }
+
+    img {
+        -webkit-user-drag: none !important;
+        user-drag: none !important;
+        pointer-events: none !important;
+    }
+</style>
+
 </head>
 <body class="bg-[#FFFDFB] text-dark font-inter overflow-x-hidden selection:bg-primary selection:text-white transition-colors duration-300 text-[15px]">
 <div id="loader" class="fixed inset-0 bg-[#FFFDFB] dark:bg-[#0f0f1a] z-[9999] flex items-center justify-center transition-opacity duration-300">
@@ -1244,19 +1273,91 @@ window.location.href = `payment?course=${encodeURIComponent(courseTag)}`;
 }
 </script>
 <script>
-document.addEventListener('click', function (e) {
-const anchor = e.target.closest('a[href^="#"]');
-if (anchor) {
-const targetId = anchor.getAttribute('href');
-if (!targetId || targetId === '#') return;
-const targetElement = document.querySelector(targetId);
-if (targetElement) {
-e.preventDefault();
-targetElement.scrollIntoView({ behavior: 'smooth' });
-history.pushState(null, null, targetId);
-}
-}
-});
+    (function () {
+        'use strict';
+
+        // 1. माउस से टेक्स्ट और इमेजेस का ड्रैग/सेलेक्शन ब्लॉक करें
+        document.addEventListener('selectstart', function (e) { e.preventDefault(); });
+        document.addEventListener('dragstart', function (e) { e.preventDefault(); });
+
+        // 2. माउस का राइट-क्लिक (Context Menu) पूरी तरह से ब्लॉक करें
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // 3. सभी शार्टकट कीज़ ब्लॉक करें (Windows/Linux + Mac सपोर्ट के साथ)
+        document.addEventListener('keydown', function (e) {
+            var isCtrl = e.ctrlKey || e.metaKey; // Windows (Ctrl) or Mac (Cmd)
+            var isShift = e.shiftKey;
+            var key = e.key ? e.key.toLowerCase() : '';
+            var code = e.keyCode || e.which;
+
+            // F12 Key (Developer Tools)
+            if (code === 123 || key === 'f12') {
+                e.preventDefault();
+                return false;
+            }
+
+            if (isCtrl) {
+                // Ctrl + Shift + I (Inspect)
+                // Ctrl + Shift + J (Console)
+                // Ctrl + Shift + C (Element Selector)
+                if (isShift && (key === 'i' || key === 'j' || key === 'c' || code === 73 || code === 74 || code === 67)) {
+                    e.preventDefault();
+                    return false;
+                }
+
+                // Ctrl + U (View Source)
+                // Ctrl + S (Save Page)
+                // Ctrl + C (Copy)
+                // Ctrl + A (Select All)
+                // Ctrl + P (Print Page)
+                if (
+                    key === 'u' || key === 's' || key === 'c' || key === 'a' || key === 'p' ||
+                    code === 85 || code === 83 || code === 67 || code === 65 || code === 80
+                ) {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+        }, true);
+    })();
 </script>
+
+// # tag use के लिए
+<script>
+    // 1. Anchor click par smooth scroll
+    document.addEventListener('click', function (e) {
+        const anchor = e.target.closest('a[href^="#"]');
+        if (anchor) {
+            const targetId = anchor.getAttribute('href');
+            if (!targetId || targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+                
+                // FIX: Current page path ko hash ke sath combine kiya gaya hai
+                const newUrl = window.location.pathname + window.location.search + targetId;
+                history.pushState(null, null, newUrl);
+            }
+        }
+    });
+
+    // 2. Page Refresh hone par usi section par scroll maintain rakhne ke liye
+    window.addEventListener('DOMContentLoaded', function () {
+        if (window.location.hash) {
+            const targetElement = document.querySelector(window.location.hash);
+            if (targetElement) {
+                setTimeout(function () {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }, 100); // 100ms delay DOM load ensure karne ke liye
+            }
+        }
+    });
+</script>
+	
 </body>
 </html>
