@@ -1735,16 +1735,33 @@
     </script>
 // # tag use के लिए
 <script>
+    // 1. Anchor click par smooth scroll
     document.addEventListener('click', function (e) {
         const anchor = e.target.closest('a[href^="#"]');
         if (anchor) {
             const targetId = anchor.getAttribute('href');
             if (!targetId || targetId === '#') return;
+            
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 e.preventDefault();
                 targetElement.scrollIntoView({ behavior: 'smooth' });
-                history.pushState(null, null, targetId);
+                
+                // FIX: Current page path ko hash ke sath combine kiya gaya hai
+                const newUrl = window.location.pathname + window.location.search + targetId;
+                history.pushState(null, null, newUrl);
+            }
+        }
+    });
+
+    // 2. Page Refresh hone par usi section par scroll maintain rakhne ke liye
+    window.addEventListener('DOMContentLoaded', function () {
+        if (window.location.hash) {
+            const targetElement = document.querySelector(window.location.hash);
+            if (targetElement) {
+                setTimeout(function () {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }, 100); // 100ms delay DOM load ensure karne ke liye
             }
         }
     });
