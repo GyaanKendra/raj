@@ -477,6 +477,20 @@
             margin-bottom: 0;
         }
     </style>
+    <style>
+    body, html {
+        -webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;
+    }
+
+    img {
+        -webkit-user-drag: none !important;
+        user-drag: none !important;
+        pointer-events: none !important;
+    }
+</style>
 </head>
 
 <body class="bg-[#FFFDFB] text-dark font-inter overflow-x-hidden selection:bg-primary selection:text-white transition-colors duration-300 text-[15px]">
@@ -502,7 +516,7 @@
     <!-- ═══════ HEADER ═══════ -->
     <header id="mainHeader" class="sticky top-0 z-[100] transition-all duration-300 w-full bg-[#FFFDFB]/95 dark:bg-[#0f0f1a]/95 backdrop-blur-md border-b border-transparent dark:border-slate-800">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="/index" class="flex items-center gap-3 group">
+            <a href="index" class="flex items-center gap-3 group">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shadow-premium transition-transform group-hover:scale-105 duration-300">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
@@ -561,7 +575,7 @@
         <!-- ─── BREADCRUMB ─── -->
         <div class="bg-slate-50 dark:bg-[#16162a] border-b border-slate-100 dark:border-slate-800 py-2 px-4 text-xs font-manrope font-medium text-muted dark:text-slate-400">
             <div class="max-w-7xl mx-auto flex flex-wrap items-center gap-1 breadcrumb">
-                <a href="/index" class="hover:text-primary transition-colors"><i class="fa-solid fa-house mr-1"></i>Home</a>
+                <a href="index" class="hover:text-primary transition-colors"><i class="fa-solid fa-house mr-1"></i>Home</a>
                 <span class="text-slate-300 dark:text-slate-600">/</span>
                 <a href="notes/" class="hover:text-primary transition-colors">Notes</a>
                <span class="text-slate-300 dark:text-slate-600">/</span>
@@ -1995,21 +2009,91 @@
             });
         });
     </script>
+<script>
+    (function () {
+        'use strict';
+
+        // 1. माउस से टेक्स्ट और इमेजेस का ड्रैग/सेलेक्शन ब्लॉक करें
+        document.addEventListener('selectstart', function (e) { e.preventDefault(); });
+        document.addEventListener('dragstart', function (e) { e.preventDefault(); });
+
+        // 2. माउस का राइट-क्लिक (Context Menu) पूरी तरह से ब्लॉक करें
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // 3. सभी शार्टकट कीज़ ब्लॉक करें (Windows/Linux + Mac सपोर्ट के साथ)
+        document.addEventListener('keydown', function (e) {
+            var isCtrl = e.ctrlKey || e.metaKey; // Windows (Ctrl) or Mac (Cmd)
+            var isShift = e.shiftKey;
+            var key = e.key ? e.key.toLowerCase() : '';
+            var code = e.keyCode || e.which;
+
+            // F12 Key (Developer Tools)
+            if (code === 123 || key === 'f12') {
+                e.preventDefault();
+                return false;
+            }
+
+            if (isCtrl) {
+                // Ctrl + Shift + I (Inspect)
+                // Ctrl + Shift + J (Console)
+                // Ctrl + Shift + C (Element Selector)
+                if (isShift && (key === 'i' || key === 'j' || key === 'c' || code === 73 || code === 74 || code === 67)) {
+                    e.preventDefault();
+                    return false;
+                }
+
+                // Ctrl + U (View Source)
+                // Ctrl + S (Save Page)
+                // Ctrl + C (Copy)
+                // Ctrl + A (Select All)
+                // Ctrl + P (Print Page)
+                if (
+                    key === 'u' || key === 's' || key === 'c' || key === 'a' || key === 'p' ||
+                    code === 85 || code === 83 || code === 67 || code === 65 || code === 80
+                ) {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+        }, true);
+    })();
+</script>
+
 // # tag use के लिए
 <script>
-document.addEventListener('click', function (e) {
-    const anchor = e.target.closest('a[href^="#"]');
-    if (anchor) {
-        const targetId = anchor.getAttribute('href');
-        if (!targetId || targetId === '#') return;
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            e.preventDefault();
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-            history.pushState(null, null, targetId);
+    // 1. Anchor click par smooth scroll
+    document.addEventListener('click', function (e) {
+        const anchor = e.target.closest('a[href^="#"]');
+        if (anchor) {
+            const targetId = anchor.getAttribute('href');
+            if (!targetId || targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+                
+                // FIX: Current page path ko hash ke sath combine kiya gaya hai
+                const newUrl = window.location.pathname + window.location.search + targetId;
+                history.pushState(null, null, newUrl);
+            }
         }
-    }
-});
+    });
+
+    // 2. Page Refresh hone par usi section par scroll maintain rakhne ke liye
+    window.addEventListener('DOMContentLoaded', function () {
+        if (window.location.hash) {
+            const targetElement = document.querySelector(window.location.hash);
+            if (targetElement) {
+                setTimeout(function () {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }, 100); // 100ms delay DOM load ensure karne ke liye
+            }
+        }
+    });
 </script>
 </body>
 </html>
