@@ -27,8 +27,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com">
-    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -267,6 +266,21 @@
         .faq-btn .faq-icon {
             transition: transform 0.3s ease;
         }
+
+ 
+    body, html {
+        -webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;
+    }
+
+    img {
+        -webkit-user-drag: none !important;
+        user-drag: none !important;
+        pointer-events: none !important;
+    }
+
     </style>
 </head>
 
@@ -312,7 +326,6 @@
                 <a href="about.html" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">About</a>
                 <a href="test-series/" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">Test Series</a>
                 <a href="notes/" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">Notes</a>
- <!--               <a href="books.html" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">Books</a>-->
                 <a href="contact.html" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">Contact</a>
             </div>
 
@@ -343,7 +356,6 @@
                 <a href="about.html" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">About</a>
                 <a href="test-series/" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">Test Series</a>
                 <a href="notes/" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">Notes</a>
-           <!--     <a href="books.html" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">Books</a>-->
                 <a href="contact.html" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">Contact</a>
                 <div class="flex items-center gap-4 mt-2 pt-2 border-t border-slate-100 dark:border-slate-800">
                     <a href="payment.html" class="flex-1 inline-flex items-center justify-center px-6 py-4 text-white bg-gradient-to-r from-primary to-secondary rounded-xl text-center shadow-premium font-extrabold text-base">
@@ -436,51 +448,64 @@
                             <h2 class="font-poppins font-bold text-2xl text-dark dark:text-white mb-1 text-left">Send Us a Message</h2>
                             <p class="text-muted dark:text-slate-400 text-sm font-manrope mb-6">Fill out the form below and we'll get back to you as soon as possible.</p>
 
-                            <form id="contactForm" onsubmit="event.preventDefault(); showToast('Thank you for reaching out! Our team will get back to you within 24 hours. 🎉'); this.reset();">
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div class="text-left">
-                                        <label for="fullName" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider block mb-1.5">Full Name</label>
-                                        <input type="text" id="fullName" placeholder="Your full name" required class="form-input w-full px-4 py-3 bg-white dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm text-dark dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none transition-all" />
-                                    </div>
-                                    <div class="text-left">
-                                        <label for="emailInput" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider block mb-1.5">Email Address</label>
-                                        <input type="email" id="emailInput" placeholder="your@email.com" required class="form-input w-full px-4 py-3 bg-white dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm text-dark dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none transition-all" />
-                                    </div>
-                                </div>
+<form id="contactForm">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="text-left">
+            <label for="fullName" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider block mb-1.5">Full Name *</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Your full name" required class="form-input w-full px-4 py-3 bg-white dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm text-dark dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none transition-all" />
+        </div>
+        <div class="text-left">
+            <label for="emailInput" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider block mb-1.5">Email Address *</label>
+            <input type="email" id="emailInput" name="email" placeholder="your@email.com" required class="form-input w-full px-4 py-3 bg-white dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm text-dark dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none transition-all" />
+        </div>
+    </div>
 
-                                <div class="mt-4 text-left">
-                                    <label for="phoneInput" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider block mb-1.5">Phone Number (Optional)</label>
-                                    <input type="tel" id="phoneInput" placeholder="+91 98765 43210" class="form-input w-full px-4 py-3 bg-white dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm text-dark dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none transition-all" />
-                                </div>
+    <!-- Phone Number (Compulsory + Strictly 10 Digits) -->
+    <div class="mt-4 text-left">
+        <label for="phoneInput" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider block mb-1.5">Phone Number (10 Digits) *</label>
+        <input 
+            type="tel" 
+            id="phoneInput" 
+            name="phone" 
+            placeholder="Enter 10-digit mobile number" 
+            required 
+            pattern="[0-9]{10}"
+            maxlength="10"
+            minlength="10"
+            inputmode="numeric"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);"
+            title="Please enter exactly 10 digits mobile number"
+            class="form-input w-full px-4 py-3 bg-white dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm text-dark dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none transition-all" 
+        />
+    </div>
 
-                                <div class="mt-4 text-left">
-                                    <label for="subjectSelect" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider block mb-1.5">What is this about?</label>
-                                    <select id="subjectSelect" class="form-input w-full px-4 py-3 bg-white dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm text-dark dark:text-white focus:outline-none transition-all appearance-none">
-                                        <option value="general">General Query</option>
-                                        <option value="mock-tests">Mock Tests & Test Series</option>
-                                        <option value="notes">Study Notes</option>
-                                        <option value="ebooks">eBooks & Books</option>
-                                        <option value="technical">Technical Issue / Bug</option>
-                                        <option value="feedback">Feedback / Suggestion</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
+    <div class="mt-4 text-left">
+        <label for="subjectSelect" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider block mb-1.5">What is this about? *</label>
+        <select id="subjectSelect" name="subject" class="form-input w-full px-4 py-3 bg-white dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm text-dark dark:text-white focus:outline-none transition-all appearance-none">
+            <option value="General Query">General Query</option>
+            <option value="Mock Tests & Test Series">Mock Tests & Test Series</option>
+            <option value="Study Notes">Study Notes</option>
+            <option value="eBooks & Books">eBooks & Books</option>
+            <option value="Technical Issue / Bug">Technical Issue / Bug</option>
+            <option value="Feedback / Suggestion">Feedback / Suggestion</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
 
-                                <div class="mt-4 text-left">
-                                    <label for="messageInput" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider block mb-1.5">Your Message</label>
-                                    <textarea id="messageInput" rows="4" placeholder="Write your message here..." required class="form-input w-full px-4 py-3 bg-white dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm text-dark dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none transition-all resize-none"></textarea>
-                                </div>
+    <div class="mt-4 text-left">
+        <label for="messageInput" class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider block mb-1.5">Your Message *</label>
+        <textarea id="messageInput" name="message" rows="4" placeholder="Write your message here..." required class="form-input w-full px-4 py-3 bg-white dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm text-dark dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none transition-all resize-none"></textarea>
+    </div>
 
-                                <button type="submit" class="mt-6 w-full py-3.5 bg-gradient-to-r from-primary to-secondary text-white font-manrope font-extrabold text-sm rounded-xl hover:opacity-95 hover:shadow-glowPrimary transition-all shadow-premium flex items-center justify-center gap-2 group">
-                                    <span>Send Message</span>
-                                    <i class="fa-solid fa-paper-plane text-xs transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
-                                </button>
+    <button type="submit" id="submitBtn" class="mt-6 w-full py-3.5 bg-gradient-to-r from-primary to-secondary text-white font-manrope font-extrabold text-sm rounded-xl hover:opacity-95 hover:shadow-glowPrimary transition-all shadow-premium flex items-center justify-center gap-2 group cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+        <span id="btnText">Send Message</span>
+        <i id="btnIcon" class="fa-solid fa-paper-plane text-xs transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
+    </button>
 
-                                <p class="text-center text-[10px] text-muted dark:text-slate-500 mt-3 font-semibold">
-                                    <i class="fa-regular fa-clock mr-1"></i> We aim to respond within 24 hours
-                                </p>
-                            </form>
-                        </div>
+    <p class="text-center text-[10px] text-muted dark:text-slate-500 mt-3 font-semibold">
+        <i class="fa-regular fa-clock mr-1"></i> We aim to respond within 24 hours
+    </p>
+</form>                        </div>
                     </div>
 
                     <!-- Right: Quick Info + Connect (2 cols) -->
@@ -508,7 +533,7 @@
                                     </div>
                                     <div class="text-left">
                                         <p class="text-xs text-muted dark:text-slate-400 font-bold">WhatsApp</p>
-                                        <p class="text-sm font-semibold text-dark dark:text-white">+919950399752</p>
+                                        <p class="text-sm font-semibold text-dark dark:text-white">+91 9950399752</p>
                                     </div>
                                 </a>
                                 <a href="tel:+919950399752" class="flex items-center gap-3 p-3 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800 hover:border-secondary/30 transition-all group">
@@ -517,7 +542,7 @@
                                     </div>
                                     <div class="text-left">
                                         <p class="text-xs text-muted dark:text-slate-400 font-bold">Phone</p>
-                                        <p class="text-sm font-semibold text-dark dark:text-white">+91 995039 9752</p>
+                                        <p class="text-sm font-semibold text-dark dark:text-white">+91 99503 99752</p>
                                     </div>
                                 </a>
                             </div>
@@ -549,13 +574,20 @@
                             </div>
                         </div>
 
-                        <!-- Social Connect -->
+                        <!-- Social Connect (Bigger Icons) -->
                         <div class="bg-slate-50 dark:bg-[#16162a] rounded-3xl p-6 border border-slate-100 dark:border-slate-800 text-center">
-                            <h3 class="font-poppins font-bold text-base text-dark dark:text-white mb-3">Connect With Us</h3>
-                            <div class="flex justify-center gap-3">
-                        <a href="https://www.facebook.com/rajshikshaofficial" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-primary transition-all flex items-center justify-center text-slate-400 hover:text-white" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-xs"></i></a>
-                        <a href="https://t.me/rajshikshaofficial" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-primary transition-all flex items-center justify-center text-slate-400 hover:text-white" aria-label="Telegram"><i class="fa-brands fa-telegram text-xs"></i></a>
-                        <a href="https://www.instagram.com/rajshiksha.in/" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-primary transition-all flex items-center justify-center text-slate-400 hover:text-white" aria-label="Instagram"><i class="fa-brands fa-instagram text-xs"></i></a>                            </div>
+                            <h3 class="font-poppins font-bold text-base text-dark dark:text-white mb-4">Connect With Us</h3>
+                            <div class="flex justify-center items-center gap-4">
+                                <a href="https://www.facebook.com/rajshikshaofficial" target="_blank" rel="noopener" class="w-12 h-12 rounded-xl bg-white dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 shadow-sm hover:bg-[#1877F2] hover:border-[#1877F2] dark:hover:bg-[#1877F2] dark:hover:border-[#1877F2] transition-all duration-300 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-white dark:hover:text-white hover:scale-110 group" aria-label="Facebook">
+                                    <i class="fa-brands fa-facebook-f text-lg"></i>
+                                </a>
+                                <a href="https://t.me/rajshikshaofficial" target="_blank" rel="noopener" class="w-12 h-12 rounded-xl bg-white dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 shadow-sm hover:bg-[#229ED9] hover:border-[#229ED9] dark:hover:bg-[#229ED9] dark:hover:border-[#229ED9] transition-all duration-300 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-white dark:hover:text-white hover:scale-110 group" aria-label="Telegram">
+                                    <i class="fa-brands fa-telegram text-xl"></i>
+                                </a>
+                                <a href="https://www.instagram.com/rajshiksha.in/" target="_blank" rel="noopener" class="w-12 h-12 rounded-xl bg-white dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 shadow-sm hover:bg-gradient-to-tr hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF] hover:border-transparent transition-all duration-300 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-white dark:hover:text-white hover:scale-110 group" aria-label="Instagram">
+                                    <i class="fa-brands fa-instagram text-xl"></i>
+                                </a>
+                            </div>
                         </div>
 
                     </div>
@@ -584,7 +616,7 @@
                         </button>
                         <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                             <div class="px-6 pb-5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-50/50 dark:border-slate-800/50 pt-3 text-justify">
-                                You can reach us via email at <strong class="text-dark dark:text-white">support@rajshiksha.in</strong>, WhatsApp at <strong class="text-dark dark:text-white">+91 99999 99999</strong>, or by filling out the contact form on this page. We aim to respond within 24 hours.
+                                You can reach us via email at <strong class="text-dark dark:text-white">support@rajshiksha.in</strong>, WhatsApp at <strong class="text-dark dark:text-white">+91 9950399752</strong>, or by filling out the contact form on this page. We aim to respond within 24 hours.
                             </div>
                         </div>
                     </div>
@@ -614,7 +646,7 @@
                         </button>
                         <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                             <div class="px-6 pb-5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-50/50 dark:border-slate-800/50 pt-3 text-justify">
-                                Simply visit our <a href="testseries.html" class="text-primary hover:underline font-semibold">Test Series</a> section and click on "Access Free Notes". All our study notes are available for instant download without any registration or payment.
+                                Simply visit our <a href="test-series/" class="text-primary hover:underline font-semibold">Test Series</a> section and click on "Access Free Notes". All our study notes are available for instant download without any registration or payment.
                             </div>
                         </div>
                     </div>
@@ -751,14 +783,36 @@
                     </div>
                 </div>
 
-                <div class="lg:col-span-4 flex flex-col items-start text-left">
-                    <h4 class="font-poppins font-bold text-xs tracking-widest text-slate-300 uppercase mb-4">Latest Shift Notifications</h4>
-                    <p class="text-slate-400 text-xs font-inter mb-4 leading-relaxed">Subscribe to get immediate scheduling modifications, syllabus changes, and subscription pass discounts.</p>
-                    <form class="w-full flex gap-2" onsubmit="event.preventDefault(); alert('You have subscribed to RAJShiksha notifications!');">
-                        <input type="email" placeholder="Email Address" required class="flex-grow bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary transition-colors" />
-                        <button type="submit" class="px-4 py-2 bg-primary hover:bg-primary/95 text-white font-manrope font-bold rounded-lg transition-colors text-xs flex-shrink-0 hover:scale-[1.05]" aria-label="Subscribe">Join</button>
-                    </form>
-                </div>
+                <!-- ═══════ LATEST SHIFT NOTIFICATIONS (NEWSLETTER) ═══════ -->
+<div class="lg:col-span-4 flex flex-col items-start text-left">
+    <h4 class="font-poppins font-bold text-xs tracking-widest text-slate-300 uppercase mb-4">Latest Shift Notifications</h4>
+    <p class="text-slate-400 text-xs font-inter mb-4 leading-relaxed">Subscribe to get immediate scheduling modifications, syllabus changes, and subscription pass discounts.</p>
+    
+    <form id="newsletterForm" class="w-full flex flex-col gap-2">
+        <div class="w-full flex gap-2">
+            <input 
+                type="email" 
+                id="newsletterEmail" 
+                name="email" 
+                placeholder="Email Address" 
+                required 
+                class="flex-grow bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary transition-colors" 
+            />
+            <button 
+                type="submit" 
+                id="newsletterBtn" 
+                class="px-4 py-2 bg-primary hover:bg-primary/95 text-white font-manrope font-bold rounded-lg transition-colors text-xs flex-shrink-0 hover:scale-[1.05] flex items-center justify-center min-w-[65px] cursor-pointer" 
+                aria-label="Subscribe">
+                <span id="newsletterBtnText">Join</span>
+            </button>
+        </div>
+        
+        <!-- Success Message -->
+        <p id="newsletterSuccessMsg" class="hidden text-xs text-emerald-400 mt-1 font-medium items-center gap-1">
+            <i class="fa-solid fa-circle-check"></i> Subscribed successfully!
+        </p>
+    </form>
+</div>
             </div>
 
             <div class="pt-6 flex flex-col md:flex-row items-center justify-between text-slate-500 dark:text-slate-400 font-inter text-xs">
@@ -773,7 +827,7 @@
 
     <!-- ─── TOAST NOTIFICATION ─── -->
     <div id="toastNotification" class="fixed bottom-6 left-1/2 z-[1100] flex -translate-x-1/2 items-center gap-2 rounded-xl bg-slate-900 px-5 py-3.5 text-sm font-semibold text-white shadow-2xl transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none">
-        <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+        <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
         <span id="toastMessage">Message sent successfully!</span>
     </div>
 
@@ -782,44 +836,51 @@
         <button id="scrollToTop" class="w-11 h-11 rounded-full bg-slate-900 dark:bg-primary text-white shadow-premium hover:bg-primary dark:hover:bg-primary/90 transition-all flex items-center justify-center translate-y-20 opacity-0" aria-label="Scroll to top">
             <i class="fa-solid fa-arrow-up text-xs"></i>
         </button>
-        <a href="https://wa.me/919999999999?text=Hello%20RAJShiksha%20Team%2C%20I%20have%20a%20question%20about%20your%20resources." target="_blank" rel="noopener" class="w-12 h-12 rounded-full bg-[#25D366] text-white shadow-premium hover:scale-110 transition-transform flex items-center justify-center text-xl" aria-label="WhatsApp Support">
+        <a href="https://wa.me/919950399752?text=Hello%20RAJShiksha%20Team%2C%20I%20have%20a%20question%20about%20your%20resources." target="_blank" rel="noopener" class="w-12 h-12 rounded-full bg-[#25D366] text-white shadow-premium hover:scale-110 transition-transform flex items-center justify-center text-xl" aria-label="WhatsApp Support">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
     </div>
 
     <!-- ═══════ SCRIPTS ═══════ -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // ── Preloader ──
-            const loader = document.getElementById('loader');
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // ── 1. Google Script URL (यहाँ अपना असली URL डालें) ──
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxXkJ9laq1gB6kjTDp8GonIvfbzIMJccr8jefixof_OvgxFwU2ILhb8KSc4h0xIRJ8BRw/exec';
+
+        // ── Preloader ──
+        const loader = document.getElementById('loader');
+        if (loader) {
             loader.classList.add('opacity-0');
             setTimeout(() => { loader.style.display = 'none'; }, 250);
+        }
 
-            // ── Scroll Progress ──
-            const scrollProgress = document.getElementById('scrollProgress');
-            window.addEventListener('scroll', () => {
-                const sh = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        // ── Scroll Progress ──
+        const scrollProgress = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', () => {
+            const sh = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            if (scrollProgress && sh > 0) {
                 scrollProgress.style.width = (window.scrollY / sh * 100) + '%';
-            });
+            }
+        });
 
-            // ── Sticky Header ──
-            const header = document.getElementById('mainHeader');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 40) {
-                    header.classList.add('bg-white/95', 'dark:bg-[#0f0f1a]/95', 'shadow-subtleCard', 'border-slate-100',
-                        'dark:border-slate-800');
-                    header.classList.remove('bg-[#FFFDFB]/95', 'dark:bg-[#0f0f1a]/95', 'border-transparent');
-                } else {
-                    header.classList.remove('bg-white/95', 'dark:bg-[#0f0f1a]/95', 'shadow-subtleCard',
-                        'border-slate-100', 'dark:border-slate-800');
-                    header.classList.add('bg-[#FFFDFB]/95', 'dark:bg-[#0f0f1a]/95', 'border-transparent');
-                }
-            });
+        // ── Sticky Header ──
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (!header) return;
+            if (window.scrollY > 40) {
+                header.classList.add('bg-white/95', 'dark:bg-[#0f0f1a]/95', 'shadow-subtleCard', 'border-slate-100', 'dark:border-slate-800');
+                header.classList.remove('bg-[#FFFDFB]/95', 'dark:bg-[#0f0f1a]/95', 'border-transparent');
+            } else {
+                header.classList.remove('bg-white/95', 'dark:bg-[#0f0f1a]/95', 'shadow-subtleCard', 'border-slate-100', 'dark:border-slate-800');
+                header.classList.add('bg-[#FFFDFB]/95', 'dark:bg-[#0f0f1a]/95', 'border-transparent');
+            }
+        });
 
-            // ── Mobile Menu ──
-            const menuBtn = document.getElementById('mobileMenuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const hamburger = document.getElementById('hamburgerIcon');
+        // ── Mobile Menu ──
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const hamburger = document.getElementById('hamburgerIcon');
+        if (menuBtn && mobileMenu && hamburger) {
             menuBtn.addEventListener('click', () => {
                 const isOpen = !mobileMenu.classList.contains('hidden');
                 mobileMenu.classList.toggle('hidden');
@@ -827,16 +888,19 @@
                     `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>` :
                     `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>`;
             });
-            document.querySelectorAll('.mobile-nav-link').forEach(link => {
-                link.addEventListener('click', () => {
+        }
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu && hamburger) {
                     mobileMenu.classList.add('hidden');
-                    hamburger.innerHTML =
-                        `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>`;
-                });
+                    hamburger.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>`;
+                }
             });
+        });
 
-            // ── Scroll to Top ──
-            const topBtn = document.getElementById('scrollToTop');
+        // ── Scroll to Top ──
+        const topBtn = document.getElementById('scrollToTop');
+        if (topBtn) {
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 400) {
                     topBtn.classList.remove('translate-y-20', 'opacity-0');
@@ -847,81 +911,237 @@
                 }
             });
             topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        }
 
-            // ── Dark Mode ──
-            const themeToggle = document.getElementById('themeToggle');
-            const setTheme = (dark) => {
-                document.documentElement.classList.toggle('dark', dark);
-                localStorage.setItem('theme', dark ? 'dark' : 'light');
-                const suns = document.querySelectorAll('.sun-icon');
-                const moons = document.querySelectorAll('.moon-icon');
-                suns.forEach(s => s.style.opacity = dark ? '1' : '0');
-                moons.forEach(m => m.style.opacity = dark ? '0' : '1');
-            };
-            const toggleTheme = () => setTheme(!document.documentElement.classList.contains('dark'));
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const saved = localStorage.getItem('theme');
-            if (saved === 'dark' || (!saved && prefersDark)) setTheme(true);
-            themeToggle.addEventListener('click', toggleTheme);
+        // ── Dark Mode ──
+        const themeToggle = document.getElementById('themeToggle');
+        const setTheme = (dark) => {
+            document.documentElement.classList.toggle('dark', dark);
+            localStorage.setItem('theme', dark ? 'dark' : 'light');
+            const suns = document.querySelectorAll('.sun-icon');
+            const moons = document.querySelectorAll('.moon-icon');
+            suns.forEach(s => s.style.opacity = dark ? '1' : '0');
+            moons.forEach(m => m.style.opacity = dark ? '0' : '1');
+        };
+        const toggleTheme = () => setTheme(!document.documentElement.classList.contains('dark'));
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const saved = localStorage.getItem('theme');
+        if (saved === 'dark' || (!saved && prefersDark)) setTheme(true);
+        if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
 
-            // ── Scroll Reveal ──
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
+        // ── Scroll Reveal ──
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // ── FAQ Accordion ──
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('.faq-icon');
+                const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+                document.querySelectorAll('.faq-btn').forEach(b => {
+                    if (b !== btn) {
+                        b.setAttribute('aria-expanded', 'false');
+                        if (b.nextElementSibling) b.nextElementSibling.style.maxHeight = '0';
+                        const otherIcon = b.querySelector('.faq-icon');
+                        if (otherIcon) otherIcon.classList.remove('rotate-180');
+                        b.parentElement.classList.remove('border-primary/20', 'shadow-subtleCard');
                     }
                 });
-            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-            // ── FAQ Accordion ──
-            document.querySelectorAll('.faq-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const content = btn.nextElementSibling;
-                    const icon = btn.querySelector('.faq-icon');
-                    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+                if (isOpen) {
+                    btn.setAttribute('aria-expanded', 'false');
+                    content.style.maxHeight = '0';
+                    if (icon) icon.classList.remove('rotate-180');
+                    btn.parentElement.classList.remove('border-primary/20', 'shadow-subtleCard');
+                } else {
+                    btn.setAttribute('aria-expanded', 'true');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    if (icon) icon.classList.add('rotate-180');
+                    btn.parentElement.classList.add('border-primary/20', 'shadow-subtleCard');
+                }
+            });
+        });
 
-                    // Close other FAQs
-                    document.querySelectorAll('.faq-btn').forEach(b => {
-                        if (b !== btn) {
-                            b.setAttribute('aria-expanded', 'false');
-                            b.nextElementSibling.style.maxHeight = '0';
-                            b.querySelector('.faq-icon').classList.remove('rotate-180');
-                            b.parentElement.classList.remove('border-primary/20', 'shadow-subtleCard');
-                        }
-                    });
+        // ── Toast Notification ──
+        window.showToast = function(message, isError = false) {
+            const toast = document.getElementById('toastNotification');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastIcon = document.getElementById('toastIcon');
+            if (!toast || !toastMessage) return;
 
-                    if (isOpen) {
-                        btn.setAttribute('aria-expanded', 'false');
-                        content.style.maxHeight = '0';
-                        icon.classList.remove('rotate-180');
-                        btn.parentElement.classList.remove('border-primary/20', 'shadow-subtleCard');
-                    } else {
-                        btn.setAttribute('aria-expanded', 'true');
-                        content.style.maxHeight = content.scrollHeight + 'px';
-                        icon.classList.add('rotate-180');
-                        btn.parentElement.classList.add('border-primary/20', 'shadow-subtleCard');
-                    }
+            toastMessage.textContent = message;
+            if (toastIcon) {
+                toastIcon.className = isError 
+                    ? 'fa-solid fa-circle-exclamation text-red-400 text-base' 
+                    : 'fa-solid fa-circle-check text-emerald-400 text-base';
+            }
+
+            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 4000);
+        };
+
+        // ── Contact Form Submission (With 10 Digits Check) ──
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnIcon = document.getElementById('btnIcon');
+        const phoneInput = document.getElementById('phoneInput');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // 10 Digits Phone Check
+                if (phoneInput && phoneInput.value.trim().length !== 10) {
+                    showToast('Please enter a valid 10-digit mobile number!', true);
+                    phoneInput.focus();
+                    return;
+                }
+
+                // Button Loading State
+                if (submitBtn) submitBtn.disabled = true;
+                if (btnText) btnText.textContent = 'Sending Message...';
+                if (btnIcon) btnIcon.className = 'fa-solid fa-spinner fa-spin text-xs';
+
+                const formData = new FormData(contactForm);
+
+                // Send data to Google Sheet
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                })
+                .then(() => {
+                    showToast('Thank you for reaching out! Our team will get back to you within 24 hours. 🎉');
+                    contactForm.reset();
+                })
+                .catch((err) => {
+                    console.error('Submission error:', err);
+                    showToast('Message received! We will connect soon.', false);
+                    contactForm.reset();
+                })
+                .finally(() => {
+                    if (submitBtn) submitBtn.disabled = false;
+                    if (btnText) btnText.textContent = 'Send Message';
+                    if (btnIcon) btnIcon.className = 'fa-solid fa-paper-plane text-xs transition-transform group-hover:translate-x-1 group-hover:-translate-y-1';
                 });
             });
+        }
+    });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 👇 यहाँ अपना Newsletter वाला Google Apps Script URL पेस्ट करें
+    const NEWSLETTER_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6IaDUQB0c-u56J6Mwo7U9rwaNpcNyK0ECboQnxnPwljRPzRWDQaxEXB1npfSJicQ0wA/exec';
 
-            // ── Toast Notification ──
-            window.showToast = function(message) {
-                const toast = document.getElementById('toastNotification');
-                const toastMessage = document.getElementById('toastMessage');
-                if (!toast || !toastMessage) return;
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsletterBtn = document.getElementById('newsletterBtn');
+    const newsletterBtnText = document.getElementById('newsletterBtnText');
+    const newsletterEmail = document.getElementById('newsletterEmail');
+    const newsletterSuccessMsg = document.getElementById('newsletterSuccessMsg');
 
-                toastMessage.textContent = message;
-                toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
-                toast.classList.add('translate-y-0', 'opacity-100');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function (e) {
+            e.preventDefault();
 
+            const emailVal = newsletterEmail.value.trim();
+            if (!emailVal) return;
+
+            // 1. बटन को लोडिंग मोड में डालें
+            newsletterBtn.disabled = true;
+            newsletterBtnText.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-xs"></i>';
+            if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
+
+            // 2. डेटा तैयार करें
+            const formData = new URLSearchParams();
+            formData.append('email', emailVal);
+
+            // 3. Google Sheet में भेजें
+            fetch(NEWSLETTER_SCRIPT_URL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => {
+                finishSubmission();
+            })
+            .catch((err) => {
+                console.log('Submission complete:', err);
+                finishSubmission();
+            });
+
+            // 4. फ़ंक्शन जो सफलता के बाद बटन और मैसेज को रीसेट करता है
+            function finishSubmission() {
+                newsletterForm.reset();
+                newsletterBtn.disabled = false;
+                newsletterBtnText.textContent = 'Joined!';
+                newsletterBtn.classList.replace('bg-primary', 'bg-emerald-600');
+                
+                if (newsletterSuccessMsg) {
+                    newsletterSuccessMsg.classList.remove('hidden');
+                    newsletterSuccessMsg.classList.add('flex');
+                }
+
+                if (typeof showToast === 'function') {
+                    showToast('🎉 You have subscribed to RAJShiksha notifications!');
+                }
+
+                // 4 सेकंड बाद बटन वापस सामान्य "Join" हो जाएगा
                 setTimeout(() => {
-                    toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
-                    toast.classList.remove('translate-y-0', 'opacity-100');
-                }, 3000);
-            };
+                    newsletterBtnText.textContent = 'Join';
+                    newsletterBtn.classList.replace('bg-emerald-600', 'bg-primary');
+                    if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
+                }, 4000);
+            }
         });
-    </script>
+    }
+});
+</script>
+// # tag use के लिए
+<script>
+    // 1. Anchor click par smooth scroll
+    document.addEventListener('click', function (e) {
+        const anchor = e.target.closest('a[href^="#"]');
+        if (anchor) {
+            const targetId = anchor.getAttribute('href');
+            if (!targetId || targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+                
+                // FIX: Current page path ko hash ke sath combine kiya gaya hai
+                const newUrl = window.location.pathname + window.location.search + targetId;
+                history.pushState(null, null, newUrl);
+            }
+        }
+    });
 
+    // 2. Page Refresh hone par usi section par scroll maintain rakhne ke liye
+    window.addEventListener('DOMContentLoaded', function () {
+        if (window.location.hash) {
+            const targetElement = document.querySelector(window.location.hash);
+            if (targetElement) {
+                setTimeout(function () {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }, 100); // 100ms delay DOM load ensure karne ke liye
+            }
+        }
+    });
+</script>
 </body>
 </html>
