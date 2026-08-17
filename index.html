@@ -435,8 +435,11 @@
             </span>
             <div class="overflow-hidden flex-grow relative">
                 <div class="animate-marquee whitespace-nowrap flex items-center gap-16 text-sm font-manrope font-semibold text-slate-300">
-                    <a href="#test-series" class="hover:text-primary transition-colors flex items-center gap-2">🔥 Read Free Rajasthan History & Culture Notes Online — Best Notes for RPSC & RSMSSB Exams | RAJShiksha </a>
-                    <a href="test-series/cet-12th-exam" class="hover:text-primary transition-colors flex items-center gap-2">🚀 🔥 Rajasthan CET (10+2) Test Series Live — 7 Minor, 2 Major & 3 Final Mocks with Detailed Solutions!</a>
+                    <a href="#notes" class="hover:text-primary transition-colors flex items-center gap-2">🔥 Read Free Rajasthan History & Culture Notes Online — Best Notes for RPSC & RSMSSB Exams | RAJShiksha </a>
+                    <a href="test-series/cet-12th-test-series" class="hover:text-primary transition-colors flex items-center gap-2">🚀 🔥 Rajasthan CET (10+2) Test Series Live — 7 Minor, 2 Major & 3 Final Mocks with Detailed Solutions!</a>
+                    <a href="test-series/rajasthan-pti-paper-1-test-series" class="hover:text-primary transition-colors flex items-center gap-2">🚀 🔥 Rajasthan PTI Paper 1 Test Series 2026 Live — 6 Minor, 2 Major & 3 Final Tests with Detailed Solutions!</a>
+                    <a href="test-series/rajasthan-si-gk-test-series" class="hover:text-primary transition-colors flex items-center gap-2">🚀 🔥 Rajasthan PTI Paper 1 Test Series 2026 Live — 7 Minor, 2 Major & 3 Final Tests with Detailed Solutions!</a>
+                    <a href="test-series/rajasthan-si-hindi-test-series" class="hover:text-primary transition-colors flex items-center gap-2">🚀 🔥 Rajasthan PTI Paper 1 Test Series 2026 Live — 7 Minor, 2 Major & 3 Final Tests with Detailed Solutions!</a>
 <!--                    <a href="#notes" class="hover:text-primary transition-colors flex items-center gap-2">📚 Indian &amp; Rajasthan History combo notes — 200+ pages</a>
                     <a href="#test-series" class="hover:text-primary transition-colors flex items-center gap-2">🎯 RPSC RAS Prelims 2025 — 15 full-length mocks added</a>-->
                 </div>
@@ -2141,14 +2144,36 @@
                     </div>
                 </div>
 
-                <div class="lg:col-span-4 flex flex-col items-start text-left">
-                    <h4 class="font-poppins font-bold text-xs tracking-widest text-slate-300 uppercase mb-4">Latest Shift Notifications</h4>
-                    <p class="text-slate-400 text-xs font-inter mb-4 leading-relaxed">Subscribe to get immediate scheduling modifications, syllabus changes, and subscription pass discounts.</p>
-                    <form class="w-full flex gap-2" onsubmit="event.preventDefault(); alert('You have subscribed to RAJShiksha notifications!');">
-                        <input type="email" placeholder="Email Address" required class="flex-grow bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary transition-colors" />
-                        <button type="submit" class="px-4 py-2 bg-primary hover:bg-primary/95 text-white font-manrope font-bold rounded-lg transition-colors text-xs flex-shrink-0 hover:scale-[1.05]" aria-label="Subscribe">Join</button>
-                    </form>
-                </div>
+  <!-- ═══════ LATEST SHIFT NOTIFICATIONS (NEWSLETTER) ═══════ -->
+<div class="lg:col-span-4 flex flex-col items-start text-left">
+    <h4 class="font-poppins font-bold text-xs tracking-widest text-slate-300 uppercase mb-4">Latest Shift Notifications</h4>
+    <p class="text-slate-400 text-xs font-inter mb-4 leading-relaxed">Subscribe to get immediate scheduling modifications, syllabus changes, and subscription pass discounts.</p>
+    
+    <form id="newsletterForm" class="w-full flex flex-col gap-2">
+        <div class="w-full flex gap-2">
+            <input 
+                type="email" 
+                id="newsletterEmail" 
+                name="email" 
+                placeholder="Email Address" 
+                required 
+                class="flex-grow bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary transition-colors" 
+            />
+            <button 
+                type="submit" 
+                id="newsletterBtn" 
+                class="px-4 py-2 bg-primary hover:bg-primary/95 text-white font-manrope font-bold rounded-lg transition-colors text-xs flex-shrink-0 hover:scale-[1.05] flex items-center justify-center min-w-[65px] cursor-pointer" 
+                aria-label="Subscribe">
+                <span id="newsletterBtnText">Join</span>
+            </button>
+        </div>
+        
+        <!-- Success Message -->
+        <p id="newsletterSuccessMsg" class="hidden text-xs text-emerald-400 mt-1 font-medium items-center gap-1">
+            <i class="fa-solid fa-circle-check"></i> Subscribed successfully!
+        </p>
+    </form>
+</div>
             </div>
 
             <div class="pt-6 flex flex-col md:flex-row items-center justify-between text-slate-500 dark:text-slate-400 font-inter text-xs">
@@ -2685,7 +2710,7 @@
         price: 29,
         mrp: 199,
         discount: '85% OFF',
-        validity: 'Regular',
+        validity: 'Regular Plan',
         language: 'Hindi & English',
         page: 'test-series/rajasthan-pti-paper-1-test-series',   // <-- ADD THIS
         description: 'Crack Rajasthan PTI Grade 2 & 3 Paper-1 with 11 structured mock tests. Get complete coverage of Rajasthan GK, Educational Psychology, and Sports CA with exact exam-level marking.',
@@ -2705,7 +2730,7 @@
         price: 99,
         mrp: 399,
         discount: '75% OFF',
-        validity: '12 Months',
+        validity: 'Regular Plan',
         language: 'Hindi & English',
         page: 'ras-pre-exam',   // <-- ADD THIS
         description: 'Comprehensive evaluation package for RPSC RAS General Knowledge & General Science Prelims Paper.',
@@ -2724,7 +2749,7 @@
         price: 29,
         mrp: 199,
         discount: '85% OFF',
-        validity: '6 Months',
+        validity: 'Regular Plan',
         language: 'Hindi & English',
         page: 'test-series/rajasthan-si-gk-test-series',   // <-- ADD THIS
         description: 'Scientifically structured test series designed for aspirants targeting Rajasthan Sub Inspector Paper-II. Complete mastery for General Knowledge, General Science, Rajasthan GK, and Aptitude with exact exam-level simulation.',
@@ -3269,5 +3294,74 @@
         init();
     })();
     </script>
+	<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 👇 यहाँ अपना Newsletter वाला Google Apps Script URL पेस्ट करें
+    const NEWSLETTER_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6IaDUQB0c-u56J6Mwo7U9rwaNpcNyK0ECboQnxnPwljRPzRWDQaxEXB1npfSJicQ0wA/exec';
+
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsletterBtn = document.getElementById('newsletterBtn');
+    const newsletterBtnText = document.getElementById('newsletterBtnText');
+    const newsletterEmail = document.getElementById('newsletterEmail');
+    const newsletterSuccessMsg = document.getElementById('newsletterSuccessMsg');
+
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const emailVal = newsletterEmail.value.trim();
+            if (!emailVal) return;
+
+            // 1. बटन को लोडिंग मोड में डालें
+            newsletterBtn.disabled = true;
+            newsletterBtnText.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-xs"></i>';
+            if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
+
+            // 2. डेटा तैयार करें
+            const formData = new URLSearchParams();
+            formData.append('email', emailVal);
+
+            // 3. Google Sheet में भेजें
+            fetch(NEWSLETTER_SCRIPT_URL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => {
+                finishSubmission();
+            })
+            .catch((err) => {
+                console.log('Submission complete:', err);
+                finishSubmission();
+            });
+
+            // 4. फ़ंक्शन जो सफलता के बाद बटन और मैसेज को रीसेट करता है
+            function finishSubmission() {
+                newsletterForm.reset();
+                newsletterBtn.disabled = false;
+                newsletterBtnText.textContent = 'Joined!';
+                newsletterBtn.classList.replace('bg-primary', 'bg-emerald-600');
+                
+                if (newsletterSuccessMsg) {
+                    newsletterSuccessMsg.classList.remove('hidden');
+                    newsletterSuccessMsg.classList.add('flex');
+                }
+
+                if (typeof showToast === 'function') {
+                    showToast('🎉 You have subscribed to RAJShiksha notifications!');
+                }
+
+                // 4 सेकंड बाद बटन वापस सामान्य "Join" हो जाएगा
+                setTimeout(() => {
+                    newsletterBtnText.textContent = 'Join';
+                    newsletterBtn.classList.replace('bg-emerald-600', 'bg-primary');
+                    if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
+                }, 4000);
+            }
+        });
+    }
+});
+</script>
+
 </body>
 </html>
