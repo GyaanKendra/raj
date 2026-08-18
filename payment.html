@@ -30,6 +30,15 @@
                         poppins: ['Poppins', 'sans-serif'],
                         manrope: ['Manrope', 'sans-serif'],
                         inter: ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        unlockPulse: {
+                            '0%, 100%': { transform: 'scale(1)', borderColor: 'rgba(255, 107, 0, 0.3)' },
+                            '50%': { transform: 'scale(1.03)', borderColor: 'rgba(16, 185, 129, 0.8)' },
+                        }
+                    },
+                    animation: {
+                        unlockGlow: 'unlockPulse 1.2s ease-in-out 2',
                     }
                 }
             }
@@ -38,44 +47,32 @@
 
     <style>
         body { background-color: #F8FAFC; color: #0F172A; }
-        .blur-qr { filter: blur(8px); transition: filter 0.4s ease, transform 0.3s ease; }
+        .blur-qr { filter: blur(9px); transition: filter 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s ease; }
         .blur-qr.unblurred { filter: blur(0px); }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
-    <!-- PERMANENT ANTI-DEVTOOLS & INSPECT DISABLE SCRIPT -->
-<script>
-    // 1. Disable Right Click
-    document.addEventListener('contextmenu', e => e.preventDefault());
 
-    // 2. Disable Keyboard Shortcuts (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S)
-    window.addEventListener('keydown', function(e) {
-        if (
-            e.key === 'F12' ||
-            (e.ctrlKey && e.shiftKey && ['I', 'i', 'J', 'j', 'C', 'c'].includes(e.key)) ||
-            (e.ctrlKey && ['u', 'U', 's', 'S', 'c', 'C', 'a', 'A', 'p', 'P'].includes(e.key))
-        ) {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-        }
-    }, true);
-
-    // 3. Anti-DevTools Trap (Browser menu se Inspect kholne par Screen Blank ho jayegi)
-    setInterval(function() {
-        const startTime = performance.now();
-        debugger;
-        const endTime = performance.now();
-        if (endTime - startTime > 100) {
-            document.body.innerHTML = "<div style='display:flex;justify-content:center;align-items:center;height:100vh;background:#0F172A;color:#ffffff;font-family:sans-serif;font-weight:bold;text-align:center;padding:20px;'>⚠️ Developer Tools &amp; Inspect Element are strictly restricted on RAJShiksha Portal!</div>";
-        }
-    }, 1000);
-</script>
+    <!-- ANTI-DEVTOOLS & INSPECT PROTECTION -->
+    <script>
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        window.addEventListener('keydown', function(e) {
+            if (
+                e.key === 'F12' ||
+                (e.ctrlKey && e.shiftKey && ['I', 'i', 'J', 'j', 'C', 'c'].includes(e.key)) ||
+                (e.ctrlKey && ['u', 'U', 's', 'S', 'c', 'C', 'a', 'A', 'p', 'P'].includes(e.key))
+            ) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
+        }, true);
+    </script>
 </head>
 
 <body class="font-inter antialiased min-h-screen flex flex-col justify-between selection:bg-primary selection:text-white">
 
-    <!-- ═══════ TOP BRAND TRUST HEADER ═══════ -->
+    <!-- ═══════ TOP HEADER ═══════ -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3 group">
@@ -110,24 +107,23 @@
             <p class="text-slate-500 text-xs sm:text-sm mt-1 font-manrope">Enter your registration details, select your item and verify your payment to start instantly.</p>
         </div>
 
-        <!-- SECURITY ALERT / DUPLICATE WARNING BOX -->
+        <!-- SECURITY ALERT BOX -->
         <div id="securityAlert" class="hidden mb-6 p-4 rounded-2xl bg-rose-50 border-2 border-rose-200 text-left text-rose-900 shadow-sm animate-pulse">
             <div class="flex items-start gap-3">
                 <i class="fa-solid fa-triangle-exclamation text-rose-600 text-xl shrink-0 mt-0.5"></i>
                 <div>
                     <h4 class="font-poppins font-extrabold text-sm text-rose-700 uppercase tracking-wider" id="alertTitle">UNAUTHORIZED ACTIVITY DETECTED</h4>
-                    <p class="text-xs font-semibold mt-0.5 leading-relaxed" id="alertMessage">This Transaction ID / UTR has already been submitted. Re-using payment receipts is strictly prohibited.</p>
+                    <p class="text-xs font-semibold mt-0.5 leading-relaxed" id="alertMessage">This Transaction ID / UTR has already been submitted.</p>
                 </div>
             </div>
         </div>
 
- <form id="checkoutForm" onsubmit="handleCheckoutSubmit(event)">
+        <form id="checkoutForm" onsubmit="handleCheckoutSubmit(event)">
             <div class="space-y-6">
 
-                <!-- CARD 1: STUDENT REGISTRATION FORM & COURSE SELECTION -->
+                <!-- CARD 1: STUDENT REGISTRATION & COURSE SELECTION -->
                 <div class="bg-white rounded-3xl p-5 sm:p-8 border border-slate-200/80 shadow-sm text-left">
                     
-                    <!-- HEADER WITH BUTTON EXACTLY ON THE RIGHT CORNER -->
                     <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
                         <div class="flex items-center gap-3">
                             <span class="w-8 h-8 rounded-xl bg-primary/10 text-primary font-bold flex items-center justify-center text-sm">1</span>
@@ -137,55 +133,38 @@
                             </div>
                         </div>
 
-                        <!-- RIGHT CORNER BUTTON -->
                         <a href="login.html" class="ml-auto inline-flex items-center gap-2 bg-slate-900 hover:bg-primary text-white px-3.5 py-2 rounded-xl transition-all text-xs font-bold shadow-md shrink-0">
                             <i class="fa-solid fa-key text-primary"></i>
-                            <span>Candidate Exam login</span>
+                            <span>Candidate Exam Login</span>
                         </a>
                     </div>
+
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         
-                        <!-- Select Test Series / Book Dropdown -->
+                        <!-- Select Course Dropdown (ORIGINAL PRESERVED LIST) -->
                         <div class="sm:col-span-2 space-y-1.5">
                             <label class="text-xs font-bold text-slate-800 block">Select Purchased Item / Course <span class="text-rose-500">*</span></label>
                             <div class="relative">
                                 <i class="fa-solid fa-graduation-cap absolute left-3.5 top-1/2 -translate-y-1/2 text-primary text-sm"></i>
-                                <select id="selectedCourse" required class="w-full pl-10 pr-8 py-3 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm font-bold text-slate-800 focus:outline-none focus:border-primary focus:bg-white transition-colors appearance-none cursor-pointer">
+                                <select id="selectedCourse" required onchange="onCourseChange()" class="w-full pl-10 pr-8 py-3 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm font-bold text-slate-800 focus:outline-none focus:border-primary focus:bg-white transition-colors appearance-none cursor-pointer">
                                     <option value="" disabled selected>-- Choose Test Series / eBook / Pass --</option>
 
                                     <!-- TEST SERIES CATEGORY -->
                                     <optgroup label="📚 TEST SERIES (टेस्ट सीरीज)">
                                         <option value="Rajasthan CET 10+2 Test Series (₹29)">Rajasthan CET 10+2 Test Series — ₹29</option>
-<!--                                        <option value="RAS 2026 Test Series Only Pre (₹99)">RAS 2026 Test Series Only Pre — ₹99</option>-->
-                                        <option value="Raj. SI 2026 Test Series (₹29)">Raj. SI 2026 Hindi Test Series <small>(Paper-I)</small>— ₹29 </option>
-                                        <option value="Raj. SI 2026 Test Series (₹29)">Raj. SI 2026 G.K. Test Series <small>(Paper-II)</small>— ₹29 </option>
-                                        <option value="Rajasthan PTI Paper 1 Test Series (₹29)">Rajasthan PTI Paper 1 Test Series 2026 <small>(Paper-I)</small>— ₹29 </option>
-
-   <!--                                        <option value="RSMSSB Patwar Test Series">RSMSSB Patwar Mock Test Series</option>
-                                        <option value="Rajasthan Police Constable Series">Rajasthan Police Constable Series</option>
-                                        <option value="REET Level 1 & Level 2 Test Series">REET Level 1 & Level 2 Test Series</option>
-                                        <option value="RSMSSB Computer Instructor Test Series">RSMSSB Computer Instructor Series</option>
-                                        <option value="RSMSSB Lab Assistant Test Series">RSMSSB Lab Assistant Test Series</option>-->
+                                        <option value="Raj. SI 2026 Test Series (₹29)">Raj. SI 2026 Hindi Test Series (Paper-I) — ₹29</option>
+                                        <option value="Raj. SI 2026 Test Series (₹29)">Raj. SI 2026 G.K. Test Series (Paper-II) — ₹29</option>
+                                        <option value="Rajasthan PTI Paper 1 Test Series (₹29)">Rajasthan PTI Paper 1 Test Series 2026 (Paper-I) — ₹29</option>
                                     </optgroup>
 
- 						<!-- Subject wise TEST SERIES CATEGORY -->
+                                    <!-- SUBJECT / TOPIC WISE TEST SERIES -->
                                     <optgroup label="📚 Complete Topic wise TEST SERIES (टेस्ट सीरीज)">
                                         <option value="rajasthan-history-sabhyata-(₹9)">Rajasthan Sabhayta (4+ Topics) Test Series — ₹9</option>
                                         <option value="rajasthan-culture-durg-(₹19)">Rajasthan Complete Durg (6 Topics) Test Series — ₹19</option>
                                         <option value="rajasthan-culture-nritya-(₹19)">Rajasthan Complete nritya (5 Topics) Test Series — ₹19</option>
                                         <option value="rajasthan-geography-bhautik-pradesh-(₹19)">Rajasthan Complete Bhotik Pradesh (5 Topics) Test Series — ₹19</option>
-										
+                                        <option value="Rajasthan History All-Access Pass (₹49)">Rajasthan History Complete Pass (7 Master Chapters) — ₹49</option>
                                     </optgroup>
-
-
-									
-                                    <!-- DIGITAL E-BOOKS CATEGORY 
-                                    <optgroup label="📖 DIGITAL E-BOOKS (ई-बुक्स)">
-                                        <option value="Rajasthan Economy & Geography eBook (₹99)">Rajasthan Economy & Geography eBook — ₹99</option>
-                                        <option value="Raj. History & Heritage eBook (₹99)">Raj. History & Heritage eBook — ₹99</option>
-                                        <option value="General & English Blueprint eBook (₹79)">General & English Blueprint eBook — ₹79</option>
-                                        <option value="Rajasthan Literature & Arts Standard eBook (₹99)">Rajasthan Literature & Arts Standard eBook — ₹99</option>
-                                    </optgroup>-->
 
                                     <!-- SUBSCRIPTION PASSES CATEGORY -->
                                     <optgroup label="⭐ MEMBERSHIP PASSES (सदस्यता पास)">
@@ -194,22 +173,17 @@
                                         <option value="Premium Regular Plan - 90 Days Access (₹499)">Premium Regular Plan (90 Days) — ₹499</option>
                                         <option value="Elite Premium Plan - 365 Days Pass (₹999)">Elite Premium Plan (365 Days Access) — ₹999</option>
                                     </optgroup>
-
-                                    <!-- OTHER CATEGORY 
-                                    <optgroup label="🌐 OTHER (अन्य)">
-                                        <option value="Other Course / Combo Package">Other / अन्य (कस्टम कोर्स या अन्य कॉम्बो)</option>
-                                    </optgroup>-->
                                 </select>
                                 <i class="fa-solid fa-chevron-down absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
                             </div>
                         </div>
 
-                        <!-- Student Full Name -->
+                        <!-- Full Name -->
                         <div class="sm:col-span-2 space-y-1.5">
                             <label class="text-xs font-bold text-slate-700 block">Student Full Name <span class="text-rose-500">*</span></label>
                             <div class="relative">
                                 <i class="fa-regular fa-user absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
-                                <input type="text" id="studentName" required placeholder="e.g. Ramesh Kumar" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+                                <input type="text" id="studentName" required placeholder="e.g. Ramesh Kumar" oninput="checkFormCompletion()" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors" />
                             </div>
                         </div>
 
@@ -218,29 +192,29 @@
                             <label class="text-xs font-bold text-slate-700 block">Mobile Number <span class="text-rose-500">*</span></label>
                             <div class="relative">
                                 <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs font-bold">+91</span>
-                                <input type="tel" id="studentMobile" maxlength="10" required placeholder="10-digit number" oninput="validatePhoneInput(this)" class="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+                                <input type="tel" id="studentMobile" maxlength="10" required placeholder="10-digit number" oninput="validatePhoneInput(this); checkFormCompletion();" class="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors" />
                             </div>
                             <span id="phoneError" class="text-[11px] text-rose-500 font-semibold hidden">Enter valid 10-digit mobile number</span>
                         </div>
 
-                        <!-- Email Address (STRICT @gmail.com) -->
+                        <!-- Email Address -->
                         <div class="space-y-1.5">
                             <label class="text-xs font-bold text-slate-700 block">Email Address (Must end with @gmail.com) <span class="text-rose-500">*</span></label>
                             <div class="relative">
                                 <i class="fa-regular fa-envelope absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
-                                <input type="email" id="studentEmail" required placeholder="yourname@gmail.com" oninput="validateEmailFormat(this)" onblur="validateEmailFormat(this)" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+                                <input type="email" id="studentEmail" required placeholder="yourname@gmail.com" oninput="validateEmailFormat(this); checkFormCompletion();" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors" />
                             </div>
                             <span id="emailError" class="text-[11px] text-rose-600 font-bold hidden flex items-center gap-1">
-                                <i class="fa-solid fa-circle-exclamation"></i> Incorrect email! Must strictly end with <u class="ml-0.5">@gmail.com</u>
+                                <i class="fa-solid fa-circle-exclamation"></i> Must strictly end with @gmail.com
                             </span>
                         </div>
 
                         <!-- Password -->
                         <div class="space-y-1.5">
-                            <label class="text-xs font-bold text-slate-700 block">Make Password <span class="text-rose-500">*</span></label>
+                            <label class="text-xs font-bold text-slate-700 block">Make Login Password <span class="text-rose-500">*</span></label>
                             <div class="relative">
                                 <i class="fa-solid fa-lock absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
-                                <input type="password" id="studentPassword" minlength="6" required placeholder="Min 6 characters" onkeyup="checkPasswordMatch()" class="w-full pl-10 pr-10 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+                                <input type="password" id="studentPassword" minlength="6" required placeholder="Min 6 characters" onkeyup="checkPasswordMatch(); checkFormCompletion();" class="w-full pl-10 pr-10 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors" />
                                 <i class="fa-regular fa-eye absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm cursor-pointer" onclick="togglePasswordVisibility('studentPassword', this)"></i>
                             </div>
                         </div>
@@ -250,19 +224,17 @@
                             <label class="text-xs font-bold text-slate-700 block">Confirm Password <span class="text-rose-500">*</span></label>
                             <div class="relative">
                                 <i class="fa-solid fa-lock absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
-                                <input type="password" id="studentConfirmPassword" minlength="6" required placeholder="Re-enter password" onkeyup="checkPasswordMatch()" class="w-full pl-10 pr-10 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+                                <input type="password" id="studentConfirmPassword" minlength="6" required placeholder="Re-enter password" onkeyup="checkPasswordMatch(); checkFormCompletion();" class="w-full pl-10 pr-10 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors" />
                                 <i class="fa-regular fa-eye absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm cursor-pointer" onclick="togglePasswordVisibility('studentConfirmPassword', this)"></i>
                             </div>
                         </div>
 
                         <!-- Password Match Validation Status -->
                         <div class="sm:col-span-2">
-                            <p id="passwordMatchMsg" class="text-xs font-bold hidden flex items-center gap-1.5">
-                                <!-- Dynamic Validation Message -->
-                            </p>
+                            <p id="passwordMatchMsg" class="text-xs font-bold hidden flex items-center gap-1.5"></p>
                         </div>
 
-                        <!-- Remark Input (Optional) -->
+                        <!-- REMARK FIELD (RESTORED) -->
                         <div class="sm:col-span-2 space-y-1.5 pt-1">
                             <label class="text-xs font-bold text-slate-700 block flex items-center justify-between">
                                 <span>Remark / विशेष विवरण <span class="text-slate-400 font-normal">(Optional)</span></span>
@@ -277,67 +249,88 @@
                     </div>
                 </div>
 
-                <!-- CARD 2: UPI QR CODE & TRANSACTION ID (MANDATORY & UNIQUE) -->
-                <div class="bg-white rounded-3xl p-5 sm:p-8 border border-slate-200/80 shadow-sm text-left">
+                <!-- CARD 2: AUTO-UNLOCKING UPI QR & 1-CLICK PAY -->
+                <div id="paymentSectionCard" class="bg-white rounded-3xl p-5 sm:p-8 border border-slate-200/80 shadow-sm text-left transition-all duration-500">
+                    
                     <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
                         <div class="flex items-center gap-3">
-                            <span class="w-8 h-8 rounded-xl bg-primary/10 text-primary font-bold flex items-center justify-center text-sm">2</span>
+                            <span id="step2Badge" class="w-8 h-8 rounded-xl bg-slate-100 text-slate-500 font-bold flex items-center justify-center text-sm transition-colors">2</span>
                             <div>
-                                <h2 class="font-poppins font-bold text-base sm:text-lg text-slate-900">Scan QR &amp; Enter Transaction ID</h2>
-                                <p class="text-xs text-slate-400">Pay via PhonePe, GPay, Paytm or any UPI App</p>
+                                <h2 class="font-poppins font-bold text-base sm:text-lg text-slate-900">Scan QR or 1-Click Pay</h2>
+                                <p class="text-xs text-slate-400" id="step2Subtitle">Step 1 pura karte hi QR auto-unlock hoga</p>
                             </div>
                         </div>
-                        <span class="text-[10px] font-extrabold text-emerald-600 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full uppercase tracking-wider hidden sm:inline-block">Zero Gateway Fee</span>
+                        <span id="qrStatusBadge" class="text-[11px] font-bold text-amber-700 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full flex items-center gap-1.5">
+                            <i class="fa-solid fa-lock text-[10px]"></i> Locked (Fill Form)
+                        </span>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
                         
-                        <!-- QR Code Container with Blur/Unblur Effect -->
-                        <div class="md:col-span-6 flex flex-col items-center justify-center text-center p-4 bg-slate-50 border border-slate-200/80 rounded-2xl">
-                            <p class="text-xs font-bold text-slate-600 mb-2">Official Payment QR Code</p>
+                        <!-- QR Code Container with Auto-Unlock Animation -->
+                        <div class="md:col-span-6 flex flex-col items-center justify-center text-center p-5 bg-slate-50 border border-slate-200/80 rounded-2xl relative overflow-hidden" id="qrWrapperCard">
                             
-                            <div class="relative w-48 h-48 rounded-xl overflow-hidden border-2 border-primary/30 p-2 bg-white shadow-md cursor-pointer group" onclick="unblurQR()">
-                                <!-- QR Image (Can be changed anytime) -->
-                                <img id="qrImage" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi://pay?pa=rajshiksha@upi&pn=RAJShiksha&cu=INR" alt="RAJShiksha Payment QR" class="w-full h-full object-contain blur-qr transition-all duration-300" />
+                            <div class="relative w-48 h-48 rounded-2xl overflow-hidden border-2 border-primary/20 p-2 bg-white shadow-md group cursor-pointer" onclick="manualForceUnlockQR()">
+                                <!-- Dynamic Auto-Generated Payment QR -->
+                                <img id="qrImage" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi://pay?pa=amzad15aug@ybl&pn=Amzad%20Khan&cu=INR" alt="RAJShiksha Official PhonePe QR" class="w-full h-full object-contain blur-qr" />
 
-                                <!-- Blur Overlay -->
-                                <div id="qrOverlay" class="absolute inset-0 bg-slate-900/60 backdrop-blur-xs flex flex-col items-center justify-center text-white p-3 transition-opacity">
-                                    <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center mb-2 shadow-lg group-hover:scale-110 transition-transform">
-                                        <i class="fa-solid fa-qrcode text-lg"></i>
+                                <!-- Blur Overlay Banner -->
+                                <div id="qrOverlay" class="absolute inset-0 bg-slate-900/75 backdrop-blur-xs flex flex-col items-center justify-center text-white p-3 transition-opacity duration-300">
+                                    <div class="w-11 h-11 rounded-full bg-primary flex items-center justify-center mb-2 shadow-lg animate-bounce">
+                                        <i class="fa-solid fa-lock text-base"></i>
                                     </div>
-                                    <span class="text-xs font-extrabold tracking-wide uppercase">Click to Reveal QR</span>
-                                    <span class="text-[10px] text-slate-200 mt-1">Tap to scan &amp; pay</span>
+                                    <span class="text-xs font-extrabold tracking-wide uppercase">QR Code Locked</span>
+                                    <span class="text-[10px] text-slate-300 mt-1">Complete Step 1 or Tap to Unlock</span>
                                 </div>
                             </div>
 
-                            <!-- Copy UPI ID -->
-                            <div class="mt-3 flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-slate-200 w-full justify-between">
-                                <span class="text-xs font-mono font-bold text-slate-700">UPI: <span class="text-primary font-black">rajshiksha@upi</span></span>
-                                <button type="button" onclick="copyUPI()" class="text-[11px] font-bold text-primary hover:underline flex items-center gap-1">
+                            <!-- OFFICIAL PAYEE NAME BADGE -->
+                            <div class="mt-3 text-center w-full">
+                                <p class="text-[11px] font-bold text-slate-700 bg-amber-50/90 border border-amber-200/80 rounded-xl py-1.5 px-2.5">
+                                    Official Payee Name on UPI: <span class="text-primary font-black">Amzad Khan</span> (RAJShiksha Exam Cell)
+                                </p>
+                            </div>
+
+                            <!-- Copy UPI ID Button -->
+                            <div class="mt-2.5 flex items-center gap-2 bg-white px-3 py-2 rounded-xl border border-slate-200 w-full justify-between shadow-xs">
+                                <span class="text-xs font-mono font-bold text-slate-700">UPI: <span class="text-primary font-black">amzad15aug@ybl</span></span>
+                                <button type="button" onclick="copyUPI()" class="text-xs font-bold text-primary hover:underline flex items-center gap-1">
                                     <i class="fa-regular fa-copy"></i> Copy
                                 </button>
                             </div>
                         </div>
 
-                        <!-- Payment Instructions & UTR Input -->
+                        <!-- 1-CLICK PAY & UTR SUBMISSION -->
                         <div class="md:col-span-6 space-y-4">
-                            <div class="bg-amber-50/80 border border-amber-200 rounded-xl p-3.5 space-y-1.5 text-xs text-amber-900">
-                                <p class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-circle-info text-amber-600"></i> Instructions:</p>
-                                <ol class="list-decimal pl-4 space-y-1 text-[11px] leading-relaxed">
-                                    <li>Tap QR to reveal and scan with GPay / PhonePe / Paytm.</li>
-                                    <li>Complete your payment for the selected course.</li>
-                                    <li>Copy 12-digit <b>UTR / Transaction Ref No.</b> and enter below.</li>
+                            
+                            <!-- 1-CLICK DIRECT UPI INTENT (MOBILE USERS) -->
+                            <div class="bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/10 border border-primary/20 rounded-2xl p-4 text-center">
+                                <span class="text-[10px] font-extrabold uppercase tracking-widest text-primary block mb-1">Mobile Instant Pay</span>
+                                <p class="text-xs text-slate-600 font-medium mb-3">Mobile me PhonePe ya GPay se direct pay karein:</p>
+                                
+                                <a id="directUpiPayBtn" href="upi://pay?pa=amzad15aug@ybl&pn=Amzad%20Khan&cu=INR" class="w-full py-3 bg-gradient-to-r from-primary to-secondary hover:opacity-95 text-white font-poppins font-extrabold text-xs rounded-xl shadow-md flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-95">
+                                    <i class="fa-solid fa-bolt-lightning"></i>
+                                    <span id="directPayBtnText">Pay Now via UPI App</span>
+                                </a>
+                            </div>
+
+                            <!-- Step Instructions -->
+                            <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 space-y-1 text-xs text-slate-700">
+                                <p class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-600"></i> Easy 2-Step Verification:</p>
+                                <ol class="list-decimal pl-4 space-y-0.5 text-[11px] text-slate-600 leading-relaxed">
+                                    <li>Pay karein (QR Scan ya ऊपर दिए बटन से)।</li>
+                                    <li>Payment receipt se 12-digit <b>UTR / Ref ID</b> niche enter karein।</li>
                                 </ol>
                             </div>
 
-                            <!-- Transaction ID Input (12 digits) -->
+                            <!-- 12-Digit UTR Input -->
                             <div class="space-y-1.5">
                                 <label class="text-xs font-bold text-slate-800 block">Enter 12-Digit UTR / Transaction ID <span class="text-rose-500">*</span></label>
                                 <div class="relative">
                                     <i class="fa-solid fa-receipt absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
                                     <input type="text" id="transactionId" maxlength="12" minlength="12" required placeholder="e.g. 402812349012" oninput="this.value = this.value.replace(/[^0-9]/g, '')" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-mono font-bold tracking-wider focus:outline-none focus:border-primary focus:bg-white transition-colors" />
                                 </div>
-                                <span class="text-[10px] text-slate-400 block">12-digit reference number from payment receipt</span>
+                                <span class="text-[10px] text-slate-400 block">12-digit UPI reference number from your app</span>
                             </div>
                         </div>
 
@@ -345,13 +338,10 @@
 
                     <!-- SUBMIT BUTTON -->
                     <div class="mt-8 border-t border-slate-100 pt-6">
-                        <button type="submit" id="submitBtn" class="w-full py-4 bg-gradient-to-r from-primary to-secondary hover:opacity-95 text-white font-poppins font-extrabold text-base rounded-2xl shadow-xl transition-all hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-shield-check text-lg"></i>
-                            <span>Submit Payment &amp; Unlock Access</span>
+                        <button type="submit" id="submitBtn" class="w-full py-4 bg-slate-900 hover:bg-primary text-white font-poppins font-extrabold text-base rounded-2xl shadow-xl transition-all hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-shield-check text-lg text-primary"></i>
+                            <span>Submit Payment &amp; Unlock Candidate Login</span>
                         </button>
-                        <p class="text-center text-[11px] text-slate-400 font-semibold mt-3">
-                            <i class="fa-solid fa-lock text-emerald-500 mr-1"></i> Form responses directly archived to <b>rajshiksha.in@gmail.com</b>
-                        </p>
                     </div>
                 </div>
 
@@ -359,99 +349,175 @@
         </form>
     </main>
 
-<!-- ════ UPDATED SUCCESS RECEIPT OVERLAY MODAL ════ -->
-<div id="successModal" class="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
-    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl border border-slate-100 transform scale-95 transition-transform duration-300" id="successModalContent">
-        
-        <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-4 animate-bounce">
-            <i class="fa-solid fa-circle-check"></i>
+    <!-- ════ SUCCESS RECEIPT MODAL ════ -->
+    <div id="successModal" class="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl border border-slate-100 transform scale-95 transition-transform duration-300" id="successModalContent">
+            
+            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-4 animate-bounce">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            
+            <h3 class="font-poppins font-extrabold text-2xl text-slate-900">Enrollment Submitted!</h3>
+            <p class="text-xs text-slate-500 mt-1 font-manrope">Your details have been logged securely with <b>RAJShiksha Exam Cell</b>.</p>
+
+            <div class="my-4 p-4 bg-slate-50 rounded-2xl border border-slate-200 text-left text-xs space-y-1.5 font-mono">
+                <p><b>Order Ref:</b> <span id="recOrderRef" class="text-primary font-bold">#RAJ10001</span></p>
+                <p><b>Course:</b> <span id="recCourse" class="text-slate-800 font-bold">-</span></p>
+                <p><b>Student:</b> <span id="recStudentName">-</span></p>
+                <p><b>Email:</b> <span id="recEmail">-</span></p>
+                <p><b>UTR ID:</b> <span id="recUTR">-</span></p>
+                <p><b>Status:</b> <span class="text-emerald-600 font-bold">Verification In Progress</span></p>
+            </div>
+
+            <div class="mb-5 p-3 rounded-xl bg-amber-50 border border-amber-200 text-left text-[11px] text-amber-900 space-y-1 font-manrope">
+                <p class="font-bold text-amber-950">📌 Next Steps:</p>
+                <p>1. Open Exam Login portal below.</p>
+                <p>2. Login with your Email &amp; Password.</p>
+            </div>
+
+            <div class="space-y-2.5">
+                <button onclick="window.location.href='login'" class="w-full py-3.5 bg-slate-900 hover:bg-primary text-white font-extrabold text-sm rounded-xl transition-all shadow-md flex items-center justify-center gap-2">
+                    <span>🚀 Open Candidate Exam Portal</span>
+                </button>
+
+                <a id="whatsappHelpBtn" href="#" target="_blank" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs rounded-xl transition-all shadow-sm flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Get Instant Activation on WhatsApp</span>
+                </a>
+            </div>
         </div>
-        
-        <h3 class="font-poppins font-extrabold text-2xl text-slate-900">Enrollment Submitted!</h3>
-        
-        <!-- OFFICIAL SUBTITLE -->
-        <p class="text-xs text-slate-500 mt-1 font-manrope">Your enrollment &amp; verification details have been logged securely with <b>RAJShiksha Examination Cell</b>.</p>
-
-        <!-- RECEIPT DETAILS BOX -->
-        <div class="my-4 p-4 bg-slate-50 rounded-2xl border border-slate-200 text-left text-xs space-y-1.5 font-mono">
-            <p><b>Order ID:</b> <span id="recOrderRef" class="text-primary font-bold">#RAJ10001</span></p>
-            <p><b>Course:</b> <span id="recCourse" class="text-slate-800 font-bold">Rajasthan Culture Test Series</span></p>
-            <p><b>Student:</b> <span id="recStudentName">Ramesh</span></p>
-            <p><b>Email:</b> <span id="recEmail">student@gmail.com</span></p>
-            <p><b>UTR ID:</b> <span id="recUTR">4028XXXXXXXX</span></p>
-            <p><b>Status:</b> <span class="text-emerald-600 font-bold">Verification Pending (5-10 Mins)</span></p>
-        </div>
-
-        <!-- 2-STEP GUIDANCE BOX -->
-        <div class="mb-5 p-3 rounded-xl bg-amber-50 border border-amber-200 text-left text-[11px] text-amber-900 space-y-1 font-manrope">
-            <p class="font-bold text-amber-950 flex items-center gap-1">📌 What to do next?</p>
-            <p>1. Open Exam Portal using button below.</p>
-            <p>2. Login using Email (<b id="guidanceEmail">your email</b>) &amp; Password.</p>
-        </div>
-
-        <!-- 2 ACTION BUTTONS (PRIMARY + SECONDARY WHATSAPP) -->
-        <div class="space-y-2.5">
-            <button onclick="window.location.href='login'" class="w-full py-3.5 bg-slate-900 hover:bg-primary text-white font-extrabold text-sm rounded-xl transition-all shadow-md flex items-center justify-center gap-2">
-                <span>🚀 Open Candidate Exam Portal</span>
-            </button>
-
-            <a id="whatsappHelpBtn" href="#" target="_blank" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs rounded-xl transition-all shadow-sm flex items-center justify-center gap-2">
-                <i class="fa-brands fa-whatsapp text-base"></i>
-                <span>Get Instant Activation on WhatsApp</span>
-            </a>
-        </div>
-
     </div>
-</div>
 
     <!-- ════ FOOTER ════ -->
     <footer class="bg-slate-900 text-white py-6 border-t border-slate-800 text-center text-xs text-slate-400">
-        <p>&copy; 2025 RAJShiksha. Platform configured cleanly for competitive exam practice.</p>
+        <p>&copy; 2026 RAJShiksha Examination Cell. Official Online Test &amp; Resource Portal.</p>
     </footer>
 
-    <!-- ═══════ CHECKOUT SCRIPT LOGIC ═══════ -->
+    <!-- ═══════ LOGIC SCRIPT ═══════ -->
     <script>
-        // Store submitted UTRs locally to block duplicates on client side
+        const UPI_ID = 'amzad15aug@ybl';
+        const PAYEE_NAME = 'Amzad Khan';
         let usedUTRs = JSON.parse(localStorage.getItem('rajshiksha_used_utrs')) || [];
+        let isQRUnlocked = false;
 
- document.addEventListener('DOMContentLoaded', () => {
-    autoSelectCourseFromURL();
-});
+        document.addEventListener('DOMContentLoaded', () => {
+            autoSelectCourseFromURL();
+            updateUpiDetails();
+        });
 
-// URL Parameter Auto-Select Logic
-function autoSelectCourseFromURL() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const courseParam = urlParams.get('course');
-    const courseSelect = document.getElementById('selectedCourse');
+        // 1. Auto-select course from URL
+        function autoSelectCourseFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const courseParam = urlParams.get('course') || urlParams.get('plan');
+            const courseSelect = document.getElementById('selectedCourse');
 
-    if (courseParam && courseSelect) {
-        const decodedParam = decodeURIComponent(courseParam).toLowerCase().trim();
-        for (let i = 0; i < courseSelect.options.length; i++) {
-            const optVal = courseSelect.options[i].value.toLowerCase().trim();
-            if (optVal === decodedParam || optVal.includes(decodedParam) || decodedParam.includes(optVal.split('(')[0].trim().toLowerCase())) {
-                courseSelect.selectedIndex = i;
-                break;
+            if (courseParam && courseSelect) {
+                const decodedParam = decodeURIComponent(courseParam).toLowerCase().trim();
+                for (let i = 0; i < courseSelect.options.length; i++) {
+                    const optVal = courseSelect.options[i].value.toLowerCase().trim();
+                    if (optVal === decodedParam || optVal.includes(decodedParam) || decodedParam.includes(optVal.split('(')[0].trim().toLowerCase())) {
+                        courseSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+            onCourseChange();
+        }
+
+        // 2. Extract numeric amount from Course Name (e.g. ₹9, ₹19, ₹29, ₹49, ₹99)
+        function extractAmount(courseString) {
+            const match = courseString.match(/₹(\d+)/);
+            return match ? match[1] : '';
+        }
+
+        // 3. Update Dynamic QR & UPI Intent Link
+        function onCourseChange() {
+            updateUpiDetails();
+            checkFormCompletion();
+        }
+
+        function updateUpiDetails() {
+            const course = document.getElementById('selectedCourse').value;
+            const amount = extractAmount(course);
+
+            let upiString = `upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent(PAYEE_NAME)}&cu=INR`;
+            if (amount) {
+                upiString += `&am=${amount}&tn=RAJShiksha%20${encodeURIComponent(course.split('(')[0].trim())}`;
+            }
+
+            // Update QR image src
+            const qrImg = document.getElementById('qrImage');
+            if (qrImg) {
+                qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(upiString)}`;
+            }
+
+            // Update Direct Pay Button
+            const directBtn = document.getElementById('directUpiPayBtn');
+            const directBtnText = document.getElementById('directPayBtnText');
+            if (directBtn) directBtn.href = upiString;
+            if (directBtnText) {
+                directBtnText.textContent = amount ? `Pay ₹${amount} via PhonePe / UPI App` : `Pay via UPI App`;
             }
         }
-    }
-}
 
-        // 1. Unblur QR Code
-        function unblurQR() {
+        // 4. AUTO-UNLOCK ANIMATION CHECK
+        function checkFormCompletion() {
+            const course = document.getElementById('selectedCourse').value;
+            const name = document.getElementById('studentName').value.trim();
+            const mobile = document.getElementById('studentMobile').value.trim();
+            const email = document.getElementById('studentEmail').value.trim().toLowerCase();
+            const pass = document.getElementById('studentPassword').value;
+            const confirmPass = document.getElementById('studentConfirmPassword').value;
+
+            const isEmailValid = /^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email);
+            const isPasswordValid = pass.length >= 6 && pass === confirmPass;
+
+            if (course && name.length >= 3 && mobile.length === 10 && isEmailValid && isPasswordValid) {
+                if (!isQRUnlocked) unlockQRSystem();
+            }
+        }
+
+        function unlockQRSystem() {
+            isQRUnlocked = true;
             const qrImg = document.getElementById('qrImage');
             const overlay = document.getElementById('qrOverlay');
+            const badge = document.getElementById('qrStatusBadge');
+            const step2Badge = document.getElementById('step2Badge');
+            const step2Subtitle = document.getElementById('step2Subtitle');
+            const qrCard = document.getElementById('qrWrapperCard');
+
+            // Trigger animations
             if (qrImg) qrImg.classList.add('unblurred');
-            if (overlay) overlay.style.opacity = '0';
-            setTimeout(() => { if (overlay) overlay.style.display = 'none'; }, 300);
+            if (overlay) {
+                overlay.style.opacity = '0';
+                setTimeout(() => overlay.style.display = 'none', 300);
+            }
+            if (badge) {
+                badge.className = "text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-300 px-3 py-1 rounded-full flex items-center gap-1.5 animate-pulse";
+                badge.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-500"></i> QR Unlocked!`;
+            }
+            if (step2Badge) {
+                step2Badge.className = "w-8 h-8 rounded-xl bg-emerald-500 text-white font-bold flex items-center justify-center text-sm shadow-md transition-colors";
+            }
+            if (step2Subtitle) {
+                step2Subtitle.textContent = "QR is ready. Scan or tap button to pay.";
+            }
+            if (qrCard) {
+                qrCard.classList.add('border-primary', 'shadow-lg');
+            }
         }
 
-        // 2. Copy UPI ID
+        function manualForceUnlockQR() {
+            if (!isQRUnlocked) unlockQRSystem();
+        }
+
+        // 5. Copy UPI ID
         function copyUPI() {
-            navigator.clipboard.writeText('rajshiksha@upi');
-            alert('UPI ID (rajshiksha@upi) copied successfully!');
+            navigator.clipboard.writeText(UPI_ID);
+            alert(`UPI ID (${UPI_ID}) copied successfully!`);
         }
 
-        // 3. Mobile Number Validation
+        // 6. Form Validations
         function validatePhoneInput(input) {
             input.value = input.value.replace(/[^0-9]/g, '');
             const error = document.getElementById('phoneError');
@@ -462,78 +528,63 @@ function autoSelectCourseFromURL() {
             }
         }
 
-        // 4. Strict Email Validation (@gmail.com requirement)
         function validateEmailFormat(input) {
             const error = document.getElementById('emailError');
             const emailVal = input.value.trim().toLowerCase();
+            const isValid = /^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(emailVal);
 
-            // Check if email strictly ends with @gmail.com
-            const isValidGmail = /^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(emailVal);
-
-            if (emailVal.length > 0 && !isValidGmail) {
+            if (emailVal.length > 0 && !isValid) {
                 if (error) error.classList.remove('hidden');
-                input.classList.add('border-rose-400', 'bg-rose-50/30');
+                input.classList.add('border-rose-400');
                 return false;
             } else {
                 if (error) error.classList.add('hidden');
-                input.classList.remove('border-rose-400', 'bg-rose-50/30');
+                input.classList.remove('border-rose-400');
                 return true;
             }
         }
 
-        // 5. Password Show/Hide Toggle
         function togglePasswordVisibility(fieldId, icon) {
             const input = document.getElementById(fieldId);
             if (input.type === 'password') {
                 input.type = 'text';
-                icon.classList.remove('fa-eye');
-                icon.classList.add('fa-eye-slash');
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
             } else {
                 input.type = 'password';
-                icon.classList.remove('fa-eye-slash');
-                icon.classList.add('fa-eye');
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
             }
         }
 
-        // 6. Check Password Match
         function checkPasswordMatch() {
             const pass = document.getElementById('studentPassword').value;
             const confirmPass = document.getElementById('studentConfirmPassword').value;
             const msg = document.getElementById('passwordMatchMsg');
-
             if (!msg) return;
 
             if (confirmPass.length === 0) {
                 msg.classList.add('hidden');
                 return;
             }
-
             msg.classList.remove('hidden');
 
             if (pass === confirmPass && pass.length >= 6) {
                 msg.className = "text-xs font-bold text-emerald-600 flex items-center gap-1";
-                msg.innerHTML = `<i class="fa-solid fa-circle-check"></i> Passwords match correctly!`;
+                msg.innerHTML = `<i class="fa-solid fa-circle-check"></i> Passwords match!`;
             } else {
                 msg.className = "text-xs font-bold text-rose-500 flex items-center gap-1";
                 msg.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Passwords do not match!`;
             }
         }
 
-        // 7. Security Alert Trigger
         function showSecurityAlert(title, message) {
             const alertBox = document.getElementById('securityAlert');
-            const alertTitle = document.getElementById('alertTitle');
-            const alertMsg = document.getElementById('alertMessage');
-
-            if (alertBox) {
-                alertTitle.textContent = title;
-                alertMsg.textContent = message;
-                alertBox.classList.remove('hidden');
-                window.scrollTo({ top: alertBox.offsetTop - 100, behavior: 'smooth' });
-            }
+            document.getElementById('alertTitle').textContent = title;
+            document.getElementById('alertMessage').textContent = message;
+            alertBox.classList.remove('hidden');
+            window.scrollTo({ top: alertBox.offsetTop - 80, behavior: 'smooth' });
         }
 
-        // 8. Form Submission Handling
+        // 7. Form Submission Handling
         function handleCheckoutSubmit(e) {
             e.preventDefault();
 
@@ -549,48 +600,21 @@ function autoSelectCourseFromURL() {
             const remark = document.getElementById('studentRemark').value.trim();
             const utr = document.getElementById('transactionId').value.trim();
 
-            if (!course) {
-                alert('Please select a Test Series / eBook / Pass from dropdown.');
-                return;
-            }
+            if (!course) return alert('Please select a course / test series.');
+            if (mobile.length !== 10) return alert('Enter valid 10-digit mobile number.');
+            if (!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email)) return showSecurityAlert('INVALID EMAIL', 'Email must strictly end with @gmail.com');
+            if (pass !== confirmPass) return alert('Passwords do not match.');
+            if (utr.length !== 12) return alert('Enter valid 12-digit UTR ID.');
 
-            if (mobile.length !== 10) {
-                alert('Please enter a valid 10-digit mobile number.');
-                return;
-            }
-
-            // Strict Email Check
-            if (!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email)) {
-                showSecurityAlert('INVALID EMAIL FORMAT', 'Please correct your email address. It must strictly end with @gmail.com');
-                return;
-            }
-
-            // Password Match Check
-            if (pass !== confirmPass) {
-                alert('Password and Confirm Password must match!');
-                return;
-            }
-
-            // UTR Length Check
-            if (utr.length !== 12) {
-                alert('Please enter a valid 12-digit UTR/Transaction ID.');
-                return;
-            }
-
-            // DUPLICATE UTR CHECK (Local Verification)
             if (usedUTRs.includes(utr)) {
-                showSecurityAlert(
-                    '🚨 UNAUTHORIZED ACTIVITY DETECTED!',
-                    `Transaction ID (${utr}) has already been submitted on RAJShiksha. Duplicate or fake UTR entries are strictly monitored and flagged.`
-                );
+                showSecurityAlert('DUPLICATE UTR DETECTED', `Transaction ID (${utr}) has already been submitted on RAJShiksha.`);
                 return;
             }
 
             const submitBtn = document.getElementById('submitBtn');
             submitBtn.disabled = true;
-            submitBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Processing &amp; Syncing to Server...`;
+            submitBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin text-primary"></i> Submitting & Syncing...`;
 
-            // Prepare Payload
             const payload = {
                 timestamp: new Date().toLocaleString(),
                 selectedCourse: course,
@@ -602,10 +626,9 @@ function autoSelectCourseFromURL() {
                 studentRemark: remark || "N/A"
             };
 
-            // GOOGLE APPS SCRIPT WEBHOOK URL
             const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzxciX1KSpsWrI93WWdutYH4ea8RMtRNdcANOQ-OTFATk7Dw62aHen8zEjcTegiHOvkoA/exec';
 
-            if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_WEBHOOK_URL') {
+            if (GOOGLE_SCRIPT_URL) {
                 fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
@@ -613,50 +636,37 @@ function autoSelectCourseFromURL() {
                     body: JSON.stringify(payload)
                 }).then(() => {
                     completeSubmission(utr, name, email, course);
-                }).catch(err => {
-                    console.error('Submission error:', err);
+                }).catch(() => {
                     completeSubmission(utr, name, email, course);
                 });
             } else {
-                setTimeout(() => {
-                    completeSubmission(utr, name, email, course);
-                }, 1000);
+                setTimeout(() => completeSubmission(utr, name, email, course), 800);
             }
         }
 
-       function completeSubmission(utr, name, email, course) {
-    usedUTRs.push(utr);
-    localStorage.setItem('rajshiksha_used_utrs', JSON.stringify(usedUTRs));
+        function completeSubmission(utr, name, email, course) {
+            usedUTRs.push(utr);
+            localStorage.setItem('rajshiksha_used_utrs', JSON.stringify(usedUTRs));
 
-    const orderId = '#RAJ' + Math.floor(10000 + Math.random() * 90000);
+            const orderId = '#RAJ' + Math.floor(10000 + Math.random() * 90000);
 
-    document.getElementById('recOrderRef').textContent = orderId;
-    document.getElementById('recCourse').textContent = course;
-    document.getElementById('recStudentName').textContent = name;
-    document.getElementById('recEmail').textContent = email;
-    document.getElementById('recUTR').textContent = utr;
+            document.getElementById('recOrderRef').textContent = orderId;
+            document.getElementById('recCourse').textContent = course;
+            document.getElementById('recStudentName').textContent = name;
+            document.getElementById('recEmail').textContent = email;
+            document.getElementById('recUTR').textContent = utr;
 
-    // Update Guidance Email
-    const gEmail = document.getElementById('guidanceEmail');
-    if (gEmail) gEmail.textContent = email;
+            const waText = encodeURIComponent(`Hello RAJShiksha Team, I have paid for ${course}.\n\nName: ${name}\nEmail: ${email}\nOrder ID: ${orderId}\nUTR ID: ${utr}\n\nPlease activate my candidate account!`);
+            const waBtn = document.getElementById('whatsappHelpBtn');
+            if (waBtn) waBtn.href = `https://wa.me/919950399752?text=${waText}`;
 
-    // Configure WhatsApp Direct Help Link with Order Details
-    const waText = encodeURIComponent(`Hello Rajshiksha Team, I have paid for ${course}.\n\nName: ${name}\nEmail: ${email}\nOrder ID: ${orderId}\nUTR ID: ${utr}\n\nPlease activate my account for candidate exam login!`);
-    const waBtn = document.getElementById('whatsappHelpBtn');
-    if (waBtn) waBtn.href = `https://wa.me/919950399752?text=${waText}`;
-
-    // Show Success Modal
-    const modal = document.getElementById('successModal');
-    if (modal) {
-        modal.classList.remove('pointer-events-none', 'opacity-0');
-        modal.classList.add('opacity-100');
-        const content = document.getElementById('successModalContent');
-        if (content) {
-            content.classList.remove('scale-95');
-            content.classList.add('scale-100');
+            const modal = document.getElementById('successModal');
+            if (modal) {
+                modal.classList.remove('pointer-events-none', 'opacity-0');
+                modal.classList.add('opacity-100');
+                document.getElementById('successModalContent').classList.replace('scale-95', 'scale-100');
+            }
         }
-    }
-}
     </script>
 </body>
 </html>
