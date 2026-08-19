@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="hi" class="scroll-smooth">
 <head>
-    <base href="/raj/">
+    <base href="/">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>राजस्थान के प्रमुख संत एवं लोक देवता – सम्पूर्ण नोट्स, संप्रदाय एवं स्मरण सूत्र | RAJShiksha</title>
@@ -1302,7 +1302,7 @@
         </div>
     </div>
 
-    <!-- ═══════ FOOTER ═══════ -->
+ <!-- ═══════ FOOTER ═══════ -->
     <footer class="bg-slate-900 dark:bg-[#0a0a16] text-white pt-16 pb-8 relative overflow-hidden border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b border-white/10">
@@ -1611,6 +1611,75 @@
         });
     </script>
     <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 👇 यहाँ अपना Newsletter वाला Google Apps Script URL पेस्ट करें
+    const NEWSLETTER_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6IaDUQB0c-u56J6Mwo7U9rwaNpcNyK0ECboQnxnPwljRPzRWDQaxEXB1npfSJicQ0wA/exec';
+
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsletterBtn = document.getElementById('newsletterBtn');
+    const newsletterBtnText = document.getElementById('newsletterBtnText');
+    const newsletterEmail = document.getElementById('newsletterEmail');
+    const newsletterSuccessMsg = document.getElementById('newsletterSuccessMsg');
+
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const emailVal = newsletterEmail.value.trim();
+            if (!emailVal) return;
+
+            // 1. बटन को लोडिंग मोड में डालें
+            newsletterBtn.disabled = true;
+            newsletterBtnText.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-xs"></i>';
+            if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
+
+            // 2. डेटा तैयार करें
+            const formData = new URLSearchParams();
+            formData.append('email', emailVal);
+
+            // 3. Google Sheet में भेजें
+            fetch(NEWSLETTER_SCRIPT_URL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => {
+                finishSubmission();
+            })
+            .catch((err) => {
+                console.log('Submission complete:', err);
+                finishSubmission();
+            });
+
+            // 4. फ़ंक्शन जो सफलता के बाद बटन और मैसेज को रीसेट करता है
+            function finishSubmission() {
+                newsletterForm.reset();
+                newsletterBtn.disabled = false;
+                newsletterBtnText.textContent = 'Joined!';
+                newsletterBtn.classList.replace('bg-primary', 'bg-emerald-600');
+                
+                if (newsletterSuccessMsg) {
+                    newsletterSuccessMsg.classList.remove('hidden');
+                    newsletterSuccessMsg.classList.add('flex');
+                }
+
+                if (typeof showToast === 'function') {
+                    showToast('🎉 You have subscribed to RAJShiksha notifications!');
+                }
+
+                // 4 सेकंड बाद बटन वापस सामान्य "Join" हो जाएगा
+                setTimeout(() => {
+                    newsletterBtnText.textContent = 'Join';
+                    newsletterBtn.classList.replace('bg-emerald-600', 'bg-primary');
+                    if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
+                }, 4000);
+            }
+        });
+    }
+});
+</script>
+    
+<script>
 document.addEventListener('DOMContentLoaded', () => {
     // 👇 यहाँ अपना Newsletter वाला Google Apps Script URL पेस्ट करें
     const NEWSLETTER_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6IaDUQB0c-u56J6Mwo7U9rwaNpcNyK0ECboQnxnPwljRPzRWDQaxEXB1npfSJicQ0wA/exec';
