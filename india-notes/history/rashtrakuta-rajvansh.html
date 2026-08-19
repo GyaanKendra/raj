@@ -1162,26 +1162,26 @@
         <section class="py-12 bg-white dark:bg-[#0f0f1a] border-t border-slate-100 dark:border-slate-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-8 reveal">
-                    <h3 class="font-poppins font-bold text-2xl text-dark dark:text-white">अन्य महत्वपूर्ण इतिहास नोट्स पढ़ें</h3>
-                    <p class="text-muted text-sm font-manrope">भारत एवं राजस्थान के प्रमुख राजवंशों व विषयों का संपूर्ण अध्ययन</p>
+                    <h3 class="font-poppins font-bold text-2xl text-dark dark:text-white">अन्य महत्वपूर्ण नोट्स पढ़ें</h3>
+                    <p class="text-muted text-sm font-manrope">भारत एवं राजस्थान विषयों का संपूर्ण अध्ययन</p>
                 </div>
                 <div class="flex flex-wrap justify-center gap-3 reveal reveal-delay-1">
-                    <a href="chalukya-rajvansh" class="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-50 dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-manrope font-bold text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all shadow-subtleCard group">
+                    <a href="rajasthan-notes/history/" class="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-50 dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-manrope font-bold text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all shadow-subtleCard group">
                         <i class="fa-solid fa-gopuram text-primary group-hover:text-white transition-colors"></i>
-                        <span>चालुक्य राजवंश</span>
+                        <span>राजस्‍थान इतिहास</span>
                     </a>
-                    <a href="chola-rajvansh" class="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-50 dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-manrope font-bold text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all shadow-subtleCard group">
+                    <a href="rajasthan-notes/geography/" class="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-50 dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-manrope font-bold text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all shadow-subtleCard group">
                         <i class="fa-solid fa-ship text-secondary group-hover:text-white transition-colors"></i>
-                        <span>चोल साम्राज्य</span>
+                        <span>राजस्‍थान भूगोल</span>
                     </a>
-                    <a href="pratihara-rajvansh" class="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-50 dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-manrope font-bold text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all shadow-subtleCard group">
+                    <a href="rajasthan-notes/culture/" class="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-50 dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-manrope font-bold text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all shadow-subtleCard group">
                         <i class="fa-solid fa-landmark text-accent group-hover:text-white transition-colors"></i>
-                        <span>गुर्ज़र-प्रतिहार वंश</span>
+                        <span>राजस्‍थान कला एवं संस्‍कृति</span>
                     </a>
-                    <a href="gupta-rajvansh" class="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-50 dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-manrope font-bold text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all shadow-subtleCard group">
+           <!--         <a href="gupta-rajvansh" class="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-50 dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-manrope font-bold text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all shadow-subtleCard group">
                         <i class="fa-solid fa-coins text-support group-hover:text-white transition-colors"></i>
                         <span>गुप्त साम्राज्य</span>
-                    </a>
+                    </a>-->
                 </div>
             </div>
         </section>
@@ -1454,6 +1454,75 @@
             }
         }
     });
+</script>
+	
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 👇 यहाँ अपना Newsletter वाला Google Apps Script URL पेस्ट करें
+    const NEWSLETTER_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6IaDUQB0c-u56J6Mwo7U9rwaNpcNyK0ECboQnxnPwljRPzRWDQaxEXB1npfSJicQ0wA/exec';
+
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsletterBtn = document.getElementById('newsletterBtn');
+    const newsletterBtnText = document.getElementById('newsletterBtnText');
+    const newsletterEmail = document.getElementById('newsletterEmail');
+    const newsletterSuccessMsg = document.getElementById('newsletterSuccessMsg');
+
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const emailVal = newsletterEmail.value.trim();
+            if (!emailVal) return;
+
+            // 1. बटन को लोडिंग मोड में डालें
+            newsletterBtn.disabled = true;
+            newsletterBtnText.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-xs"></i>';
+            if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
+
+            // 2. डेटा तैयार करें
+            const formData = new URLSearchParams();
+            formData.append('email', emailVal);
+
+            // 3. Google Sheet में भेजें
+            fetch(NEWSLETTER_SCRIPT_URL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => {
+                finishSubmission();
+            })
+            .catch((err) => {
+                console.log('Submission complete:', err);
+                finishSubmission();
+            });
+
+            // 4. फ़ंक्शन जो सफलता के बाद बटन और मैसेज को रीसेट करता है
+            function finishSubmission() {
+                newsletterForm.reset();
+                newsletterBtn.disabled = false;
+                newsletterBtnText.textContent = 'Joined!';
+                newsletterBtn.classList.replace('bg-primary', 'bg-emerald-600');
+                
+                if (newsletterSuccessMsg) {
+                    newsletterSuccessMsg.classList.remove('hidden');
+                    newsletterSuccessMsg.classList.add('flex');
+                }
+
+                if (typeof showToast === 'function') {
+                    showToast('🎉 You have subscribed to RAJShiksha notifications!');
+                }
+
+                // 4 सेकंड बाद बटन वापस सामान्य "Join" हो जाएगा
+                setTimeout(() => {
+                    newsletterBtnText.textContent = 'Join';
+                    newsletterBtn.classList.replace('bg-emerald-600', 'bg-primary');
+                    if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
+                }, 4000);
+            }
+        });
+    }
+});
 </script>
 </body>
 </html>
