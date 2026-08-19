@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="hi" class="scroll-smooth">
 <head>
-    <base href="/raj/">
+    <base href="/">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>रंगमहल सभ्यता (Rangmahal Civilization) – हनुमानगढ़: कुषाण व गुप्तकालीन पुरातात्विक अध्ययन | RAJShiksha</title>
@@ -1418,63 +1418,75 @@
         });
     </script>
 
-    <!-- Newsletter Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const NEWSLETTER_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6IaDUQB0c-u56J6Mwo7U9rwaNpcNyK0ECboQnxnPwljRPzRWDQaxEXB1npfSJicQ0wA/exec';
+    
 
-            const newsletterForm = document.getElementById('newsletterForm');
-            const newsletterBtn = document.getElementById('newsletterBtn');
-            const newsletterBtnText = document.getElementById('newsletterBtnText');
-            const newsletterEmail = document.getElementById('newsletterEmail');
-            const newsletterSuccessMsg = document.getElementById('newsletterSuccessMsg');
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 👇 यहाँ अपना Newsletter वाला Google Apps Script URL पेस्ट करें
+    const NEWSLETTER_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6IaDUQB0c-u56J6Mwo7U9rwaNpcNyK0ECboQnxnPwljRPzRWDQaxEXB1npfSJicQ0wA/exec';
 
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', function (e) {
-                    e.preventDefault();
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsletterBtn = document.getElementById('newsletterBtn');
+    const newsletterBtnText = document.getElementById('newsletterBtnText');
+    const newsletterEmail = document.getElementById('newsletterEmail');
+    const newsletterSuccessMsg = document.getElementById('newsletterSuccessMsg');
 
-                    const emailVal = newsletterEmail.value.trim();
-                    if (!emailVal) return;
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function (e) {
+            e.preventDefault();
 
-                    newsletterBtn.disabled = true;
-                    newsletterBtnText.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-xs"></i>';
+            const emailVal = newsletterEmail.value.trim();
+            if (!emailVal) return;
+
+            // 1. बटन को लोडिंग मोड में डालें
+            newsletterBtn.disabled = true;
+            newsletterBtnText.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-xs"></i>';
+            if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
+
+            // 2. डेटा तैयार करें
+            const formData = new URLSearchParams();
+            formData.append('email', emailVal);
+
+            // 3. Google Sheet में भेजें
+            fetch(NEWSLETTER_SCRIPT_URL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => {
+                finishSubmission();
+            })
+            .catch((err) => {
+                console.log('Submission complete:', err);
+                finishSubmission();
+            });
+
+            // 4. फ़ंक्शन जो सफलता के बाद बटन और मैसेज को रीसेट करता है
+            function finishSubmission() {
+                newsletterForm.reset();
+                newsletterBtn.disabled = false;
+                newsletterBtnText.textContent = 'Joined!';
+                newsletterBtn.classList.replace('bg-primary', 'bg-emerald-600');
+                
+                if (newsletterSuccessMsg) {
+                    newsletterSuccessMsg.classList.remove('hidden');
+                    newsletterSuccessMsg.classList.add('flex');
+                }
+
+                if (typeof showToast === 'function') {
+                    showToast('🎉 You have subscribed to RAJShiksha notifications!');
+                }
+
+                // 4 सेकंड बाद बटन वापस सामान्य "Join" हो जाएगा
+                setTimeout(() => {
+                    newsletterBtnText.textContent = 'Join';
+                    newsletterBtn.classList.replace('bg-emerald-600', 'bg-primary');
                     if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
-
-                    const formData = new URLSearchParams();
-                    formData.append('email', emailVal);
-
-                    fetch(NEWSLETTER_SCRIPT_URL, {
-                        method: 'POST',
-                        body: formData,
-                        mode: 'no-cors'
-                    })
-                    .then(() => { finishSubmission(); })
-                    .catch((err) => { finishSubmission(); });
-
-                    function finishSubmission() {
-                        newsletterForm.reset();
-                        newsletterBtn.disabled = false;
-                        newsletterBtnText.textContent = 'Joined!';
-                        newsletterBtn.classList.replace('bg-primary', 'bg-emerald-600');
-                        
-                        if (newsletterSuccessMsg) {
-                            newsletterSuccessMsg.classList.remove('hidden');
-                            newsletterSuccessMsg.classList.add('flex');
-                        }
-
-                        if (typeof showToast === 'function') {
-                            showToast('🎉 You have subscribed to RAJShiksha notifications!');
-                        }
-
-                        setTimeout(() => {
-                            newsletterBtnText.textContent = 'Join';
-                            newsletterBtn.classList.replace('bg-emerald-600', 'bg-primary');
-                            if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
-                        }, 4000);
-                    }
-                });
+                }, 4000);
             }
         });
-    </script>
+    }
+});
+</script>
 </body>
 </html>
