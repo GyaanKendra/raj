@@ -9,6 +9,7 @@
     <meta name="keywords" content="Rajasthan Cultural Personalities, राजस्थान के प्रमुख सांस्कृतिक व्यक्तित्व, Komal Kothari, Devilal Samar, Vijaydan Detha, Allah Jilai Bai, Kripal Singh Shekhawat, Gulabo Sapera, Sakar Khan, Kanhaiyalal Sethia, RAS Art and Culture Notes, RPSC Exam Prep" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="author" content="RAJShiksha" />
+    <meta name="application-name" content="RAJShiksha" />
     <link rel="canonical" href="https://rajshiksha.in/rajasthan-notes/culture/sanskritik-vyaktitva" />
     
     <!-- Favicon -->
@@ -24,6 +25,16 @@
     <meta property="og:description" content="कोमल कोठारी, देवीलाल सामर, विजयदान देथा, कृपाल सिंह शेखावत, पद्मश्री प्राप्त कलाकार एवं संगीतज्ञों का प्रामाणिक संकलन।" />
     <meta property="og:image" content="https://rajshiksha.in/assets/images/default-og.webp">
     <meta property="og:url" content="https://rajshiksha.in/rajasthan-notes/culture/sanskritik-vyaktitva" />
+    <meta property="og:site_name" content="RAJShiksha" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T09LEQH7V6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T09LEQH7V6');
+    </script>
 
     <!-- Google Structured Data / Article & FAQ Schema -->
     <script type="application/ld+json">
@@ -41,8 +52,8 @@
           "description": "राजस्थान के लोक कला शोधकर्ता, संगीतज्ञ, नृत्य कलाकार, शिल्पकार एवं साहित्यकारों का परीक्षा-उपयोगी वर्गीकरण।",
           "image": "https://rajshiksha.in/assets/images/default-og.webp",
           "inLanguage": "hi-IN",
-          "datePublished": "2026-08-10T08:00:00+05:30",
-          "dateModified": "2026-08-15T10:00:00+05:30",
+          "datePublished": "2026-08-15T08:00:00+05:30",
+          "dateModified": "2026-08-20T12:00:00+05:30",
           "author": {
             "@type": "Organization",
             "name": "RAJShiksha",
@@ -108,10 +119,10 @@
     }
     </script>
 
-    <!-- Google Fonts & Tailwind -->
+    <!-- Google Fonts, Tailwind, Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -133,27 +144,14 @@
                         poppins: ['Poppins', 'sans-serif'],
                         manrope: ['Manrope', 'sans-serif'],
                         inter: ['Inter', 'sans-serif'],
+                        devanagari: ['Noto Sans Devanagari', 'sans-serif'],
                     },
                     boxShadow: {
                         premium: '0 12px 30px -10px rgba(255, 107, 0, 0.15)',
                         glowPrimary: '0 0 40px -5px rgba(255, 107, 0, 0.18)',
                         subtleCard: '0 4px 20px -2px rgba(15, 23, 42, 0.03)',
                         cardHover: '0 20px 45px -10px rgba(15, 23, 42, 0.06)',
-                    },
-                    animation: {
-                        'float-slow': 'float-slow 8s ease-in-out infinite',
-                        'gradient-x': 'gradient-x 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        'float-slow': {
-                            '0%, 100%': { transform: 'translateY(0px) rotate(-1.5deg)' },
-                            '50%': { transform: 'translateY(-8px) rotate(-2.5deg)' },
-                        },
-                        'gradient-x': {
-                            '0%, 100%': { backgroundPosition: '0% 50%' },
-                            '50%': { backgroundPosition: '100% 50%' },
-                        }
-                    },
+                    }
                 }
             }
         }
@@ -167,13 +165,14 @@
         .dark ::-webkit-scrollbar-track { background: #1a1a2e; }
         .dark ::-webkit-scrollbar-thumb { background: #ff6b00; }
         html { scroll-behavior: smooth; }
-        body { transition: background-color 0.4s ease, color 0.3s ease; }
+        body { font-family: 'Noto Sans Devanagari', 'Inter', sans-serif; transition: background-color 0.4s ease, color 0.3s ease; }
         .dark body { background: #0f0f1a; color: #e2e8f0; }
         .dark .bg-white { background: #1a1a2e !important; }
         .dark .bg-slate-50 { background: #16162a !important; }
         .dark .bg-lightBg { background: #0f0f1a !important; }
         .dark .bg-slateBg { background: #12121f !important; }
         .dark .border-slate-100 { border-color: #2a2a42 !important; }
+        .dark .border-slate-200 { border-color: #3a3a52 !important; }
         .dark .text-dark { color: #e2e8f0 !important; }
         .dark .text-muted { color: #94a3b8 !important; }
         .dark .shadow-subtleCard { box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.3) !important; }
@@ -182,9 +181,8 @@
         .dark .faq-content { color: #cbd5e1 !important; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .reveal { opacity: 0; transform: translateY(35px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.visible { opacity: 1; transform: translateY(0); }
-        .gradient-text { background-size: 200% 200%; animation: gradient-x 4s ease-in-out infinite; }
         .theme-toggle { transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
         .theme-toggle:hover { transform: rotate(20deg) scale(1.1); }
         .theme-toggle .sun-icon, .theme-toggle .moon-icon { transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: absolute; }
@@ -197,31 +195,36 @@
         .fact-highlight { background: linear-gradient(120deg, rgba(255, 107, 0, 0.08) 0%, rgba(255, 62, 108, 0.08) 100%); border-left: 4px solid #FF6B00; }
         .rpsc-highlight { background: linear-gradient(120deg, rgba(37, 99, 235, 0.08) 0%, rgba(255, 107, 0, 0.08) 100%); border-left: 4px solid #2563EB; }
         .trick-box { background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(37, 99, 235, 0.08) 100%); border-left: 4px solid #7C3AED; }
-        .breadcrumb a { transition: color 0.2s; }
-        .breadcrumb a:hover { color: #FF6B00; }
         .civ-grid .civ-card { transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
-        .civ-grid .civ-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 16px 35px -8px rgba(15, 23, 42, 0.1); }
-        .dark .civ-grid .civ-card:hover { box-shadow: 0 16px 35px -8px rgba(0, 0, 0, 0.4); }
+        .civ-grid .civ-card:hover { transform: translateY(-4px); box-shadow: 0 16px 35px -10px rgba(15, 23, 42, 0.1); }
+        .dark .civ-grid .civ-card:hover { box-shadow: 0 16px 35px -10px rgba(0, 0, 0, 0.4); }
         .faq-btn[aria-expanded="true"] .faq-icon { transform: rotate(180deg); }
         .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; }
-        .faq-btn[aria-expanded="true"] + .faq-content { max-height: 650px; padding-bottom: 1.25rem; }
+        .faq-btn[aria-expanded="true"]+.faq-content { max-height: 600px; padding-bottom: 1.25rem; }
         .custom-table-wrap { overflow-x: auto; }
         .custom-table-wrap table { min-width: 640px; width: 100%; border-collapse: collapse; }
-        .custom-table-wrap th { background: linear-gradient(135deg, #FF6B00, #FF3E6C); color: #fff; font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.75rem 0.9rem; text-align: left; }
-        .custom-table-wrap td { padding: 0.65rem 0.9rem; font-size: 0.82rem; border-bottom: 1px solid #e2e8f0; }
+        .custom-table-wrap th { background: linear-gradient(135deg, #FF6B00, #FF3E6C); color: #fff; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.75rem 0.8rem; text-align: left; }
+        .custom-table-wrap td { padding: 0.65rem 0.8rem; font-size: 0.82rem; border-bottom: 1px solid #e2e8f0; }
         .dark .custom-table-wrap td { border-bottom-color: #2a2a42; }
         .custom-table-wrap tr:nth-child(even) { background: rgba(255, 107, 0, 0.025); }
         .dark .custom-table-wrap tr:nth-child(even) { background: rgba(255, 107, 0, 0.05); }
-    </style>
-    <style>
-        body, html { -webkit-user-select: none !important; -moz-user-select: none !important; -ms-user-select: none !important; user-select: none !important; }
-        img { -webkit-user-drag: none !important; user-drag: none !important; pointer-events: none !important; }
+        body, html {
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+        }
+        img {
+            -webkit-user-drag: none !important;
+            user-drag: none !important;
+            pointer-events: none !important;
+        }
     </style>
 </head>
 
-<body class="bg-[#FFFDFB] text-dark font-inter overflow-x-hidden selection:bg-primary selection:text-white transition-colors duration-300 text-[15px]">
+<body class="bg-[#FFFDFB] text-dark font-devanagari overflow-x-hidden selection:bg-primary selection:text-white transition-colors duration-300 text-[15px]">
 
-    <!-- ═══════ PRELOADER ═══════ -->
+    <!-- PRELOADER -->
     <div id="loader" class="fixed inset-0 bg-[#FFFDFB] dark:bg-[#0f0f1a] z-[9999] flex items-center justify-center transition-opacity duration-300">
         <div class="relative flex flex-col items-center">
             <div class="relative w-14 h-14">
@@ -234,12 +237,12 @@
         </div>
     </div>
 
-    <!-- ═══════ SCROLL PROGRESS ═══════ -->
+    <!-- SCROLL PROGRESS -->
     <div class="fixed top-0 left-0 w-full h-[3px] bg-slate-100 dark:bg-slate-800 z-[999]">
         <div id="scrollProgress" class="h-full bg-gradient-to-r from-primary via-secondary to-accent w-0 transition-all duration-75"></div>
     </div>
 
-    <!-- ═══════ HEADER ═══════ -->
+    <!-- HEADER -->
     <header id="mainHeader" class="sticky top-0 z-[100] transition-all duration-300 w-full bg-[#FFFDFB]/95 dark:bg-[#0f0f1a]/95 backdrop-blur-md border-b border-transparent dark:border-slate-800">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="index" class="flex items-center gap-3 group">
@@ -255,30 +258,33 @@
             </a>
 
             <div class="hidden lg:flex items-center gap-8 font-manrope font-semibold text-base text-muted dark:text-slate-300">
-                <a href="index" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">Home</a>
-                <a href="about" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">About</a>
-                <a href="test-series/" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">Test Series</a>
+                <a href="index" class="hover:text-primary transition-colors py-2">Home</a>
+                <a href="about" class="hover:text-primary transition-colors py-2">About</a>
+                <a href="test-series/" class="hover:text-primary transition-colors py-2">Test Series</a>
                 <a href="notes/" class="text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary/60">Notes</a>
-                <a href="contact" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">Contact</a>
+                <a href="contact" class="hover:text-primary transition-colors py-2">Contact</a>
             </div>
 
             <div class="flex items-center gap-3 lg:gap-4">
-                <button id="themeToggle" class="theme-toggle w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-primary/10 dark:hover:bg-primary/20 transition-all relative" aria-label="Toggle dark mode">
+                <button id="themeToggle" class="theme-toggle w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-primary/10 transition-all relative" aria-label="Toggle dark mode">
                     <i class="fa-regular fa-sun sun-icon text-yellow-500 text-[15px]"></i>
                     <i class="fa-regular fa-moon moon-icon text-slate-400 text-[15px]"></i>
                 </button>
-                <a href="payment" class="hidden lg:inline-flex items-center justify-center px-5 py-2.5 font-manrope font-extrabold text-[15px] text-white bg-slate-900 dark:bg-primary rounded-xl hover:bg-primary dark:hover:bg-primary/90 transition-all shadow-subtleCard group">
+
+                <a href="payment" class="hidden lg:inline-flex items-center justify-center px-5 py-2.5 font-manrope font-extrabold text-[15px] text-white bg-slate-900 dark:bg-primary rounded-xl hover:bg-primary transition-all shadow-subtleCard group">
                     <span class="mr-2">Buy Now</span>
                     <i class="fa-solid fa-arrow-right text-[11px] transition-transform group-hover:translate-x-1"></i>
                 </a>
+
                 <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-xl text-dark dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle Navigation">
-                    <svg id="hamburgerIcon" class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg id="hamburgerIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
         </nav>
 
+        <!-- Mobile Drawer -->
         <div id="mobileMenu" class="hidden lg:hidden fixed inset-x-0 top-20 bg-white dark:bg-[#1a1a2e] border-b border-slate-100 dark:border-slate-800 shadow-xl px-6 py-8 transition-all duration-300">
             <div class="flex flex-col gap-4 font-manrope font-bold text-lg text-dark/85 dark:text-white/85">
                 <a href="index" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">Home</a>
@@ -286,63 +292,71 @@
                 <a href="test-series/" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">Test Series</a>
                 <a href="notes/" class="text-primary py-2 border-b border-slate-50 dark:border-slate-800">Notes</a>
                 <a href="contact" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">Contact</a>
-                <div class="flex items-center gap-4 mt-2 pt-2 border-t border-slate-100 dark:border-slate-800">
-                    <a href="payment" class="flex-1 inline-flex items-center justify-center px-6 py-4 text-white bg-gradient-to-r from-primary to-secondary rounded-xl text-center shadow-premium font-extrabold text-base">Buy Now</a>
+                <div class="mt-2 pt-2 border-t border-slate-100 dark:border-slate-800">
+                    <a href="payment" class="w-full inline-flex items-center justify-center px-6 py-3.5 text-white bg-gradient-to-r from-primary to-secondary rounded-xl text-center shadow-premium font-extrabold text-base">Buy Now</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- ═══════ MAIN CONTENT ═══════ -->
+    <!-- MAIN CONTENT -->
     <main>
-        <!-- ─── BREADCRUMB ─── -->
-        <div class="bg-slate-50 dark:bg-[#16162a] border-b border-slate-100 dark:border-slate-800 py-2.5 px-4 text-xs font-manrope font-medium text-muted dark:text-slate-400">
-            <div class="max-w-7xl mx-auto flex flex-wrap items-center gap-1.5 breadcrumb">
+
+        <!-- BREADCRUMB -->
+        <div class="bg-slate-50 dark:bg-[#16162a] border-b border-slate-100 dark:border-slate-800 py-2 px-4 text-xs font-manrope font-medium text-muted dark:text-slate-400">
+            <div class="max-w-7xl mx-auto flex flex-wrap items-center gap-1.5">
                 <a href="index" class="hover:text-primary transition-colors"><i class="fa-solid fa-house mr-1"></i>Home</a>
                 <span class="text-slate-300 dark:text-slate-600">/</span>
                 <a href="notes/" class="hover:text-primary transition-colors">Notes</a>
                 <span class="text-slate-300 dark:text-slate-600">/</span>
-                <a href="rajasthan-notes/culture/" class="hover:text-primary transition-colors">कला एवं संस्कृति</a>
+                <a href="rajasthan-notes/culture/" class="hover:text-primary transition-colors">राजस्थान की संस्कृति</a>
                 <span class="text-slate-300 dark:text-slate-600">/</span>
                 <span class="text-primary font-semibold">प्रमुख सांस्कृतिक व्यक्तित्व</span>
             </div>
         </div>
 
-        <!-- ─── HERO SECTION ─── -->
+        <!-- HERO SECTION -->
         <section class="relative pt-12 pb-16 overflow-hidden bg-gradient-to-b from-lightBg via-[#FFFDF9] to-white dark:from-[#0f0f1a] dark:via-[#12121f] dark:to-[#0f0f1a]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="relative rounded-[32px] bg-slate-50 dark:bg-[#16162a] border border-slate-100 dark:border-slate-800 overflow-hidden shadow-subtleCard">
                     <div class="relative min-h-[420px] lg:min-h-[380px] flex items-center px-6 md:px-12 lg:px-16 py-10">
+
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full relative z-10">
+
                             <!-- Left Column -->
                             <div class="lg:col-span-8 flex flex-col items-start text-left">
-                                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold font-poppins bg-primary/10 text-primary uppercase tracking-wider mb-4">
-                                    <i class="fa-solid fa-award text-[13px]"></i>
+                                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-sm font-bold font-poppins bg-primary/10 text-primary uppercase tracking-wider mb-4">
+                                    <i class="fa-solid fa-award text-[14px]"></i>
                                     मरुधरा के रत्न: कला, संगीत व संस्कृति के अग्रदूत
                                 </span>
-                                <h1 class="hero-title font-poppins font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-[46px] text-dark dark:text-white leading-[1.12] tracking-tight mb-4">
-                                    राजस्थान के प्रमुख सांस्कृतिक व्यक्तित्व: <br />
-                                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent gradient-text">लोक कलाकार, संगीतज्ञ, शिल्पकार व साहित्यकार</span>
+                                <h1 class="hero-title font-poppins font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-[45px] text-dark dark:text-white leading-[1.12] tracking-tight mb-4">
+                                    राजस्थान के सांस्कृतिक व्यक्तित्व : <br />
+                                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-red-500 to-amber-600">लोक कलाकार, संगीतज्ञ, शिल्पकार व साहित्यकार</span>
                                 </h1>
-                                <p class="font-manrope text-base md:text-[16px] text-muted dark:text-slate-300 mb-6 max-w-2xl leading-relaxed">
+                                <p class="font-manrope text-base md:text-[17px] text-muted dark:text-slate-300 mb-6 max-w-2xl leading-relaxed">
                                     राजस्थानी संस्कृति को वैश्विक मंच पर पहचान दिलाने वाले शिखर व्यक्तित्व: <strong class="text-dark dark:text-white">कोमल कोठारी</strong> (रूपायन संस्थान), <strong class="text-dark dark:text-white">देवीलाल सामर</strong> (लोक कला मंडल), <strong class="text-dark dark:text-white">विजयदान देथा 'बिज्जी'</strong>, <strong class="text-dark dark:text-white">अल्लाह जिलाई बाई</strong>, <strong class="text-dark dark:text-white">कृपाल सिंह शेखावत</strong> (ब्लू पॉटरी), <strong class="text-dark dark:text-white">गुलाबो सपेरा</strong> एवं <strong class="text-dark dark:text-white">कन्हैयालाल सेठिया</strong> — <span class="text-primary font-semibold">RAS, RPSC एवं RSSB</span> परीक्षाओं हेतु सम्पूर्ण प्रामाणिक अध्ययन सामग्री।
                                 </p>
                                 <div class="flex flex-wrap gap-3.5 w-full sm:w-auto">
-                                    <a href="#explore-topics" class="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 font-poppins font-extrabold text-white bg-gradient-to-r from-primary to-secondary rounded-xl hover:opacity-95 hover:shadow-glowPrimary hover:scale-[1.02] active:scale-95 transition-all shadow-premium text-[15px] tracking-wide group">
-                                        <span>सम्पूर्ण व्यक्तित्व पढ़ें</span>
-                                        <i class="fa-solid fa-arrow-down text-[12px] transition-transform group-hover:translate-y-0.5"></i>
+                                    <a href="rajasthan-notes/culture/sanskritik-vyaktitva#researchers" class="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 font-poppins font-extrabold text-white bg-gradient-to-r from-primary to-secondary rounded-xl hover:opacity-95 hover:shadow-glowPrimary transition-all shadow-premium text-[15px] tracking-wide group">
+                                        <span>विषय देखें</span>
+                                        <i class="fa-solid fa-arrow-right text-[12px] transition-transform group-hover:translate-x-1"></i>
                                     </a>
-                                    <a href="#tricks" class="inline-flex items-center justify-center px-7 py-3.5 font-manrope font-extrabold text-dark dark:text-white border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1a1a2e] rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-[1.02] active:scale-95 transition-all text-[15px] tracking-wide">स्मरण सूत्र &amp; ट्रिक्स</a>
+                                    <a href="rajasthan-notes/culture/sanskritik-vyaktitva#exam-facts" class="inline-flex items-center justify-center px-7 py-3.5 font-manrope font-extrabold text-dark dark:text-white border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1a1a2e] rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-all text-[15px] tracking-wide">परीक्षा तथ्य</a>
                                 </div>
-                                <div class="mt-6 flex flex-wrap items-center gap-3">
-                                    <span class="flex items-center gap-1.5 px-3 py-1 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 rounded-full text-xs font-bold">
-                                        <i class="fa-solid fa-check-circle text-emerald-500"></i> प्रामाणिक ग्रंथ अकादमी आधारित
+
+                                <!-- Trust Badges -->
+                                <div class="mt-6 flex flex-wrap items-center gap-4">
+                                    <span class="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 rounded-full text-xs font-bold">
+                                        <i class="fa-solid fa-check-circle text-emerald-500"></i>
+                                        100% प्रामाणिक तथ्य
                                     </span>
-                                    <span class="flex items-center gap-1.5 px-3 py-1 bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-400 rounded-full text-xs font-bold">
-                                        <i class="fa-solid fa-star text-amber-500"></i> 100% Authentic RPSC
+                                    <span class="flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-400 rounded-full text-xs font-bold">
+                                        <i class="fa-solid fa-star text-amber-500"></i>
+                                        RAS/RPSC विशेष
                                     </span>
-                                    <span class="flex items-center gap-1.5 px-3 py-1 bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-400 rounded-full text-xs font-bold">
-                                        <i class="fa-solid fa-wand-magic-sparkles text-purple-500"></i> पद्म पुरस्कार विजेता सूची
+                                    <span class="flex items-center gap-1.5 px-3 py-1.5 bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-400 rounded-full text-xs font-bold">
+                                        <i class="fa-solid fa-wand-magic-sparkles text-purple-500"></i>
+                                        पद्म पुरस्कार विजेता सूची
                                     </span>
                                 </div>
                             </div>
@@ -353,7 +367,7 @@
                                     <div class="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div>
                                     <div class="flex items-center justify-between mb-3">
                                         <span class="text-xs font-bold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full flex items-center gap-1">
-                                            <i class="fa-solid fa-fire"></i> High Yield Core Topic
+                                            <i class="fa-solid fa-fire"></i> Core Subject
                                         </span>
                                         <span class="text-xs font-bold text-slate-400">हर परीक्षा में 3-4 प्रश्न</span>
                                     </div>
@@ -373,621 +387,867 @@
                                     </div>
                                 </div>
 
-                                <button onclick="openOfferModal()" class="flex items-center justify-center gap-2 py-3.5 bg-slate-900 dark:bg-primary text-white font-manrope font-extrabold text-sm rounded-xl hover:bg-primary dark:hover:bg-primary/90 transition-all shadow-premium group">
-                                    <i class="fa-solid fa-pen-nib text-[12px] text-primary dark:text-white group-hover:text-white transition-colors"></i>
-                                    <span>सांस्कृतिक व्यक्तित्व : 100+ Practice MCQs</span>
+                                <button onclick="openOfferModal()" class="flex items-center justify-center gap-2 py-3.5 bg-slate-900 dark:bg-slate-800 text-white font-manrope font-extrabold text-sm rounded-xl hover:bg-primary transition-all shadow-premium group cursor-pointer">
+                                    <i class="fa-solid fa-book-open text-[10px] text-primary group-hover:text-white transition-colors"></i>
+                                    <span>सांस्कृतिक व्यक्तित्व : Complete Test</span>
                                     <i class="fa-solid fa-chevron-right text-[10px] transition-transform group-hover:translate-x-1"></i>
                                 </button>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========== STICKY TABLE OF CONTENTS ========== -->
-        <div class="sticky top-20 z-40 bg-white/90 dark:bg-[#0f0f1a]/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 py-2.5 px-4 shadow-sm transition-all duration-300">
+        <!-- STICKY TABLE OF CONTENTS -->
+        <div class="sticky top-20 z-40 bg-white/95 dark:bg-[#0f0f1a]/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 py-2.5 px-4 shadow-sm transition-all duration-300">
             <div class="max-w-7xl mx-auto flex flex-wrap items-center gap-2 md:gap-3 overflow-x-auto no-scrollbar">
-                <span class="text-xs font-bold text-muted dark:text-slate-400 font-manrope tracking-wider uppercase shrink-0 mr-1">📑 विषय सूची :</span>
-                <a href="#researchers" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">1. लोक कला संरक्षक व शोधकर्ता</a>
-                <a href="#musicians" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">2. शास्त्रीय व लोक संगीतज्ञ</a>
-                <a href="#instrumentalists" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">3. प्रमुख लोक वाद्य वादक</a>
-                <a href="#dancers-theater" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">4. लोक नृत्य व नाट्य कलाकार</a>
-                <a href="#craftspersons" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">5. सिद्धहस्त शिल्पकार व चित्रकार</a>
-                <a href="#writers-historians" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">6. प्रमुख साहित्यकार व भाषाविद</a>
-                <a href="#master-table" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">7. व्यक्तित्व व उपाधि मास्टर टेबल</a>
-                <a href="#tricks" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">8. याद रखने की धांसू ट्रिक्स</a>
-                <a href="#exam-facts" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">9. RPSC One-Liners</a>
+                <span class="text-xs font-bold text-muted dark:text-slate-400 font-manrope tracking-wider uppercase shrink-0 mr-1">📑 विषय-सूची :</span>
+                <a href="rajasthan-notes/culture/sanskritik-vyaktitva#researchers" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">1. लोक कला संरक्षक व शोधकर्ता</a>
+                <a href="rajasthan-notes/culture/sanskritik-vyaktitva#musicians" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">2. शास्त्रीय व लोक संगीतज्ञ</a>
+                <a href="rajasthan-notes/culture/sanskritik-vyaktitva#instrumentalists" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">3. प्रमुख लोक वाद्य वादक</a>
+                <a href="rajasthan-notes/culture/sanskritik-vyaktitva#dancers-theater" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">4. लोक नृत्य व नाट्य कलाकार</a>
+                <a href="rajasthan-notes/culture/sanskritik-vyaktitva#craftspersons" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">5. सिद्धहस्त शिल्पकार व चित्रकार</a>
+                <a href="rajasthan-notes/culture/sanskritik-vyaktitva#writers-historians" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">6. प्रमुख साहित्यकार व इतिहासकार</a>
+                <a href="rajasthan-notes/culture/sanskritik-vyaktitva#master-table" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">7. व्यक्तित्व व उपाधि मास्टर चार्ट</a>
+                <a href="rajasthan-notes/culture/sanskritik-vyaktitva#tricks" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">8. स्मरण सूत्र व ट्रिक्स</a>
+                <a href="rajasthan-notes/culture/sanskritik-vyaktitva#exam-facts" class="sticky-nav-link text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-primary whitespace-nowrap px-2.5 py-1 rounded-lg hover:bg-primary/5">9. परीक्षा तथ्य</a>
             </div>
         </div>
 
-        <!-- ─── EXPLORE TOPICS SECTION ─── -->
-        <section id="explore-topics" class="py-12 md:py-20 bg-white dark:bg-[#0f0f1a] relative overflow-hidden">
+        <!-- TOP TOPIC GRID & SEQUENTIAL NAVIGATION -->
+        <section class="pt-8 pb-4 bg-white dark:bg-[#0f0f1a]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
+                
                 <!-- TOPIC NAVIGATION GRID -->
-                <div class="mb-14 reveal">
+                <div class="mb-8 reveal">
                     <div class="flex items-center justify-between flex-wrap gap-3 mb-4">
-                        <h3 class="font-poppins font-bold text-xl md:text-2xl text-dark dark:text-white flex items-center gap-2">
-                            <i class="fa-solid fa-masks-theater text-primary"></i>
+                        <h3 class="font-poppins font-bold text-lg md:text-xl text-dark dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-user-graduate text-primary"></i>
                             <span>राजस्थान कला एवं संस्कृति: विषयवार अध्ययन</span>
                         </h3>
                         <a href="rajasthan-notes/culture/" class="text-xs font-bold text-primary hover:text-primary/80 transition-colors flex items-center gap-1">
-                            सम्पूर्ण कला-संस्कृति देखें <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            पूरा कला एवं संस्कृति हब देखें <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 civ-grid">
+                        <!-- 1. सांस्कृतिक व्यक्तित्व (Active Card) -->
                         <a href="rajasthan-notes/culture/sanskritik-vyaktitva" class="civ-card bg-slate-50 dark:bg-[#16162a] rounded-xl p-4 border-2 border-primary shadow-premium text-center transition-all relative overflow-hidden group">
                             <div class="absolute inset-0 bg-primary/5"></div>
                             <div class="relative z-10">
                                 <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center text-base mx-auto mb-2">
-                                    <i class="fa-solid fa-user-graduate"></i>
+                                    <i class="fa-solid fa-user-graduate text-sm"></i>
                                 </div>
                                 <h4 class="text-xs font-extrabold text-dark dark:text-white">सांस्कृतिक व्यक्तित्व</h4>
-                                <p class="text-[9px] text-primary font-semibold mt-0.5">Active Topic</p>
-                                <span class="inline-block mt-1 text-[8px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold">100% Complete</span>
+                                <p class="text-[9px] text-primary font-semibold mt-0.5">कलाकार &amp; शिल्पी</p>
+                                <span class="inline-block mt-1.5 text-[8px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold">सक्रिय विषय</span>
                             </div>
                         </a>
-                        <a href="rajasthan-notes/culture/mela-tyohar" class="civ-card bg-slate-50 dark:bg-[#16162a] rounded-xl p-4 border border-slate-100 dark:border-slate-800 text-center hover:border-primary/40 transition-all group">
-                            <div class="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 flex items-center justify-center text-base mx-auto mb-2 group-hover:bg-emerald-200 dark:group-hover:bg-emerald-900/50 transition-all">
-                                <i class="fa-solid fa-calendar-days"></i>
+
+                        <!-- 2. मेले एवं त्यौहार -->
+                        <a href="rajasthan-notes/culture/mela-tyohar" class="civ-card bg-slate-50 dark:bg-[#16162a] rounded-xl p-4 border border-slate-200 dark:border-slate-800 text-center hover:border-primary/40 transition-all group">
+                            <div class="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 flex items-center justify-center text-base mx-auto mb-2 group-hover:bg-emerald-200 transition-all">
+                                <i class="fa-solid fa-calendar-days text-sm"></i>
                             </div>
                             <h4 class="text-xs font-bold text-dark dark:text-white group-hover:text-primary transition-colors">मेले एवं त्यौहार</h4>
                             <p class="text-[9px] text-muted dark:text-slate-400">पुष्कर, तीज, गणगौर</p>
                         </a>
-                        <a href="rajasthan-notes/culture/chitrakala-lokkala" class="civ-card bg-slate-50 dark:bg-[#16162a] rounded-xl p-4 border border-slate-100 dark:border-slate-800 text-center hover:border-primary/40 transition-all group">
-                            <div class="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-950/30 text-amber-700 dark:text-amber-400 flex items-center justify-center text-base mx-auto mb-2 group-hover:bg-amber-200 dark:group-hover:bg-amber-900/50 transition-all">
-                                <i class="fa-solid fa-palette"></i>
+
+                        <!-- 3. चित्रकला व लोककला -->
+                        <a href="rajasthan-notes/culture/chitrakala-lokkala" class="civ-card bg-slate-50 dark:bg-[#16162a] rounded-xl p-4 border border-slate-200 dark:border-slate-800 text-center hover:border-primary/40 transition-all group">
+                            <div class="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-950/30 text-amber-700 dark:text-amber-400 flex items-center justify-center text-base mx-auto mb-2 group-hover:bg-amber-200 transition-all">
+                                <i class="fa-solid fa-palette text-sm"></i>
                             </div>
                             <h4 class="text-xs font-bold text-dark dark:text-white group-hover:text-primary transition-colors">चित्रकला व लोककला</h4>
                             <p class="text-[9px] text-muted dark:text-slate-400">बणी-ठणी, फड़, थेवा</p>
                         </a>
-                        <a href="rajasthan-notes/culture/lok-sangeet-vadhyayantra" class="civ-card bg-slate-50 dark:bg-[#16162a] rounded-xl p-4 border border-slate-100 dark:border-slate-800 text-center hover:border-primary/40 transition-all group">
-                            <div class="w-10 h-10 rounded-full bg-yellow-100 dark:bg-yellow-950/30 text-yellow-700 dark:text-yellow-400 flex items-center justify-center text-base mx-auto mb-2 group-hover:bg-yellow-200 dark:group-hover:bg-yellow-900/50 transition-all">
-                                <i class="fa-solid fa-guitar"></i>
+
+                        <!-- 4. लोक संगीत व वाद्ययंत्र -->
+                        <a href="rajasthan-notes/culture/lok-sangeet-vadhyayantra" class="civ-card bg-slate-50 dark:bg-[#16162a] rounded-xl p-4 border border-slate-200 dark:border-slate-800 text-center hover:border-primary/40 transition-all group">
+                            <div class="w-10 h-10 rounded-full bg-yellow-100 dark:bg-yellow-950/30 text-yellow-700 dark:text-yellow-400 flex items-center justify-center text-base mx-auto mb-2 group-hover:bg-yellow-200 transition-all">
+                                <i class="fa-solid fa-guitar text-sm"></i>
                             </div>
                             <h4 class="text-xs font-bold text-dark dark:text-white group-hover:text-primary transition-colors">संगीत व वाद्ययंत्र</h4>
                             <p class="text-[9px] text-muted dark:text-slate-400">मांड, लंगा, अलगोजा</p>
                         </a>
-                        <a href="rajasthan-notes/culture/lok-devta-sant" class="civ-card bg-slate-50 dark:bg-[#16162a] rounded-xl p-4 border border-slate-100 dark:border-slate-800 text-center hover:border-primary/40 transition-all group">
-                            <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-950/30 text-purple-700 dark:text-purple-400 flex items-center justify-center text-base mx-auto mb-2 group-hover:bg-purple-200 dark:group-hover:bg-purple-900/50 transition-all">
-                                <i class="fa-solid fa-hands-praying"></i>
+
+                        <!-- 5. संत व लोक देवता -->
+                        <a href="rajasthan-notes/culture/lok-devta-sant" class="civ-card bg-slate-50 dark:bg-[#16162a] rounded-xl p-4 border border-slate-200 dark:border-slate-800 text-center hover:border-primary/40 transition-all group">
+                            <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-950/30 text-purple-700 dark:text-purple-400 flex items-center justify-center text-base mx-auto mb-2 group-hover:bg-purple-200 transition-all">
+                                <i class="fa-solid fa-hands-praying text-sm"></i>
                             </div>
                             <h4 class="text-xs font-bold text-dark dark:text-white group-hover:text-primary transition-colors">संत व लोक देवता</h4>
                             <p class="text-[9px] text-muted dark:text-slate-400">पंचपीर &amp; संप्रदाय</p>
                         </a>
-                        <a href="rajasthan-notes/culture/rajasthan-vastra-abhushan" class="civ-card bg-slate-50 dark:bg-[#16162a] rounded-xl p-4 border border-slate-100 dark:border-slate-800 text-center hover:border-primary/40 transition-all group">
-                            <div class="w-10 h-10 rounded-full bg-rose-100 dark:bg-rose-950/30 text-rose-700 dark:text-rose-400 flex items-center justify-center text-base mx-auto mb-2 group-hover:bg-rose-200 dark:group-hover:bg-rose-900/50 transition-all">
-                                <i class="fa-solid fa-vest-patches"></i>
+
+                        <!-- 6. राजस्थान के दुर्ग -->
+                        <a href="rajasthan-notes/culture/chittorgarh-durg" class="civ-card bg-slate-50 dark:bg-[#16162a] rounded-xl p-4 border border-slate-200 dark:border-slate-800 text-center hover:border-primary/40 transition-all group">
+                            <div class="w-10 h-10 rounded-full bg-rose-100 dark:bg-rose-950/30 text-rose-700 dark:text-rose-400 flex items-center justify-center text-base mx-auto mb-2 group-hover:bg-rose-200 transition-all">
+                                <i class="fa-solid fa-fort-awesome text-sm"></i>
                             </div>
-                            <h4 class="text-xs font-bold text-dark dark:text-white group-hover:text-primary transition-colors">वस्त्र व आभूषण</h4>
-                            <p class="text-[9px] text-muted dark:text-slate-400">पहनावा &amp; गहने</p>
+                            <h4 class="text-xs font-bold text-dark dark:text-white group-hover:text-primary transition-colors">राजस्थान के दुर्ग</h4>
+                            <p class="text-[9px] text-muted dark:text-slate-400">किला स्थापत्य</p>
                         </a>
                     </div>
                 </div>
 
-                <!-- PREVIOUS / ALL / NEXT NAV BAR -->
-                <div class="flex flex-wrap items-center justify-between gap-3 mb-12 text-sm font-manrope font-semibold reveal">
-                    <a href="rajasthan-notes/culture/mela-tyohar" class="inline-flex items-center gap-1.5 text-muted dark:text-slate-400 hover:text-primary transition-colors group">
-                        <i class="fa-solid fa-arrow-left text-xs group-hover:-translate-x-1 transition-transform"></i>
+                <!-- PREVIOUS / INDEX / NEXT SEQUENTIAL BAR -->
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-6 text-xs font-manrope font-semibold text-muted dark:text-slate-400 border-b border-slate-100 dark:border-slate-800 pb-4">
+                    <a href="rajasthan-notes/culture/mela-tyohar" class="inline-flex items-center gap-1.5 hover:text-primary transition-colors group">
+                        <i class="fa-solid fa-arrow-left text-[10px] group-hover:-translate-x-1 transition-transform"></i>
                         <span>पिछला: मेले एवं त्यौहार</span>
                     </a>
-                    <a href="rajasthan-notes/culture/" class="inline-flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors">
-                        <i class="fa-solid fa-th-list text-xs"></i>
-                        <span>सभी संस्कृति नोट्स</span>
+                    <a href="rajasthan-notes/culture/" class="inline-flex items-center gap-1.5 text-primary hover:underline">
+                        <i class="fa-solid fa-th-list text-[10px]"></i>
+                        <span>संस्कृति नोट्स इंडेक्स</span>
                     </a>
-                    <a href="rajasthan-notes/culture/chittorgarh-durg" class="inline-flex items-center gap-1.5 text-muted dark:text-slate-400 hover:text-primary transition-colors group">
+                    <a href="rajasthan-notes/culture/chittorgarh-durg" class="inline-flex items-center gap-1.5 hover:text-primary transition-colors group">
                         <span>अगला: चित्तौड़गढ़ दुर्ग</span>
-                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                        <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
 
-                <!-- MAIN HEADING -->
-                <div class="text-center mb-12 reveal">
-                    <span class="text-primary font-bold text-sm uppercase tracking-widest font-poppins">Standard Reference Study Material</span>
-                    <h2 class="font-poppins font-bold text-3xl md:text-4xl text-dark dark:text-white mt-1">
-                        राजस्थान के प्रमुख सांस्कृतिक व्यक्तित्व: <span class="text-primary">सम्पूर्ण विश्लेषण</span>
-                    </h2>
-                    <p class="text-muted text-base max-w-3xl mx-auto mt-2 font-manrope">
-                        लोक कला शोधकर्ता, संगीतज्ञ, लोक वादक, नृत्यांगनाएं, सिद्धहस्त शिल्पकार, चित्रकार एवं मूर्धन्य साहित्यकारों का प्रामाणिक संकलन।
-                    </p>
-                </div>
-
-                <!-- ========================================== -->
-                <!-- 1. लोक कला संरक्षक एवं शोधकर्ता -->
-                <!-- ========================================== -->
-                <div id="researchers" class="mb-16 reveal">
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-lg flex-shrink-0">
-                            <i class="fa-solid fa-building-columns"></i>
-                        </div>
-                        <h3 class="font-poppins font-extrabold text-2xl text-dark dark:text-white">1. लोक कला संरक्षक, शोधकर्ता एवं संस्थापक</h3>
-                    </div>
-                    <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard space-y-4">
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-manrope text-slate-600 dark:text-slate-300 leading-relaxed">
-                            
-                            <!-- Komal Kothari -->
-                            <div class="p-4 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-primary uppercase text-sm mb-2 flex items-center justify-between">
-                                    <span>🏛️ 1. पद्मभूषण कोमल कोठारी (1929–2004)</span>
-                                    <span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full">कपासन, चित्तौड़गढ़</span>
-                                </h4>
-                                <p>• <b>संस्था स्थापना:</b> 1960 ई. में विजयदान देथा के सहयोग से <b>'रूपायन संस्थान' (बोरुंदा, जोधपुर)</b> की स्थापना की।</p>
-                                <p>• <b>योगदान:</b> लंगा एवं मांगणियार जातियों के लोक संगीत, वाद्ययंत्र (कामायचा, रावणहत्था) एवं कठपुतली कला को अंतरराष्ट्रीय मंच प्रदान किया।</p>
-                                <p>• <b>पुरस्कार:</b> पद्मश्री (1983), पद्मभूषण (2004), राजस्थान रत्न (2012 - मरणोपरांत)।</p>
-                                <p>• <b>पत्रिका:</b> 'लोक संस्कृति' एवं 'प्रेरणा' पत्रिका का संपादन किया।</p>
-                            </div>
-
-                            <!-- Devilal Samar -->
-                            <div class="p-4 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-primary uppercase text-sm mb-2 flex items-center justify-between">
-                                    <span>🎭 2. पद्मश्री देवीलाल सामर (1911–1981)</span>
-                                    <span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full">उदयपुर</span>
-                                </h4>
-                                <p>• <b>संस्था स्थापना:</b> <b>22 फरवरी 1952</b> को उदयपुर में <b>'भारतीय लोक कला मंडल'</b> की स्थापना की।</p>
-                                <p>• <b>योगदान:</b> राजस्थान की <b>कठपुतली कला</b> एवं गवरी, तेरहताली, चरी लोक नृत्यों को पुनर्जीवित कर अंतरराष्ट्रीय पहचान (रोमानिया कठपुतली समारोह में प्रथम पुरस्कार) दिलाई।</p>
-                                <p>• <b>प्रमुख पुस्तकें:</b> <i>'राजस्थान का लोक संगीत'</i>, <i>'राजस्थान के लोक नाट्य'</i>, <i>'कठपुतली: कला और शिक्षा'</i>।</p>
-                                <p>• <b>पुरस्कार:</b> 1968 में भारत सरकार द्वारा <b>पद्मश्री</b> से सम्मानित।</p>
-                            </div>
-
-                            <!-- Vijaydan Detha -->
-                            <div class="p-4 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-primary uppercase text-sm mb-2 flex items-center justify-between">
-                                    <span>📚 3. विजयदान देथा 'बिज्जी' (1926–2013)</span>
-                                    <span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full">बोरुंदा, जोधपुर</span>
-                                </h4>
-                                <p>• <b>उपनाम:</b> <b>'राजस्थान के शेक्सपियर'</b> के रूप में विख्यात।</p>
-                                <p>• <b>सर्वश्रेष्ठ कृति:</b> <b>'बातां री फुलवारी'</b> (14 खंडों में राजस्थानी लोक कथाओं का अनुपम संग्रह)।</p>
-                                <p>• <b>कहानियों पर बनी फिल्में:</b> इनकी कहानी <b>'दुविधा'</b> पर अमोल पालेकर ने <b>'पहेली'</b> (शाहरुख खान अभिनीत) तथा मणि कौल ने 'दुविधा' फिल्म बनाई। <b>'चरणदास चोर'</b> नाटक इन्हीं की कथा पर आधारित है।</p>
-                                <p>• <b>पुरस्कार:</b> पद्मश्री (2007), साहित्य अकादमी पुरस्कार (1974), राजस्थान रत्न (2012), नोबेल साहित्य पुरस्कार हेतु नामांकित (2011)।</p>
-                            </div>
-
-                            <!-- Sitaram Lalas -->
-                            <div class="p-4 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-primary uppercase text-sm mb-2 flex items-center justify-between">
-                                    <span>📖 4. डॉ. सीताराम लालस (1908–1986)</span>
-                                    <span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full">जोधपुर</span>
-                                </h4>
-                                <p>• <b>उपनाम:</b> <b>'राजस्थानी भाषा के पाणिनी'</b> एवं 'राजस्थानी जुबां की मशाल'।</p>
-                                <p>• <b>ऐतिहासिक कार्य:</b> 40 वर्षों के अथक परिश्रम से 4 खंडों एवं 2 लाख से अधिक शब्दों का <b>'राजस्थानी शब्दकोश' (Rajasthani Sabadkosh)</b> तैयार किया।</p>
-                                <p>• <b>पुरस्कार:</b> 1977 में भारत सरकार द्वारा <b>पद्मश्री</b> से सम्मानित।</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ========================================== -->
-                <!-- 2. शास्त्रीय एवं लोक संगीतज्ञ -->
-                <!-- ========================================== -->
-                <div id="musicians" class="mb-16 reveal">
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-10 h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center text-lg flex-shrink-0">
-                            <i class="fa-solid fa-microphone-lines"></i>
-                        </div>
-                        <h3 class="font-poppins font-extrabold text-2xl text-dark dark:text-white">2. शास्त्रीय एवं लोक संगीत की अमर विभूतियाँ</h3>
-                    </div>
-                    <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard space-y-4">
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 text-xs font-manrope text-slate-600 dark:text-slate-300 leading-relaxed">
-                            
-                            <!-- Allah Jilai Bai -->
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-secondary uppercase mb-1 flex items-center justify-between">
-                                    <span>👑 अल्लाह जिलाई बाई (1902–1992)</span>
-                                    <span class="text-[9px] bg-secondary/10 text-secondary px-1.5 py-0.5 rounded">बीकानेर</span>
-                                </h4>
-                                <p>• <b>उपनाम:</b> <b>'राजस्थान की मरुकोकिला'</b> (बाई जी)।</p>
-                                <p>• बीकानेर के महाराजा <b>गंगासिंह</b> के दरबार में मांड गायन किया। राज्य गीत <b>'केसरिया बालम'</b> को अंतरराष्ट्रीय ख्याति दिलाई।</p>
-                                <p>• <b>पुरस्कार:</b> 1982 में <b>पद्मश्री</b>, 2012 में राजस्थान रत्न, 2003 में इन पर 5 रु. का डाक टिकट जारी।</p>
-                            </div>
-
-                            <!-- Pt. Vishwa Mohan Bhatt -->
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-secondary uppercase mb-1 flex items-center justify-between">
-                                    <span>🎸 पं. विश्व मोहन भट्ट (जन्म 1950)</span>
-                                    <span class="text-[9px] bg-secondary/10 text-secondary px-1.5 py-0.5 rounded">जयपुर</span>
-                                </h4>
-                                <p>• <b>आविष्कार:</b> गिटार, सितार व वीणा का समन्वित रूप <b>'मोहन वीणा' (Mohan Veena)</b> का आविष्कार किया।</p>
-                                <p>• <b>उपलब्धि:</b> एल्बम <i>'अ मीटिंग बाय द रिवर'</i> हेतु 1994 में विश्वविख्यात <b>'ग्रेमी अवार्ड' (Grammy Award)</b> जीता।</p>
-                                <p>• <b>पुरस्कार:</b> पद्मश्री (2002), पद्मभूषण (2017)।</p>
-                            </div>
-
-                            <!-- Gavri Devi -->
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-secondary uppercase mb-1 flex items-center justify-between">
-                                    <span>🎤 गवरी देवी (1920–1988)</span>
-                                    <span class="text-[9px] bg-secondary/10 text-secondary px-1.5 py-0.5 rounded">पाली/जोधपुर</span>
-                                </h4>
-                                <p>• जोधपुर महाराजा <b>उम्मेदसिंह</b> के दरबार में मांड गायन प्रस्तुत किया।</p>
-                                <p>• 1983 में लंदन के <b>अल्बर्ट हॉल</b> में आयोजित भारत महोत्सव में मांड गायन प्रस्तुत कर विश्वभर में प्रशंसा पाई।</p>
-                                <p>• 2013 में मरणोपरांत <b>राजस्थान रत्न</b> से सम्मानित।</p>
-                            </div>
-
-                            <!-- Dagar Brothers -->
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-secondary uppercase mb-1">🎼 डागर बंधु (उस्ताद जिया फरीदुद्दीन डागर)</h4>
-                                <p>• <b>घराना:</b> <b>डागर घराना (ध्रुपद गायकी)</b> के विश्वविख्यात गायक।</p>
-                                <p>• प्रवर्तक बहराम खां डागर के वंशज, जिन्होंने शास्त्रीय ध्रुपद शैली को अंतरराष्ट्रीय स्तर पर पुनर्जीवित किया। (2012 में पद्मश्री)।</p>
-                            </div>
-
-                            <!-- Mehdi Hasan -->
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-secondary uppercase mb-1">🎶 उस्ताद मेहदी हसन (1927–2012)</h4>
-                                <p>• <b>जन्म:</b> लूणा (झुंझुनू)।</p>
-                                <p>• <b>उपनाम:</b> <b>'शहंशाह-ए-गजल' (Ghazal King)</b>। विश्व के सर्वाधिक लोकप्रिय गजल गायकों में अग्रणी।</p>
-                            </div>
-
-                            <!-- Begum Batool -->
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-secondary uppercase mb-1">🧕 बतूल बेगम (जयपुर)</h4>
-                                <p>• मांड, लोक भजन एवं कव्वाली गायिका।</p>
-                                <p>• 8 मार्च 2022 को राष्ट्रपति द्वारा देश के सर्वोच्च महिला सम्मान <b>'नारी शक्ति पुरस्कार'</b> से सम्मानित।</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ========================================== -->
-                <!-- 3. प्रमुख लोक वाद्य वादक -->
-                <!-- ========================================== -->
-                <div id="instrumentalists" class="mb-16 reveal">
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-lg flex-shrink-0">
-                            <i class="fa-solid fa-guitar"></i>
-                        </div>
-                        <h3 class="font-poppins font-extrabold text-2xl text-dark dark:text-white">3. राजस्थान के प्रमुख लोक वाद्य वादक एवं उपाधियाँ</h3>
-                    </div>
-                    <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5 text-xs font-manrope text-slate-600 dark:text-slate-300 leading-relaxed">
-                            
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-accent uppercase mb-1">🪕 साकर खां मांगणियार (1938–2013)</h4>
-                                <p>• <b>वाद्य:</b> <b>कामायचा के अद्वितीय जादूगर</b> (हमीरका, बाड़मेर)।<br />
-                                • विश्व प्रसिद्ध वायलिन वादक यहूदी मेनुहिन के साथ जुगलबंदी की।<br />
-                                • <b>पुरस्कार:</b> 2012 में भारत सरकार द्वारा <b>पद्मश्री</b> से सम्मानित।</p>
-                            </div>
-
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-accent uppercase mb-1">🥢 सदीक खां मांगणियार</h4>
-                                <p>• <b>वाद्य:</b> <b>खड़ताल के जादूगर</b> (बोरुंदा, जोधपुर)।<br />
-                                • विश्व के अनेक देशों में खड़ताल वादन से दर्शकों को मंत्रमुग्ध किया।<br />
-                                • इनके नाम पर जयपुर में 'लोक कला अनुसंधान परिषद' स्थापित है।</p>
-                            </div>
-
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-accent uppercase mb-1">🪕 जहूर खां मेवाती एवं उमर फारूक</h4>
-                                <p>• <b>वाद्य:</b> <b>भपंग के जादूगर</b> (अलवर, मेवात क्षेत्र)।<br />
-                                • लोक वाद्य भपंग को राष्ट्रीय व अंतरराष्ट्रीय मंचों पर प्रतिष्ठा दिलाई।</p>
-                            </div>
-
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-accent uppercase mb-1">🥁 पं. पुरुषोत्तम दास (1907–1991)</h4>
-                                <p>• <b>वाद्य:</b> <b>पखावज / मृदंग के अद्वितीय सम्राट</b> (नाथद्वारा)।<br />
-                                • ग्रंथ: <i>'मृदंग वादन'</i>। 1984 में भारत सरकार द्वारा <b>पद्मश्री</b> से सम्मानित।</p>
-                            </div>
-
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-accent uppercase mb-1">🥁 रामकिशन सोलंकी</h4>
-                                <p>• <b>वाद्य:</b> <b>नगाड़े के जादूगर</b> (पुष्कर, अजमेर)।<br />
-                                • पुष्कर मेले एवं अंतरराष्ट्रीय उत्सवों में नगाड़ा वादन के शीर्ष कलाकार।</p>
-                            </div>
-
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-accent uppercase mb-1">🎺 रामनाथ चौधरी (पद्मश्री 2024)</h4>
-                                <p>• <b>वाद्य:</b> <b>नाक से अलगोजा बजाने वाले</b> विश्वविख्यात कलाकार (पदमपुरा, जयपुर)।<br />
-                                • 2024 में कला क्षेत्र में <b>पद्मश्री</b> से सम्मानित।</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ========================================== -->
-                <!-- 4. लोक नृत्य व नाट्य कलाकार -->
-                <!-- ========================================== -->
-                <div id="dancers-theater" class="mb-16 reveal">
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-600 flex items-center justify-center text-lg flex-shrink-0">
-                            <i class="fa-solid fa-person-walking"></i>
-                        </div>
-                        <h3 class="font-poppins font-extrabold text-2xl text-dark dark:text-white">4. लोक नृत्य एवं लोक नाट्य के प्रमुख कलाकार</h3>
-                    </div>
-                    <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard space-y-4">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-manrope text-slate-600 dark:text-slate-300 leading-relaxed">
-                            
-                            <!-- Gulabo Sapera -->
-                            <div class="p-4 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-rose-600 dark:text-rose-400 uppercase text-sm mb-2 flex items-center justify-between">
-                                    <span>💃 गुलाबो सपेरा (कोटड़ा, अजमेर)</span>
-                                    <span class="text-[10px] bg-rose-500/10 text-rose-600 px-2 py-0.5 rounded-full">पद्मश्री 2016</span>
-                                </h4>
-                                <p>• <b>योगदान:</b> कालबेलिया नृत्य को विश्व के 165+ देशों में प्रस्तुत कर <b>2010 में यूनेस्को की अमूर्त सांस्कृतिक धरोहर सूची</b> में शामिल कराया।</p>
-                                <p>• फ्रांस के राष्ट्रपति द्वारा सम्मानित, 'गुलाबो' नाम से फ्रेंच में बायोग्राफी प्रकाशित।</p>
-                            </div>
-
-                            <!-- Folk Theater Pioneers -->
-                            <div class="p-4 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800 space-y-1.5">
-                                <h4 class="font-bold text-rose-600 dark:text-rose-400 uppercase text-sm mb-2">🎭 लोक नाट्य के प्रमुख प्रवर्तक</h4>
-                                <p>• <b>लक्षीराम (कुचामन):</b> <b>कुचामनी ख्याल</b> के प्रवर्तक (रचनाएं: गोगा चौहान, मीरां मंगल)।</p>
-                                <p>• <b>नानूराम व दुलिया राणा (चिड़ावा):</b> <b>शेखावाटी ख्याल</b> के प्रसिद्ध कलाकार।</p>
-                                <p>• <b>अलीबख्श (मुंडावर, अलवर):</b> <b>अलीबख्शी ख्याल</b> के प्रवर्तक (उपनाम: <b>'अलवर का रसखान'</b>)।</p>
-                                <p>• <b>बाघाजी जाट (केकड़ी):</b> <b>भवाई नृत्य</b> के जन्मदाता।</p>
-                                <p>• <b>कृष्णा व्यास छंगाणी व तारा शर्मा:</b> भवाई नृत्य की प्रसिद्ध नृत्यांगनाएं।</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ========================================== -->
-                <!-- 5. सिद्धहस्त शिल्पकार व चित्रकार -->
-                <!-- ========================================== -->
-                <div id="craftspersons" class="mb-16 reveal">
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-lg flex-shrink-0">
-                            <i class="fa-solid fa-palette"></i>
-                        </div>
-                        <h3 class="font-poppins font-extrabold text-2xl text-dark dark:text-white">5. सिद्धहस्त शिल्पकार, चितेरे एवं चित्रकार</h3>
-                    </div>
-                    <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard space-y-4">
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs font-manrope text-slate-600 dark:text-slate-300 leading-relaxed">
-                            
-                            <!-- Kripal Singh -->
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-emerald-600 dark:text-emerald-400 uppercase mb-1">🏺 कृपाल सिंह शेखावत (1922–2008)</h4>
-                                <p>• <b>कला:</b> <b>'ब्लू पॉटरी के जादूगर'</b> (मऊ, सीकर)।<br />
-                                • ब्लू पॉटरी में 25 नए रंगों का प्रयोग कर <b>'कृपाल कुंभ'</b> शैली विकसित की।<br />
-                                • <b>पुरस्कार:</b> पद्मश्री (1974), शिल्पगुरु (2002)।</p>
-                            </div>
-
-                            <!-- Shree Lal Joshi -->
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-emerald-600 dark:text-emerald-400 uppercase mb-1">📜 श्रीलाल जोशी (1931–2018)</h4>
-                                <p>• <b>कला:</b> <b>फड़ चित्रकला के अंतरराष्ट्रीय चितेरे</b> (शाहपुरा, भीलवाड़ा)।<br />
-                                • देवनारायण जी व पाबूजी की फड़ को वैश्विक मंच पर प्रदर्शित किया।<br />
-                                • <b>पुरस्कार:</b> पद्मश्री (2006), शिल्पगुरु (2007)।</p>
-                            </div>
-
-                            <!-- Hisamuddin Usta -->
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-emerald-600 dark:text-emerald-400 uppercase mb-1">🐪 हिसामुद्दीन उस्ता (1913–1997)</h4>
-                                <p>• <b>कला:</b> <b>उस्ता कला (मुनव्वती कला)</b> के सिरमौर शिल्पी (बीकानेर)।<br />
-                                • ऊंट की खाल पर स्वर्ण मीनाकारी हेतु 1986 में <b>पद्मश्री</b> प्राप्त।</p>
-                            </div>
-
-                            <!-- Mohanlal Kumhar -->
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-emerald-600 dark:text-emerald-400 uppercase mb-1">🧱 मोहनलाल कुम्हार (1939–2021)</h4>
-                                <p>• <b>कला:</b> <b>टेराकोटा कला (मृण्मूर्ति शिल्प)</b> (मोलेला, राजसमंद)।<br />
-                                • मिट्टी से लोक देवताओं की मूर्तियां बनाने हेतु 2012 में <b>पद्मश्री</b> से सम्मानित।</p>
-                            </div>
-
-                            <!-- Mahesh Rajsoni -->
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-emerald-600 dark:text-emerald-400 uppercase mb-1">💎 महेश राजसोनी</h4>
-                                <p>• <b>कला:</b> <b>थेवा कला</b> (प्रतापगढ़)।<br />
-                                • हरे बेल्जियम कांच पर स्वर्ण नक्काशी में अद्वितीय कार्य हेतु 2015 में <b>पद्मश्री</b> से सम्मानित।</p>
-                            </div>
-
-                            <!-- Ramgopal Vijayvargiya & Master Artists -->
-                            <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-emerald-600 dark:text-emerald-400 uppercase mb-1">🎨 रामगोपाल विजयवर्गीय (1905–2003)</h4>
-                                <p>• <b>कला:</b> आधुनिक राजस्थानी चित्रकला के जनक (बालेर, सवाई माधोपुर)।<br />
-                                • राजस्थान के प्रथम चित्रकार जिन्हें 1984 में <b>पद्मश्री</b> मिला। एकल चित्र प्रदर्शनी परंपरा शुरू की।</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ========================================== -->
-                <!-- 6. प्रमुख साहित्यकार व इतिहासकार -->
-                <!-- ========================================== -->
-                <div id="writers-historians" class="mb-16 reveal">
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-10 h-10 rounded-xl bg-support/10 text-support flex items-center justify-center text-lg flex-shrink-0">
-                            <i class="fa-solid fa-book-bookmark"></i>
-                        </div>
-                        <h3 class="font-poppins font-extrabold text-2xl text-dark dark:text-white">6. प्रमुख साहित्यकार, कवि एवं इतिहासकार</h3>
-                    </div>
-                    <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-manrope text-slate-600 dark:text-slate-300 leading-relaxed">
-                            
-                            <!-- Kanhaiyalal Sethia -->
-                            <div class="p-4 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
-                                <h4 class="font-bold text-support uppercase text-sm mb-2 flex items-center justify-between">
-                                    <span>✍️ कन्हैयालाल सेठिया (1919–2008)</span>
-                                    <span class="text-[10px] bg-support/10 text-support px-2 py-0.5 rounded-full">सुजानगढ़, चूरू</span>
-                                </h4>
-                                <p>• <b>अमर रचनाएं:</b> <i>'पाथल और पीथल'</i> (महाराणा प्रताप व पृथ्वीराज राठौड़), <i>'धरती धोरां री'</i>, <i>'मींझर'</i>, <i>'लीलतांस'</i> (1976 साहित्य अकादमी), <i>'सबद'</i>, <i>'कूंकूं'</i>।</p>
-                                <p>• <b>पुरस्कार:</b> पद्मश्री (2004), मूर्तिदेवी पुरस्कार, राजस्थान रत्न (2012)।</p>
-                            </div>
-
-                            <!-- Kavi Shyamaldas & Muhnot Nainsi -->
-                            <div class="p-4 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800 space-y-2">
-                                <div>
-                                    <h5 class="font-bold text-dark dark:text-white">📜 कविराज श्यामलदास (1836–1893, भीलवाड़ा)</h5>
-                                    <p>• मेवाड़ महाराणा सज्जनसिंह के दरबारी। प्रसिद्ध ऐतिहासिक ग्रंथ: <b>'वीर विनोद'</b> (मेवाड़ का प्रामाणिक इतिहास)। ब्रिटिश सरकार ने इन्हें <b>'महामहोपाध्याय'</b> व <i>'केसर-ए-हिंद'</i> की उपाधि दी।</p>
-                                </div>
-                                <div class="border-t border-slate-100 dark:border-slate-800 pt-2">
-                                    <h5 class="font-bold text-dark dark:text-white">📜 मुहणौत नैणसी (1610–1670, जोधपुर)</h5>
-                                    <p>• जसवंतसिंह प्रथम के दीवान। ग्रंथ: <b>'नैणसी री ख्यात'</b> एवं <b>'मारवाड़ रा परगना री विगत'</b> (राजस्थान का गजेटियर)। मुंशी देवीप्रसाद ने इन्हें <b>'राजपूताने का अबुल फजल'</b> कहा।</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ========================================== -->
-                <!-- 7. मास्टर टेबल: व्यक्तित्व एवं उपाधियाँ -->
-                <!-- ========================================== -->
-                <div id="master-table" class="mb-16 reveal">
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center text-lg flex-shrink-0">
-                            <i class="fa-solid fa-table-list"></i>
-                        </div>
-                        <h3 class="font-poppins font-extrabold text-2xl text-dark dark:text-white">7. प्रमुख व्यक्तित्व, उपाधियाँ एवं उपलब्धियों का मास्टर चार्ट</h3>
-                    </div>
-                    <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard">
-                        <div class="custom-table-wrap">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>सांस्कृतिक व्यक्तित्व</th>
-                                        <th>क्षेत्र / विधा</th>
-                                        <th>प्रसिद्ध उपनाम / उपाधि</th>
-                                        <th>प्रमुख उपलब्धि / पुरस्कार</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><b>अल्लाह जिलाई बाई</b></td>
-                                        <td>मांड गायकी (बीकानेर)</td>
-                                        <td><b>'राजस्थान की मरुकोकिला'</b></td>
-                                        <td>पद्मश्री (1982), राजस्थान रत्न (2012)</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>विजयदान देथा 'बिज्जी'</b></td>
-                                        <td>राजस्थानी साहित्य (बोरुंदा)</td>
-                                        <td><b>'राजस्थान के शेक्सपियर'</b></td>
-                                        <td>बातां री फुलवारी, पद्मश्री (2007)</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>कृपाल सिंह शेखावत</b></td>
-                                        <td>ब्लू पॉटरी (सीकर/जयपुर)</td>
-                                        <td><b>'ब्लू पॉटरी के जादूगर'</b></td>
-                                        <td>पद्मश्री (1974), कृपाल कुंभ शैली</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>साकर खां मांगणियार</b></td>
-                                        <td>कामायचा वादन (बाड़मेर)</td>
-                                        <td><b>'कामायचा के सुल्तान'</b></td>
-                                        <td>पद्मश्री (2012)</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>सदीक खां मांगणियार</b></td>
-                                        <td>खड़ताल वादन (जोधपुर)</td>
-                                        <td><b>'खड़ताल के जादूगर'</b></td>
-                                        <td>लोक कला शोध परिषद संस्थापक</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>जहूर खां मेवाती</b></td>
-                                        <td>भपंग वादन (अलवर)</td>
-                                        <td><b>'भपंग के जादूगर'</b></td>
-                                        <td>मेवात लोक वाद्य संरक्षक</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>पं. पुरुषोत्तम दास</b></td>
-                                        <td>पखावज वादन (नाथद्वारा)</td>
-                                        <td><b>'पखावज सम्राट'</b></td>
-                                        <td>पद्मश्री (1984), 'मृदंग वादन' ग्रंथ</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>गुलाबो सपेरा</b></td>
-                                        <td>कालबेलिया नृत्य (अजमेर)</td>
-                                        <td><b>'कालबेलिया क्वीन'</b></td>
-                                        <td>पद्मश्री (2016), UNESCO सूची 2010</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>डॉ. सीताराम लालस</b></td>
-                                        <td>भाषा एवं कोशकार (जोधपुर)</td>
-                                        <td><b>'राजस्थानी के पाणिनी'</b></td>
-                                        <td>राजस्थानी सबदकोश (2 लाख शब्द)</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>कन्हैयालाल सेठिया</b></td>
-                                        <td>राजस्थानी कविता (चूरू)</td>
-                                        <td><b>'धरती धोरां री के जनक'</b></td>
-                                        <td>पाथल और पीथल, पद्मश्री (2004)</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ========================================== -->
-                <!-- 8. याद रखने की धांसू ट्रिक्स -->
-                <!-- ========================================== -->
-                <div id="tricks" class="mb-16 reveal">
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-10 h-10 rounded-xl bg-yellow-500/10 text-yellow-600 flex items-center justify-center text-lg flex-shrink-0">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        </div>
-                        <h3 class="font-poppins font-extrabold text-2xl text-dark dark:text-white">8. व्यक्तित्व एवं संस्थाएं याद रखने की आसान ट्रिक्स</h3>
-                    </div>
-                    <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard space-y-4">
-                        
-                        <!-- Trick 1: Institutions -->
-                        <div class="p-4 trick-box rounded-xl">
-                            <p class="text-xs font-bold text-accent uppercase mb-1">🎯 ट्रिक 1: रूपायन व लोक कला मंडल संस्थापक</p>
-                            <p class="text-sm font-bold text-dark dark:text-white mb-1">"बोरुंदा में कोमल बिज्जी, उदयपुर में सामर जी"</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 font-manrope">
-                                • <b>रूपायन संस्थान (बोरुंदा, 1960):</b> <b>कोमल</b> कोठारी व <b>बिज्जी</b> (विजयदान देथा)<br />
-                                • <b>भारतीय लोक कला मंडल (उदयपुर, 1952):</b> देवीलाल <b>सामर</b>
-                            </p>
-                        </div>
-
-                        <!-- Trick 2: Instrument Masters -->
-                        <div class="p-4 trick-box rounded-xl">
-                            <p class="text-xs font-bold text-accent uppercase mb-1">🎯 ट्रिक 2: लोक वाद्यों के जादूगर</p>
-                            <p class="text-sm font-bold text-dark dark:text-white mb-1">"साकर कामायचा, सदीक खड़ताल, जहूर भपंग बजावे बेमिसाल"</p>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 font-manrope">
-                                • कामायचा = <b>साकर खां</b> | खड़ताल = <b>सदीक खां</b> | भपंग = <b>जहूर खां मेवाती</b>
-                            </p>
-                        </div>
-
-                        <!-- Trick 3: Artists -->
-                        <div class="p-4 fact-highlight rounded-xl">
-                            <p class="text-xs font-bold text-amber-700 dark:text-amber-300 uppercase mb-1">🎯 ट्रिक 3: हस्तशिल्प के सिरमौर शिल्पी</p>
-                            <p class="text-xs text-slate-700 dark:text-slate-300 font-manrope">
-                                • <b>कृपाल</b> = ब्लू पॉटरी | <b>हिसामुद्दीन</b> = उस्ता कला | <b>श्रीलाल</b> = फड़ चित्रकला | <b>मोहनलाल</b> = टेराकोटा
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ========================================== -->
-                <!-- 9. RPSC ONE-LINERS (EXAM FACTS) -->
-                <!-- ========================================== -->
-                <div id="exam-facts" class="mb-0 reveal">
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-10 h-10 rounded-xl bg-yellow-500/10 text-yellow-600 flex items-center justify-center text-lg flex-shrink-0">
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <h3 class="font-poppins font-extrabold text-2xl text-dark dark:text-white">9. विगत परीक्षाओं में पूछे गए अति-महत्वपूर्ण तथ्य (One-Liners)</h3>
-                    </div>
-                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-[#1a1a2e] dark:to-[#16162a] rounded-2xl p-6 border border-amber-200/50 dark:border-slate-800 shadow-subtleCard">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <h4 class="font-poppins font-bold text-dark dark:text-white text-sm uppercase tracking-wider mb-2">📌 संस्था व शोधकर्ता परीक्षा तथ्य</h4>
-                                <ul class="space-y-2 text-slate-700 dark:text-slate-300 text-xs font-manrope leading-relaxed list-disc pl-4">
-                                    <li><b>रूपायन संस्थान (बोरुंदा):</b> कोमल कोठारी एवं विजयदान देथा द्वारा 1960 में स्थापित।</li>
-                                    <li><b>भारतीय लोक कला मंडल (उदयपुर):</b> 1952 में देवीलाल सामर द्वारा स्थापित।</li>
-                                    <li><b>'दुविधा' व 'अलेखूं हिटलर':</b> विजयदान देथा 'बिज्जी' की प्रसिद्ध कृतियाँ।</li>
-                                    <li><b>राजस्थानी सबदकोश:</b> डॉ. सीताराम लालस द्वारा 2 लाख शब्दों में संकलित।</li>
-                                    <li><b>'वीर विनोद' ग्रंथ:</b> कविराज श्यामलदास द्वारा रचित मेवाड़ का इतिहास।</li>
-                                    <li><b>'राजपूताने का अबुल फजल':</b> मुंशी देवीप्रसाद ने मुहणौत नैणसी को कहा।</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-poppins font-bold text-dark dark:text-white text-sm uppercase tracking-wider mb-2">📌 कला व संगीत व्यक्तित्व तथ्य</h4>
-                                <ul class="space-y-2 text-slate-700 dark:text-slate-300 text-xs font-manrope leading-relaxed list-disc pl-4">
-                                    <li><b>अल्लाह जिलाई बाई:</b> 1982 में पद्मश्री पाने वाली बीकानेर की प्रसिद्ध मांड गायिका।</li>
-                                    <li><b>कृपाल सिंह शेखावत:</b> ब्लू पॉटरी को 25 नए रंगों से सजाने वाले शिल्पी (पद्मश्री 1974)।</li>
-                                    <li><b>गुलाबो सपेरा:</b> कालबेलिया नृत्य को यूनेस्को धरोहर में शामिल कराने वाली नृत्यांगना।</li>
-                                    <li><b>साकर खां:</b> कामायचा के पद्मश्री वादक | <b>सदीक खां:</b> खड़ताल के जादूगर।</li>
-                                    <li><b>पं. पुरुषोत्तम दास:</b> नाथद्वारा के विख्यात पखावज वादक (पद्मश्री 1984)।</li>
-                                    <li><b>श्रीलाल जोशी:</b> फड़ चित्रकला को अंतरराष्ट्रीय ख्याति दिलाने वाले चितेरे।</li>
-                                    <li><b>पं. विश्व मोहन भट्ट:</b> 'मोहन वीणा' के आविष्कारक एवं ग्रैमी अवार्ड विजेता (1994)।</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <div class="text-center mb-8 reveal">
+                    <span class="text-primary font-bold text-xs uppercase tracking-widest font-poppins">राजस्थान हिंदी ग्रंथ अकादमी प्रामाणिक अध्ययन</span>
+                    <h2 class="font-poppins font-bold text-2xl md:text-3xl text-dark dark:text-white mt-1">सांस्कृतिक व्यक्तित्व: <span class="text-primary">सम्पूर्ण सांस्कृतिक व ऐतिहासिक विश्लेषण</span></h2>
+                    <p class="text-muted dark:text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto mt-1 font-manrope">लोक कला शोधकर्ता, संगीतज्ञ, लोक वादक, नृत्यांगनाएं, सिद्धहस्त शिल्पकार, चित्रकार एवं मूर्धन्य साहित्यकारों का प्रामाणिक संकलन।</p>
                 </div>
 
             </div>
         </section>
 
-        <!-- ─── FAQ SECTION ─── -->
+        <!-- MAIN BALANCED 8:4 LAYOUT (STUDY CONTENT + RIGHT STICKY SIDEBAR) -->
+        <section class="pb-16 bg-white dark:bg-[#0f0f1a]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+                    <!-- ============================================== -->
+                    <!-- LEFT COLUMN (8 COLS): 100% UNTOUCHED CONTENT   -->
+                    <!-- ============================================== -->
+                    <div class="lg:col-span-8 space-y-12">
+
+                        <!-- 1. लोक कला संरक्षक एवं शोधकर्ता -->
+                        <div id="researchers" class="space-y-4 reveal">
+                            <div class="flex items-center gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                <div class="w-9 h-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-base shrink-0">
+                                    <i class="fa-solid fa-building-columns"></i>
+                                </div>
+                                <h3 class="font-poppins font-extrabold text-xl sm:text-2xl text-dark dark:text-white">
+                                    1. लोक कला संरक्षक, शोधकर्ता एवं संस्थापक
+                                </h3>
+                            </div>
+                            <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-subtleCard space-y-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-manrope text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    
+                                    <!-- Komal Kothari -->
+                                    <div class="p-4 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-primary uppercase text-sm mb-2 flex items-center justify-between">
+                                            <span>🏛️ 1. पद्मभूषण कोमल कोठारी (1929–2004)</span>
+                                            <span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full">कपासन, चित्तौड़गढ़</span>
+                                        </h4>
+                                        <p>• <b>संस्था स्थापना:</b> 1960 ई. में विजयदान देथा के सहयोग से <b>'रूपायन संस्थान' (बोरुंदा, जोधपुर)</b> की स्थापना की।</p>
+                                        <p>• <b>योगदान:</b> लंगा एवं मांगणियार जातियों के लोक संगीत, वाद्ययंत्र (कामायचा, रावणहत्था) एवं कठपुतली कला को अंतरराष्ट्रीय मंच प्रदान किया।</p>
+                                        <p>• <b>पुरस्कार:</b> पद्मश्री (1983), पद्मभूषण (2004), राजस्थान रत्न (2012 - मरणोपरांत)।</p>
+                                        <p>• <b>पत्रिका:</b> 'लोक संस्कृति' एवं 'प्रेरणा' पत्रिका का संपादन किया।</p>
+                                    </div>
+
+                                    <!-- Devilal Samar -->
+                                    <div class="p-4 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-primary uppercase text-sm mb-2 flex items-center justify-between">
+                                            <span>🎭 2. पद्मश्री देवीलाल सामर (1911–1981)</span>
+                                            <span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full">उदयपुर</span>
+                                        </h4>
+                                        <p>• <b>संस्था स्थापना:</b> <b>22 फरवरी 1952</b> को उदयपुर में <b>'भारतीय लोक कला मंडल'</b> की स्थापना की।</p>
+                                        <p>• <b>योगदान:</b> राजस्थान की <b>कठपुतली कला</b> एवं गवरी, तेरहताली, चरी लोक नृत्यों को पुनर्जीवित कर अंतरराष्ट्रीय पहचान (रोमानिया कठपुतली समारोह में प्रथम पुरस्कार) दिलाई।</p>
+                                        <p>• <b>प्रमुख पुस्तकें:</b> <i>'राजस्थान का लोक संगीत'</i>, <i>'राजस्थान के लोक नाट्य'</i>, <i>'कठपुतली: कला और शिक्षा'</i>।</p>
+                                        <p>• <b>पुरस्कार:</b> 1968 में भारत सरकार द्वारा <b>पद्मश्री</b> से सम्मानित।</p>
+                                    </div>
+
+                                    <!-- Vijaydan Detha -->
+                                    <div class="p-4 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-primary uppercase text-sm mb-2 flex items-center justify-between">
+                                            <span>📚 3. विजयदान देथा 'बिज्जी' (1926–2013)</span>
+                                            <span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full">बोरुंदा, जोधपुर</span>
+                                        </h4>
+                                        <p>• <b>उपनाम:</b> <b>'राजस्थान के शेक्सपियर'</b> के रूप में विख्यात।</p>
+                                        <p>• <b>सर्वश्रेष्ठ कृति:</b> <b>'बातां री फुलवारी'</b> (14 खंडों में राजस्थानी लोक कथाओं का अनुपम संग्रह)।</p>
+                                        <p>• <b>कहानियों पर बनी फिल्में:</b> इनकी कहानी <b>'दुविधा'</b> पर अमोल पालेकर ने <b>'पहेली'</b> (शाहरुख खान अभिनीत) तथा मणि कौल ने 'दुविधा' फिल्म बनाई। <b>'चरणदास चोर'</b> नाटक इन्हीं की कथा पर आधारित है।</p>
+                                        <p>• <b>पुरस्कार:</b> पद्मश्री (2007), साहित्य अकादमी पुरस्कार (1974), राजस्थान रत्न (2012), नोबेल साहित्य पुरस्कार हेतु नामांकित (2011)।</p>
+                                    </div>
+
+                                    <!-- Sitaram Lalas -->
+                                    <div class="p-4 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-primary uppercase text-sm mb-2 flex items-center justify-between">
+                                            <span>📖 4. डॉ. सीताराम लालस (1908–1986)</span>
+                                            <span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full">जोधपुर</span>
+                                        </h4>
+                                        <p>• <b>उपनाम:</b> <b>'राजस्थानी भाषा के पाणिनी'</b> एवं 'राजस्थानी जुबां की मशाल'।</p>
+                                        <p>• <b>ऐतिहासिक कार्य:</b> 40 वर्षों के अथक परिश्रम से 4 खंडों एवं 2 लाख से अधिक शब्दों का <b>'राजस्थानी शब्दकोश' (Rajasthani Sabadkosh)</b> तैयार किया।</p>
+                                        <p>• <b>पुरस्कार:</b> 1977 में भारत सरकार द्वारा <b>पद्मश्री</b> से सम्मानित।</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. शास्त्रीय एवं लोक संगीतज्ञ -->
+                        <div id="musicians" class="space-y-4 reveal">
+                            <div class="flex items-center gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                <div class="w-9 h-9 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center text-base shrink-0">
+                                    <i class="fa-solid fa-microphone-lines"></i>
+                                </div>
+                                <h3 class="font-poppins font-extrabold text-xl sm:text-2xl text-dark dark:text-white">
+                                    2. शास्त्रीय एवं लोक संगीत की अमर विभूतियाँ
+                                </h3>
+                            </div>
+                            <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-subtleCard space-y-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 text-xs font-manrope text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    
+                                    <!-- Allah Jilai Bai -->
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-secondary uppercase mb-1 flex items-center justify-between">
+                                            <span>👑 अल्लाह जिलाई बाई (1902–1992)</span>
+                                            <span class="text-[9px] bg-secondary/10 text-secondary px-1.5 py-0.5 rounded">बीकानेर</span>
+                                        </h4>
+                                        <p>• <b>उपनाम:</b> <b>'राजस्थान की मरुकोकिला'</b> (बाई जी)।</p>
+                                        <p>• बीकानेर के महाराजा <b>गंगासिंह</b> के दरबार में मांड गायन किया। राज्य गीत <b>'केसरिया बालम'</b> को अंतरराष्ट्रीय ख्याति दिलाई।</p>
+                                        <p>• <b>पुरस्कार:</b> 1982 में <b>पद्मश्री</b>, 2012 में राजस्थान रत्न, 2003 में इन पर 5 रु. का डाक टिकट जारी।</p>
+                                    </div>
+
+                                    <!-- Pt. Vishwa Mohan Bhatt -->
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-secondary uppercase mb-1 flex items-center justify-between">
+                                            <span>🎸 पं. विश्व मोहन भट्ट (जन्म 1950)</span>
+                                            <span class="text-[9px] bg-secondary/10 text-secondary px-1.5 py-0.5 rounded">जयपुर</span>
+                                        </h4>
+                                        <p>• <b>आविष्कार:</b> गिटार, सितार व वीणा का समन्वित रूप <b>'मोहन वीणा' (Mohan Veena)</b> का आविष्कार किया।</p>
+                                        <p>• <b>उपलब्धि:</b> एल्बम <i>'अ मीटिंग बाय द रिवर'</i> हेतु 1994 में विश्वविख्यात <b>'ग्रेमी अवार्ड' (Grammy Award)</b> जीता।</p>
+                                        <p>• <b>पुरस्कार:</b> पद्मश्री (2002), पद्मभूषण (2017)।</p>
+                                    </div>
+
+                                    <!-- Gavri Devi -->
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-secondary uppercase mb-1 flex items-center justify-between">
+                                            <span>🎤 गवरी देवी (1920–1988)</span>
+                                            <span class="text-[9px] bg-secondary/10 text-secondary px-1.5 py-0.5 rounded">पाली/जोधपुर</span>
+                                        </h4>
+                                        <p>• जोधपुर महाराजा <b>उम्मेदसिंह</b> के दरबार में मांड गायन प्रस्तुत किया।</p>
+                                        <p>• 1983 में लंदन के <b>अल्बर्ट हॉल</b> में आयोजित भारत महोत्सव में मांड गायन प्रस्तुत कर विश्वभर में प्रशंसा पाई।</p>
+                                        <p>• 2013 में मरणोपरांत <b>राजस्थान रत्न</b> से सम्मानित।</p>
+                                    </div>
+
+                                    <!-- Dagar Brothers -->
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-secondary uppercase mb-1">🎼 डागर बंधु (उस्ताद जिया फरीदुद्दीन डागर)</h4>
+                                        <p>• <b>घराना:</b> <b>डागर घराना (ध्रुपद गायकी)</b> के विश्वविख्यात गायक।</p>
+                                        <p>• प्रवर्तक बहराम खां डागर के वंशज, जिन्होंने शास्त्रीय ध्रुपद शैली को अंतरराष्ट्रीय स्तर पर पुनर्जीवित किया। (2012 में पद्मश्री)।</p>
+                                    </div>
+
+                                    <!-- Mehdi Hasan -->
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-secondary uppercase mb-1">🎶 उस्ताद मेहदी हसन (1927–2012)</h4>
+                                        <p>• <b>जन्म:</b> लूणा (झुंझुनू)।</p>
+                                        <p>• <b>उपनाम:</b> <b>'शहंशाह-ए-गजल' (Ghazal King)</b>। विश्व के सर्वाधिक लोकप्रिय गजल गायकों में अग्रणी।</p>
+                                    </div>
+
+                                    <!-- Begum Batool -->
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-secondary uppercase mb-1">🧕 बतूल बेगम (जयपुर)</h4>
+                                        <p>• मांड, लोक भजन एवं कव्वाली गायिका।</p>
+                                        <p>• 8 मार्च 2022 को राष्ट्रपति द्वारा देश के सर्वोच्च महिला सम्मान <b>'नारी शक्ति पुरस्कार'</b> से सम्मानित।</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. प्रमुख लोक वाद्य वादक -->
+                        <div id="instrumentalists" class="space-y-4 reveal">
+                            <div class="flex items-center gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                <div class="w-9 h-9 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-base shrink-0">
+                                    <i class="fa-solid fa-guitar"></i>
+                                </div>
+                                <h3 class="font-poppins font-extrabold text-xl sm:text-2xl text-dark dark:text-white">
+                                    3. राजस्थान के प्रमुख लोक वाद्य वादक एवं उपाधियाँ
+                                </h3>
+                            </div>
+                            <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-subtleCard">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5 text-xs font-manrope text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-accent uppercase mb-1">🪕 साकर खां मांगणियार (1938–2013)</h4>
+                                        <p>• <b>वाद्य:</b> <b>कामायचा के अद्वितीय जादूगर</b> (हमीरका, बाड़मेर)।<br />
+                                        • विश्व प्रसिद्ध वायलिन वादक यहूदी मेनुहिन के साथ जुगलबंदी की।<br />
+                                        • <b>पुरस्कार:</b> 2012 में भारत सरकार द्वारा <b>पद्मश्री</b> से सम्मानित।</p>
+                                    </div>
+
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-accent uppercase mb-1">🥢 सदीक खां मांगणियार</h4>
+                                        <p>• <b>वाद्य:</b> <b>खड़ताल के जादूगर</b> (बोरुंदा, जोधपुर)।<br />
+                                        • विश्व के अनेक देशों में खड़ताल वादन से दर्शकों को मंत्रमुग्ध किया।<br />
+                                        • इनके नाम पर जयपुर में 'लोक कला अनुसंधान परिषद' स्थापित है।</p>
+                                    </div>
+
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-accent uppercase mb-1">🪕 जहूर खां मेवाती एवं उमर फारूक</h4>
+                                        <p>• <b>वाद्य:</b> <b>भपंग के जादूगर</b> (अलवर, मेवात क्षेत्र)।<br />
+                                        • लोक वाद्य भपंग को राष्ट्रीय व अंतरराष्ट्रीय मंचों पर प्रतिष्ठा दिलाई।</p>
+                                    </div>
+
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-accent uppercase mb-1">🥁 पं. पुरुषोत्तम दास (1907–1991)</h4>
+                                        <p>• <b>वाद्य:</b> <b>पखावज / मृदंग के अद्वितीय सम्राट</b> (नाथद्वारा)।<br />
+                                        • ग्रंथ: <i>'मृदंग वादन'</i>। 1984 में भारत सरकार द्वारा <b>पद्मश्री</b> से सम्मानित।</p>
+                                    </div>
+
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-accent uppercase mb-1">🥁 रामकिशन सोलंकी</h4>
+                                        <p>• <b>वाद्य:</b> <b>नगाड़े के जादूगर</b> (पुष्कर, अजमेर)।<br />
+                                        • पुष्कर मेले एवं अंतरराष्ट्रीय उत्सवों में नगाड़ा वादन के शीर्ष कलाकार।</p>
+                                    </div>
+
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-accent uppercase mb-1">🎺 रामनाथ चौधरी (पद्मश्री 2024)</h4>
+                                        <p>• <b>वाद्य:</b> <b>नाक से अलगोजा बजाने वाले</b> विश्वविख्यात कलाकार (पदमपुरा, जयपुर)।<br />
+                                        • 2024 में कला क्षेत्र में <b>पद्मश्री</b> से सम्मानित।</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. लोक नृत्य व नाट्य कलाकार -->
+                        <div id="dancers-theater" class="space-y-4 reveal">
+                            <div class="flex items-center gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                <div class="w-9 h-9 rounded-xl bg-rose-500/10 text-rose-600 flex items-center justify-center text-base shrink-0">
+                                    <i class="fa-solid fa-person-walking"></i>
+                                </div>
+                                <h3 class="font-poppins font-extrabold text-xl sm:text-2xl text-dark dark:text-white">
+                                    4. लोक नृत्य एवं लोक नाट्य के प्रमुख कलाकार
+                                </h3>
+                            </div>
+                            <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-subtleCard space-y-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-manrope text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    
+                                    <!-- Gulabo Sapera -->
+                                    <div class="p-4 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-rose-600 dark:text-rose-400 uppercase text-sm mb-2 flex items-center justify-between">
+                                            <span>💃 गुलाबो सपेरा (कोटड़ा, अजमेर)</span>
+                                            <span class="text-[10px] bg-rose-500/10 text-rose-600 px-2 py-0.5 rounded-full">पद्मश्री 2016</span>
+                                        </h4>
+                                        <p>• <b>योगदान:</b> कालबेलिया नृत्य को विश्व के 165+ देशों में प्रस्तुत कर <b>2010 में यूनेस्को की अमूर्त सांस्कृतिक धरोहर सूची</b> में शामिल कराया।</p>
+                                        <p>• फ्रांस के राष्ट्रपति द्वारा सम्मानित, 'गुलाबो' नाम से फ्रेंच में बायोग्राफी प्रकाशित।</p>
+                                    </div>
+
+                                    <!-- Folk Theater Pioneers -->
+                                    <div class="p-4 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800 space-y-1.5">
+                                        <h4 class="font-bold text-rose-600 dark:text-rose-400 uppercase text-sm mb-2">🎭 लोक नाट्य के प्रमुख प्रवर्तक</h4>
+                                        <p>• <b>लक्षीराम (कुचामन):</b> <b>कुचामनी ख्याल</b> के प्रवर्तक (रचनाएं: गोगा चौहान, मीरां मंगल)।</p>
+                                        <p>• <b>नानूराम व दुलिया राणा (चिड़ावा):</b> <b>शेखावाटी ख्याल</b> के प्रसिद्ध कलाकार।</p>
+                                        <p>• <b>अलीबख्श (मुंडावर, अलवर):</b> <b>अलीबख्शी ख्याल</b> के प्रवर्तक (उपनाम: <b>'अलवर का रसखान'</b>)।</p>
+                                        <p>• <b>बाघाजी जाट (केकड़ी):</b> <b>भवाई नृत्य</b> के जन्मदाता।</p>
+                                        <p>• <b>कृष्णा व्यास छंगाणी व तारा शर्मा:</b> भवाई नृत्य की प्रसिद्ध नृत्यांगनाएं।</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. सिद्धहस्त शिल्पकार व चित्रकार -->
+                        <div id="craftspersons" class="space-y-4 reveal">
+                            <div class="flex items-center gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                <div class="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-base shrink-0">
+                                    <i class="fa-solid fa-palette"></i>
+                                </div>
+                                <h3 class="font-poppins font-extrabold text-xl sm:text-2xl text-dark dark:text-white">
+                                    5. सिद्धहस्त शिल्पकार, चितेरे एवं चित्रकार
+                                </h3>
+                            </div>
+                            <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-subtleCard space-y-4">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs font-manrope text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    
+                                    <!-- Kripal Singh -->
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-emerald-600 dark:text-emerald-400 uppercase mb-1">🏺 कृपाल सिंह शेखावत (1922–2008)</h4>
+                                        <p>• <b>कला:</b> <b>'ब्लू पॉटरी के जादूगर'</b> (मऊ, सीकर)।<br />
+                                        • ब्लू पॉटरी में 25 नए रंगों का प्रयोग कर <b>'कृपाल कुंभ'</b> शैली विकसित की।<br />
+                                        • <b>पुरस्कार:</b> पद्मश्री (1974), शिल्पगुरु (2002)।</p>
+                                    </div>
+
+                                    <!-- Shree Lal Joshi -->
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-emerald-600 dark:text-emerald-400 uppercase mb-1">📜 श्रीलाल जोशी (1931–2018)</h4>
+                                        <p>• <b>कला:</b> <b>फड़ चित्रकला के अंतरराष्ट्रीय चितेरे</b> (शाहपुरा, भीलवाड़ा)।<br />
+                                        • देवनारायण जी व पाबूजी की फड़ को वैश्विक मंच पर प्रदर्शित किया।<br />
+                                        • <b>पुरस्कार:</b> पद्मश्री (2006), शिल्पगुरु (2007)।</p>
+                                    </div>
+
+                                    <!-- Hisamuddin Usta -->
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-emerald-600 dark:text-emerald-400 uppercase mb-1">🐪 हिसामुद्दीन उस्ता (1913–1997)</h4>
+                                        <p>• <b>कला:</b> <b>उस्ता कला (मुनव्वती कला)</b> के सिरमौर शिल्पी (बीकानेर)।<br />
+                                        • ऊंट की खाल पर स्वर्ण मीनाकारी हेतु 1986 में <b>पद्मश्री</b> प्राप्त।</p>
+                                    </div>
+
+                                    <!-- Mohanlal Kumhar -->
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-emerald-600 dark:text-emerald-400 uppercase mb-1">🧱 मोहनलाल कुम्हार (1939–2021)</h4>
+                                        <p>• <b>कला:</b> <b>टेराकोटा कला (मृण्मूर्ति शिल्प)</b> (मोलेला, राजसमंद)।<br />
+                                        • मिट्टी से लोक देवताओं की मूर्तियां बनाने हेतु 2012 में <b>पद्मश्री</b> से सम्मानित।</p>
+                                    </div>
+
+                                    <!-- Mahesh Rajsoni -->
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-emerald-600 dark:text-emerald-400 uppercase mb-1">💎 महेश राजसोनी</h4>
+                                        <p>• <b>कला:</b> <b>थेवा कला</b> (प्रतापगढ़)।<br />
+                                        • हरे बेल्जियम कांच पर स्वर्ण नक्काशी में अद्वितीय कार्य हेतु 2015 में <b>पद्मश्री</b> से सम्मानित।</p>
+                                    </div>
+
+                                    <!-- Ramgopal Vijayvargiya -->
+                                    <div class="p-3.5 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-emerald-600 dark:text-emerald-400 uppercase mb-1">🎨 रामगोपाल विजयवर्गीय (1905–2003)</h4>
+                                        <p>• <b>कला:</b> आधुनिक राजस्थानी चित्रकला के जनक (बालेर, सवाई माधोपुर)।<br />
+                                        • राजस्थान के प्रथम चित्रकार जिन्हें 1984 में <b>पद्मश्री</b> मिला। एकल चित्र प्रदर्शनी परंपरा शुरू की।</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. प्रमुख साहित्यकार व इतिहासकार -->
+                        <div id="writers-historians" class="space-y-4 reveal">
+                            <div class="flex items-center gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                <div class="w-9 h-9 rounded-xl bg-support/10 text-support flex items-center justify-center text-base shrink-0">
+                                    <i class="fa-solid fa-book-bookmark"></i>
+                                </div>
+                                <h3 class="font-poppins font-extrabold text-xl sm:text-2xl text-dark dark:text-white">
+                                    6. प्रमुख साहित्यकार, कवि एवं इतिहासकार
+                                </h3>
+                            </div>
+                            <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-subtleCard">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-manrope text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    
+                                    <!-- Kanhaiyalal Sethia -->
+                                    <div class="p-4 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-support uppercase text-sm mb-2 flex items-center justify-between">
+                                            <span>✍️ कन्हैयालाल सेठिया (1919–2008)</span>
+                                            <span class="text-[10px] bg-support/10 text-support px-2 py-0.5 rounded-full">सुजानगढ़, चूरू</span>
+                                        </h4>
+                                        <p>• <b>अमर रचनाएं:</b> <i>'पाथल और पीथल'</i> (महाराणा प्रताप व पृथ्वीराज राठौड़), <i>'धरती धोरां री'</i>, <i>'मींझर'</i>, <i>'लीलतांस'</i> (1976 साहित्य अकादमी), <i>'सबद'</i>, <i>'कूंकूं'</i>।</p>
+                                        <p>• <b>पुरस्कार:</b> पद्मश्री (2004), मूर्तिदेवी पुरस्कार, राजस्थान रत्न (2012)।</p>
+                                    </div>
+
+                                    <!-- Kavi Shyamaldas & Muhnot Nainsi -->
+                                    <div class="p-4 bg-white dark:bg-[#1a1a2e] rounded-xl border border-slate-100 dark:border-slate-800 space-y-2">
+                                        <div>
+                                            <h5 class="font-bold text-dark dark:text-white">📜 कविराज श्यामलदास (1836–1893, भीलवाड़ा)</h5>
+                                            <p>• मेवाड़ महाराणा सज्जनसिंह के दरबारी। प्रसिद्ध ऐतिहासिक ग्रंथ: <b>'वीर विनोद'</b> (मेवाड़ का प्रामाणिक इतिहास)। ब्रिटिश सरकार ने इन्हें <b>'महामहोपाध्याय'</b> व <i>'केसर-ए-हिंद'</i> की उपाधि दी।</p>
+                                        </div>
+                                        <div class="border-t border-slate-100 dark:border-slate-800 pt-2">
+                                            <h5 class="font-bold text-dark dark:text-white">📜 मुहणौत नैणसी (1610–1670, जोधपुर)</h5>
+                                            <p>• जसवंतसिंह प्रथम के दीवान। ग्रंथ: <b>'नैणसी री ख्यात'</b> एवं <b>'मारवाड़ रा परगना री विगत'</b> (राजस्थान का गजेटियर)। मुंशी देवीप्रसाद ने इन्हें <b>'राजपूताने का अबुल फजल'</b> कहा।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 7. मास्टर टेबल: व्यक्तित्व एवं उपाधियाँ -->
+                        <div id="master-table" class="space-y-4 reveal">
+                            <div class="flex items-center gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                <div class="w-9 h-9 rounded-xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center text-base shrink-0">
+                                    <i class="fa-solid fa-table-list"></i>
+                                </div>
+                                <h3 class="font-poppins font-extrabold text-xl sm:text-2xl text-dark dark:text-white">
+                                    7. प्रमुख व्यक्तित्व, उपाधियाँ एवं उपलब्धियों का मास्टर चार्ट
+                                </h3>
+                            </div>
+                            <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-subtleCard">
+                                <div class="custom-table-wrap">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>सांस्कृतिक व्यक्तित्व</th>
+                                                <th>क्षेत्र / विधा</th>
+                                                <th>प्रसिद्ध उपनाम / उपाधि</th>
+                                                <th>प्रमुख उपलब्धि / पुरस्कार</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><b>अल्लाह जिलाई बाई</b></td>
+                                                <td>मांड गायकी (बीकानेर)</td>
+                                                <td><b>'राजस्थान की मरुकोकिला'</b></td>
+                                                <td>पद्मश्री (1982), राजस्थान रत्न (2012)</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>विजयदान देथा 'बिज्जी'</b></td>
+                                                <td>राजस्थानी साहित्य (बोरुंदा)</td>
+                                                <td><b>'राजस्थान के शेक्सपियर'</b></td>
+                                                <td>बातां री फुलवारी, पद्मश्री (2007)</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>कृपाल सिंह शेखावत</b></td>
+                                                <td>ब्लू पॉटरी (सीकर/जयपुर)</td>
+                                                <td><b>'ब्लू पॉटरी के जादूगर'</b></td>
+                                                <td>पद्मश्री (1974), कृपाल कुंभ शैली</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>साकर खां मांगणियार</b></td>
+                                                <td>कामायचा वादन (बाड़मेर)</td>
+                                                <td><b>'कामायचा के सुल्तान'</b></td>
+                                                <td>पद्मश्री (2012)</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>सदीक खां मांगणियार</b></td>
+                                                <td>खड़ताल वादन (जोधपुर)</td>
+                                                <td><b>'खड़ताल के जादूगर'</b></td>
+                                                <td>लोक कला शोध परिषद संस्थापक</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>जहूर खां मेवाती</b></td>
+                                                <td>भपंग वादन (अलवर)</td>
+                                                <td><b>'भपंग के जादूगर'</b></td>
+                                                <td>मेवात लोक वाद्य संरक्षक</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>पं. पुरुषोत्तम दास</b></td>
+                                                <td>पखावज वादन (नाथद्वारा)</td>
+                                                <td><b>'पखावज सम्राट'</b></td>
+                                                <td>पद्मश्री (1984), 'मृदंग वादन' ग्रंथ</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>गुलाबो सपेरा</b></td>
+                                                <td>कालबेलिया नृत्य (अजमेर)</td>
+                                                <td><b>'कालबेलिया क्वीन'</b></td>
+                                                <td>पद्मश्री (2016), UNESCO सूची 2010</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>डॉ. सीताराम लालस</b></td>
+                                                <td>भाषा एवं कोशकार (जोधपुर)</td>
+                                                <td><b>'राजस्थानी के पाणिनी'</b></td>
+                                                <td>राजस्थानी सबदकोश (2 लाख शब्द)</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>कन्हैयालाल सेठिया</b></td>
+                                                <td>राजस्थानी कविता (चूरू)</td>
+                                                <td><b>'धरती धोरां री के जनक'</b></td>
+                                                <td>पाथल और पीथल, पद्मश्री (2004)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 8. याद रखने की धांसू ट्रिक्स -->
+                        <div id="tricks" class="space-y-4 reveal">
+                            <div class="flex items-center gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                <div class="w-9 h-9 rounded-xl bg-yellow-500/10 text-yellow-600 flex items-center justify-center text-base shrink-0">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                </div>
+                                <h3 class="font-poppins font-extrabold text-xl sm:text-2xl text-dark dark:text-white">
+                                    8. व्यक्तित्व एवं संस्थाएं याद रखने की आसान ट्रिक्स
+                                </h3>
+                            </div>
+                            <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-subtleCard space-y-4">
+                                <div class="p-4 trick-box rounded-xl">
+                                    <p class="text-xs font-bold text-accent uppercase mb-1">🎯 ट्रिक 1: रूपायन व लोक कला मंडल संस्थापक</p>
+                                    <p class="text-sm font-bold text-dark dark:text-white mb-1">"बोरुंदा में कोमल बिज्जी, उदयपुर में सामर जी"</p>
+                                    <p class="text-xs text-slate-600 dark:text-slate-300 font-manrope">
+                                        • <b>रूपायन संस्थान (बोरुंदा, 1960):</b> <b>कोमल</b> कोठारी व <b>बिज्जी</b> (विजयदान देथा)<br />
+                                        • <b>भारतीय लोक कला मंडल (उदयपुर, 1952):</b> देवीलाल <b>सामर</b>
+                                    </p>
+                                </div>
+
+                                <div class="p-4 trick-box rounded-xl">
+                                    <p class="text-xs font-bold text-accent uppercase mb-1">🎯 ट्रिक 2: लोक वाद्यों के जादूगर</p>
+                                    <p class="text-sm font-bold text-dark dark:text-white mb-1">"साकर कामायचा, सदीक खड़ताल, जहूर भपंग बजावे बेमिसाल"</p>
+                                    <p class="text-xs text-slate-600 dark:text-slate-300 font-manrope">
+                                        • कामायचा = <b>साकर खां</b> | खड़ताल = <b>सदीक खां</b> | भपंग = <b>जहूर खां मेवाती</b>
+                                    </p>
+                                </div>
+
+                                <div class="p-4 fact-highlight rounded-xl">
+                                    <p class="text-xs font-bold text-amber-700 dark:text-amber-300 uppercase mb-1">🎯 ट्रिक 3: हस्तशिल्प के सिरमौर शिल्पी</p>
+                                    <p class="text-xs text-slate-700 dark:text-slate-300 font-manrope">
+                                        • <b>कृपाल</b> = ब्लू पॉटरी | <b>हिसामुद्दीन</b> = उस्ता कला | <b>श्रीलाल</b> = फड़ चित्रकला | <b>मोहनलाल</b> = टेराकोटा
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 9. RPSC ONE-LINERS (EXAM FACTS) -->
+                        <div id="exam-facts" class="space-y-4 reveal">
+                            <div class="flex items-center gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                <div class="w-9 h-9 rounded-xl bg-red-500/10 text-red-600 flex items-center justify-center text-base shrink-0">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <h3 class="font-poppins font-extrabold text-xl sm:text-2xl text-dark dark:text-white">
+                                    9. विगत परीक्षाओं में पूछे गए अति-महत्वपूर्ण तथ्य (One-Liners)
+                                </h3>
+                            </div>
+                            <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-[#1a1a2e] dark:to-[#16162a] rounded-2xl p-6 border border-amber-200/50 dark:border-slate-800 shadow-subtleCard">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <h4 class="font-poppins font-bold text-dark dark:text-white text-xs uppercase tracking-wider mb-2">📌 संस्था व शोधकर्ता परीक्षा तथ्य</h4>
+                                        <ul class="space-y-2 text-slate-700 dark:text-slate-300 text-xs font-manrope leading-relaxed list-disc pl-4">
+                                            <li><b>रूपायन संस्थान (बोरुंदा):</b> कोमल कोठारी एवं विजयदान देथा द्वारा 1960 में स्थापित।</li>
+                                            <li><b>भारतीय लोक कला मंडल (उदयपुर):</b> 1952 में देवीलाल सामर द्वारा स्थापित।</li>
+                                            <li><b>'दुविधा' व 'अलेखूं हिटलर':</b> विजयदान देथा 'बिज्जी' की प्रसिद्ध कृतियाँ।</li>
+                                            <li><b>राजस्थानी सबदकोश:</b> डॉ. सीताराम लालस द्वारा 2 लाख शब्दों में संकलित।</li>
+                                            <li><b>'वीर विनोद' ग्रंथ:</b> कविराज श्यामलदास द्वारा रचित मेवाड़ का इतिहास।</li>
+                                            <li><b>'राजपूताने का अबुल फजल':</b> मुंशी देवीप्रसाद ने मुहणौत नैणसी को कहा।</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-poppins font-bold text-dark dark:text-white text-sm uppercase tracking-wider mb-2">📌 कला व संगीत व्यक्तित्व तथ्य</h4>
+                                        <ul class="space-y-2 text-slate-700 dark:text-slate-300 text-xs font-manrope leading-relaxed list-disc pl-4">
+                                            <li><b>अल्लाह जिलाई बाई:</b> 1982 में पद्मश्री पाने वाली बीकानेर की प्रसिद्ध मांड गायिका।</li>
+                                            <li><b>कृपाल सिंह शेखावत:</b> ब्लू पॉटरी को 25 नए रंगों से सजाने वाले शिल्पी (पद्मश्री 1974)।</li>
+                                            <li><b>गुलाबो सपेरा:</b> कालबेलिया नृत्य को यूनेस्को धरोहर में शामिल कराने वाली नृत्यांगना।</li>
+                                            <li><b>साकर खां:</b> कामायचा के पद्मश्री वादक | <b>सदीक खां:</b> खड़ताल के जादूगर।</li>
+                                            <li><b>पं. पुरुषोत्तम दास:</b> नाथद्वारा के विख्यात पखावज वादक (पद्मश्री 1984)।</li>
+                                            <li><b>श्रीलाल जोशी:</b> फड़ चित्रकला को अंतरराष्ट्रीय ख्याति दिलाने वाले चितेरे।</li>
+                                            <li><b>पं. विश्व मोहन भट्ट:</b> 'मोहन वीणा' के आविष्कारक एवं ग्रैमी अवार्ड विजेता (1994)।</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- ============================================== -->
+                    <!-- RIGHT COLUMN (4 COLS): HIGH-CONVERTING SIDEBAR -->
+                    <!-- ============================================== -->
+                    <div class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+
+                        <!-- WIDGET 1: 100% TOPIC MOCK TEST CARD -->
+                        <div class="bg-gradient-to-br from-slate-900 via-[#16162a] to-slate-900 text-white rounded-2xl p-5 border border-slate-700 shadow-premium relative overflow-hidden text-center space-y-3">
+                            <div class="absolute -top-10 -right-10 w-28 h-28 bg-emerald-500/10 rounded-full blur-2xl"></div>
+                            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[11px] font-bold uppercase tracking-wider">
+                                <i class="fa-solid fa-gift"></i> Special Topicwise Test
+                            </div>
+                            <div>
+                                <h4 class="font-poppins font-extrabold text-lg text-white mt-1">सांस्कृतिक व्यक्तित्व : टेस्ट देवें</h4>
+                                <p class="text-xs text-slate-300 font-manrope mt-1">आरपीएससी व कर्मचारी चयन बोर्ड परीक्षा स्तर के नवीनतम वस्तुनिष्ठ प्रश्न।</p>
+                            </div>
+                            <div class="py-2 flex items-center justify-center gap-3">
+                                <span class="text-slate-400 line-through text-sm font-semibold">₹49</span>
+                                <span class="text-2xl font-black text-emerald-400">₹9 <span class="text-xs uppercase font-bold text-white bg-emerald-600 px-2 py-0.5 rounded ml-1">GET 81% OFF</span></span>
+                            </div>
+                            <button onclick="openOfferModal()" class="w-full py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-manrope font-extrabold text-xs rounded-xl hover:opacity-95 transition-all shadow-premium hover:scale-[1.02] cursor-pointer">
+                                <i class="fa-solid fa-play-circle mr-1.5"></i> Complete टेस्ट शुरू करें →
+                            </button>
+                        </div>
+
+                        <!-- WIDGET 2: COMPLETE PASS @ ₹29 (UNBEATABLE VALUE CTA) -->
+                        <div class="bg-gradient-to-br from-amber-500/15 via-[#FFFDF9] to-orange-500/15 dark:from-[#1a1a2e] dark:via-[#16162a] dark:to-[#1a1a2e] rounded-2xl p-5 border-2 border-primary/40 shadow-glowPrimary text-center space-y-3 relative overflow-hidden">
+                            <div class="absolute top-2 right-2 bg-primary text-white text-[9px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse">
+                                Limited Pass
+                            </div>
+                            <div class="w-11 h-11 rounded-xl bg-primary/20 text-primary flex items-center justify-center mx-auto text-xl">
+                                <i class="fa-solid fa-crown"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-poppins font-extrabold text-base text-dark dark:text-white">Rajasthan Test Series</h4>
+                                <p class="text-xs text-muted dark:text-slate-300 font-manrope mt-1">
+                                    राजस्‍थान की सभी परीक्षाएं, Instant रैंक, सटीक व्याख्या व पिछले 10 वर्षों के RPSC पेपर्स का निचोड़।
+                                </p>
+                            </div>
+                            <div class="py-1">
+                                <span class="text-xs text-slate-400 line-through mr-1.5">₹199</span>
+                                <span class="text-3xl font-black text-primary">₹29</span>
+                                <span class="text-xs text-muted dark:text-slate-400 font-bold ml-1">/ All Access</span>
+                            </div>
+                            <a href="test-series/" class="block w-full py-3 bg-gradient-to-r from-primary to-secondary text-white font-manrope font-extrabold text-xs rounded-xl hover:shadow-glowPrimary transition-all shadow-premium hover:scale-[1.02]">
+                                <i class="fa-solid fa-bolt mr-1"></i> केवल ₹29 में पास एक्टिवेट करें
+                            </a>
+                            <p class="text-[10px] text-slate-400 font-medium">⚡ 2 मिनट में एक्टिवेशन | अनलिमिटेड री-अटेम्प्ट</p>
+                        </div>
+
+                        <!-- WIDGET 3: RAJASTHAN ART & CULTURE FULL LIVE SERIES (TOP RANKED) -->
+                        <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-subtleCard space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-[10px] font-bold uppercase tracking-wider text-primary font-poppins">Culture Master Hub</span>
+                                    <h3 class="font-poppins font-extrabold text-base text-dark dark:text-white mt-0.5">
+                                        राजस्‍थान कला एवं संस्कृति
+                                    </h3>
+                                </div>
+                                <span class="text-[10px] font-bold text-secondary bg-pink-50 dark:bg-pink-950/40 px-2 py-0.5 rounded">Culture</span>
+                            </div>
+                            <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-300 font-manrope">
+                                <li class="flex items-center justify-between py-1 border-b border-slate-200/50 dark:border-slate-800">
+                                    <span class="text-primary font-bold flex items-center"><i class="fa-solid fa-user-graduate text-[10px] text-primary mr-1.5"></i> प्रमुख सांस्कृतिक व्यक्तित्व</span>
+                                    <span class="text-[9px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">वर्तमान</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1 border-b border-slate-200/50 dark:border-slate-800">
+                                    <a href="rajasthan-notes/culture/mela-tyohar" class="hover:text-primary flex items-center"><i class="fa-solid fa-calendar-days text-[10px] text-secondary mr-1.5"></i> उत्सव, त्यौहार एवं मेले</a>
+                                    <span class="text-[9px] font-bold text-secondary bg-pink-50 dark:bg-pink-950/40 px-1.5 py-0.5 rounded">त्यौहार</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1 border-b border-slate-200/50 dark:border-slate-800">
+                                    <a href="rajasthan-notes/culture/chitrakala-lokkala" class="hover:text-primary flex items-center"><i class="fa-solid fa-palette text-[10px] text-secondary mr-1.5"></i> चित्रकला एवं लोककला</a>
+                                    <span class="text-[9px] font-bold text-secondary bg-pink-50 dark:bg-pink-950/40 px-1.5 py-0.5 rounded">चित्रकला</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1 border-b border-slate-200/50 dark:border-slate-800">
+                                    <a href="rajasthan-notes/culture/lok-sangeet-vadhyayantra" class="hover:text-primary flex items-center"><i class="fa-solid fa-guitar text-[10px] text-secondary mr-1.5"></i> लोक संगीत व वाद्ययंत्र</a>
+                                    <span class="text-[9px] font-bold text-secondary bg-pink-50 dark:bg-pink-950/40 px-1.5 py-0.5 rounded">संगीत</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1 border-b border-slate-200/50 dark:border-slate-800">
+                                    <a href="rajasthan-notes/culture/chittorgarh-durg" class="hover:text-primary flex items-center"><i class="fa-solid fa-fort text-[10px] text-secondary mr-1.5"></i> चित्तौड़गढ़ दुर्ग (3 साके)</a>
+                                    <span class="text-[9px] font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 px-1.5 py-0.5 rounded">दुर्ग</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1 border-b border-slate-200/50 dark:border-slate-800">
+                                    <a href="rajasthan-notes/culture/kumbhalgarh-durg" class="hover:text-primary flex items-center"><i class="fa-solid fa-mountain text-[10px] text-secondary mr-1.5"></i> कुंभलगढ़ दुर्ग (कटारगढ़)</a>
+                                    <span class="text-[9px] font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 px-1.5 py-0.5 rounded">दुर्ग</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1 border-b border-slate-200/50 dark:border-slate-800">
+                                    <a href="rajasthan-notes/culture/ghoomar-nritya" class="hover:text-primary flex items-center"><i class="fa-solid fa-person-dress text-[10px] text-secondary mr-1.5"></i> घूमर नृत्य (राज्य नृत्य)</a>
+                                    <span class="text-[9px] font-bold text-secondary bg-pink-50 dark:bg-pink-950/40 px-1.5 py-0.5 rounded">नृत्य</span>
+                                </li>
+                                <li class="flex items-center justify-between py-1">
+                                    <a href="rajasthan-notes/culture/lok-devta-sant" class="hover:text-primary flex items-center"><i class="fa-solid fa-hands-praying text-[10px] text-secondary mr-1.5"></i> प्रमुख संत एवं लोक देवता</a>
+                                    <span class="text-[9px] font-bold text-amber-600 bg-amber-50 dark:bg-amber-950/40 px-1.5 py-0.5 rounded">संत</span>
+                                </li>
+                            </ul>
+                            <div class="pt-2">
+                                <a href="rajasthan-notes/culture/" class="text-xs font-bold text-secondary hover:underline flex items-center gap-1">
+                                    संपूर्ण कला एवं संस्कृति लाइब्रेरी देखें →
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- WIDGET 4: RAJASTHAN HISTORY (CROSS SUBJECT) -->
+                        <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-subtleCard space-y-3">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-poppins font-extrabold text-base text-dark dark:text-white">
+                                    राजस्थान का इतिहास
+                                </h3>
+                                <span class="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">History</span>
+                            </div>
+                            <ul class="space-y-1.5 text-xs text-slate-700 dark:text-slate-300 font-manrope">
+                                <li><a href="rajasthan-notes/history/kalibangan-sabhyata" class="hover:text-primary flex items-center py-1 border-b border-slate-200/50 dark:border-slate-800"><i class="fa-solid fa-city text-[10px] text-primary mr-1.5"></i> कालीबंगा सभ्यता (हड़प्पा)</a></li>
+                                <li><a href="rajasthan-notes/history/ganeshwar-sabhyata" class="hover:text-primary flex items-center py-1 border-b border-slate-200/50 dark:border-slate-800"><i class="fa-solid fa-hammer text-[10px] text-primary mr-1.5"></i> गणेश्वर सभ्यता (ताम्र जननी)</a></li>
+                                <li><a href="rajasthan-notes/history/ahar-sabhyata" class="hover:text-primary flex items-center py-1 border-b border-slate-200/50 dark:border-slate-800"><i class="fa-solid fa-mound text-[10px] text-primary mr-1.5"></i> आहड़ सभ्यता (बनास संस्कृति)</a></li>
+                                <li><a href="rajasthan-notes/history/bairath-sabhyata" class="hover:text-primary flex items-center py-1 border-b border-slate-200/50 dark:border-slate-800"><i class="fa-solid fa-landmark text-[10px] text-primary mr-1.5"></i> बैराठ सभ्यता (विराटनगर)</a></li>
+                                <li><a href="rajasthan-notes/history/mewar-rajvansh" class="hover:text-primary flex items-center py-1"><i class="fa-solid fa-fort-awesome text-[10px] text-primary mr-1.5"></i> मेवाड़ राजवंश (गुहिल/सिसोदिया)</a></li>
+                            </ul>
+                            <div class="pt-2">
+                                <a href="rajasthan-notes/history/" class="text-xs font-bold text-primary hover:underline flex items-center gap-1">
+                                    इतिहास हब खोलें →
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- WIDGET 5: RAJASTHAN GEOGRAPHY (50 DISTRICTS UPDATED) -->
+                        <div class="bg-slate-50 dark:bg-[#16162a] rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-subtleCard space-y-3">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-poppins font-extrabold text-base text-dark dark:text-white">
+                                    राजस्थान का भूगोल
+                                </h3>
+                                <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 rounded">50 ज़िले</span>
+                            </div>
+                            <ul class="space-y-1.5 text-xs text-slate-700 dark:text-slate-300 font-manrope">
+                                <li><a href="rajasthan-notes/geography/physiographic-divisions-bhautik-pradesh" class="hover:text-primary flex items-center py-1 border-b border-slate-200/50 dark:border-slate-800"><i class="fa-solid fa-mountain-sun text-[10px] text-emerald-600 mr-1.5"></i> भौतिक प्रदेश (4 प्रमुख भाग)</a></li>
+                                <li><a href="rajasthan-notes/geography/climate-kopen-classification" class="hover:text-primary flex items-center py-1 border-b border-slate-200/50 dark:border-slate-800"><i class="fa-solid fa-cloud-sun-rain text-[10px] text-emerald-600 mr-1.5"></i> जलवायु एवं कोपेन वर्गीकरण</a></li>
+                                <li><a href="rajasthan-notes/geography/drainage-system-and-lakes" class="hover:text-primary flex items-center py-1"><i class="fa-solid fa-water text-[10px] text-emerald-600 mr-1.5"></i> अपवाह तंत्र एवं प्रमुख झीलें</a></li>
+                            </ul>
+                            <div class="pt-2">
+                                <a href="rajasthan-notes/geography/" class="text-xs font-bold text-emerald-600 hover:underline flex items-center gap-1">
+                                    राजस्थान भूगोल हब खोलें →
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY THIS TOPIC IS IMPORTANT -->
+        <section class="py-16 bg-slateBg dark:bg-[#12121f] relative overflow-hidden border-t border-slate-100 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                    <div class="reveal">
+                        <span class="text-primary font-bold text-sm uppercase tracking-widest font-poppins">परीक्षा में महत्व</span>
+                        <h2 class="font-poppins font-bold text-3xl md:text-4xl text-dark dark:text-white mt-1 mb-4">सांस्कृतिक व्यक्तित्व क्यों <span class="text-primary">अति-महत्वपूर्ण</span> हैं?</h2>
+                        <p class="text-muted dark:text-slate-400 text-base font-manrope leading-relaxed mb-5">
+                            RPSC, RAS, CET एवं शिक्षक भर्ती परीक्षाओं में कला एवं संस्कृति खंड से राजस्थान के प्रमुख सांस्कृतिक पुरोधाओं, पद्म पुरस्कार विजेताओं एवं संस्थापकों से सीधे प्रश्न पूछे जाते हैं।
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span> <span><strong class="text-dark dark:text-white">संस्थापक:</strong> रूपायन संस्थान (कोमल कोठारी), लोक कला मंडल (देवीलाल सामर)।</span></li>
+                            <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-secondary/10 text-secondary flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span> <span><strong class="text-dark dark:text-white">साहित्यकार:</strong> 'बातां री फुलवारी' (विजयदान देथा), 'पाथल और पीथल' (कन्हैयालाल सेठिया)।</span></li>
+                            <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-accent/10 text-accent flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span> <span><strong class="text-dark dark:text-white">संगीत व वादक:</strong> अल्लाह जिलाई बाई (मांड), साकर खां (कामायचा), सदीक खां (खड़ताल)।</span></li>
+                            <li class="flex items-start gap-3"><span class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">4</span> <span><strong class="text-dark dark:text-white">शिल्प व नृत्य:</strong> कृपाल सिंह शेखावत (ब्लू पॉटरी), गुलाबो सपेरा (कालबेलिया)।</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 reveal">
+                        <div class="bg-white dark:bg-[#1a1a2e] rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard text-center hover:shadow-cardHover transition-all duration-300">
+                            <div class="w-14 h-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-2xl mx-auto mb-3">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </div>
+                            <h4 class="font-poppins font-bold text-lg text-dark dark:text-white">संस्थापक</h4>
+                            <p class="text-xs text-muted dark:text-slate-400 mt-1">कोठारी, सामर, देथा</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#1a1a2e] rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard text-center hover:shadow-cardHover transition-all duration-300">
+                            <div class="w-14 h-14 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center text-2xl mx-auto mb-3">
+                                <i class="fa-solid fa-microphone"></i>
+                            </div>
+                            <h4 class="font-poppins font-bold text-lg text-dark dark:text-white">मांड गायिका</h4>
+                            <p class="text-xs text-muted dark:text-slate-400 mt-1">मरुकोकिला अल्लाह जिलाई</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#1a1a2e] rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard text-center hover:shadow-cardHover transition-all duration-300">
+                            <div class="w-14 h-14 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-2xl mx-auto mb-3">
+                                <i class="fa-solid fa-guitar"></i>
+                            </div>
+                            <h4 class="font-poppins font-bold text-lg text-dark dark:text-white">लोक वादक</h4>
+                            <p class="text-xs text-muted dark:text-slate-400 mt-1">साकर, सदीक, जहूर खां</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#1a1a2e] rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-subtleCard text-center hover:shadow-cardHover transition-all duration-300">
+                            <div class="w-14 h-14 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-2xl mx-auto mb-3">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <h4 class="font-poppins font-bold text-lg text-dark dark:text-white">पद्मश्री शिल्पी</h4>
+                            <p class="text-xs text-muted dark:text-slate-400 mt-1">कृपाल सिंह, श्रीलाल जोशी</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HIGH-IMPACT COMPACT RECTANGLE CTA BANNER -->
+        <section class="py-8 bg-slate-50 dark:bg-[#16162a]">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6">
+                <div class="bg-gradient-to-r from-slate-900 via-[#1a1a2e] to-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-700 shadow-premium relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+                        <div class="text-left space-y-2">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-extrabold uppercase tracking-wider">
+                                <i class="fa-solid fa-bolt"></i> Crack Your Dream Exam
+                            </div>
+                            <h3 class="font-poppins font-black text-xl sm:text-2xl text-white">
+                                राजस्थान की सभी परीक्षाओं की टेस्ट सीरीज़ — <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">केवल ₹29 में</span>
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-300 font-manrope max-w-lg">
+                                CET, SI, RAS Pre, 1st/2nd Grade और राजस्थान पुलिस परीक्षा हेतु 500+ मॉक टेस्ट, लीडरबोर्ड रैंक और विस्तृत समाधान।
+                            </p>
+                        </div>
+                        <div class="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto shrink-0">
+                            <a href="test-series/free-mock-tests" class="w-full sm:w-auto text-center px-5 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-white font-manrope font-extrabold text-xs transition-all">
+                                फ्री मॉक टेस्ट (₹0)
+                            </a>
+                            <a href="test-series/" class="w-full sm:w-auto text-center px-7 py-3 bg-gradient-to-r from-primary to-secondary hover:shadow-glowPrimary rounded-xl text-white font-manrope font-extrabold text-xs transition-all shadow-premium hover:scale-105">
+                                Test Series @ ₹29 →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
         <section class="py-16 bg-white dark:bg-[#0f0f1a]">
             <div class="max-w-4xl mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12 reveal">
@@ -997,7 +1257,6 @@
                 </div>
 
                 <div class="space-y-4 reveal">
-                    <!-- FAQ 1 -->
                     <div class="faq-item bg-slate-50 dark:bg-[#16162a] border border-slate-100 dark:border-slate-800 rounded-2xl shadow-subtleCard hover:shadow-cardHover transition-all duration-300 overflow-hidden">
                         <button class="faq-btn w-full px-6 py-4 text-left font-manrope font-bold text-base text-slate-900 dark:text-white flex items-center justify-between gap-4 transition-colors" aria-expanded="false">
                             <span>'रूपायन संस्थान' (बोरुंदा) की स्थापना कब और किसने की थी?</span>
@@ -1010,7 +1269,6 @@
                         </div>
                     </div>
 
-                    <!-- FAQ 2 -->
                     <div class="faq-item bg-slate-50 dark:bg-[#16162a] border border-slate-100 dark:border-slate-800 rounded-2xl shadow-subtleCard hover:shadow-cardHover transition-all duration-300 overflow-hidden">
                         <button class="faq-btn w-full px-6 py-4 text-left font-manrope font-bold text-base text-slate-900 dark:text-white flex items-center justify-between gap-4 transition-colors" aria-expanded="false">
                             <span>ब्लू पॉटरी के पुनरुद्धारक के रूप में किन्हें जाना जाता है?</span>
@@ -1023,7 +1281,6 @@
                         </div>
                     </div>
 
-                    <!-- FAQ 3 -->
                     <div class="faq-item bg-slate-50 dark:bg-[#16162a] border border-slate-100 dark:border-slate-800 rounded-2xl shadow-subtleCard hover:shadow-cardHover transition-all duration-300 overflow-hidden">
                         <button class="faq-btn w-full px-6 py-4 text-left font-manrope font-bold text-base text-slate-900 dark:text-white flex items-center justify-between gap-4 transition-colors" aria-expanded="false">
                             <span>'बातां री फुलवारी' के लेखक कौन हैं और इसमें कितने खंड हैं?</span>
@@ -1036,7 +1293,6 @@
                         </div>
                     </div>
 
-                    <!-- FAQ 4 -->
                     <div class="faq-item bg-slate-50 dark:bg-[#16162a] border border-slate-100 dark:border-slate-800 rounded-2xl shadow-subtleCard hover:shadow-cardHover transition-all duration-300 overflow-hidden">
                         <button class="faq-btn w-full px-6 py-4 text-left font-manrope font-bold text-base text-slate-900 dark:text-white flex items-center justify-between gap-4 transition-colors" aria-expanded="false">
                             <span>कालबेलिया नृत्य को यूनेस्को की धरोहर सूची में कब और किसके प्रयासों से शामिल किया गया?</span>
@@ -1049,7 +1305,6 @@
                         </div>
                     </div>
 
-                    <!-- FAQ 5 -->
                     <div class="faq-item bg-slate-50 dark:bg-[#16162a] border border-slate-100 dark:border-slate-800 rounded-2xl shadow-subtleCard hover:shadow-cardHover transition-all duration-300 overflow-hidden">
                         <button class="faq-btn w-full px-6 py-4 text-left font-manrope font-bold text-base text-slate-900 dark:text-white flex items-center justify-between gap-4 transition-colors" aria-expanded="false">
                             <span>'राजस्थानी शब्दकोश' के रचयिता कौन थे और उन्हें क्या उपाधि दी गई है?</span>
@@ -1065,62 +1320,69 @@
             </div>
         </section>
 
-        <!-- ─── QUICK NAVIGATION ─── -->
+        <!-- CORE SUBJECTS EXPLORER -->
         <section class="py-12 bg-slateBg dark:bg-[#12121f] border-t border-slate-100 dark:border-slate-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-8 reveal">
-                    <h3 class="font-poppins font-bold text-2xl text-dark dark:text-white">अन्य महत्वपूर्ण अध्ययन सामग्री पर जाएँ</h3>
-                    <p class="text-muted text-sm font-manrope">राजस्थान के इतिहास, दुर्ग, लोक कला एवं सांस्कृतिक धरोहरों से जुड़े अध्ययन नोट्स</p>
+                    <h3 class="font-poppins font-bold text-2xl text-dark dark:text-white">अन्य महत्वपूर्ण विषयों पर जाएँ</h3>
+                    <p class="text-muted text-sm font-manrope">राजस्थान के इतिहास, भूगोल एवं कला-संस्कृति की प्रामाणिक अध्ययन सामग्री</p>
                 </div>
                 <div class="flex flex-wrap justify-center gap-3 reveal">
                     <a href="rajasthan-notes/culture/" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-manrope font-bold text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all shadow-subtleCard group">
-                        <i class="fa-solid fa-masks-theater text-primary group-hover:text-white transition-colors"></i>
-                        <span>कला एवं संस्कृति</span>
+                        <i class="fa-solid fa-palette text-secondary group-hover:text-white transition-colors"></i>
+                        <span>राजस्‍थान कला एवं संस्‍कृति (Master Hub)</span>
                     </a>
                     <a href="rajasthan-notes/history/" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-manrope font-bold text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all shadow-subtleCard group">
-                        <i class="fa-solid fa-fort text-secondary group-hover:text-white transition-colors"></i>
-                        <span>राजस्थान का इतिहास</span>
+                        <i class="fa-solid fa-fort-awesome text-primary group-hover:text-white transition-colors"></i>
+                        <span>राजस्‍थान इतिहास</span>
                     </a>
                     <a href="rajasthan-notes/geography/" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-manrope font-bold text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all shadow-subtleCard group">
-                        <i class="fa-solid fa-mountain-sun text-accent group-hover:text-white transition-colors"></i>
-                        <span>राजस्थान का भूगोल</span>
+                        <i class="fa-solid fa-earth-asia text-emerald-600 group-hover:text-white transition-colors"></i>
+                        <span>राजस्‍थान भूगोल (50 नवीन ज़िले)</span>
                     </a>
-        <!--            <a href="notes#indian-polity" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-[#1a1a2e] border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-manrope font-bold text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all shadow-subtleCard group">
-                        <i class="fa-solid fa-scale-balanced text-support group-hover:text-white transition-colors"></i>
-                        <span>भारतीय राजव्यवस्था</span>
-                    </a>-->
                 </div>
             </div>
         </section>
+
     </main>
 
-    <!-- ═══════ OFFER MODAL POPUP ═══════ -->
+    <!-- OFFER MODAL (POPUP) -->
     <div id="offerModal" class="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300">
-        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 text-left shadow-2xl border border-slate-100 relative transform scale-95 transition-transform duration-300 overflow-hidden" id="offerModalContent">
-            <button onclick="closeOfferModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 font-bold flex items-center justify-center transition-colors">✕</button>
+        <div class="bg-white dark:bg-[#1a1a2e] rounded-3xl max-w-lg w-full p-6 sm:p-8 text-left shadow-2xl border border-slate-100 dark:border-slate-800 relative transform scale-95 transition-transform duration-300 overflow-hidden" id="offerModalContent">
+            
+            <!-- Close Button -->
+            <button onclick="closeOfferModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 font-bold flex items-center justify-center transition-colors">✕</button>
+
+            <!-- Offer Badge -->
             <div class="flex items-center gap-2 mb-3">
-                <span class="bg-rose-100 border border-rose-200 text-rose-700 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider animate-pulse">
-                    🔥 Limited Exam Offer
+                <span class="bg-rose-100 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800/40 text-rose-700 dark:text-rose-300 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider animate-pulse">
+                    🔥 81% Limited Discount Offer
                 </span>
                 <span class="text-[10px] text-slate-400 font-bold">Only 18 passes left</span>
             </div>
-            <h3 class="font-poppins font-black text-xl sm:text-2xl text-slate-900 leading-tight">
-                🏛️ राजस्थान सांस्कृतिक व्यक्तित्व <br /><span style="color: #FF6B00;">Online Mock Test Pass</span>
+
+            <!-- Title -->
+            <h3 class="font-poppins font-black text-xl sm:text-2xl text-slate-900 dark:text-white leading-tight">
+                🏛️ राजस्थान सांस्कृतिक व्यक्तित्व <br /><span class="text-primary">Online Mock Test Pass</span>
             </h3>
-            <div class="my-4 p-4 rounded-2xl bg-amber-50/80 border border-amber-200 flex items-center justify-between">
+
+            <!-- Price Box -->
+            <div class="my-4 p-4 rounded-2xl bg-amber-50/80 dark:bg-[#16162a] border border-amber-200 dark:border-slate-800 flex items-center justify-between">
                 <div>
-                    <span class="text-xs text-slate-400 line-through font-semibold">Regular Price: ₹99</span>
+                    <span class="text-xs text-slate-400 line-through font-semibold">Regular Price: ₹49</span>
                     <div class="flex items-baseline gap-2">
-                        <span class="text-2xl sm:text-3xl font-poppins font-black text-slate-900">₹19</span>
+                        <span class="text-2xl sm:text-3xl font-poppins font-black text-slate-900 dark:text-white">₹9</span>
                         <span class="text-xs text-emerald-600 font-bold">Offer Price (One-time)</span>
                     </div>
                 </div>
                 <div class="text-right">
-                    <span class="text-[10px] font-bold text-amber-800 bg-amber-200/60 px-2.5 py-1 rounded-lg block">Full Year Validity</span>
+                    <span class="text-[10px] font-bold text-amber-800 dark:text-amber-300 bg-amber-200/60 dark:bg-amber-950/40 px-2.5 py-1 rounded-lg block">1 Month Validity</span>
                 </div>
             </div>
-            <div class="space-y-2 text-xs font-manrope text-slate-700 mb-6">
-                <p class="font-bold text-slate-900 uppercase text-[11px] tracking-wider border-b pb-1">इस टेस्ट पास में आपको मिलेगा:</p>
+
+            <!-- Features List -->
+            <div class="space-y-2 text-xs font-manrope text-slate-700 dark:text-slate-300 mb-6">
+                <p class="font-bold text-slate-900 dark:text-white uppercase text-[11px] tracking-wider border-b border-slate-200 dark:border-slate-700 pb-1">इस टेस्ट पास में आपको मिलेगा:</p>
                 <div class="flex items-start gap-2">
                     <span class="text-emerald-500 font-bold">✓</span>
                     <span><b>टॉपिक-वाइज टेस्ट्स:</b> कोमल कोठारी, देवीलाल सामर, पद्मश्री प्राप्त कलाकार, साहित्यकार</span>
@@ -1134,17 +1396,21 @@
                     <span><b>अनलिमिटेड एटेम्प्ट्स:</b> अपनी तैयारी को पुख्ता करने हेतु असीमित अभ्यास</span>
                 </div>
             </div>
-            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/60 text-[11px] text-slate-600 font-semibold mb-5 flex items-center gap-2">
+
+            <!-- Social Proof -->
+            <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-[#12121f] border border-slate-200/60 dark:border-slate-800 text-[11px] text-slate-600 dark:text-slate-400 font-semibold mb-5 flex items-center gap-2">
                 <span class="text-amber-500 text-sm">⭐⭐⭐⭐⭐</span>
                 <span><b>620+</b> अभ्यर्थियों ने इस सप्ताह टेस्ट सीरीज़ जॉइन की!</span>
             </div>
-            <button onclick="proceedToPaymentPage()" class="w-full py-4 text-white font-poppins font-extrabold text-sm sm:text-base rounded-2xl shadow-xl transition-all hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-2" style="background: linear-gradient(to right, #FF6B00, #FF3E6C);">
+
+            <!-- Claim Offer Button -->
+            <button onclick="proceedToPaymentPage()" class="w-full py-4 text-white font-poppins font-extrabold text-sm sm:text-base rounded-2xl shadow-xl transition-all hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary cursor-pointer">
                 <span>Claim Offer @ ₹19 &amp; Unlock Tests →</span>
             </button>
         </div>
     </div>
 
- <!-- ═══════ FOOTER ═══════ -->
+    <!-- FOOTER -->
     <footer class="bg-slate-900 dark:bg-[#0a0a16] text-white pt-16 pb-8 relative overflow-hidden border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b border-white/10">
@@ -1185,36 +1451,36 @@
                     </div>
                 </div>
 
-                <!-- ═══════ LATEST SHIFT NOTIFICATIONS (NEWSLETTER) ═══════ -->
-<div class="lg:col-span-4 flex flex-col items-start text-left">
-    <h4 class="font-poppins font-bold text-xs tracking-widest text-slate-300 uppercase mb-4">Latest Shift Notifications</h4>
-    <p class="text-slate-400 text-xs font-inter mb-4 leading-relaxed">Subscribe to get immediate scheduling modifications, syllabus changes, and subscription pass discounts.</p>
-    
-    <form id="newsletterForm" class="w-full flex flex-col gap-2">
-        <div class="w-full flex gap-2">
-            <input 
-                type="email" 
-                id="newsletterEmail" 
-                name="email" 
-                placeholder="Email Address" 
-                required 
-                class="flex-grow bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary transition-colors" 
-            />
-            <button 
-                type="submit" 
-                id="newsletterBtn" 
-                class="px-4 py-2 bg-primary hover:bg-primary/95 text-white font-manrope font-bold rounded-lg transition-colors text-xs flex-shrink-0 hover:scale-[1.05] flex items-center justify-center min-w-[65px] cursor-pointer" 
-                aria-label="Subscribe">
-                <span id="newsletterBtnText">Join</span>
-            </button>
-        </div>
-        
-        <!-- Success Message -->
-        <p id="newsletterSuccessMsg" class="hidden text-xs text-emerald-400 mt-1 font-medium items-center gap-1">
-            <i class="fa-solid fa-circle-check"></i> Subscribed successfully!
-        </p>
-    </form>
-</div>
+                <!-- NEWSLETTER -->
+                <div class="lg:col-span-4 flex flex-col items-start text-left">
+                    <h4 class="font-poppins font-bold text-xs tracking-widest text-slate-300 uppercase mb-4">Latest Shift Notifications</h4>
+                    <p class="text-slate-400 text-xs font-inter mb-4 leading-relaxed">Subscribe to get immediate scheduling modifications, syllabus changes, and subscription pass discounts.</p>
+                    
+                    <form id="newsletterForm" class="w-full flex flex-col gap-2">
+                        <div class="w-full flex gap-2">
+                            <input 
+                                type="email" 
+                                id="newsletterEmail" 
+                                name="email" 
+                                placeholder="Email Address" 
+                                required 
+                                class="flex-grow bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary transition-colors" 
+                            />
+                            <button 
+                                type="submit" 
+                                id="newsletterBtn" 
+                                class="px-4 py-2 bg-primary hover:bg-primary/95 text-white font-manrope font-bold rounded-lg transition-colors text-xs flex-shrink-0 hover:scale-[1.05] flex items-center justify-center min-w-[65px] cursor-pointer" 
+                                aria-label="Subscribe">
+                                <span id="newsletterBtnText">Join</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Success Message -->
+                        <p id="newsletterSuccessMsg" class="hidden text-xs text-emerald-400 mt-1 font-medium items-center gap-1">
+                            <i class="fa-solid fa-circle-check"></i> Subscribed successfully!
+                        </p>
+                    </form>
+                </div>
             </div>
 
             <div class="pt-6 flex flex-col md:flex-row items-center justify-between text-slate-500 dark:text-slate-400 font-inter text-xs">
@@ -1227,50 +1493,48 @@
         </div>
     </footer>
 
-    <!-- ═══════ FLOATING WIDGETS ═══════ -->
+    <!-- FLOATING WIDGETS -->
     <div class="fixed bottom-6 right-6 z-[90] flex flex-col items-center gap-3">
         <button id="scrollToTop" class="w-11 h-11 rounded-full bg-slate-900 dark:bg-primary text-white shadow-premium hover:bg-primary dark:hover:bg-primary/90 transition-all flex items-center justify-center translate-y-20 opacity-0" aria-label="Scroll to top">
             <i class="fa-solid fa-arrow-up text-xs"></i>
         </button>
-        <a href="https://wa.me/919950399752?text=Hello%20RAJShiksha%20Team%2C%20I%20want%20to%20know%20more%20about%20Rajasthan%20Notes." target="_blank" rel="noopener" class="w-12 h-12 rounded-full bg-[#25D366] text-white shadow-premium hover:scale-110 transition-transform flex items-center justify-center text-xl" aria-label="WhatsApp Support">
+        <a href="https://wa.me/919950399752?text=Hello%20RAJShiksha%20Team%2C%20I%20want%20to%20know%20more%20about%20Rajasthan%20Cultural%20Personalities%20Notes." target="_blank" rel="noopener" class="w-12 h-12 rounded-full bg-[#25D366] text-white shadow-premium hover:scale-110 transition-transform flex items-center justify-center text-xl" aria-label="WhatsApp Support">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
     </div>
 
-    <!-- ═══════ SCRIPTS ═══════ -->
+    <!-- SCRIPTS -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // ── Preloader ──
+            // Preloader
             const loader = document.getElementById('loader');
             if (loader) {
                 loader.classList.add('opacity-0');
                 setTimeout(() => { loader.style.display = 'none'; }, 250);
             }
 
-            // ── Scroll Progress ──
+            // Scroll Progress
             const scrollProgress = document.getElementById('scrollProgress');
             window.addEventListener('scroll', () => {
                 const sh = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                if (sh > 0 && scrollProgress) {
+                if (scrollProgress && sh > 0) {
                     scrollProgress.style.width = (window.scrollY / sh * 100) + '%';
                 }
             });
 
-            // ── Sticky Header ──
+            // Sticky Header
             const header = document.getElementById('mainHeader');
             window.addEventListener('scroll', () => {
-                if (header) {
-                    if (window.scrollY > 40) {
-                        header.classList.add('bg-white/95', 'dark:bg-[#0f0f1a]/95', 'shadow-subtleCard', 'border-slate-100', 'dark:border-slate-800');
-                        header.classList.remove('bg-[#FFFDFB]/95', 'dark:bg-[#0f0f1a]/95', 'border-transparent');
-                    } else {
-                        header.classList.remove('bg-white/95', 'dark:bg-[#0f0f1a]/95', 'shadow-subtleCard', 'border-slate-100', 'dark:border-slate-800');
-                        header.classList.add('bg-[#FFFDFB]/95', 'dark:bg-[#0f0f1a]/95', 'border-transparent');
-                    }
+                if (window.scrollY > 40) {
+                    header.classList.add('bg-white/95', 'dark:bg-[#0f0f1a]/95', 'shadow-subtleCard', 'border-slate-100', 'dark:border-slate-800');
+                    header.classList.remove('bg-[#FFFDFB]/95', 'dark:bg-[#0f0f1a]/95', 'border-transparent');
+                } else {
+                    header.classList.remove('bg-white/95', 'dark:bg-[#0f0f1a]/95', 'shadow-subtleCard', 'border-slate-100', 'dark:border-slate-800');
+                    header.classList.add('bg-[#FFFDFB]/95', 'dark:bg-[#0f0f1a]/95', 'border-transparent');
                 }
             });
 
-            // ── Mobile Menu ──
+            // Mobile Menu
             const menuBtn = document.getElementById('mobileMenuBtn');
             const mobileMenu = document.getElementById('mobileMenu');
             const hamburger = document.getElementById('hamburgerIcon');
@@ -1282,15 +1546,9 @@
                         `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>` :
                         `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>`;
                 });
-                document.querySelectorAll('.mobile-nav-link').forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                        hamburger.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>`;
-                    });
-                });
             }
 
-            // ── Scroll to Top ──
+            // Scroll to Top
             const topBtn = document.getElementById('scrollToTop');
             window.addEventListener('scroll', () => {
                 if (topBtn) {
@@ -1307,7 +1565,7 @@
                 topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
             }
 
-            // ── Dark Mode ──
+            // Dark Mode
             const themeToggle = document.getElementById('themeToggle');
             const setTheme = (dark) => {
                 document.documentElement.classList.toggle('dark', dark);
@@ -1318,21 +1576,24 @@
                 moons.forEach(m => m.style.opacity = dark ? '0' : '1');
             };
             const toggleTheme = () => setTheme(!document.documentElement.classList.contains('dark'));
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             const saved = localStorage.getItem('theme');
-            if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) setTheme(true);
-            if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+            if (saved === 'dark' || (!saved && prefersDark)) setTheme(true);
+            if (themeToggle) {
+                themeToggle.addEventListener('click', toggleTheme);
+            }
 
-            // ── Scroll Reveal ──
+            // Scroll Reveal
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
                     }
                 });
-            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+            }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-            // ── FAQ Accordion ──
+            // FAQ Accordion
             document.querySelectorAll('.faq-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const content = btn.nextElementSibling;
@@ -1344,7 +1605,6 @@
                             b.setAttribute('aria-expanded', 'false');
                             b.nextElementSibling.style.maxHeight = '0';
                             b.querySelector('.faq-icon').classList.remove('rotate-180');
-                            b.parentElement.classList.remove('border-primary/20', 'shadow-subtleCard');
                         }
                     });
 
@@ -1352,19 +1612,17 @@
                         btn.setAttribute('aria-expanded', 'false');
                         content.style.maxHeight = '0';
                         icon.classList.remove('rotate-180');
-                        btn.parentElement.classList.remove('border-primary/20', 'shadow-subtleCard');
                     } else {
                         btn.setAttribute('aria-expanded', 'true');
                         content.style.maxHeight = content.scrollHeight + 'px';
                         icon.classList.add('rotate-180');
-                        btn.parentElement.classList.add('border-primary/20', 'shadow-subtleCard');
                     }
                 });
             });
         });
     </script>
 
-    <!-- MODAL SCRIPT -->
+    <!-- OFFER MODAL SCRIPT -->
     <script>
         function openOfferModal() {
             const modal = document.getElementById('offerModal');
@@ -1390,134 +1648,105 @@
 
         function proceedToPaymentPage() {
             const courseTag = "rajasthan-culture-vyaktitva-(₹19)";
-            window.location.href = `payment.html?course=${encodeURIComponent(courseTag)}`;
+            window.location.href = `payment?course=${encodeURIComponent(courseTag)}`;
         }
     </script>
 
-    <!-- CONTENT PROTECTION SCRIPT -->
+    <!-- CONTENT PROTECTION -->
     <script>
         (function () {
             'use strict';
             document.addEventListener('selectstart', function (e) { e.preventDefault(); });
             document.addEventListener('dragstart', function (e) { e.preventDefault(); });
-            document.addEventListener('contextmenu', function (e) {
-                e.preventDefault();
-                return false;
-            });
+            document.addEventListener('contextmenu', function (e) { e.preventDefault(); return false; });
             document.addEventListener('keydown', function (e) {
                 var isCtrl = e.ctrlKey || e.metaKey;
-                var isShift = e.shiftKey;
                 var key = e.key ? e.key.toLowerCase() : '';
                 var code = e.keyCode || e.which;
-
                 if (code === 123 || key === 'f12') { e.preventDefault(); return false; }
                 if (isCtrl) {
-                    if (isShift && (key === 'i' || key === 'j' || key === 'c' || code === 73 || code === 74 || code === 67)) {
-                        e.preventDefault(); return false;
-                    }
-                    if (key === 'u' || key === 's' || key === 'c' || key === 'a' || key === 'p' || code === 85 || code === 83 || code === 67 || code === 65 || code === 80) {
-                        e.preventDefault(); return false;
-                    }
+                    if (e.shiftKey && (key === 'i' || key === 'j' || key === 'c' || code === 73 || code === 74 || code === 67)) { e.preventDefault(); return false; }
+                    if (key === 'u' || key === 's' || key === 'c' || key === 'a' || key === 'p' || code === 85 || code === 83 || code === 67 || code === 65 || code === 80) { e.preventDefault(); return false; }
                 }
             }, true);
         })();
     </script>
 
-    <!-- SMOOTH SCROLL FOR HASH LINKS -->
+    <!-- HASH ANCHOR SMOOTH SCROLL -->
     <script>
         document.addEventListener('click', function (e) {
-            const anchor = e.target.closest('a[href^="#"]');
+            const anchor = e.target.closest('a[href*="#"]');
             if (anchor) {
-                const targetId = anchor.getAttribute('href');
-                if (!targetId || targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    e.preventDefault();
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                    const newUrl = window.location.pathname + window.location.search + targetId;
-                    history.pushState(null, null, newUrl);
-                }
-            }
-        });
-
-        window.addEventListener('DOMContentLoaded', function () {
-            if (window.location.hash) {
-                const targetElement = document.querySelector(window.location.hash);
-                if (targetElement) {
-                    setTimeout(function () {
+                const href = anchor.getAttribute('href');
+                if (!href || href === '#') return;
+                const hashIndex = href.indexOf('#');
+                if (hashIndex !== -1) {
+                    const targetId = href.substring(hashIndex);
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
                         targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
+                        const newUrl = window.location.pathname + window.location.search + targetId;
+                        history.pushState(null, null, newUrl);
+                    }
                 }
             }
         });
     </script>
+
+    <!-- NEWSLETTER SUBMISSION SCRIPT -->
     <script>
-document.addEventListener('DOMContentLoaded', () => {
-    // 👇 यहाँ अपना Newsletter वाला Google Apps Script URL पेस्ट करें
-    const NEWSLETTER_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6IaDUQB0c-u56J6Mwo7U9rwaNpcNyK0ECboQnxnPwljRPzRWDQaxEXB1npfSJicQ0wA/exec';
+    document.addEventListener('DOMContentLoaded', () => {
+        const NEWSLETTER_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6IaDUQB0c-u56J6Mwo7U9rwaNpcNyK0ECboQnxnPwljRPzRWDQaxEXB1npfSJicQ0wA/exec';
 
-    const newsletterForm = document.getElementById('newsletterForm');
-    const newsletterBtn = document.getElementById('newsletterBtn');
-    const newsletterBtnText = document.getElementById('newsletterBtnText');
-    const newsletterEmail = document.getElementById('newsletterEmail');
-    const newsletterSuccessMsg = document.getElementById('newsletterSuccessMsg');
+        const newsletterForm = document.getElementById('newsletterForm');
+        const newsletterBtn = document.getElementById('newsletterBtn');
+        const newsletterBtnText = document.getElementById('newsletterBtnText');
+        const newsletterEmail = document.getElementById('newsletterEmail');
+        const newsletterSuccessMsg = document.getElementById('newsletterSuccessMsg');
 
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function (e) {
-            e.preventDefault();
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function (e) {
+                e.preventDefault();
 
-            const emailVal = newsletterEmail.value.trim();
-            if (!emailVal) return;
+                const emailVal = newsletterEmail.value.trim();
+                if (!emailVal) return;
 
-            // 1. बटन को लोडिंग मोड में डालें
-            newsletterBtn.disabled = true;
-            newsletterBtnText.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-xs"></i>';
-            if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
+                newsletterBtn.disabled = true;
+                newsletterBtnText.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-xs"></i>';
+                if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
 
-            // 2. डेटा तैयार करें
-            const formData = new URLSearchParams();
-            formData.append('email', emailVal);
+                const formData = new URLSearchParams();
+                formData.append('email', emailVal);
 
-            // 3. Google Sheet में भेजें
-            fetch(NEWSLETTER_SCRIPT_URL, {
-                method: 'POST',
-                body: formData,
-                mode: 'no-cors'
-            })
-            .then(() => {
-                finishSubmission();
-            })
-            .catch((err) => {
-                console.log('Submission complete:', err);
-                finishSubmission();
+                fetch(NEWSLETTER_SCRIPT_URL, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                })
+                .then(() => { finishSubmission(); })
+                .catch((err) => { finishSubmission(); });
+
+                function finishSubmission() {
+                    newsletterForm.reset();
+                    newsletterBtn.disabled = false;
+                    newsletterBtnText.textContent = 'Joined!';
+                    newsletterBtn.classList.replace('bg-primary', 'bg-emerald-600');
+                    
+                    if (newsletterSuccessMsg) {
+                        newsletterSuccessMsg.classList.remove('hidden');
+                        newsletterSuccessMsg.classList.add('flex');
+                    }
+
+                    setTimeout(() => {
+                        newsletterBtnText.textContent = 'Join';
+                        newsletterBtn.classList.replace('bg-emerald-600', 'bg-primary');
+                        if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
+                    }, 4000);
+                }
             });
-
-            // 4. फ़ंक्शन जो सफलता के बाद बटन और मैसेज को रीसेट करता है
-            function finishSubmission() {
-                newsletterForm.reset();
-                newsletterBtn.disabled = false;
-                newsletterBtnText.textContent = 'Joined!';
-                newsletterBtn.classList.replace('bg-primary', 'bg-emerald-600');
-                
-                if (newsletterSuccessMsg) {
-                    newsletterSuccessMsg.classList.remove('hidden');
-                    newsletterSuccessMsg.classList.add('flex');
-                }
-
-                if (typeof showToast === 'function') {
-                    showToast('🎉 You have subscribed to RAJShiksha notifications!');
-                }
-
-                // 4 सेकंड बाद बटन वापस सामान्य "Join" हो जाएगा
-                setTimeout(() => {
-                    newsletterBtnText.textContent = 'Join';
-                    newsletterBtn.classList.replace('bg-emerald-600', 'bg-primary');
-                    if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
-                }, 4000);
-            }
-        });
-    }
-});
-</script>
+        }
+    });
+    </script>
 </body>
 </html>
