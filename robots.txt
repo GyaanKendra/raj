@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /payment
 
 # Sitemap Location
 Sitemap: https://rajshiksha.in/sitemap.xml
