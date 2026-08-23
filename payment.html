@@ -93,7 +93,7 @@
                 </div>
                 <div class="flex flex-col text-left">
                     <span class="font-poppins font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900">RAJ<span class="text-primary">Shiksha</span></span>
-                    <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold -mt-1">Verified Official Portal</span>
+                    <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold -mt-1">Exam Hub</span>
                 </div>
             </a>
 
@@ -151,82 +151,50 @@
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         
-                        <!-- Select Course Dropdown (ORIGINAL PRESERVED LIST) -->
-                        <div class="sm:col-span-2 space-y-1.5">
-                            <label class="text-xs font-bold text-slate-800 block">Select Purchased Item / Course <span class="text-rose-500">*</span></label>
+                        <!-- ═════ SOLUTION 1: 2-STEP CASCADING DROPDOWN ═════ -->
+                        
+                        <!-- STEP 1: Select Category / Exam -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-slate-800 block">Step 1: Choose Exam / Category <span class="text-rose-500">*</span></label>
                             <div class="relative">
-                                <i class="fa-solid fa-graduation-cap absolute left-3.5 top-1/2 -translate-y-1/2 text-primary text-sm"></i>
-                                <select id="selectedCourse" required onchange="onCourseChange()" class="w-full pl-10 pr-8 py-3 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm font-bold text-slate-800 focus:outline-none focus:border-primary focus:bg-white transition-colors appearance-none cursor-pointer">
-                                    <option value="" disabled selected>-- Choose Test Series / eBook / Pass --</option>
-
-                                    <!-- TEST SERIES CATEGORY -->
-                                    <optgroup label="📚 TEST SERIES (टेस्ट सीरीज)">
-                                        <option value="Rajasthan CET 10+2 Test Series (₹29)">CET 10+2 Test Series — ₹29</option>
-                                        <option value="Rajasthan CET Graduation Test Series (₹29)">CET Graduation Test Series — ₹29</option>
-                                        <option value="Raj. SI 2026 Test Series (₹29)">Raj. SI 2026 Hindi Test Series (Paper-I) — ₹29</option>
-                                        <option value="Raj. SI 2026 Test Series (₹29)">Raj. SI 2026 G.K. Test Series (Paper-II) — ₹29</option>
-                                        <option value="Rajasthan PTI Paper 1 Test Series (₹29)">Raj. PTI Paper 1 Test Series 2026 (Paper-I) — ₹29</option>
-                                        <option value="Rajasthan VDO Test Series (₹19)">Raj. VDO Test Series 2026 — ₹19</option>
-                                        <option value="Rajasthan PATWAR Test Series (₹19)">Raj. PATWAR Test Series 2026 — ₹19</option>
-                             <!--           <option value="Rajasthan LDC Test Series (₹19)">Raj. LDC Test Series 2026 — ₹19</option>-->
-                                    </optgroup>
-
-                                    <!-- SUBJECT / TOPIC WISE TEST SERIES -->
-                                    <optgroup label="📚 Complete Topic wise TEST SERIES (टेस्ट सीरीज)">
-                                        <option value="rajasthan-history-sabhyata-(₹9)">Rajasthan Sabhayta (4+ Topics) Test Series — ₹9</option>
-                                        <option value="rajasthan-culture-durg-(₹19)">Rajasthan Complete Durg (6 Topics) Test Series — ₹19</option>
-                                        <option value="rajasthan-culture-nritya-(₹19)">Rajasthan Complete nritya (5 Topics) Test Series — ₹19</option>
-                                        <option value="rajasthan-geography-bhautik-pradesh-(₹19)">Rajasthan Complete Bhotik Pradesh (5 Topics) Test Series — ₹19</option>
-                                        <option value="Rajasthan History All-Access Pass (₹49)">Rajasthan History Complete Pass (7 Master Chapters) — ₹49</option>
-                                    </optgroup>
-
-                                    <!-- CET10+2-PAPER-1-test-series -->
-                                    <optgroup label="⭐CET 10+2 TEST SERIES PASS (सदस्यता पास)">
-                                        <option value="Starter Basic Plan - 19 Days Access (₹29)">CET 10+2 Starter Pass (19 Days) — ₹29</option>
-                                        <option value="Standard Pass - 49 Days Membership (₹39)">CET 10+2 Standard Pass (49 Days) — ₹39</option>
-                                        <option value="Premium Regular Plan - 149 Days Access (₹49)">CET 10+2 Prem. Regular Plan (149 Days) — ₹49</option>
-                                        <option value="Elite Premium Plan - 365 Days Pass (₹199)">CET 10+2 Elite Prem. Plan (365 Days) — ₹199</option>
-                                    </optgroup>
-                                    <!-- CETGRAD.-PAPER-1-test-series -->
-                                    <optgroup label="⭐CET Graduation TEST SERIES PASS (सदस्यता पास)">
-                                        <option value="Starter Basic Plan - 19 Days Access (₹29)">CET Grad. Starter Pass (19 Days) — ₹29</option>
-                                        <option value="Standard Pass - 49 Days Membership (₹39)">CET Grad. Standard Pass (49 Days) — ₹39</option>
-                                        <option value="Premium Regular Plan - 149 Days Access (₹49)">CET Grad. Prem. Regular Plan (149 Days) — ₹49</option>
-                                        <option value="Elite Premium Plan - 365 Days Pass (₹199)">CET Grad. Elite Prem. Plan (365 Days) — ₹199</option>
-                                    </optgroup>
-
-                                    <!-- PTI-PAPER-1-test-series -->
-                                    <optgroup label="⭐PTI TEST SERIES PASS (सदस्यता पास)">
-                                        <option value="Starter Basic Plan - 19 Days Access (₹29)">PTI Starter Pass (19 Days) — ₹29</option>
-                                        <option value="Standard Pass - 49 Days Membership (₹39)">PTI Standard Pass (49 Days) — ₹39</option>
-                                        <option value="Premium Regular Plan - 149 Days Access (₹49)">PTI Premium Regular Plan (149 Days) — ₹49</option>
-                                        <option value="Elite Premium Plan - 365 Days Pass (₹199)">PTI Elite Premium Plan (365 Days) — ₹199</option>
-                                    </optgroup>
-                                    <!-- RAJ.-SI-PAPER-GK-test-series -->
-                                    <optgroup label="⭐RAJ. SI (GK) TEST SERIES PASS (सदस्यता पास)">
-                                        <option value="Starter Basic Plan - 19 Days Access (₹29)">SI Starter Pass (19 Days) — ₹29</option>
-                                        <option value="Standard Pass - 49 Days Membership (₹39)">SI Standard Pass (49 Days) — ₹39</option>
-                                        <option value="Premium Regular Plan - 149 Days Access (₹49)">SI Premium Regular Plan (149 Days) — ₹49</option>
-                                        <option value="Elite Premium Plan - 365 Days Pass (₹199)">SI Elite Premium Plan (365 Days) — ₹199</option>
-                                    </optgroup>
-                                    <!-- RAJ.-SI-PAPER-HINDI-test-series -->
-                                    <optgroup label="⭐RAJ. SI (HINDI) TEST SERIES PASS (सदस्यता पास)">
-                                        <option value="Starter Basic Plan - 19 Days Access (₹29)">SI Starter Pass (19 Days) — ₹29</option>
-                                        <option value="Standard Pass - 49 Days Membership (₹39)">SI Standard Pass (49 Days) — ₹39</option>
-                                        <option value="Premium Regular Plan - 149 Days Access (₹49)">SI Premium Regular Plan (149 Days) — ₹49</option>
-                                        <option value="Elite Premium Plan - 365 Days Pass (₹199)">SI Elite Premium Plan (365 Days) — ₹199</option>
-                                    </optgroup>
-
-									
-                                    <!-- SUBSCRIPTION PASSES CATEGORY -->
-                                    <optgroup label="⭐ MEMBERSHIP PASSES (सदस्यता पास)">
-                                        <option value="Starter Basic Plan - 7 Days Access (₹99)">Starter Basic Plan (7 Days Access) — ₹99</option>
-                                        <option value="Standard Sprint Pass - 30 Days Membership (₹199)">Standard Sprint Pass (30 Days) — ₹199</option>
-                                        <option value="Premium Regular Plan - 90 Days Access (₹499)">Premium Regular Plan (90 Days) — ₹499</option>
-                                        <option value="Elite Premium Plan - 365 Days Pass (₹999)">Elite Premium Plan (365 Days Access) — ₹999</option>
-                                    </optgroup>
+                                <i class="fa-solid fa-layer-group absolute left-3.5 top-1/2 -translate-y-1/2 text-primary text-sm"></i>
+                                <select id="categorySelect" required onchange="onCategoryChange()" class="w-full pl-10 pr-8 py-3 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm font-bold text-slate-800 focus:outline-none focus:border-primary focus:bg-white transition-colors appearance-none cursor-pointer">
+                                    <option value="" disabled selected>-- Select Exam / Pass Type --</option>
+                                    <option value="test_series">📚 Complete Test Series (टेस्ट सीरीज)</option>
+                                    <option value="topic_wise">📚 Topic Wise Test Series</option>
+                                    <option value="cet_12th_pass">⭐ CET 10+2 Membership Pass</option>
+                                    <option value="cet_grad_pass">⭐ CET Graduation Pass</option>
+                                    <option value="pti_pass">⭐ PTI Test Series Pass</option>
+                                    <option value="si_gk_pass">⭐ Raj. SI (GK) Test Series Pass</option>
+                                    <option value="si_hindi_pass">⭐ Raj. SI (Hindi) Test Series Pass</option>
+                                    <option value="membership_pass">⭐ All-Access Membership Passes</option>
                                 </select>
                                 <i class="fa-solid fa-chevron-down absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                        <!-- STEP 2: Select Specific Plan / Duration / Price -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-slate-800 block">Step 2: Choose Plan / Validity <span class="text-rose-500">*</span></label>
+                            <div class="relative">
+                                <i class="fa-solid fa-graduation-cap absolute left-3.5 top-1/2 -translate-y-1/2 text-primary text-sm"></i>
+                                <select id="selectedCourse" required disabled onchange="onCourseChange()" class="w-full pl-10 pr-8 py-3 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm font-bold text-slate-800 focus:outline-none focus:border-primary focus:bg-white transition-colors appearance-none cursor-pointer disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed">
+                                    <option value="" disabled selected>-- Pehle Exam/Category Select Karein --</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                        <!-- DYNAMIC VISUAL PRICE TAG (BADGE) -->
+                        <div id="priceBadgeContainer" class="sm:col-span-2 hidden transition-all duration-300">
+                            <div class="flex items-center justify-between bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-2.5 shadow-xs">
+                                <div class="flex items-center gap-2 text-xs font-bold text-emerald-800">
+                                    <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                                    <span>Plan Selected: <span id="priceBadgeTitle" class="text-slate-900 font-extrabold">-</span></span>
+                                </div>
+                                <span id="priceBadgeAmount" class="text-xs sm:text-sm font-black text-emerald-700 bg-white px-2.5 py-1 rounded-lg border border-emerald-200 shadow-xs">
+                                    Payable: ₹0
+                                </span>
                             </div>
                         </div>
 
@@ -249,9 +217,14 @@
                             <span id="phoneError" class="text-[11px] text-rose-500 font-semibold hidden">Enter valid 10-digit mobile number</span>
                         </div>
 
-                        <!-- Email Address -->
+                        <!-- Email Address + AUTO @GMAIL.COM APPEND BUTTON -->
                         <div class="space-y-1.5">
-                            <label class="text-xs font-bold text-slate-700 block">Email Address (Must end with @gmail.com) <span class="text-rose-500">*</span></label>
+                            <div class="flex items-center justify-between">
+                                <label class="text-xs font-bold text-slate-700 block">Email Address <span class="text-rose-500">*</span></label>
+                                <button type="button" onclick="appendGmailDomain()" class="text-[10px] font-bold text-primary bg-primary/10 hover:bg-primary hover:text-white px-2 py-0.5 rounded-lg transition-colors flex items-center gap-1">
+                                    <i class="fa-solid fa-plus text-[8px]"></i> @gmail.com
+                                </button>
+                            </div>
                             <div class="relative">
                                 <i class="fa-regular fa-envelope absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
                                 <input type="email" id="studentEmail" required placeholder="yourname@gmail.com" oninput="validateEmailFormat(this); checkFormCompletion();" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors" />
@@ -375,12 +348,17 @@
                                 </ol>
                             </div>
 
-                            <!-- 12-Digit UTR Input -->
+                            <!-- 12-Digit UTR Input + PASTE UTR HELPER BUTTON -->
                             <div class="space-y-1.5">
                                 <label class="text-xs font-bold text-slate-800 block">Enter 12-Digit UTR / Transaction ID <span class="text-rose-500">*</span></label>
                                 <div class="relative">
                                     <i class="fa-solid fa-receipt absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
-                                    <input type="text" id="transactionId" maxlength="12" minlength="12" required placeholder="e.g. 402812349012" oninput="this.value = this.value.replace(/[^0-9]/g, '')" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-mono font-bold tracking-wider focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+                                    <input type="text" id="transactionId" maxlength="12" minlength="12" required placeholder="e.g. 402812349012" oninput="this.value = this.value.replace(/[^0-9]/g, '')" class="w-full pl-10 pr-20 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-mono font-bold tracking-wider focus:outline-none focus:border-primary focus:bg-white transition-colors" />
+                                    
+                                    <!-- 1-Click Paste Button -->
+                                    <button type="button" onclick="pasteUTR()" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white hover:bg-primary hover:text-white border border-slate-200 text-slate-700 text-[11px] font-bold px-2.5 py-1.5 rounded-lg shadow-xs transition-all flex items-center gap-1">
+                                        <i class="fa-regular fa-paste text-xs"></i> Paste
+                                    </button>
                                 </div>
                                 <span class="text-[10px] text-slate-400 block">12-digit UPI reference number from your app</span>
                             </div>
@@ -392,7 +370,7 @@
                     <div class="mt-8 border-t border-slate-100 pt-6">
                         <button type="submit" id="submitBtn" class="w-full py-4 bg-slate-900 hover:bg-primary text-white font-poppins font-extrabold text-base rounded-2xl shadow-xl transition-all hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-2">
                             <i class="fa-solid fa-shield-check text-lg text-primary"></i>
-                            <span>Submit Payment &amp; Unlock Candidate Login</span>
+                            <span id="submitBtnText">Submit Payment &amp; Unlock Candidate Login</span>
                         </button>
                     </div>
                 </div>
@@ -401,16 +379,22 @@
         </form>
     </main>
 
-    <!-- ════ SUCCESS RECEIPT MODAL ════ -->
-    <div id="successModal" class="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
-        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl border border-slate-100 transform scale-95 transition-transform duration-300" id="successModalContent">
+    <!-- ════ SUCCESS RECEIPT MODAL (WITH TOP-RIGHT CLOSE + OUTSIDE CLICK) ════ -->
+    <div id="successModal" onclick="handleBackdropClick(event)" class="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl border border-slate-100 transform scale-95 transition-transform duration-300 relative" id="successModalContent">
             
-            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-4 animate-bounce">
+            <!-- 🌟 CLOSE (✕) BUTTON TOP RIGHT -->
+            <button type="button" onclick="closeSuccessModal()" class="absolute top-4 right-4 bg-slate-100 hover:bg-rose-50 text-slate-500 hover:text-rose-600 px-3 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 shadow-xs group" title="Close & Return to Page">
+                <span class="group-hover:text-rose-600">Close</span>
+                <i class="fa-solid fa-xmark text-sm group-hover:rotate-90 transition-transform"></i>
+            </button>
+
+            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-4 mt-2 animate-bounce">
                 <i class="fa-solid fa-circle-check"></i>
             </div>
             
             <h3 class="font-poppins font-extrabold text-2xl text-slate-900">Enrollment Submitted!</h3>
-            <p class="text-xs text-slate-500 mt-1 font-manrope">Your details have been logged securely with <b>RAJShiksha Exam Cell</b>.</p>
+            <p class="text-xs text-slate-500 mt-1 font-manrope">Your details have been logged securely with <b>RAJShiksha</b>.</p>
 
             <div class="my-4 p-4 bg-slate-50 rounded-2xl border border-slate-200 text-left text-xs space-y-1.5 font-mono">
                 <p><b>Order Ref:</b> <span id="recOrderRef" class="text-primary font-bold">#RAJ10001</span></p>
@@ -452,25 +436,120 @@
         let usedUTRs = JSON.parse(localStorage.getItem('rajshiksha_used_utrs')) || [];
         let isQRUnlocked = false;
 
+        // ══════ 2-STEP DROPDOWN DATA CATALOG ══════
+        const courseCatalog = {
+            test_series: [
+                { val: "Rajasthan CET 10+2 Test Series (₹29)", text: "CET 10+2 Test Series — ₹29" },
+                { val: "Rajasthan CET Graduation Test Series (₹29)", text: "CET Graduation Test Series — ₹29" },
+                { val: "Raj. SI 2026 Test Series (₹29)", text: "Raj. SI 2026 Hindi Test Series (Paper-I) — ₹29" },
+                { val: "Raj. SI 2026 GK Test Series (₹29)", text: "Raj. SI 2026 G.K. Test Series (Paper-II) — ₹29" },
+                { val: "Rajasthan PTI Paper 1 Test Series (₹29)", text: "Raj. PTI Paper 1 Test Series 2026 (Paper-I) — ₹29" },
+                { val: "Rajasthan VDO Test Series (₹19)", text: "Raj. VDO Test Series 2026 — ₹19" },
+                { val: "Rajasthan PATWAR Test Series (₹19)", text: "Raj. PATWAR Test Series 2026 — ₹19" }
+            ],
+            topic_wise: [
+                { val: "rajasthan-history-sabhyata-(₹9)", text: "Rajasthan Sabhayta (4+ Topics) Test Series — ₹9" },
+                { val: "rajasthan-culture-durg-(₹19)", text: "Rajasthan Complete Durg (6 Topics) Test Series — ₹19" },
+                { val: "rajasthan-culture-nritya-(₹19)", text: "Rajasthan Complete nritya (5 Topics) Test Series — ₹19" },
+                { val: "rajasthan-geography-bhautik-pradesh-(₹19)", text: "Rajasthan Complete Bhotik Pradesh (5 Topics) Test Series — ₹19" },
+                { val: "Rajasthan History All-Access Pass (₹49)", text: "Rajasthan History Complete Pass (7 Master Chapters) — ₹49" }
+            ],
+            cet_12th_pass: [
+                { val: "Starter Basic Plan - 19 Days Access (₹29)", text: "CET 10+2 Starter Pass (19 Days) — ₹29" },
+                { val: "Standard Pass - 49 Days Membership (₹39)", text: "CET 10+2 Standard Pass (49 Days) — ₹39" },
+                { val: "Premium Regular Plan - 149 Days Access (₹49)", text: "CET 10+2 Prem. Regular Plan (149 Days) — ₹49" },
+                { val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "CET 10+2 Elite Prem. Plan (365 Days) — ₹199" }
+            ],
+            cet_grad_pass: [
+                { val: "Starter Basic Plan - 19 Days Access (₹29)", text: "CET Grad. Starter Pass (19 Days) — ₹29" },
+                { val: "Standard Pass - 49 Days Membership (₹39)", text: "CET Grad. Standard Pass (49 Days) — ₹39" },
+                { val: "Premium Regular Plan - 149 Days Access (₹49)", text: "CET Grad. Prem. Regular Plan (149 Days) — ₹49" },
+                { val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "CET Grad. Elite Prem. Plan (365 Days) — ₹199" }
+            ],
+            pti_pass: [
+                { val: "Starter Basic Plan - 19 Days Access (₹29)", text: "PTI Starter Pass (19 Days) — ₹29" },
+                { val: "Standard Pass - 49 Days Membership (₹39)", text: "PTI Standard Pass (49 Days) — ₹39" },
+                { val: "Premium Regular Plan - 149 Days Access (₹49)", text: "PTI Premium Regular Plan (149 Days) — ₹49" },
+                { val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "PTI Elite Premium Plan (365 Days) — ₹199" }
+            ],
+            si_gk_pass: [
+                { val: "Starter Basic Plan - 19 Days Access (₹29)", text: "SI Starter Pass (19 Days) — ₹29" },
+                { val: "Standard Pass - 49 Days Membership (₹39)", text: "SI Standard Pass (49 Days) — ₹39" },
+                { val: "Premium Regular Plan - 149 Days Access (₹49)", text: "SI Premium Regular Plan (149 Days) — ₹49" },
+                { val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "SI Elite Premium Plan (365 Days) — ₹199" }
+            ],
+            si_hindi_pass: [
+                { val: "Starter Basic Plan - 19 Days Access (₹29)", text: "SI Starter Pass (19 Days) — ₹29" },
+                { val: "Standard Pass - 49 Days Membership (₹39)", text: "SI Standard Pass (49 Days) — ₹39" },
+                { val: "Premium Regular Plan - 149 Days Access (₹49)", text: "SI Premium Regular Plan (149 Days) — ₹49" },
+                { val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "SI Elite Premium Plan (365 Days) — ₹199" }
+            ],
+            membership_pass: [
+                { val: "Starter Basic Plan - 7 Days Access (₹99)", text: "Starter Basic Plan (7 Days Access) — ₹99" },
+                { val: "Standard Sprint Pass - 30 Days Membership (₹199)", text: "Standard Sprint Pass (30 Days) — ₹199" },
+                { val: "Premium Regular Plan - 90 Days Access (₹499)", text: "Premium Regular Plan (90 Days) — ₹499" },
+                { val: "Elite Premium Plan - 365 Days Pass (₹999)", text: "Elite Premium Plan (365 Days Access) — ₹999" }
+            ]
+        };
+
+        // On Category Selection -> Load Courses
+        function onCategoryChange() {
+            const catSelect = document.getElementById('categorySelect');
+            const courseSelect = document.getElementById('selectedCourse');
+            const selectedCat = catSelect.value;
+
+            courseSelect.innerHTML = '<option value="" disabled selected>-- Choose Specific Plan / Price --</option>';
+
+            if (selectedCat && courseCatalog[selectedCat]) {
+                courseSelect.disabled = false;
+                courseCatalog[selectedCat].forEach(item => {
+                    const opt = document.createElement('option');
+                    opt.value = item.val;
+                    opt.textContent = item.text;
+                    courseSelect.appendChild(opt);
+                });
+            } else {
+                courseSelect.disabled = true;
+            }
+
+            onCourseChange();
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             autoSelectCourseFromURL();
             updateUpiDetails();
         });
 
-        // 1. Auto-select course from URL
+        // 1. Auto-select course from URL with 2-Step Support
         function autoSelectCourseFromURL() {
             const urlParams = new URLSearchParams(window.location.search);
             const courseParam = urlParams.get('course') || urlParams.get('plan');
-            const courseSelect = document.getElementById('selectedCourse');
 
-            if (courseParam && courseSelect) {
+            if (courseParam) {
                 const decodedParam = decodeURIComponent(courseParam).toLowerCase().trim();
-                for (let i = 0; i < courseSelect.options.length; i++) {
-                    const optVal = courseSelect.options[i].value.toLowerCase().trim();
-                    if (optVal === decodedParam || optVal.includes(decodedParam) || decodedParam.includes(optVal.split('(')[0].trim().toLowerCase())) {
-                        courseSelect.selectedIndex = i;
-                        break;
+                let foundCategory = null;
+                let foundCourseVal = null;
+
+                for (const [catKey, items] of Object.entries(courseCatalog)) {
+                    for (const item of items) {
+                        const optVal = item.val.toLowerCase().trim();
+                        const optText = item.text.toLowerCase().trim();
+                        if (optVal.includes(decodedParam) || decodedParam.includes(optVal.split('(')[0].trim().toLowerCase()) || optText.includes(decodedParam)) {
+                            foundCategory = catKey;
+                            foundCourseVal = item.val;
+                            break;
+                        }
                     }
+                    if (foundCategory) break;
+                }
+
+                if (foundCategory) {
+                    const catSelect = document.getElementById('categorySelect');
+                    catSelect.value = foundCategory;
+                    onCategoryChange();
+
+                    const courseSelect = document.getElementById('selectedCourse');
+                    courseSelect.value = foundCourseVal;
                 }
             }
             onCourseChange();
@@ -478,14 +557,32 @@
 
         // 2. Extract numeric amount from Course Name (e.g. ₹9, ₹19, ₹29, ₹49, ₹99)
         function extractAmount(courseString) {
+            if (!courseString) return '';
             const match = courseString.match(/₹(\d+)/);
             return match ? match[1] : '';
         }
 
-        // 3. Update Dynamic QR & UPI Intent Link
+        // 3. Update Dynamic QR, UPI Intent Link & Visual Price Badge
         function onCourseChange() {
             updateUpiDetails();
+            updatePriceBadge();
             checkFormCompletion();
+        }
+
+        function updatePriceBadge() {
+            const course = document.getElementById('selectedCourse').value;
+            const container = document.getElementById('priceBadgeContainer');
+            const titleSpan = document.getElementById('priceBadgeTitle');
+            const amountSpan = document.getElementById('priceBadgeAmount');
+
+            if (course && container) {
+                const amount = extractAmount(course);
+                container.classList.remove('hidden');
+                if (titleSpan) titleSpan.textContent = course.split('(')[0].trim();
+                if (amountSpan) amountSpan.textContent = amount ? `Payable: ₹${amount}` : `Payable`;
+            } else if (container) {
+                container.classList.add('hidden');
+            }
         }
 
         function updateUpiDetails() {
@@ -567,6 +664,39 @@
         function copyUPI() {
             navigator.clipboard.writeText(UPI_ID);
             alert(`UPI ID (${UPI_ID}) copied successfully!`);
+        }
+
+        // Auto-Append @gmail.com
+        function appendGmailDomain() {
+            const emailInput = document.getElementById('studentEmail');
+            let val = emailInput.value.trim();
+            if (!val) {
+                emailInput.focus();
+                return;
+            }
+            if (val.includes('@')) {
+                val = val.split('@')[0];
+            }
+            emailInput.value = val + '@gmail.com';
+            validateEmailFormat(emailInput);
+            checkFormCompletion();
+        }
+
+        // 1-Click Paste UTR
+        async function pasteUTR() {
+            try {
+                const text = await navigator.clipboard.readText();
+                const cleanDigits = text.replace(/[^0-9]/g, '').slice(0, 12);
+                if (cleanDigits) {
+                    const utrInput = document.getElementById('transactionId');
+                    utrInput.value = cleanDigits;
+                    checkFormCompletion();
+                } else {
+                    alert('Clipboard me koi number nahi mila. Kripya number copy karein.');
+                }
+            } catch (err) {
+                alert('Clipboard access allow karein ya manually number enter karein.');
+            }
         }
 
         // 6. Form Validations
@@ -652,7 +782,7 @@
             const remark = document.getElementById('studentRemark').value.trim();
             const utr = document.getElementById('transactionId').value.trim();
 
-            if (!course) return alert('Please select a course / test series.');
+            if (!course) return alert('Please select a course / test series plan.');
             if (mobile.length !== 10) return alert('Enter valid 10-digit mobile number.');
             if (!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email)) return showSecurityAlert('INVALID EMAIL', 'Email must strictly end with @gmail.com');
             if (pass !== confirmPass) return alert('Passwords do not match.');
@@ -719,6 +849,61 @@
                 document.getElementById('successModalContent').classList.replace('scale-95', 'scale-100');
             }
         }
+
+        // ══════ 🌟 CLOSE MODAL, RESET FORM & UPDATE SUBMIT BUTTON ══════
+        function closeSuccessModal() {
+            const modal = document.getElementById('successModal');
+            const modalContent = document.getElementById('successModalContent');
+
+            if (modal && modalContent) {
+                modalContent.classList.replace('scale-100', 'scale-95');
+                modal.classList.replace('opacity-100', 'opacity-0');
+                setTimeout(() => {
+                    modal.classList.add('pointer-events-none');
+                }, 300);
+            }
+
+            // 1. Reset Entire Form
+            const form = document.getElementById('checkoutForm');
+            if (form) form.reset();
+
+            // 2. Reset dynamic course dropdown & price tag
+            const courseSelect = document.getElementById('selectedCourse');
+            if (courseSelect) {
+                courseSelect.innerHTML = '<option value="" disabled selected>-- Pehle Exam/Category Select Karein --</option>';
+                courseSelect.disabled = true;
+            }
+            const priceBadge = document.getElementById('priceBadgeContainer');
+            if (priceBadge) priceBadge.classList.add('hidden');
+
+            const matchMsg = document.getElementById('passwordMatchMsg');
+            if (matchMsg) matchMsg.classList.add('hidden');
+
+            // 3. Update Submit Button to "Submitted Successfully" & Disable it
+            const submitBtn = document.getElementById('submitBtn');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.className = "w-full py-4 bg-emerald-600 text-white font-poppins font-extrabold text-base rounded-2xl shadow-md cursor-not-allowed flex items-center justify-center gap-2 transition-all";
+                submitBtn.innerHTML = `<i class="fa-solid fa-circle-check text-lg"></i> <span>Submitted Successfully</span>`;
+            }
+        }
+
+        // Outside Click (Backdrop click) handler
+        function handleBackdropClick(e) {
+            if (e.target.id === 'successModal') {
+                closeSuccessModal();
+            }
+        }
+
+        // Escape (Esc) key listener
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' || e.key === 'Esc') {
+                const modal = document.getElementById('successModal');
+                if (modal && !modal.classList.contains('pointer-events-none')) {
+                    closeSuccessModal();
+                }
+            }
+        });
     </script>
 </body>
 </html>
