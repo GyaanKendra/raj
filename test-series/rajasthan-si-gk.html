@@ -526,7 +526,7 @@
                             <span class="font-poppins font-black text-3xl text-primary">₹29</span>
                             <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold ml-1">85% OFF</span>
                         </div>
-                        <a href="payment" class="px-6 py-2.5 bg-primary hover:bg-primary/90 text-white font-poppins font-extrabold text-sm rounded-xl transition-all shadow-premium hover:scale-[1.03]">Buy Now</a>
+                        <a href="payment?cat=test_series&plan=si-gk" rel="nofollow" class="px-6 py-2.5 bg-primary hover:bg-primary/90 text-white font-poppins font-extrabold text-sm rounded-xl transition-all shadow-premium hover:scale-[1.03]">Buy Now</a>
                     </div>
                 </div>
 
@@ -1362,8 +1362,9 @@
                     <span class="text-[10px] text-slate-400 line-through">₹49</span>
                 </div>
                 <span class="text-[9px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/40 px-2.5 py-1 rounded-full">61% OFF</span>
-                <a href="payment" onclick="handlePurchase(event, 'RPSC SI PYQ Master Pack', 19)" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-poppins font-bold text-xs rounded-xl transition-all shadow-md">Get Access</a>
-            </div>
+                <a href="#plans" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-poppins font-bold text-xs rounded-xl transition-all shadow-md">Get Access</a>
+
+			</div>
         </div>
 
         <!-- ═══ OFFICIAL PYQ CARDS GRID ═══ -->
@@ -1696,7 +1697,13 @@
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> PYQs Access</li>
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> All New Tests FREE Added</li>
                         </ul>
-				<a href="payment" onclick="handlePurchase(event, 'Standard', 39)" class="mt-4 w-full py-2.5 bg-gradient-to-r from-primary to-secondary text-white font-bold text-sm rounded-xl hover:opacity-95 transition-all text-center shadow-premium">Buy Now</a>                    </div>
+										<!-- 2. Standard Plan (₹39) -->
+						<a href="payment?cat=si_gk_pass&plan=sigk-49d" 
+   					rel="nofollow"
+   					onclick="handlePurchase(event, 'si_gk_pass', 'sigk-49d')" 
+   					class="mt-4 w-full py-2.5 bg-gradient-to-r from-primary to-secondary text-white font-bold text-sm rounded-xl hover:opacity-95 transition-all text-center shadow-premium">
+   						Buy Now	</a>	
+					</div>
 
                     <!-- Plan: 3 Months -->
                     <div class="bg-slate-50 dark:bg-[#1a1a2e] rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 flex flex-col">
@@ -1716,7 +1723,10 @@
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> All Subject-wise Tests</li>
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> All New Tests FREE Added</li>
                         </ul>
-                        <a href="payment" onclick="handlePurchase(event, 'Premium', 49)" class="mt-4 w-full py-2.5 bg-accent hover:bg-accent/90 text-white font-bold text-sm rounded-xl transition-all text-center">Buy Now</a>
+                        <!-- 3. Premium Plan (₹49) -->
+						<a href="payment?cat=si_gk_pass&plan=sigk-149d" rel="nofollow"
+   						onclick="handlePurchase(event, 'si_gk_pass', 'sigk-149d')" 
+   						class="mt-4 w-full py-2.5 bg-accent hover:bg-accent/90 text-white font-bold text-sm rounded-xl transition-all text-center">   Buy Now</a>
                     </div>
 
                     <!-- Plan: 1 Year -->
@@ -1737,7 +1747,9 @@
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> Unlimited Attempt</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> PDF Download</li>
                         </ul>
-                        <a href="payment" onclick="handlePurchase(event, 'Elite', 199)" class="mt-4 w-full py-2.5 bg-support hover:bg-support/90 text-white font-bold text-sm rounded-xl transition-all text-center">Buy Now</a>
+					<a href="payment?cat=si_gk_pass&plan=sigk-365d"   rel="nofollow"
+   					onclick="handlePurchase(event, 'si_gk_pass', 'sigk-365d')" 
+   					class="mt-4 w-full py-2.5 bg-support hover:bg-support/90 text-white font-bold text-sm rounded-xl transition-all text-center">   Buy Now</a>
                     </div>
 
                 </div>
@@ -2087,6 +2099,39 @@ document.addEventListener('click', function (e) {
             });
         }
     });
-    </script>
+    </script
+		<script>
+    // 1. Anchor click par smooth scroll
+    document.addEventListener('click', function (e) {
+        const anchor = e.target.closest('a[href^="#"]');
+        if (anchor) {
+            const targetId = anchor.getAttribute('href');
+            if (!targetId || targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+                
+                // FIX: Current page path ko hash ke sath combine kiya gaya hai
+                const newUrl = window.location.pathname + window.location.search + targetId;
+                history.pushState(null, null, newUrl);
+            }
+        }
+    });
+
+    // 2. Page Refresh hone par usi section par scroll maintain rakhne ke liye
+    window.addEventListener('DOMContentLoaded', function () {
+        if (window.location.hash) {
+            const targetElement = document.querySelector(window.location.hash);
+            if (targetElement) {
+                setTimeout(function () {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }, 100); // 100ms delay DOM load ensure karne ke liye
+            }
+        }
+    });
+</script>
+		
 </body>
 </html>
