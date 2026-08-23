@@ -151,7 +151,7 @@
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         
-                        <!-- ═════ SOLUTION 1: 2-STEP CASCADING DROPDOWN ═════ -->
+                        <!-- ═════ 2-STEP CASCADING DROPDOWN (ALL CATEGORIES & PASSES INCLUDED) ═════ -->
                         
                         <!-- STEP 1: Select Category / Exam -->
                         <div class="space-y-1.5">
@@ -160,14 +160,24 @@
                                 <i class="fa-solid fa-layer-group absolute left-3.5 top-1/2 -translate-y-1/2 text-primary text-sm"></i>
                                 <select id="categorySelect" required onchange="onCategoryChange()" class="w-full pl-10 pr-8 py-3 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm font-bold text-slate-800 focus:outline-none focus:border-primary focus:bg-white transition-colors appearance-none cursor-pointer">
                                     <option value="" disabled selected>-- Select Exam / Pass Type --</option>
-                                    <option value="test_series">⭐ All Test Series</option>
-                                    <option value="topic_wise">⭐ Topic Wise Test Series</option>
-                                    <option value="cet_12th_pass">⭐ CET 10+2 Pass</option>
-                                    <option value="cet_grad_pass">⭐ CET Graduation Pass</option>
-                                    <option value="pti_pass">⭐ PTI Paper 1 Pass</option>
-                                    <option value="si_gk_pass">⭐ Raj. SI (GK) Pass</option>
-                                    <option value="si_hindi_pass">⭐ Raj. SI (Hindi) Pass</option>
-                                    <option value="membership_pass">⭐ All-Access Membership Passes</option>
+                                    
+                                    <!-- Full Test Series -->
+                                    <option value="test_series">All Test Series (CET, SI, PTI, Patwar)</option>
+                                    
+                                    <!-- Chapter Wise / Topic Wise Categories -->
+                                    <option value="geo_chapters">Rajasthan Geography (Chapter Wise Tests)</option>
+                                    <option value="hist_chapters">Rajasthan History (Chapter Wise Tests)</option>
+                                    <option value="culture_chapters">Rajasthan Art &amp; Culture (Chapter Wise Tests)</option>
+                                    <option value="polity_chapters">Rajasthan Polity (Chapter Wise Tests)</option>
+                                    <option value="topic_wise">Topic Wise Test Series (Old Topics)</option>
+                                    
+                                    <!-- Exam Passes -->
+                                    <option value="cet_12th_pass">CET 10+2 Pass</option>
+                                    <option value="cet_grad_pass">CET Graduation Pass</option>
+                                    <option value="pti_pass">PTI Paper 1 Pass</option>
+                                    <option value="si_gk_pass">Raj. SI (GK) Pass</option>
+                                    <option value="si_hindi_pass">Raj. SI (Hindi) Pass</option>
+                                    <option value="membership_pass">All-Access Membership Passes</option>
                                 </select>
                                 <i class="fa-solid fa-chevron-down absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
                             </div>
@@ -259,7 +269,7 @@
                             <p id="passwordMatchMsg" class="text-xs font-bold hidden flex items-center gap-1.5"></p>
                         </div>
 
-                        <!-- REMARK FIELD (RESTORED) -->
+                        <!-- REMARK FIELD -->
                         <div class="sm:col-span-2 space-y-1.5 pt-1">
                             <label class="text-xs font-bold text-slate-700 block flex items-center justify-between">
                                 <span>Remark / विशेष विवरण <span class="text-slate-400 font-normal">(Optional)</span></span>
@@ -379,11 +389,10 @@
         </form>
     </main>
 
-    <!-- ════ SUCCESS RECEIPT MODAL (WITH TOP-RIGHT CLOSE + OUTSIDE CLICK) ════ -->
+    <!-- ════ SUCCESS RECEIPT MODAL ════ -->
     <div id="successModal" onclick="handleBackdropClick(event)" class="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
         <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl border border-slate-100 transform scale-95 transition-transform duration-300 relative" id="successModalContent">
             
-            <!-- 🌟 CLOSE (✕) BUTTON TOP RIGHT -->
             <button type="button" onclick="closeSuccessModal()" class="absolute top-4 right-4 bg-slate-100 hover:bg-rose-50 text-slate-500 hover:text-rose-600 px-3 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 shadow-xs group" title="Close & Return to Page">
                 <span class="group-hover:text-rose-600">Close</span>
                 <i class="fa-solid fa-xmark text-sm group-hover:rotate-90 transition-transform"></i>
@@ -436,8 +445,9 @@
         let usedUTRs = JSON.parse(localStorage.getItem('rajshiksha_used_utrs')) || [];
         let isQRUnlocked = false;
 
-        // ══════ 2-STEP DROPDOWN DATA CATALOG ══════
+        // ══════ 2-STEP DROPDOWN DATA CATALOG (CLEAN & COMPLETE) ══════
         const courseCatalog = {
+            // 1. ALL FULL TEST SERIES
             test_series: [
                 { val: "Rajasthan CET 10+2 Test Series (₹29)", text: "CET 10+2 Test Series — ₹29" },
                 { val: "Rajasthan CET Graduation Test Series (₹29)", text: "CET Graduation Test Series — ₹29" },
@@ -447,6 +457,49 @@
                 { val: "Rajasthan VDO Test Series (₹19)", text: "Raj. VDO Test Series 2026 — ₹19" },
                 { val: "Rajasthan PATWAR Test Series (₹19)", text: "Raj. PATWAR Test Series 2026 — ₹19" }
             ],
+
+            // 2. RAJASTHAN GEOGRAPHY (CHAPTER WISE)
+            geo_chapters: [
+                { val: "Rajasthan Geography All-Access Pass (₹49)", text: "Rajasthan Geography All-Access Pass (3 Months) — ₹49" },
+                { val: "Geography Ch-01: स्थिति, विस्तार एवं भौतिक प्रदेश (₹9)", text: "Ch-01: स्थिति, विस्तार एवं भौतिक प्रदेश — ₹9" },
+                { val: "Geography Ch-02: अपवाह तंत्र (नदियां), झीलें व बांध (₹9)", text: "Ch-02: अपवाह तंत्र (नदियां), झीलें व बांध — ₹9" },
+                { val: "Geography Ch-03: जलवायु, मानसूनी तंत्र एवं मृदा (₹9)", text: "Ch-03: जलवायु, मानसूनी तंत्र एवं मृदा — ₹9" },
+                { val: "Geography Ch-04: प्राकृतिक वनस्पति, वन रिपोर्ट व वन्यजीव (₹9)", text: "Ch-04: प्राकृतिक वनस्पति, वन रिपोर्ट व वन्यजीव — ₹9" },
+                { val: "Geography Ch-05: सिंचाई एवं बहुउद्देशीय परियोजनाएं (₹9)", text: "Ch-05: सिंचाई एवं बहुउद्देशीय परियोजनाएं (IGNP/ERCP) — ₹9" },
+                { val: "Geography Ch-06: कृषि, प्रमुख फसलें एवं पशुधन (₹9)", text: "Ch-06: कृषि, प्रमुख फसलें एवं पशुधन संपदा — ₹9" },
+                { val: "Geography Ch-07: खनिज संसाधन, ऊर्जा एवं उद्योग (₹9)", text: "Ch-07: खनिज संसाधन, ऊर्जा एवं प्रमुख उद्योग — ₹9" },
+                { val: "Geography Ch-08: जनसंख्या (2011), जनजातियां व परिवहन (₹9)", text: "Ch-08: जनसंख्या (2011), जनजातियां व परिवहन — ₹9" }
+            ],
+
+          /*
+	  // 3. RAJASTHAN HISTORY (CHAPTER WISE)
+            hist_chapters: [
+                { val: "Rajasthan History All-Access Pass (₹49)", text: "Rajasthan History All-Access Pass (3 Months) — ₹49" },
+                { val: "History Ch-01: प्राचीन सभ्यताएं (कालीबंगा, आहड़ आदि) (₹9)", text: "Ch-01: प्राचीन सभ्यताएं (कालीबंगा, आहड़) — ₹9" },
+                { val: "History Ch-02: प्रमुख राजवंश (मेवाड़, मारवाड़, कछवाहा) (₹9)", text: "Ch-02: प्रमुख राजवंश (मेवाड़, मारवाड़, कछवाहा) — ₹9" },
+                { val: "History Ch-03: 1857 की क्रांति व किसान आंदोलन (₹9)", text: "Ch-03: 1857 की क्रांति, प्रजामंडल व किसान आंदोलन — ₹9" },
+                { val: "History Ch-04: राजस्थान का एकीकरण एवं व्यक्तित्व (₹9)", text: "Ch-04: राजस्थान का एकीकरण एवं प्रमुख व्यक्तित्व — ₹9" }
+            ],
+
+            // 4. ART & CULTURE (CHAPTER WISE)
+            culture_chapters: [
+                { val: "Rajasthan Art & Culture All-Access Pass (₹49)", text: "Rajasthan Art & Culture All-Access Pass (3 Months) — ₹49" },
+                { val: "Culture Ch-01: प्रमुख दुर्ग, महल, हवेलियां व छतरियां (₹9)", text: "Ch-01: प्रमुख दुर्ग, महल, हवेलियां व छतरियां — ₹9" },
+                { val: "Culture Ch-02: लोक देवता, देवियां एवं संत संप्रदाय (₹9)", text: "Ch-02: लोक देवता, देवियां एवं संत संप्रदाय — ₹9" },
+                { val: "Culture Ch-03: लोक नृत्य, लोक नाट्य व संगीत घराने (₹9)", text: "Ch-03: लोक नृत्य, लोक नाट्य व संगीत घराने — ₹9" },
+                { val: "Culture Ch-04: मेले, त्यौहार, वेशभूषा व आभूषण (₹9)", text: "Ch-04: मेले, त्यौहार, वेशभूषा व आभूषण — ₹9" }
+            ],
+
+            // 5. RAJASTHAN POLITY (CHAPTER WISE)
+            polity_chapters: [
+                { val: "Rajasthan Polity All-Access Pass (₹49)", text: "Rajasthan Polity All-Access Pass (3 Months) — ₹49" },
+                { val: "Polity Ch-01: राज्यपाल, मुख्यमंत्री व मंत्रिपरिषद (₹9)", text: "Ch-01: राज्यपाल, मुख्यमंत्री व मंत्रिपरिषद — ₹9" },
+                { val: "Polity Ch-02: विधानसभा, उच्च न्यायालय व लोकायुक्त (₹9)", text: "Ch-02: विधानसभा, उच्च न्यायालय व लोकायुक्त — ₹9" },
+                { val: "Polity Ch-03: RPSC, मानवाधिकार व राज्य निर्वाचन आयोग (₹9)", text: "Ch-03: RPSC, राज्य मानवाधिकार आयोग — ₹9" }
+            ],
+		*/
+
+            // 6. OLD TOPIC WISE MAPPING (BACKWARD COMPATIBILITY)
             topic_wise: [
                 { val: "rajasthan-history-sabhyata-(₹9)", text: "Rajasthan Sabhayta (4+ Topics) Test Series — ₹9" },
                 { val: "rajasthan-culture-durg-(₹19)", text: "Rajasthan Complete Durg (6 Topics) Test Series — ₹19" },
@@ -454,36 +507,48 @@
                 { val: "rajasthan-geography-bhautik-pradesh-(₹19)", text: "Rajasthan Complete Bhotik Pradesh (5 Topics) Test Series — ₹19" },
                 { val: "Rajasthan History All-Access Pass (₹49)", text: "Rajasthan History Complete Pass (7 Master Chapters) — ₹49" }
             ],
+
+            // 7. CET 10+2 PASS
             cet_12th_pass: [
                 { val: "Starter Basic Plan - 19 Days Access (₹29)", text: "CET 10+2 Starter Pass (19 Days) — ₹29" },
                 { val: "Standard Pass - 49 Days Membership (₹39)", text: "CET 10+2 Standard Pass (49 Days) — ₹39" },
                 { val: "Premium Regular Plan - 149 Days Access (₹49)", text: "CET 10+2 Prem. Regular Plan (149 Days) — ₹49" },
                 { val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "CET 10+2 Elite Prem. Plan (365 Days) — ₹199" }
             ],
+
+            // 8. CET GRADUATION PASS
             cet_grad_pass: [
                 { val: "Starter Basic Plan - 19 Days Access (₹29)", text: "CET Grad. Starter Pass (19 Days) — ₹29" },
                 { val: "Standard Pass - 49 Days Membership (₹39)", text: "CET Grad. Standard Pass (49 Days) — ₹39" },
                 { val: "Premium Regular Plan - 149 Days Access (₹49)", text: "CET Grad. Prem. Regular Plan (149 Days) — ₹49" },
                 { val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "CET Grad. Elite Prem. Plan (365 Days) — ₹199" }
             ],
+
+            // 9. PTI PAPER 1 PASS
             pti_pass: [
                 { val: "Starter Basic Plan - 19 Days Access (₹29)", text: "PTI Starter Pass (19 Days) — ₹29" },
                 { val: "Standard Pass - 49 Days Membership (₹39)", text: "PTI Standard Pass (49 Days) — ₹39" },
                 { val: "Premium Regular Plan - 149 Days Access (₹49)", text: "PTI Premium Regular Plan (149 Days) — ₹49" },
                 { val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "PTI Elite Premium Plan (365 Days) — ₹199" }
             ],
+
+            // 10. SI GK PASS
             si_gk_pass: [
                 { val: "Starter Basic Plan - 19 Days Access (₹29)", text: "SI Starter Pass (19 Days) — ₹29" },
                 { val: "Standard Pass - 49 Days Membership (₹39)", text: "SI Standard Pass (49 Days) — ₹39" },
                 { val: "Premium Regular Plan - 149 Days Access (₹49)", text: "SI Premium Regular Plan (149 Days) — ₹49" },
                 { val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "SI Elite Premium Plan (365 Days) — ₹199" }
             ],
+
+            // 11. SI HINDI PASS
             si_hindi_pass: [
                 { val: "Starter Basic Plan - 19 Days Access (₹29)", text: "SI Starter Pass (19 Days) — ₹29" },
                 { val: "Standard Pass - 49 Days Membership (₹39)", text: "SI Standard Pass (49 Days) — ₹39" },
                 { val: "Premium Regular Plan - 149 Days Access (₹49)", text: "SI Premium Regular Plan (149 Days) — ₹49" },
                 { val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "SI Elite Premium Plan (365 Days) — ₹199" }
             ],
+
+            // 12. ALL-ACCESS MEMBERSHIP PASSES
             membership_pass: [
                 { val: "Starter Basic Plan - 7 Days Access (₹99)", text: "Starter Basic Plan (7 Days Access) — ₹99" },
                 { val: "Standard Sprint Pass - 30 Days Membership (₹199)", text: "Standard Sprint Pass (30 Days) — ₹199" },
@@ -520,49 +585,61 @@
             updateUpiDetails();
         });
 
-        // 1. Auto-select course from URL with 2-Step Support
+        // 🌟 Auto-select course from URL (Supports ?course=..., ?plan=... and ?cat=...)
         function autoSelectCourseFromURL() {
             const urlParams = new URLSearchParams(window.location.search);
+            const catParam = urlParams.get('cat');
             const courseParam = urlParams.get('course') || urlParams.get('plan');
+
+            let foundCategory = catParam || null;
+            let foundCourseVal = null;
 
             if (courseParam) {
                 const decodedParam = decodeURIComponent(courseParam).toLowerCase().trim();
-                let foundCategory = null;
-                let foundCourseVal = null;
 
                 for (const [catKey, items] of Object.entries(courseCatalog)) {
+                    if (foundCategory && catKey !== foundCategory) continue;
+
                     for (const item of items) {
                         const optVal = item.val.toLowerCase().trim();
                         const optText = item.text.toLowerCase().trim();
-                        if (optVal.includes(decodedParam) || decodedParam.includes(optVal.split('(')[0].trim().toLowerCase()) || optText.includes(decodedParam)) {
+
+                        if (
+                            optVal.includes(decodedParam) || 
+                            optText.includes(decodedParam) ||
+                            decodedParam.includes(optVal.split('(')[0].trim().toLowerCase())
+                        ) {
                             foundCategory = catKey;
                             foundCourseVal = item.val;
                             break;
                         }
                     }
-                    if (foundCategory) break;
+                    if (foundCourseVal) break;
                 }
+            }
 
-                if (foundCategory) {
-                    const catSelect = document.getElementById('categorySelect');
-                    catSelect.value = foundCategory;
-                    onCategoryChange();
+            if (foundCategory && courseCatalog[foundCategory]) {
+                const catSelect = document.getElementById('categorySelect');
+                catSelect.value = foundCategory;
+                onCategoryChange();
 
+                if (foundCourseVal) {
                     const courseSelect = document.getElementById('selectedCourse');
                     courseSelect.value = foundCourseVal;
                 }
             }
+
             onCourseChange();
         }
 
-        // 2. Extract numeric amount from Course Name (e.g. ₹9, ₹19, ₹29, ₹49, ₹99)
+        // Extract numeric amount from Course Name (₹9, ₹19, ₹29, ₹49, ₹99...)
         function extractAmount(courseString) {
             if (!courseString) return '';
             const match = courseString.match(/₹(\d+)/);
             return match ? match[1] : '';
         }
 
-        // 3. Update Dynamic QR, UPI Intent Link & Visual Price Badge
+        // Update Dynamic QR, UPI Intent Link & Visual Price Badge
         function onCourseChange() {
             updateUpiDetails();
             updatePriceBadge();
@@ -609,7 +686,7 @@
             }
         }
 
-        // 4. AUTO-UNLOCK ANIMATION CHECK
+        // AUTO-UNLOCK ANIMATION CHECK
         function checkFormCompletion() {
             const course = document.getElementById('selectedCourse').value;
             const name = document.getElementById('studentName').value.trim();
@@ -635,7 +712,6 @@
             const step2Subtitle = document.getElementById('step2Subtitle');
             const qrCard = document.getElementById('qrWrapperCard');
 
-            // Trigger animations
             if (qrImg) qrImg.classList.add('unblurred');
             if (overlay) {
                 overlay.style.opacity = '0';
@@ -660,7 +736,7 @@
             if (!isQRUnlocked) unlockQRSystem();
         }
 
-        // 5. Copy UPI ID
+        // Copy UPI ID
         function copyUPI() {
             navigator.clipboard.writeText(UPI_ID);
             alert(`UPI ID (${UPI_ID}) copied successfully!`);
@@ -699,7 +775,7 @@
             }
         }
 
-        // 6. Form Validations
+        // Form Validations
         function validatePhoneInput(input) {
             input.value = input.value.replace(/[^0-9]/g, '');
             const error = document.getElementById('phoneError');
@@ -766,7 +842,7 @@
             window.scrollTo({ top: alertBox.offsetTop - 80, behavior: 'smooth' });
         }
 
-        // 7. Form Submission Handling
+        // Form Submission Handling
         function handleCheckoutSubmit(e) {
             e.preventDefault();
 
@@ -850,7 +926,7 @@
             }
         }
 
-        // ══════ 🌟 CLOSE MODAL, RESET FORM & UPDATE SUBMIT BUTTON ══════
+        // Close Modal & Reset
         function closeSuccessModal() {
             const modal = document.getElementById('successModal');
             const modalContent = document.getElementById('successModalContent');
@@ -863,11 +939,9 @@
                 }, 300);
             }
 
-            // 1. Reset Entire Form
             const form = document.getElementById('checkoutForm');
             if (form) form.reset();
 
-            // 2. Reset dynamic course dropdown & price tag
             const courseSelect = document.getElementById('selectedCourse');
             if (courseSelect) {
                 courseSelect.innerHTML = '<option value="" disabled selected>-- Pehle Exam/Category Select Karein --</option>';
@@ -879,7 +953,6 @@
             const matchMsg = document.getElementById('passwordMatchMsg');
             if (matchMsg) matchMsg.classList.add('hidden');
 
-            // 3. Update Submit Button to "Submitted Successfully" & Disable it
             const submitBtn = document.getElementById('submitBtn');
             if (submitBtn) {
                 submitBtn.disabled = true;
@@ -888,14 +961,12 @@
             }
         }
 
-        // Outside Click (Backdrop click) handler
         function handleBackdropClick(e) {
             if (e.target.id === 'successModal') {
                 closeSuccessModal();
             }
         }
 
-        // Escape (Esc) key listener
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' || e.key === 'Esc') {
                 const modal = document.getElementById('successModal');
