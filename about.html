@@ -434,13 +434,11 @@
         <div id="scrollProgress" class="h-full bg-gradient-to-r from-primary via-secondary to-accent w-0 transition-all duration-75"></div>
     </div>
 
-
-
     <!-- ═══════ HEADER ═══════ -->
     <header id="mainHeader" class="sticky top-0 z-[100] transition-all duration-300 w-full bg-[#FFFDFB]/95 dark:bg-[#0f0f1a]/95 backdrop-blur-md border-b border-transparent dark:border-slate-800">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Brand Logo & Name -->
-            <a href="/" class="flex items-center gap-3 group">
+            <a href="/" class="flex items-center gap-3 group" aria-label="RAJShiksha Home">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shadow-premium transition-transform group-hover:scale-105 duration-300">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
@@ -458,7 +456,6 @@
                 <a href="about" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">About</a>
                 <a href="test-series/" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">Test Series</a>
                 <a href="notes/" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">Notes</a>
-             <!--   <a href="books" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">Books</a>-->
                 <a href="contact" class="hover:text-primary transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary/60 after:transition-all hover:after:w-full">Contact</a>
             </div>
 
@@ -489,7 +486,6 @@
                 <a href="about" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">About</a>
                 <a href="test-series/" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">Test Series</a>
                 <a href="notes/" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">Notes</a>
-                <!--<a href="books" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">Books</a>-->
                 <a href="contact" class="mobile-nav-link hover:text-primary py-2 border-b border-slate-50 dark:border-slate-800">Contact</a>
                 <div class="flex items-center gap-4 mt-2 pt-2 border-t border-slate-100 dark:border-slate-800">
                     <a href="payment" class="flex-1 inline-flex items-center justify-center px-6 py-4 text-white bg-gradient-to-r from-primary to-secondary rounded-xl text-center shadow-premium font-extrabold text-base">
@@ -529,10 +525,9 @@
                                         <span>Explore Free Resources</span>
                                         <i class="fa-solid fa-arrow-right text-[12px] transition-transform group-hover:translate-x-1"></i>
                                     </a>
-      <!---                              <a href="#about" class="inline-flex items-center justify-center px-8 py-4 font-manrope font-extrabold text-dark dark:text-white border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1a1a2e] rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-[1.03] active:scale-95 transition-all text-[15px] tracking-wide">Learn More</a>-->
                                 </div>
 
-                                <!-- Trust Badges - Student Friendly -->
+                                <!-- Trust Badges -->
                                 <div class="mt-8 flex flex-wrap items-center gap-5">
                                     <div class="flex items-center gap-2">
                                         <span class="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 rounded-full text-xs font-bold">
@@ -544,14 +539,6 @@
                                             Free Tests (Limited)
                                         </span>
                                     </div>
-                                 <!--   <div class="flex items-center gap-1.5 text-amber-500">
-                                        <i class="fa-solid fa-star text-xs"></i>
-                                        <i class="fa-solid fa-star text-xs"></i>
-                                        <i class="fa-solid fa-star text-xs"></i>
-                                        <i class="fa-solid fa-star text-xs"></i>
-                                        <i class="fa-solid fa-star text-xs"></i>
-                                        <span class="text-xs font-bold text-slate-600 dark:text-slate-400 ml-1">4.8/5</span>
-                                    </div>-->
                                 </div>
                             </div>
 
@@ -710,12 +697,12 @@
                                 <span>Full mocks with premium access</span>
                             </li>
                         </ul>
-                        <a href="test-series/" class="mt-6 inline-flex items-center gap-1.5 text-sm font-extrabold text-primary hover:text-primary/80 transition-colors group">
-                            Explore Tests <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
+                        <a href="test-series/" class="mt-6 inline-flex items-center gap-1.5 text-sm font-extrabold text-primary hover:text-primary/80 transition-colors group" aria-label="Explore Test Series">
+                            <span>Explore Tests</span> <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
                         </a>
                     </div>
 
-                    <!-- Card 2: Study Notes - COMPLETELY FREE -->
+                    <!-- Card 2: Study Notes -->
                     <div class="bg-white dark:bg-[#1a1a2e] rounded-3xl p-8 border border-slate-100 dark:border-slate-800 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 hover:-translate-y-1.5 group reveal reveal-delay-2">
                         <div class="w-16 h-16 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center text-3xl mb-5 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-book-open"></i>
@@ -737,8 +724,8 @@
                                 <span>Science, Reasoning &amp; English — Free</span>
                             </li>
                         </ul>
-                        <a href="notes/" class="mt-6 inline-flex items-center gap-1.5 text-sm font-extrabold text-secondary hover:text-secondary/80 transition-colors group">
-                            Access Free Notes <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
+                        <a href="notes/" class="mt-6 inline-flex items-center gap-1.5 text-sm font-extrabold text-secondary hover:text-secondary/80 transition-colors group" aria-label="Access Free Notes">
+                            <span>Access Free Notes</span> <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
                         </a>
                     </div>
 
@@ -767,18 +754,18 @@
                                 <span>Read on any device — mobile, tablet, desktop</span>
                             </li>
                         </ul>
-                        <a href="#" class="mt-6 inline-flex items-center gap-1.5 text-sm font-extrabold text-accent hover:text-accent/80 transition-colors group">
-                            Explore eBooks <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
+                        <a href="notes/" class="mt-6 inline-flex items-center gap-1.5 text-sm font-extrabold text-accent hover:text-accent/80 transition-colors group" aria-label="Explore eBooks">
+                            <span>Explore eBooks</span> <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
                         </a>
                     </div>
 
                 </div>
 
-                <!-- CTA Banner -->
+                <!-- CTA Banner (Fixed Canonicalized Issue: changed index#plans to /#plans) -->
                 <div class="mt-14 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 dark:from-primary/5 dark:via-secondary/5 dark:to-accent/5 rounded-3xl p-8 md:p-12 border border-slate-100 dark:border-slate-800 text-center reveal">
                     <h3 class="font-poppins font-bold text-2xl md:text-3xl text-dark dark:text-white mb-3">Start Your Preparation Today</h3>
                     <p class="text-muted dark:text-slate-400 text-sm max-w-2xl mx-auto mb-6">Access free notes, limited free tests, and explore our eBook collection. Premium packs available for complete access.</p>
-                    <a href="index#plans" class="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/95 text-white font-manrope font-extrabold rounded-xl transition-all shadow-premium hover:scale-[1.03] text-sm group">
+                    <a href="/#plans" class="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/95 text-white font-manrope font-extrabold rounded-xl transition-all shadow-premium hover:scale-[1.03] text-sm group">
                         <span>Get Free Access Now</span>
                         <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
                     </a>
@@ -809,8 +796,8 @@
                             With over 12+ years of experience in educational technology and competitive exams, Amzad envisioned RAJShiksha as a platform that democratizes quality education for every aspirant. His passion for teaching and technology drives the platform's innovation and growth.
                         </p>
                         <div class="team-social mt-4 flex justify-center gap-3">
-                            <a href="#" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 dark:hover:bg-primary/20 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-primary transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
-                            <a href="#" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 dark:hover:bg-primary/20 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-primary transition-all"><i class="fa-brands fa-x-twitter text-sm"></i></a>
+                            <a href="#" aria-label="Amzad Pathan LinkedIn Profile" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 dark:hover:bg-primary/20 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-primary transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                            <a href="#" aria-label="Amzad Pathan Twitter Profile" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 dark:hover:bg-primary/20 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-primary transition-all"><i class="fa-brands fa-x-twitter text-sm"></i></a>
                         </div>
                     </div>
 
@@ -825,8 +812,8 @@
                             Priya brings 8+ years of experience in curriculum design and educational content development. She leads a team of subject matter experts who meticulously craft every mock test, note, and eBook to ensure accuracy, relevance, and exam-oriented quality.
                         </p>
                         <div class="team-social mt-4 flex justify-center gap-3">
-                            <a href="#" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-secondary/10 dark:hover:bg-secondary/20 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-secondary transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
-                            <a href="#" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-secondary/10 dark:hover:bg-secondary/20 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-secondary transition-all"><i class="fa-brands fa-x-twitter text-sm"></i></a>
+                            <a href="#" aria-label="Priya Sharma LinkedIn Profile" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-secondary/10 dark:hover:bg-secondary/20 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-secondary transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                            <a href="#" aria-label="Priya Sharma Twitter Profile" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-secondary/10 dark:hover:bg-secondary/20 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-secondary transition-all"><i class="fa-brands fa-x-twitter text-sm"></i></a>
                         </div>
                     </div>
 
@@ -841,8 +828,8 @@
                             Sanjeev brings 10+ years of strategic leadership and operational excellence. He oversees platform growth, user experience, and strategic partnerships, ensuring RAJShiksha remains the most trusted and accessible exam preparation platform in Rajasthan.
                         </p>
                         <div class="team-social mt-4 flex justify-center gap-3">
-                            <a href="#" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-accent/10 dark:hover:bg-accent/20 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-accent transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
-                            <a href="#" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-accent/10 dark:hover:bg-accent/20 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-accent transition-all"><i class="fa-brands fa-x-twitter text-sm"></i></a>
+                            <a href="#" aria-label="Sanjeev Kumar LinkedIn Profile" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-accent/10 dark:hover:bg-accent/20 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-accent transition-all"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                            <a href="#" aria-label="Sanjeev Kumar Twitter Profile" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-accent/10 dark:hover:bg-accent/20 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-accent transition-all"><i class="fa-brands fa-x-twitter text-sm"></i></a>
                         </div>
                     </div>
 
@@ -888,7 +875,7 @@
                                 </div>
                                 <div class="text-left">
                                     <p class="text-xs text-muted dark:text-slate-400 font-bold uppercase tracking-wider">WhatsApp</p>
-                                    <a href="https://wa.me/919950399752" target="_blank" class="text-sm font-semibold text-dark dark:text-white hover:text-secondary transition-colors">+91 995039 9752</a>
+                                    <a href="https://wa.me/919950399752" target="_blank" rel="noopener" class="text-sm font-semibold text-dark dark:text-white hover:text-secondary transition-colors">+91 995039 9752</a>
                                 </div>
                             </div>
                             <div class="flex items-center gap-4">
@@ -907,7 +894,7 @@
                                 <span>Email Us</span>
                                 <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
                             </a>
-                            <a href="https://wa.me/919950399752" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#1da851] text-white font-manrope font-extrabold rounded-xl transition-all shadow-lg text-sm group">
+                            <a href="https://wa.me/919950399752" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#1da851] text-white font-manrope font-extrabold rounded-xl transition-all shadow-lg text-sm group">
                                 <i class="fa-brands fa-whatsapp text-base"></i>
                                 <span>Chat on WhatsApp</span>
                             </a>
@@ -957,7 +944,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b border-white/10">
                 <div class="lg:col-span-4 flex flex-col items-start text-left">
-                    <a href="/" class="flex items-center gap-2.5 mb-5">
+                    <a href="/" class="flex items-center gap-2.5 mb-5" aria-label="RAJShiksha Home">
                         <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shadow-premium">
                             <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
@@ -994,35 +981,35 @@
                 </div>
 
                 <!-- ═══════ LATEST SHIFT NOTIFICATIONS (NEWSLETTER) ═══════ -->
-<div class="lg:col-span-4 flex flex-col items-start text-left">
-    <h4 class="font-poppins font-bold text-xs tracking-widest text-slate-300 uppercase mb-4">Latest Shift Notifications</h4>
-    <p class="text-slate-400 text-xs font-inter mb-4 leading-relaxed">Subscribe to get immediate scheduling modifications, syllabus changes, and subscription pass discounts.</p>
-    
-    <form id="newsletterForm" class="w-full flex flex-col gap-2">
-        <div class="w-full flex gap-2">
-            <input 
-                type="email" 
-                id="newsletterEmail" 
-                name="email" 
-                placeholder="Email Address" 
-                required 
-                class="flex-grow bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary transition-colors" 
-            />
-            <button 
-                type="submit" 
-                id="newsletterBtn" 
-                class="px-4 py-2 bg-primary hover:bg-primary/95 text-white font-manrope font-bold rounded-lg transition-colors text-xs flex-shrink-0 hover:scale-[1.05] flex items-center justify-center min-w-[65px] cursor-pointer" 
-                aria-label="Subscribe">
-                <span id="newsletterBtnText">Join</span>
-            </button>
-        </div>
-        
-        <!-- Success Message -->
-        <p id="newsletterSuccessMsg" class="hidden text-xs text-emerald-400 mt-1 font-medium items-center gap-1">
-            <i class="fa-solid fa-circle-check"></i> Subscribed successfully!
-        </p>
-    </form>
-</div>
+                <div class="lg:col-span-4 flex flex-col items-start text-left">
+                    <h4 class="font-poppins font-bold text-xs tracking-widest text-slate-300 uppercase mb-4">Latest Shift Notifications</h4>
+                    <p class="text-slate-400 text-xs font-inter mb-4 leading-relaxed">Subscribe to get immediate scheduling modifications, syllabus changes, and subscription pass discounts.</p>
+                    
+                    <form id="newsletterForm" class="w-full flex flex-col gap-2">
+                        <div class="w-full flex gap-2">
+                            <input 
+                                type="email" 
+                                id="newsletterEmail" 
+                                name="email" 
+                                placeholder="Email Address" 
+                                required 
+                                class="flex-grow bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary transition-colors" 
+                            />
+                            <button 
+                                type="submit" 
+                                id="newsletterBtn" 
+                                class="px-4 py-2 bg-primary hover:bg-primary/95 text-white font-manrope font-bold rounded-lg transition-colors text-xs flex-shrink-0 hover:scale-[1.05] flex items-center justify-center min-w-[65px] cursor-pointer" 
+                                aria-label="Subscribe">
+                                <span id="newsletterBtnText">Join</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Success Message -->
+                        <p id="newsletterSuccessMsg" class="hidden text-xs text-emerald-400 mt-1 font-medium items-center gap-1">
+                            <i class="fa-solid fa-circle-check"></i> Subscribed successfully!
+                        </p>
+                    </form>
+                </div>
             </div>
 
             <div class="pt-6 flex flex-col md:flex-row items-center justify-between text-slate-500 dark:text-slate-400 font-inter text-xs">
@@ -1140,7 +1127,6 @@
     </script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    // 👇 यहाँ अपना Newsletter वाला Google Apps Script URL पेस्ट करें
     const NEWSLETTER_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6IaDUQB0c-u56J6Mwo7U9rwaNpcNyK0ECboQnxnPwljRPzRWDQaxEXB1npfSJicQ0wA/exec';
 
     const newsletterForm = document.getElementById('newsletterForm');
@@ -1156,16 +1142,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const emailVal = newsletterEmail.value.trim();
             if (!emailVal) return;
 
-            // 1. बटन को लोडिंग मोड में डालें
             newsletterBtn.disabled = true;
             newsletterBtnText.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-xs"></i>';
             if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
 
-            // 2. डेटा तैयार करें
             const formData = new URLSearchParams();
             formData.append('email', emailVal);
 
-            // 3. Google Sheet में भेजें
             fetch(NEWSLETTER_SCRIPT_URL, {
                 method: 'POST',
                 body: formData,
@@ -1179,7 +1162,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 finishSubmission();
             });
 
-            // 4. फ़ंक्शन जो सफलता के बाद बटन और मैसेज को रीसेट करता है
             function finishSubmission() {
                 newsletterForm.reset();
                 newsletterBtn.disabled = false;
@@ -1195,7 +1177,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     showToast('🎉 You have subscribed to RAJShiksha notifications!');
                 }
 
-                // 4 सेकंड बाद बटन वापस सामान्य "Join" हो जाएगा
                 setTimeout(() => {
                     newsletterBtnText.textContent = 'Join';
                     newsletterBtn.classList.replace('bg-emerald-600', 'bg-primary');
