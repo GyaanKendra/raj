@@ -151,7 +151,7 @@
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         
-                        <!-- ═════ 2-STEP CASCADING DROPDOWN (ALL CATEGORIES & PASSES INCLUDED) ═════ -->
+                        <!-- ═════ 2-STEP CASCADING DROPDOWN ═════ -->
                         
                         <!-- STEP 1: Select Category / Exam -->
                         <div class="space-y-1.5">
@@ -160,18 +160,12 @@
                                 <i class="fa-solid fa-layer-group absolute left-3.5 top-1/2 -translate-y-1/2 text-primary text-sm"></i>
                                 <select id="categorySelect" required onchange="onCategoryChange()" class="w-full pl-10 pr-8 py-3 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm font-bold text-slate-800 focus:outline-none focus:border-primary focus:bg-white transition-colors appearance-none cursor-pointer">
                                     <option value="" disabled selected>-- Select Exam / Pass Type --</option>
-                                    
-                                    <!-- Full Test Series -->
                                     <option value="test_series">All Test Series (CET, SI, PTI, Patwar)</option>
-                                    
-                                    <!-- Chapter Wise / Topic Wise Categories -->
                                     <option value="geo_chapters">Rajasthan Geography (Chapter Wise Tests)</option>
                                     <option value="hist_chapters">Rajasthan History (Chapter Wise Tests)</option>
                                     <option value="culture_chapters">Rajasthan Art &amp; Culture (Chapter Wise Tests)</option>
                                     <option value="polity_chapters">Rajasthan Polity (Chapter Wise Tests)</option>
                                     <option value="topic_wise">Topic Wise Test Series (Old Topics)</option>
-                                    
-                                    <!-- Exam Passes -->
                                     <option value="cet_12th_pass">CET 10+2 Pass</option>
                                     <option value="cet_grad_pass">CET Graduation Pass</option>
                                     <option value="pti_pass">PTI Paper 1 Pass</option>
@@ -277,7 +271,7 @@
                             </label>
                             <div class="relative">
                                 <i class="fa-regular fa-comment-dots absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
-                                <textarea id="studentRemark" rows="2" placeholder="e.g. Please activate CET test series immediately..." class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors resize-none"></textarea>
+                                <textarea id="studentRemark" rows="2" placeholder="e.g. Please activate my course immediately..." class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors resize-none"></textarea>
                             </div>
                         </div>
 
@@ -445,115 +439,113 @@
         let usedUTRs = JSON.parse(localStorage.getItem('rajshiksha_used_utrs')) || [];
         let isQRUnlocked = false;
 
-        // ══════ 2-STEP DROPDOWN DATA CATALOG (CLEAN & COMPLETE) ══════
+        // ══════ 2-STEP DROPDOWN DATA CATALOG (WITH UNIQUE CLEAN IDS & VALS) ══════
         const courseCatalog = {
             // 1. ALL FULL TEST SERIES
             test_series: [
-                { val: "Rajasthan CET 10+2 Test Series (₹29)", text: "CET 10+2 Test Series — ₹29" },
-                { val: "Rajasthan CET Graduation Test Series (₹29)", text: "CET Graduation Test Series — ₹29" },
-                { val: "Raj. SI 2026 Test Series (₹29)", text: "Raj. SI 2026 Hindi Test Series (Paper-I) — ₹29" },
-                { val: "Raj. SI 2026 GK Test Series (₹29)", text: "Raj. SI 2026 G.K. Test Series (Paper-II) — ₹29" },
-                { val: "Rajasthan PTI Paper 1 Test Series (₹29)", text: "Raj. PTI Paper 1 Test Series 2026 (Paper-I) — ₹29" },
-                { val: "Rajasthan VDO Test Series (₹19)", text: "Raj. VDO Test Series 2026 — ₹19" },
-                { val: "Rajasthan PATWAR Test Series (₹19)", text: "Raj. PATWAR Test Series 2026 — ₹19" }
+                { id: "cet-12th", val: "Rajasthan CET 10+2 Test Series (₹29)", text: "CET 10+2 Test Series — ₹29" },
+                { id: "cet-grad", val: "Rajasthan CET Graduation Test Series (₹29)", text: "CET Graduation Test Series — ₹29" },
+                { id: "si-hindi", val: "Raj. SI 2026 Test Series (₹29)", text: "Raj. SI 2026 Hindi Test Series (Paper-I) — ₹29" },
+                { id: "si-gk", val: "Raj. SI 2026 GK Test Series (₹29)", text: "Raj. SI 2026 G.K. Test Series (Paper-II) — ₹29" },
+                { id: "pti-p1", val: "Rajasthan PTI Paper 1 Test Series (₹29)", text: "Raj. PTI Paper 1 Test Series 2026 (Paper-I) — ₹29" },
+                { id: "vdo", val: "Rajasthan VDO Test Series (₹19)", text: "Raj. VDO Test Series 2026 — ₹19" },
+                { id: "patwar", val: "Rajasthan PATWAR Test Series (₹19)", text: "Raj. PATWAR Test Series 2026 — ₹19" }
             ],
 
             // 2. RAJASTHAN GEOGRAPHY (CHAPTER WISE)
             geo_chapters: [
-                { val: "Rajasthan Geography All-Access Pass (₹49)", text: "Rajasthan Geography All-Access Pass (3 Months) — ₹49" },
-                { val: "Geography Ch-01: स्थिति, विस्तार एवं भौतिक प्रदेश (₹9)", text: "Ch-01: स्थिति, विस्तार एवं भौतिक प्रदेश — ₹9" },
-                { val: "Geography Ch-02: अपवाह तंत्र (नदियां), झीलें व बांध (₹9)", text: "Ch-02: अपवाह तंत्र (नदियां), झीलें व बांध — ₹9" },
-                { val: "Geography Ch-03: जलवायु, मानसूनी तंत्र एवं मृदा (₹9)", text: "Ch-03: जलवायु, मानसूनी तंत्र एवं मृदा — ₹9" },
-                { val: "Geography Ch-04: प्राकृतिक वनस्पति, वन रिपोर्ट व वन्यजीव (₹9)", text: "Ch-04: प्राकृतिक वनस्पति, वन रिपोर्ट व वन्यजीव — ₹9" },
-                { val: "Geography Ch-05: सिंचाई एवं बहुउद्देशीय परियोजनाएं (₹9)", text: "Ch-05: सिंचाई एवं बहुउद्देशीय परियोजनाएं (IGNP/ERCP) — ₹9" },
-                { val: "Geography Ch-06: कृषि, प्रमुख फसलें एवं पशुधन (₹9)", text: "Ch-06: कृषि, प्रमुख फसलें एवं पशुधन संपदा — ₹9" },
-                { val: "Geography Ch-07: खनिज संसाधन, ऊर्जा एवं उद्योग (₹9)", text: "Ch-07: खनिज संसाधन, ऊर्जा एवं प्रमुख उद्योग — ₹9" },
-                { val: "Geography Ch-08: जनसंख्या (2011), जनजातियां व परिवहन (₹9)", text: "Ch-08: जनसंख्या (2011), जनजातियां व परिवहन — ₹9" }
+                { id: "geo-full", val: "Rajasthan Geography All-Access Pass (₹49)", text: "Rajasthan Geography All-Access Pass (3 Months) — ₹49" },
+                { id: "geo-ch1", val: "Geography Ch-01: स्थिति, विस्तार एवं भौतिक प्रदेश (₹9)", text: "Ch-01: स्थिति, विस्तार एवं भौतिक प्रदेश — ₹9" },
+                { id: "geo-ch2", val: "Geography Ch-02: अपवाह तंत्र (नदियां), झीलें व बांध (₹9)", text: "Ch-02: अपवाह तंत्र (नदियां), झीलें व बांध — ₹9" },
+                { id: "geo-ch3", val: "Geography Ch-03: जलवायु, मानसूनी तंत्र एवं मृदा (₹9)", text: "Ch-03: जलवायु, मानसूनी तंत्र एवं मृदा — ₹9" },
+                { id: "geo-ch4", val: "Geography Ch-04: प्राकृतिक वनस्पति, वन रिपोर्ट व वन्यजीव (₹9)", text: "Ch-04: प्राकृतिक वनस्पति, वन रिपोर्ट व वन्यजीव — ₹9" },
+                { id: "geo-ch5", val: "Geography Ch-05: सिंचाई एवं बहुउद्देशीय परियोजनाएं (₹9)", text: "Ch-05: सिंचाई एवं बहुउद्देशीय परियोजनाएं (IGNP/ERCP) — ₹9" },
+                { id: "geo-ch6", val: "Geography Ch-06: कृषि, प्रमुख फसलें एवं पशुधन (₹9)", text: "Ch-06: कृषि, प्रमुख फसलें एवं पशुधन संपदा — ₹9" },
+                { id: "geo-ch7", val: "Geography Ch-07: खनिज संसाधन, ऊर्जा एवं उद्योग (₹9)", text: "Ch-07: खनिज संसाधन, ऊर्जा एवं प्रमुख उद्योग — ₹9" },
+                { id: "geo-ch8", val: "Geography Ch-08: जनसंख्या (2011), जनजातियां व परिवहन (₹9)", text: "Ch-08: जनसंख्या (2011), जनजातियां व परिवहन — ₹9" }
             ],
 
-          /*
-	  // 3. RAJASTHAN HISTORY (CHAPTER WISE)
+            // 3. RAJASTHAN HISTORY (CHAPTER WISE)
             hist_chapters: [
-                { val: "Rajasthan History All-Access Pass (₹49)", text: "Rajasthan History All-Access Pass (3 Months) — ₹49" },
-                { val: "History Ch-01: प्राचीन सभ्यताएं (कालीबंगा, आहड़ आदि) (₹9)", text: "Ch-01: प्राचीन सभ्यताएं (कालीबंगा, आहड़) — ₹9" },
-                { val: "History Ch-02: प्रमुख राजवंश (मेवाड़, मारवाड़, कछवाहा) (₹9)", text: "Ch-02: प्रमुख राजवंश (मेवाड़, मारवाड़, कछवाहा) — ₹9" },
-                { val: "History Ch-03: 1857 की क्रांति व किसान आंदोलन (₹9)", text: "Ch-03: 1857 की क्रांति, प्रजामंडल व किसान आंदोलन — ₹9" },
-                { val: "History Ch-04: राजस्थान का एकीकरण एवं व्यक्तित्व (₹9)", text: "Ch-04: राजस्थान का एकीकरण एवं प्रमुख व्यक्तित्व — ₹9" }
+                { id: "hist-full", val: "Rajasthan History All-Access Pass (₹49)", text: "Rajasthan History All-Access Pass (3 Months) — ₹49" },
+                { id: "hist-ch1", val: "History Ch-01: प्राचीन सभ्यताएं (कालीबंगा, आहड़ आदि) (₹9)", text: "Ch-01: प्राचीन सभ्यताएं (कालीबंगा, आहड़) — ₹9" },
+                { id: "hist-ch2", val: "History Ch-02: प्रमुख राजवंश (मेवाड़, मारवाड़, कछवाहा) (₹9)", text: "Ch-02: प्रमुख राजवंश (मेवाड़, मारवाड़) — ₹9" },
+                { id: "hist-ch3", val: "History Ch-03: 1857 की क्रांति व किसान आंदोलन (₹9)", text: "Ch-03: 1857 की क्रांति, प्रजामंडल व किसान आंदोलन — ₹9" },
+                { id: "hist-ch4", val: "History Ch-04: राजस्थान का एकीकरण एवं व्यक्तित्व (₹9)", text: "Ch-04: राजस्थान का एकीकरण एवं प्रमुख व्यक्तित्व — ₹9" }
             ],
 
             // 4. ART & CULTURE (CHAPTER WISE)
             culture_chapters: [
-                { val: "Rajasthan Art & Culture All-Access Pass (₹49)", text: "Rajasthan Art & Culture All-Access Pass (3 Months) — ₹49" },
-                { val: "Culture Ch-01: प्रमुख दुर्ग, महल, हवेलियां व छतरियां (₹9)", text: "Ch-01: प्रमुख दुर्ग, महल, हवेलियां व छतरियां — ₹9" },
-                { val: "Culture Ch-02: लोक देवता, देवियां एवं संत संप्रदाय (₹9)", text: "Ch-02: लोक देवता, देवियां एवं संत संप्रदाय — ₹9" },
-                { val: "Culture Ch-03: लोक नृत्य, लोक नाट्य व संगीत घराने (₹9)", text: "Ch-03: लोक नृत्य, लोक नाट्य व संगीत घराने — ₹9" },
-                { val: "Culture Ch-04: मेले, त्यौहार, वेशभूषा व आभूषण (₹9)", text: "Ch-04: मेले, त्यौहार, वेशभूषा व आभूषण — ₹9" }
+                { id: "culture-full", val: "Rajasthan Art & Culture All-Access Pass (₹49)", text: "Rajasthan Art & Culture All-Access Pass (3 Months) — ₹49" },
+                { id: "culture-ch1", val: "Culture Ch-01: प्रमुख दुर्ग, महल, हवेलियां व छतरियां (₹9)", text: "Ch-01: प्रमुख दुर्ग, महल, हवेलियां व छतरियां — ₹9" },
+                { id: "culture-ch2", val: "Culture Ch-02: लोक देवता, देवियां एवं संत संप्रदाय (₹9)", text: "Ch-02: लोक देवता, देवियां एवं संत संप्रदाय — ₹9" },
+                { id: "culture-ch3", val: "Culture Ch-03: लोक नृत्य, लोक नाट्य व संगीत घराने (₹9)", text: "Ch-03: लोक नृत्य, लोक नाट्य व संगीत घराने — ₹9" },
+                { id: "culture-ch4", val: "Culture Ch-04: मेले, त्यौहार, वेशभूषा व आभूषण (₹9)", text: "Ch-04: मेले, त्यौहार, वेशभूषा व आभूषण — ₹9" }
             ],
 
             // 5. RAJASTHAN POLITY (CHAPTER WISE)
             polity_chapters: [
-                { val: "Rajasthan Polity All-Access Pass (₹49)", text: "Rajasthan Polity All-Access Pass (3 Months) — ₹49" },
-                { val: "Polity Ch-01: राज्यपाल, मुख्यमंत्री व मंत्रिपरिषद (₹9)", text: "Ch-01: राज्यपाल, मुख्यमंत्री व मंत्रिपरिषद — ₹9" },
-                { val: "Polity Ch-02: विधानसभा, उच्च न्यायालय व लोकायुक्त (₹9)", text: "Ch-02: विधानसभा, उच्च न्यायालय व लोकायुक्त — ₹9" },
-                { val: "Polity Ch-03: RPSC, मानवाधिकार व राज्य निर्वाचन आयोग (₹9)", text: "Ch-03: RPSC, राज्य मानवाधिकार आयोग — ₹9" }
+                { id: "polity-full", val: "Rajasthan Polity All-Access Pass (₹49)", text: "Rajasthan Polity All-Access Pass (3 Months) — ₹49" },
+                { id: "polity-ch1", val: "Polity Ch-01: राज्यपाल, मुख्यमंत्री व मंत्रिपरिषद (₹9)", text: "Ch-01: राज्यपाल, मुख्यमंत्री व मंत्रिपरिषद — ₹9" },
+                { id: "polity-ch2", val: "Polity Ch-02: विधानसभा, उच्च न्यायालय व लोकायुक्त (₹9)", text: "Ch-02: विधानसभा, उच्च न्यायालय व लोकायुक्त — ₹9" },
+                { id: "polity-ch3", val: "Polity Ch-03: RPSC, मानवाधिकार व राज्य निर्वाचन आयोग (₹9)", text: "Ch-03: RPSC, राज्य मानवाधिकार आयोग — ₹9" }
             ],
-		*/
 
             // 6. OLD TOPIC WISE MAPPING (BACKWARD COMPATIBILITY)
             topic_wise: [
-                { val: "rajasthan-history-sabhyata-(₹9)", text: "Rajasthan Sabhayta (4+ Topics) Test Series — ₹9" },
-                { val: "rajasthan-culture-durg-(₹19)", text: "Rajasthan Complete Durg (6 Topics) Test Series — ₹19" },
-                { val: "rajasthan-culture-nritya-(₹19)", text: "Rajasthan Complete nritya (5 Topics) Test Series — ₹19" },
-                { val: "rajasthan-geography-bhautik-pradesh-(₹19)", text: "Rajasthan Complete Bhotik Pradesh (5 Topics) Test Series — ₹19" },
-                { val: "Rajasthan History All-Access Pass (₹49)", text: "Rajasthan History Complete Pass (7 Master Chapters) — ₹49" }
+                { id: "top-sabhyata", val: "rajasthan-history-sabhyata-(₹9)", text: "Rajasthan Sabhayta (4+ Topics) Test Series — ₹9" },
+                { id: "top-durg", val: "rajasthan-culture-durg-(₹19)", text: "Rajasthan Complete Durg (6 Topics) Test Series — ₹19" },
+                { id: "top-nritya", val: "rajasthan-culture-nritya-(₹19)", text: "Rajasthan Complete nritya (5 Topics) Test Series — ₹19" },
+                { id: "top-bhautik", val: "rajasthan-geography-bhautik-pradesh-(₹19)", text: "Rajasthan Complete Bhotik Pradesh (5 Topics) Test Series — ₹19" },
+                { id: "top-his-pass", val: "Rajasthan History All-Access Pass (₹49)", text: "Rajasthan History Complete Pass (7 Master Chapters) — ₹49" }
             ],
 
             // 7. CET 10+2 PASS
             cet_12th_pass: [
-                { val: "Starter Basic Plan - 19 Days Access (₹29)", text: "CET 10+2 Starter Pass (19 Days) — ₹29" },
-                { val: "Standard Pass - 49 Days Membership (₹39)", text: "CET 10+2 Standard Pass (49 Days) — ₹39" },
-                { val: "Premium Regular Plan - 149 Days Access (₹49)", text: "CET 10+2 Prem. Regular Plan (149 Days) — ₹49" },
-                { val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "CET 10+2 Elite Prem. Plan (365 Days) — ₹199" }
+                { id: "cet12-19d", val: "Starter Basic Plan - 19 Days Access (₹29)", text: "CET 10+2 Starter Pass (19 Days) — ₹29" },
+                { id: "cet12-49d", val: "Standard Pass - 49 Days Membership (₹39)", text: "CET 10+2 Standard Pass (49 Days) — ₹39" },
+                { id: "cet12-149d", val: "Premium Regular Plan - 149 Days Access (₹49)", text: "CET 10+2 Prem. Regular Plan (149 Days) — ₹49" },
+                { id: "cet12-365d", val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "CET 10+2 Elite Prem. Plan (365 Days) — ₹199" }
             ],
 
             // 8. CET GRADUATION PASS
             cet_grad_pass: [
-                { val: "Starter Basic Plan - 19 Days Access (₹29)", text: "CET Grad. Starter Pass (19 Days) — ₹29" },
-                { val: "Standard Pass - 49 Days Membership (₹39)", text: "CET Grad. Standard Pass (49 Days) — ₹39" },
-                { val: "Premium Regular Plan - 149 Days Access (₹49)", text: "CET Grad. Prem. Regular Plan (149 Days) — ₹49" },
-                { val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "CET Grad. Elite Prem. Plan (365 Days) — ₹199" }
+                { id: "cetgrad-19d", val: "Starter Basic Plan - 19 Days Access (₹29)", text: "CET Grad. Starter Pass (19 Days) — ₹29" },
+                { id: "cetgrad-49d", val: "Standard Pass - 49 Days Membership (₹39)", text: "CET Grad. Standard Pass (49 Days) — ₹39" },
+                { id: "cetgrad-149d", val: "Premium Regular Plan - 149 Days Access (₹49)", text: "CET Grad. Prem. Regular Plan (149 Days) — ₹49" },
+                { id: "cetgrad-365d", val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "CET Grad. Elite Prem. Plan (365 Days) — ₹199" }
             ],
 
             // 9. PTI PAPER 1 PASS
             pti_pass: [
-                { val: "Starter Basic Plan - 19 Days Access (₹29)", text: "PTI Starter Pass (19 Days) — ₹29" },
-                { val: "Standard Pass - 49 Days Membership (₹39)", text: "PTI Standard Pass (49 Days) — ₹39" },
-                { val: "Premium Regular Plan - 149 Days Access (₹49)", text: "PTI Premium Regular Plan (149 Days) — ₹49" },
-                { val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "PTI Elite Premium Plan (365 Days) — ₹199" }
+                { id: "pti-19d", val: "Starter Basic Plan - 19 Days Access (₹29)", text: "PTI Starter Pass (19 Days) — ₹29" },
+                { id: "pti-49d", val: "Standard Pass - 49 Days Membership (₹39)", text: "PTI Standard Pass (49 Days) — ₹39" },
+                { id: "pti-149d", val: "Premium Regular Plan - 149 Days Access (₹49)", text: "PTI Premium Regular Plan (149 Days) — ₹49" },
+                { id: "pti-365d", val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "PTI Elite Premium Plan (365 Days) — ₹199" }
             ],
 
             // 10. SI GK PASS
             si_gk_pass: [
-                { val: "Starter Basic Plan - 19 Days Access (₹29)", text: "SI Starter Pass (19 Days) — ₹29" },
-                { val: "Standard Pass - 49 Days Membership (₹39)", text: "SI Standard Pass (49 Days) — ₹39" },
-                { val: "Premium Regular Plan - 149 Days Access (₹49)", text: "SI Premium Regular Plan (149 Days) — ₹49" },
-                { val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "SI Elite Premium Plan (365 Days) — ₹199" }
+                { id: "sigk-19d", val: "Starter Basic Plan - 19 Days Access (₹29)", text: "SI Starter Pass (19 Days) — ₹29" },
+                { id: "sigk-49d", val: "Standard Pass - 49 Days Membership (₹39)", text: "SI Standard Pass (49 Days) — ₹39" },
+                { id: "sigk-149d", val: "Premium Regular Plan - 149 Days Access (₹49)", text: "SI Premium Regular Plan (149 Days) — ₹49" },
+                { id: "sigk-365d", val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "SI Elite Premium Plan (365 Days) — ₹199" }
             ],
 
             // 11. SI HINDI PASS
             si_hindi_pass: [
-                { val: "Starter Basic Plan - 19 Days Access (₹29)", text: "SI Starter Pass (19 Days) — ₹29" },
-                { val: "Standard Pass - 49 Days Membership (₹39)", text: "SI Standard Pass (49 Days) — ₹39" },
-                { val: "Premium Regular Plan - 149 Days Access (₹49)", text: "SI Premium Regular Plan (149 Days) — ₹49" },
-                { val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "SI Elite Premium Plan (365 Days) — ₹199" }
+                { id: "sihindi-19d", val: "Starter Basic Plan - 19 Days Access (₹29)", text: "SI Starter Pass (19 Days) — ₹29" },
+                { id: "sihindi-49d", val: "Standard Pass - 49 Days Membership (₹39)", text: "SI Standard Pass (49 Days) — ₹39" },
+                { id: "sihindi-149d", val: "Premium Regular Plan - 149 Days Access (₹49)", text: "SI Premium Regular Plan (149 Days) — ₹49" },
+                { id: "sihindi-365d", val: "Elite Premium Plan - 365 Days Pass (₹199)", text: "SI Elite Premium Plan (365 Days) — ₹199" }
             ],
 
             // 12. ALL-ACCESS MEMBERSHIP PASSES
             membership_pass: [
-                { val: "Starter Basic Plan - 7 Days Access (₹99)", text: "Starter Basic Plan (7 Days Access) — ₹99" },
-                { val: "Standard Sprint Pass - 30 Days Membership (₹199)", text: "Standard Sprint Pass (30 Days) — ₹199" },
-                { val: "Premium Regular Plan - 90 Days Access (₹499)", text: "Premium Regular Plan (90 Days) — ₹499" },
-                { val: "Elite Premium Plan - 365 Days Pass (₹999)", text: "Elite Premium Plan (365 Days Access) — ₹999" }
+                { id: "member-7d", val: "Starter Basic Plan - 7 Days Access (₹99)", text: "Starter Basic Plan (7 Days Access) — ₹99" },
+                { id: "member-30d", val: "Standard Sprint Pass - 30 Days Membership (₹199)", text: "Standard Sprint Pass (30 Days) — ₹199" },
+                { id: "member-90d", val: "Premium Regular Plan - 90 Days Access (₹499)", text: "Premium Regular Plan (90 Days) — ₹499" },
+                { id: "member-365d", val: "Elite Premium Plan - 365 Days Pass (₹999)", text: "Elite Premium Plan (365 Days Access) — ₹999" }
             ]
         };
 
@@ -585,29 +577,33 @@
             updateUpiDetails();
         });
 
-        // 🌟 Auto-select course from URL (Supports ?course=..., ?plan=... and ?cat=...)
+        // 🌟 Auto-select course from URL (Supports Clean Slugs like ?cat=geo_chapters&plan=geo-ch1)
         function autoSelectCourseFromURL() {
             const urlParams = new URLSearchParams(window.location.search);
             const catParam = urlParams.get('cat');
-            const courseParam = urlParams.get('course') || urlParams.get('plan');
+            const planParam = urlParams.get('plan') || urlParams.get('course');
 
             let foundCategory = catParam || null;
             let foundCourseVal = null;
 
-            if (courseParam) {
-                const decodedParam = decodeURIComponent(courseParam).toLowerCase().trim();
+            if (planParam) {
+                const cleanParam = decodeURIComponent(planParam).toLowerCase().trim();
+                const cleanParamSpaced = cleanParam.replace(/-/g, ' ');
 
                 for (const [catKey, items] of Object.entries(courseCatalog)) {
                     if (foundCategory && catKey !== foundCategory) continue;
 
                     for (const item of items) {
-                        const optVal = item.val.toLowerCase().trim();
-                        const optText = item.text.toLowerCase().trim();
+                        const itemId = (item.id || '').toLowerCase();
+                        const itemValLower = item.val.toLowerCase();
+                        const itemTextLower = item.text.toLowerCase();
 
                         if (
-                            optVal.includes(decodedParam) || 
-                            optText.includes(decodedParam) ||
-                            decodedParam.includes(optVal.split('(')[0].trim().toLowerCase())
+                            itemId === cleanParam ||
+                            itemValLower.includes(cleanParam) || 
+                            itemValLower.includes(cleanParamSpaced) ||
+                            itemTextLower.includes(cleanParam) ||
+                            cleanParam.includes(itemValLower.split('(')[0].trim().toLowerCase())
                         ) {
                             foundCategory = catKey;
                             foundCourseVal = item.val;
