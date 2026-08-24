@@ -1368,7 +1368,7 @@
                             <span class="text-[10px] text-slate-400 line-through">₹49</span>
                         </div>
                         <span class="text-[9px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/40 px-2.5 py-1 rounded-full">61% OFF</span>
-                        <a href="test-series/rajasthan-si-hindi#plans" onclick="handlePurchase(event, 'RPSC SI Hindi PYQ Pack', 19)" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-poppins font-bold text-xs rounded-xl transition-all shadow-md">Get Access</a>
+                        <a href="test-series/rajasthan-si-hindi#plans" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-poppins font-bold text-xs rounded-xl transition-all shadow-md">Get Access</a>
                     </div>
                 </div>
 
@@ -1790,6 +1790,27 @@
         }
     });
     </script>
+	 <!-- HASH ANCHOR SMOOTH SCROLL -->
+    <script>
+        document.addEventListener('click', function (e) {
+            const anchor = e.target.closest('a[href*="#"]');
+            if (anchor) {
+                const href = anchor.getAttribute('href');
+                if (!href || href === '#') return;
+                const hashIndex = href.indexOf('#');
+                if (hashIndex !== -1) {
+                    const targetId = href.substring(hashIndex);
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        const newUrl = window.location.pathname + window.location.search + targetId;
+                        history.pushState(null, null, newUrl);
+                    }
+                }
+            }
+        });
+    </script>
     <script>
 document.addEventListener('DOMContentLoaded', () => {
     // 👇 यहाँ अपना Newsletter वाला Google Apps Script URL पेस्ट करें
@@ -1858,5 +1879,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 </script>
+	
 </body>
 </html>
