@@ -523,7 +523,7 @@
                             <span class="font-poppins font-black text-3xl text-primary">₹29</span>
                             <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold ml-1">85% OFF</span>
                         </div>
-                        <a href="payment" class="px-6 py-2.5 bg-primary hover:bg-primary/90 text-white font-poppins font-extrabold text-sm rounded-xl transition-all shadow-premium hover:scale-[1.03]">Buy Now</a>
+                        <a href="payment?cat=test_series&plan=pti-paper-1" rel="nofollow" class="px-6 py-2.5 bg-primary hover:bg-primary/90 text-white font-poppins font-extrabold text-sm rounded-xl transition-all shadow-premium hover:scale-[1.03]">Buy Now</a>
                     </div>
                 </div>
 
@@ -1574,7 +1574,7 @@
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> PYQs Access</li>
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> All New Tests FREE Added</li>
                         </ul>
-                        <a href="payment" onclick="handlePurchase(event, 'Starter', 29)" class="mt-4 w-full py-2.5 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-sm rounded-xl hover:bg-primary hover:text-white transition-all text-center">Buy Now</a>
+                        <a href="payment?cat=pti_pass&plan=pti-19d" rel="nofollow" onclick="handlePurchase(event, 'pti_pass', 'pti-19d')" class="mt-4 w-full py-2.5 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-sm rounded-xl hover:bg-primary hover:text-white transition-all text-center">Buy Now</a>
                     </div>
 
                     <!-- Plan: 49 Days (Popular) -->
@@ -1596,7 +1596,7 @@
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> PYQs Access</li>
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> All New Tests FREE Added</li>
                         </ul>
-                        <a href="payment" onclick="handlePurchase(event, 'Standard', 39)" class="mt-4 w-full py-2.5 bg-gradient-to-r from-primary to-secondary text-white font-bold text-sm rounded-xl hover:opacity-95 transition-all text-center shadow-premium">Buy Now</a>
+                        <a href="payment?cat=pti_pass&plan=pti-49d" rel="nofollow" onclick="handlePurchase(event, 'pti_pass', 'pti-49d')" class="mt-4 w-full py-2.5 bg-gradient-to-r from-primary to-secondary text-white font-bold text-sm rounded-xl hover:opacity-95 transition-all text-center shadow-premium">Buy Now</a>
                     </div>
 
                     <!-- Plan: 149 Days -->
@@ -1617,7 +1617,7 @@
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> All Subject-wise Tests</li>
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> All New Tests FREE Added</li>
                         </ul>
-                        <a href="payment" onclick="handlePurchase(event, 'Premium', 49)" class="mt-4 w-full py-2.5 bg-accent hover:bg-accent/90 text-white font-bold text-sm rounded-xl transition-all text-center">Buy Now</a>
+                        <a href="payment?cat=pti_pass&plan=pti-149d" rel="nofollow" onclick="handlePurchase(event, 'pti_pass', 'pti-149d')" class="mt-4 w-full py-2.5 bg-accent hover:bg-accent/90 text-white font-bold text-sm rounded-xl transition-all text-center">Buy Now</a>
                     </div>
 
                     <!-- Plan: 365 Days -->
@@ -1638,7 +1638,7 @@
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> Unlimited Attempt</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> PDF Download</li>
                         </ul>
-                        <a href="payment" onclick="handlePurchase(event, 'Elite', 199)" class="mt-4 w-full py-2.5 bg-support hover:bg-support/90 text-white font-bold text-sm rounded-xl transition-all text-center">Buy Now</a>
+                        <a href="payment?cat=pti_pass&plan=pti-365d" rel="nofollow" onclick="handlePurchase(event, 'pti_pass', 'pti-365d')" class="mt-4 w-full py-2.5 bg-support hover:bg-support/90 text-white font-bold text-sm rounded-xl transition-all text-center">Buy Now</a>
                     </div>
 
                 </div>
@@ -1880,11 +1880,10 @@
             window.location.href = 'login';
         }
 
-        function handlePurchase(event, plan, price) {
-            if (event) event.preventDefault();
-            alert(`Selected: ${plan} Plan (₹${price}). Redirecting to checkout...`);
-            window.location.href = 'payment?plan=' + encodeURIComponent(plan) + '&price=' + price;
-        }
+       function handlePurchase(event, cat, plan) {
+    if (event) event.preventDefault();
+    window.location.href = 'payment?cat=' + cat + '&plan=' + plan;
+}
 
         // Smooth scroll for anchor links
         document.addEventListener('click', function (e) {
