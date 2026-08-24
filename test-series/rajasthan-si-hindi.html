@@ -1735,11 +1735,10 @@
             window.location.href = 'login';
         }
 
-        function handlePurchase(event, plan, price) {
-            if (event) event.preventDefault();
-            alert(`Selected: ${plan} Plan (₹${price}). Redirecting to checkout...`);
-            window.location.href = 'payment?plan=' + encodeURIComponent(plan) + '&price=' + price;
-        }
+        function handlePurchase(event, cat, plan) {
+    if (event) event.preventDefault();
+    window.location.href = 'payment?cat=' + cat + '&plan=' + plan;
+}
 
         document.addEventListener('click', function (e) {
             const anchor = e.target.closest('a[href^="#"]');
