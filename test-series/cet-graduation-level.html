@@ -610,7 +610,7 @@
                             <span class="font-poppins font-black text-3xl text-primary">₹29</span>
                             <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold ml-1">85% OFF</span>
                         </div>
-                        <a href="payment" class="px-6 py-2.5 bg-primary hover:bg-primary/90 text-white font-poppins font-extrabold text-sm rounded-xl transition-all shadow-premium hover:scale-[1.03]">Buy Now</a>
+                        <a href="payment?cat=test_series&plan=cet-graduation" rel="nofollow" class="px-6 py-2.5 bg-primary hover:bg-primary/90 text-white font-poppins font-extrabold text-sm rounded-xl transition-all shadow-premium hover:scale-[1.03]">Buy Now</a>
                     </div>
                 </div>
 
@@ -1427,7 +1427,7 @@
                     <div class="flex items-center gap-3">
                         <span class="font-poppins font-black text-2xl text-support">₹19</span>
                         <span class="text-xs text-slate-400 line-through">₹49</span>
-                        <a href="payment" class="px-5 py-2 bg-support hover:bg-support/90 text-white font-poppins font-bold text-sm rounded-xl transition-all">Buy Now</a>
+                        <a href="test-series/cet-graduation-level#plans" class="px-5 py-2 bg-support hover:bg-support/90 text-white font-poppins font-bold text-sm rounded-xl transition-all">Buy Now</a>
                     </div>
                 </div>
 
@@ -1493,7 +1493,7 @@
                             <span class="text-[10px] text-slate-400 line-through">₹49</span>
                         </div>
                         <span class="text-[9px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/40 px-2.5 py-1 rounded-full">61% OFF</span>
-                        <a href="payment" onclick="handlePurchase(event, 'CET Graduation PYQ Master Pack', 19)" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-poppins font-bold text-xs rounded-xl transition-all shadow-md">Get Access</a>
+                        <a href="test-series/cet-graduation-level#plans" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-poppins font-bold text-xs rounded-xl transition-all shadow-md">Get Access</a>
                     </div>
                 </div>
 
@@ -1763,7 +1763,7 @@
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> PYQs Access</li>
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> All New Tests FREE Added</li>
                         </ul>
-                        <a href="payment" onclick="handlePurchase(event, 'Starter CET Pass', 29)" class="mt-4 w-full py-2.5 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-sm rounded-xl hover:bg-primary hover:text-white transition-all text-center">Buy Now</a>
+                        <a href="payment?cat=cet_grad_pass&plan=cetgrad-19d" rel="nofollow" onclick="handlePurchase(event, 'cet_grad_pass', 'cetgrad-19d')" class="mt-4 w-full py-2.5 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-sm rounded-xl hover:bg-primary hover:text-white transition-all text-center">Buy Now</a>
                     </div>
 
                     <!-- Plan: 1 Month (Popular) -->
@@ -1806,7 +1806,7 @@
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> All Subject-wise Tests</li>
                             <li class="flex items-center gap-2 text-slate-400 dark:text-slate-500"><i class="fa-solid fa-xmark text-xs"></i> All New Tests FREE Added</li>
                         </ul>
-                        <a href="payment" onclick="handlePurchase(event, 'Premium CET Pass', 49)" class="mt-4 w-full py-2.5 bg-accent hover:bg-accent/90 text-white font-bold text-sm rounded-xl transition-all text-center">Buy Now</a>
+                        <a href="payment?cat=cet_grad_pass&plan=cetgrad-149d" rel="nofollow" onclick="handlePurchase(event, 'cet_grad_pass', 'cetgrad-149d')" class="mt-4 w-full py-2.5 bg-accent hover:bg-accent/90 text-white font-bold text-sm rounded-xl transition-all text-center">Buy Now</a>
                     </div>
 
                     <!-- Plan: 1 Year -->
@@ -1827,7 +1827,7 @@
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> Unlimited Attempt</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary text-xs"></i> PDF Download</li>
                         </ul>
-                        <a href="payment" onclick="handlePurchase(event, 'Elite All Access Pass', 199)" class="mt-4 w-full py-2.5 bg-support hover:bg-support/90 text-white font-bold text-sm rounded-xl transition-all text-center">Buy Now</a>
+                        <a href="payment?cat=cet_grad_pass&plan=cetgrad-365d" rel="nofollow" onclick="handlePurchase(event, 'cet_grad_pass', 'cetgrad-365d')" class="mt-4 w-full py-2.5 bg-support hover:bg-support/90 text-white font-bold text-sm rounded-xl transition-all text-center">Buy Now</a>
                     </div>
 
                 </div>
@@ -2069,11 +2069,10 @@
             window.location.href = 'login';
         }
 
-        function handlePurchase(event, plan, price) {
-            if (event) event.preventDefault();
-            alert(`Selected: ${plan} (₹${price}). Redirecting to checkout...`);
-            window.location.href = 'payment?plan=' + encodeURIComponent(plan) + '&price=' + price;
-        }
+        function handlePurchase(event, cat, plan) {
+    if (event) event.preventDefault();
+    window.location.href = 'payment?cat=' + cat + '&plan=' + plan;
+		}
 
         document.addEventListener('click', function (e) {
             const anchor = e.target.closest('a[href^="#"]');
