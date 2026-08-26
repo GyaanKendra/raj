@@ -68,54 +68,76 @@
         }
     </script>
 
-    <!-- Schema.org JSON-LD for Search Engines -->
-    <script type="application/ld+json">
+ <!-- Schema.org JSON-LD for Search Engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "Free Mock Tests for Rajasthan Competitive Exams 2026",
       "description": "High yield free practice mock tests for CET 10+2, Rajasthan SI, PTI, VDO, and Patwar exams.",
       "url": "https://rajshiksha.in/test-series/free-mock-tests",
+      "numberOfItems": 4,
       "itemListElement": [
         {
-          "@type": "Quiz",
+          "@type": "ListItem",
           "position": 1,
           "name": "RSMSSB CET 10+2 Free Mock Test 01 (Foundation Test)",
-          "hasPart": {
-            "@type": "Question",
-            "eduQuestionType": "Multiple choice"
-          }
+          "url": "https://rajshiksha.in/test-series/cet-12th-level"
         },
         {
-          "@type": "Quiz",
+          "@type": "ListItem",
           "position": 2,
           "name": "RPSC SI Paper-II GK & GS Free Mock Test 01",
-          "hasPart": {
-            "@type": "Question",
-            "eduQuestionType": "Multiple choice"
-          }
+          "url": "https://rajshiksha.in/test-series/rajasthan-si-gk"
         },
         {
-          "@type": "Quiz",
+          "@type": "ListItem",
           "position": 3,
           "name": "RPSC SI Paper-I General Hindi Free Mock Test 01",
-          "hasPart": {
-            "@type": "Question",
-            "eduQuestionType": "Multiple choice"
+          "url": "https://rajshiksha.in/test-series/rajasthan-si-hindi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Rajasthan PTI Paper 1 Free Mock Test 01",
+          "url": "https://rajshiksha.in/test-series/rajasthan-pti-paper-1"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "क्या ये पहले टेस्ट सच में 100% फ्री हैं?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "हाँ, बिल्कुल! CET 10+2, SI GK, SI Hindi और PTI Paper 1 का Minor Test 01 हर छात्र के लिए बिना किसी शुल्क या क्रेडिट कार्ड के उपलब्ध है।"
           }
         },
         {
-          "@type": "Quiz",
-          "position": 4,
-          "name": "Rajasthan PTI Paper 1 Free Mock Test 01",
-          "hasPart": {
-            "@type": "Question",
-            "eduQuestionType": "Multiple choice"
+          "@type": "Question",
+          "name": "फ्री टेस्ट देने के बाद मुझे रिजल्ट और आंसर की कैसे मिलेगी?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "टेस्ट सबमिट करते ही आपका स्कोरकार्ड, कुल सही/गलत उत्तर, नेगेटिव मार्किंग डिडक्शन, आपकी रैंक और हर प्रश्न का प्रामाणिक व्याख्यात्मक हल तुरंत स्क्रीन पर दिखाई देगा।"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "अगर मुझे पूरी टेस्ट सीरीज़ खरीदनी हो तो क्या प्रोसेस है?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "आप प्रत्येक टेस्ट कार्ड के नीचे दिए गए Unlock Full Pack बटन या ऊपर दिए गए Buy Pass बटन पर क्लिक करके किसी भी पेमेंट माध्यम (UPI, QR, Card) से तुरंत पूरी सीरीज़ एक्टिवेट कर सकते हैं।"
           }
         }
       ]
     }
-    </script>
+  ]
+}
+</script>
 
     <style>
         /* Base Reset */
@@ -1069,7 +1091,7 @@
         </div>
     </div>
 
-  <!-- ═══════ FOOTER ═══════ -->
+   <!-- ═══════ FOOTER ═══════ -->
     <footer class="bg-slate-900 dark:bg-[#0a0a16] text-white pt-16 pb-8 relative overflow-hidden border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b border-white/10">
@@ -1110,14 +1132,36 @@
                     </div>
                 </div>
 
-                <div class="lg:col-span-4 flex flex-col items-start text-left">
-                    <h4 class="font-poppins font-bold text-xs tracking-widest text-slate-300 uppercase mb-4">Latest Shift Notifications</h4>
-                    <p class="text-slate-400 text-xs font-inter mb-4 leading-relaxed">Subscribe to get immediate scheduling modifications, syllabus changes, and subscription pass discounts.</p>
-                    <form class="w-full flex gap-2" onsubmit="event.preventDefault(); alert('You have subscribed to RAJShiksha notifications!');">
-                        <input type="email" placeholder="Email Address" required class="flex-grow bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary transition-colors" />
-                        <button type="submit" class="px-4 py-2 bg-primary hover:bg-primary/95 text-white font-manrope font-bold rounded-lg transition-colors text-xs flex-shrink-0 hover:scale-[1.05]" aria-label="Subscribe">Join</button>
-                    </form>
-                </div>
+                <!-- ═══════ LATEST SHIFT NOTIFICATIONS (NEWSLETTER) ═══════ -->
+<div class="lg:col-span-4 flex flex-col items-start text-left">
+    <h4 class="font-poppins font-bold text-xs tracking-widest text-slate-300 uppercase mb-4">Latest Shift Notifications</h4>
+    <p class="text-slate-400 text-xs font-inter mb-4 leading-relaxed">Subscribe to get immediate scheduling modifications, syllabus changes, and subscription pass discounts.</p>
+    
+    <form id="newsletterForm" class="w-full flex flex-col gap-2">
+        <div class="w-full flex gap-2">
+            <input 
+                type="email" 
+                id="newsletterEmail" 
+                name="email" 
+                placeholder="Email Address" 
+                required 
+                class="flex-grow bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary transition-colors" 
+            />
+            <button 
+                type="submit" 
+                id="newsletterBtn" 
+                class="px-4 py-2 bg-primary hover:bg-primary/95 text-white font-manrope font-bold rounded-lg transition-colors text-xs flex-shrink-0 hover:scale-[1.05] flex items-center justify-center min-w-[65px] cursor-pointer" 
+                aria-label="Subscribe">
+                <span id="newsletterBtnText">Join</span>
+            </button>
+        </div>
+        
+        <!-- Success Message -->
+        <p id="newsletterSuccessMsg" class="hidden text-xs text-emerald-400 mt-1 font-medium items-center gap-1">
+            <i class="fa-solid fa-circle-check"></i> Subscribed successfully!
+        </p>
+    </form>
+</div>
             </div>
 
             <div class="pt-6 flex flex-col md:flex-row items-center justify-between text-slate-500 dark:text-slate-400 font-inter text-xs">
@@ -1298,5 +1342,73 @@
             }
         });
     </script>
+	<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 👇 यहाँ अपना Newsletter वाला Google Apps Script URL पेस्ट करें
+    const NEWSLETTER_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6IaDUQB0c-u56J6Mwo7U9rwaNpcNyK0ECboQnxnPwljRPzRWDQaxEXB1npfSJicQ0wA/exec';
+
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsletterBtn = document.getElementById('newsletterBtn');
+    const newsletterBtnText = document.getElementById('newsletterBtnText');
+    const newsletterEmail = document.getElementById('newsletterEmail');
+    const newsletterSuccessMsg = document.getElementById('newsletterSuccessMsg');
+
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const emailVal = newsletterEmail.value.trim();
+            if (!emailVal) return;
+
+            // 1. बटन को लोडिंग मोड में डालें
+            newsletterBtn.disabled = true;
+            newsletterBtnText.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-xs"></i>';
+            if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
+
+            // 2. डेटा तैयार करें
+            const formData = new URLSearchParams();
+            formData.append('email', emailVal);
+
+            // 3. Google Sheet में भेजें
+            fetch(NEWSLETTER_SCRIPT_URL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => {
+                finishSubmission();
+            })
+            .catch((err) => {
+                console.log('Submission complete:', err);
+                finishSubmission();
+            });
+
+            // 4. फ़ंक्शन जो सफलता के बाद बटन और मैसेज को रीसेट करता है
+            function finishSubmission() {
+                newsletterForm.reset();
+                newsletterBtn.disabled = false;
+                newsletterBtnText.textContent = 'Joined!';
+                newsletterBtn.classList.replace('bg-primary', 'bg-emerald-600');
+                
+                if (newsletterSuccessMsg) {
+                    newsletterSuccessMsg.classList.remove('hidden');
+                    newsletterSuccessMsg.classList.add('flex');
+                }
+
+                if (typeof showToast === 'function') {
+                    showToast('🎉 You have subscribed to RAJShiksha notifications!');
+                }
+
+                // 4 सेकंड बाद बटन वापस सामान्य "Join" हो जाएगा
+                setTimeout(() => {
+                    newsletterBtnText.textContent = 'Join';
+                    newsletterBtn.classList.replace('bg-emerald-600', 'bg-primary');
+                    if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
+                }, 4000);
+            }
+        });
+    }
+});
+</script>
 </body>
 </html>
