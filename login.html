@@ -96,6 +96,12 @@
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh3ZndiZ2Z6enptd2hqdWRodmRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3MDk0ODQsImV4cCI6MjEwMDI4NTQ4NH0.tj0v3i9778AW4b0dseb_zxOmIJ5EDf4PapbjVNQweUw";
     const db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+    // =========================================================================
+    // 👇 GOOGLE SHEET APPS SCRIPT WEB APP URL (यहाँ अपना Apps Script URL डालें) 👇
+    // =========================================================================
+    const GOOGLE_SHEET_FEEDBACK_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyBiRiOxZSM3-9LY7hbS1rCp-RNwi_e5dlzjOg8IbqhQRuBhDRQgYWmZK6ud16bg7UB/exec";
+    // =========================================================================
+
     // SECURITY FEATURE: DISABLE RIGHT-CLICK & COPY
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.addEventListener('copy', e => e.preventDefault());
@@ -137,7 +143,7 @@
       
       <div class="bg-white border border-slate-100 p-7 sm:p-10 rounded-[32px] w-full max-w-[450px] shadow-2xl shadow-slate-200/60 relative">
         
-        <!-- CENTERED LOGO & BRANDING (ICON TOP, NAME CENTERED) -->
+        <!-- CENTERED LOGO & BRANDING -->
         <div class="flex flex-col items-center justify-center mb-6 text-center">
           <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#FF512F] to-[#DD2476] flex items-center justify-center shadow-lg shadow-rose-500/25 mb-3.5">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -220,7 +226,6 @@
             SECURE EXAMINATION SYSTEM
           </div>
 
-          <!-- COMPACT BACK TO HOMEPAGE BUTTON AT BOTTOM -->
           <a href="/" onclick="if(history.length > 1){ history.back(); return false; }" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-slate-500 hover:text-[#0B0B3B] transition-colors mt-1">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
             <span>Back to Homepage</span>
@@ -243,7 +248,6 @@
 
       <main class="max-w-4xl mx-auto my-6 p-6 md:p-8 bg-white rounded-3xl border border-slate-200 shadow-sm flex-1 space-y-6 overflow-y-auto w-full">
         
-        <!-- CENTERED BRANDING LOGO ON INSTRUCTION CARD TOP -->
         <div class="flex flex-col items-center justify-center border-b border-slate-100 pb-5 text-center">
           <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#FF512F] to-[#DD2476] flex items-center justify-center shadow-md shadow-rose-500/20 mb-2">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -298,7 +302,6 @@
       
       <header class="bg-[#0B0B3B] text-white px-4 md:px-6 py-2.5 flex items-center justify-between shadow-lg">
         <div class="flex items-center gap-3">
-          <!-- BRAND GRADIENT LOGO ICON IN EXAM HEADER -->
           <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#FF512F] to-[#DD2476] flex items-center justify-center shadow-md shadow-rose-500/30 border border-white/20">
             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
@@ -459,7 +462,6 @@
             <span>📥</span> Download Question Paper PDF
           </button>
           
-          <!-- REFORMED POSITIVE SUGGESTION BUTTON -->
           <button onclick="openFeedbackModal()" class="flex-1 sm:flex-none bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-5 py-3.5 rounded-2xl shadow-lg shadow-indigo-600/20 transition text-xs flex items-center justify-center gap-2">
             <span>💡</span> Give Feedback & Get Free Access Pass
           </button>
@@ -474,16 +476,15 @@
 
   </div>
 
-  <!-- HIGHLY ENGAGING STUDENT FEEDBACK & SUGGESTION MODAL -->
+  <!-- FEEDBACK MODAL -->
   <div id="feedback-modal" class="hidden fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-white border border-slate-200 rounded-[32px] w-full max-w-lg p-6 sm:p-8 shadow-2xl relative transition-all my-8">
       
-      <!-- CLOSE BUTTON -->
       <button onclick="closeFeedbackModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 bg-slate-100 p-2 rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs transition">
         ✕
       </button>
 
-      <!-- STEP 1: INSPIRING STUDENT-CENTRIC ANNOUNCEMENT -->
+      <!-- STEP 1: INFO -->
       <div id="feedback-step-info" class="space-y-5 text-center">
         <div class="w-16 h-16 bg-gradient-to-tr from-amber-400 to-amber-600 text-white rounded-3xl flex items-center justify-center mx-auto text-3xl shadow-lg shadow-amber-500/30">
           💡
@@ -512,7 +513,7 @@
         </button>
       </div>
 
-      <!-- STEP 2: POSITIVE FEEDBACK FORM WITH STRICT VALIDATION -->
+      <!-- STEP 2: FORM -->
       <div id="feedback-step-form" class="hidden space-y-4">
         <div class="border-b pb-3 mb-2">
           <h3 class="text-base font-extrabold text-[#0B0B3B]">Student Feedback Form</h3>
@@ -527,14 +528,12 @@
             </div>
             <div>
               <label class="block text-[11px] font-bold text-slate-700 mb-1">मोबाइल नंबर (10 Digit Mobile)</label>
-              <!-- ONLY 10 DIGITS ALLOWED -->
               <input type="tel" id="fb-phone" required placeholder="9876543210" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:outline-none focus:border-[#0B0B3B]">
             </div>
           </div>
 
           <div>
             <label class="block text-[11px] font-bold text-slate-700 mb-1">ईमेल आईडी (Email Address)</label>
-            <!-- STRICT EMAIL VALIDATION -->
             <input type="email" id="fb-email" required placeholder="example@gmail.com" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="कृपया एक सही ईमेल दर्ज करें (उदा. name@gmail.com)" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:outline-none focus:border-[#0B0B3B]">
           </div>
 
@@ -564,7 +563,6 @@
     </div>
   </div>
 
-  <!-- CONTAINER FOR COMPACT PDF PRINTING -->
   <div id="mobile-pdf-print-area"></div>
 
   <script>
@@ -1219,9 +1217,7 @@
       return deviceId;
     }
 
-    // ===================================================
-    // POSITIVE FEEDBACK POPUP SYSTEM
-    // ===================================================
+    // FEEDBACK POPUP ENGINE
     function openFeedbackModal() {
       document.getElementById('feedback-modal').classList.remove('hidden');
       document.getElementById('feedback-step-info').classList.remove('hidden');
@@ -1246,7 +1242,6 @@
       const phoneVal = document.getElementById('fb-phone').value.trim();
       const emailVal = document.getElementById('fb-email').value.trim();
 
-      // STRICT VALIDATION CHECKS
       if (phoneVal.length !== 10) {
         alert("⚠️ कृपया केवल 10 अंकों का मान्य मोबाइल नंबर दर्ज करें!");
         return;
@@ -1268,26 +1263,43 @@
         email: emailVal,
         category: document.getElementById('fb-category').value,
         message: document.getElementById('fb-message').value.trim(),
-        test_title: state.currentTest ? state.currentTest.title : 'General Test Feedback',
-        created_at: new Date().toISOString()
+        test_title: state.currentTest ? state.currentTest.title : 'General Test Feedback'
       };
 
       try {
-        await db.from('candidate_feedbacks').insert([feedbackData]);
-      } catch (err) {
-        console.log("Feedback logged:", feedbackData);
-      }
+        // 1. Google Sheets में सेव
+        if (GOOGLE_SHEET_FEEDBACK_WEBHOOK_URL && !GOOGLE_SHEET_FEEDBACK_WEBHOOK_URL.includes("YOUR_GOOGLE_APPS_SCRIPT")) {
+          await fetch(GOOGLE_SHEET_FEEDBACK_WEBHOOK_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(feedbackData)
+          });
+        }
 
-      alert("🎉 धन्यवाद! आपका सुझाव सफलतापूर्वक सबमिट कर दिया गया है। हमारी रिसर्च टीम जल्द ही इसकी समीक्षा करेगी।");
-      submitBtn.innerText = "सुझाव सबमिट करें ✔";
-      submitBtn.disabled = false;
-      document.getElementById('feedback-form').reset();
-      closeFeedbackModal();
+        // 2. Supabase में बैकअप
+        try {
+          await db.from('candidate_feedbacks').insert([{
+            ...feedbackData,
+            created_at: new Date().toISOString()
+          }]);
+        } catch (dbErr) {
+          console.warn("Supabase log:", dbErr);
+        }
+
+        alert("🎉 धन्यवाद! आपका सुझाव सफलतापूर्वक सबमिट कर दिया गया है। हमारी रिसर्च टीम जल्द ही इसकी समीक्षा करेगी।");
+      } catch (err) {
+        console.error("Error submitting feedback:", err);
+        alert("सुझाव दर्ज करने में समस्या आई, कृपया पुनः प्रयास करें।");
+      } finally {
+        submitBtn.innerText = "सुझाव सबमिट करें ✔";
+        submitBtn.disabled = false;
+        document.getElementById('feedback-form').reset();
+        closeFeedbackModal();
+      }
     }
 
-    // ===================================================
     // COMPACT PDF GENERATOR
-    // ===================================================
     function downloadCompleteExamPDF() {
       const btn = document.getElementById('download-pdf-btn');
       btn.innerText = "⏳ Preparing PDF...";
