@@ -857,7 +857,14 @@
             const alertBox = document.getElementById('securityAlert');
             if (alertBox) alertBox.classList.add('hidden');
 
+            // 🌟 Get Selected Category Text and Course Plan
+            const catSelect = document.getElementById('categorySelect');
+            const categoryName = (catSelect && catSelect.selectedIndex > 0) ? catSelect.options[catSelect.selectedIndex].text : '';
             const course = document.getElementById('selectedCourse').value;
+
+            // 🌟 Combine Category + Course Plan for complete tracking in Excel
+            const finalCourseSelected = categoryName ? `${categoryName} — ${course}` : course;
+
             const name = document.getElementById('studentName').value.trim();
             const mobile = document.getElementById('studentMobile').value.trim();
             const email = document.getElementById('studentEmail').value.trim().toLowerCase();
@@ -881,16 +888,20 @@
             submitBtn.disabled = true;
             submitBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin text-primary"></i> Submitting & Syncing...`;
 
-            const payload = {
-                timestamp: new Date().toLocaleString(),
-                selectedCourse: course,
-                studentName: name,
-                mobileNumber: mobile,
-                emailAddress: email,
-                password: pass,
-                transactionUTR: utr,
-                studentRemark: remark || "N/A"
-            };
+            const now = new Date();
+			const pad = (n) => String(n).padStart(2, '0');
+		const formattedTimestamp = `${pad(now.getDate())}/${pad(now.getMonth() + 1)}/${now.getFullYear()}, ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+	
+		const payload = {
+	    timestamp: formattedTimestamp,
+	    selectedCourse: finalCourseSelected,
+	    studentName: name,
+	    mobileNumber: mobile,
+	    emailAddress: email,
+	    password: pass,
+	    transactionUTR: utr,
+	    studentRemark: remark || "N/A"
+	};
 
             const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzxciX1KSpsWrI93WWdutYH4ea8RMtRNdcANOQ-OTFATk7Dw62aHen8zEjcTegiHOvkoA/exec';
 
@@ -901,12 +912,12 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 }).then(() => {
-                    completeSubmission(utr, name, email, course);
+                    completeSubmission(utr, name, email, finalCourseSelected);
                 }).catch(() => {
-                    completeSubmission(utr, name, email, course);
+                    completeSubmission(utr, name, email, finalCourseSelected);
                 });
             } else {
-                setTimeout(() => completeSubmission(utr, name, email, course), 800);
+                setTimeout(() => completeSubmission(utr, name, email, finalCourseSelected), 800);
             }
         }
 
