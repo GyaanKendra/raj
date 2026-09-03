@@ -17,11 +17,63 @@
 	<meta property="og:image" content="https://rajshiksha.in/assets/images/default-og.webp">
     <meta property="og:url" content="https://rajshiksha.in/test-series/cet-12th-level" />
     <meta property="og:site_name" content="RAJShiksha" />
-<!-- ═══════ Google Structured Data / Product, Course & FAQ Schema ═══════ -->
+<!-- ═══════ MASTER JSON-LD STRUCTURED DATA (@GRAPH) ═══════ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://rajshiksha.in/#website",
+      "url": "https://rajshiksha.in/",
+      "name": "RAJShiksha",
+      "description": "Rajasthan Competitive Exams Portal - Test Series, Smart Notes & Free Mocks",
+      "publisher": {
+        "@type": "Organization",
+        "name": "RAJShiksha",
+        "url": "https://rajshiksha.in"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://rajshiksha.in/test-series/cet-12th-level#webpage",
+      "url": "https://rajshiksha.in/test-series/cet-12th-level",
+      "name": "Rajasthan CET 10+2 Test Series 2026 – RAJShiksha",
+      "description": "Prepare for RSMSSB 10+2 Exam 2026 with RAJShiksha. 7 Minor Tests, 2 Major Tests, 3 Final Tests & Subject-wise Practice. Starting at just ₹29.",
+      "inLanguage": "hi-IN",
+      "isPartOf": {
+        "@id": "https://rajshiksha.in/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://rajshiksha.in/test-series/cet-12th-level#breadcrumb"
+      },
+      "datePublished": "2026-09-02T18:00:00+05:30",
+      "dateModified": "2026-09-03T23:12:00+05:30"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://rajshiksha.in/test-series/cet-12th-level#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rajshiksha.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Test Series",
+          "item": "https://rajshiksha.in/test-series/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "RSMSSB CET 10+2 Test Series",
+          "item": "https://rajshiksha.in/test-series/cet-12th-level"
+        }
+      ]
+    },
     {
       "@type": "Product",
       "@id": "https://rajshiksha.in/test-series/cet-12th-level#product",
@@ -32,13 +84,20 @@
         "@type": "Brand",
         "name": "RAJShiksha"
       },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "120"
+      },
       "offers": {
-        "@type": "Offer",
-        "url": "https://rajshiksha.in/test-series/cet-12th-level",
+        "@type": "AggregateOffer",
         "priceCurrency": "INR",
-        "price": "29",
-        "priceValidUntil": "2026-09-01",
-        "availability": "https://schema.org/InStock"
+        "lowPrice": "29",
+        "highPrice": "199",
+        "offerCount": "4",
+        "priceValidUntil": "2026-09-20",
+        "availability": "https://schema.org/InStock",
+        "url": "https://rajshiksha.in/test-series/cet-12th-level"
       }
     },
     {
