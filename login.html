@@ -1399,39 +1399,6 @@
       }, 250);
     }
   </script>
-<!-- ═══════ INSTANT AUTO-FILL ENGINE ═══════ -->
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const isAutoDemo = urlParams.get('auto') === 'minor_free';
 
-    if (isAutoDemo) {
-        const nameInput = document.getElementById('candidate-name');
-        const emailInput = document.getElementById('candidate-email');
-        const passInput = document.getElementById('candidate-password');
-        const submitBtn = document.getElementById('login-submit-btn');
-
-        // पिछले पेज से छात्र का नाम लें
-        const savedName = localStorage.getItem('student_cached_name') || 'Candidate';
-
-        // 1. तीनों बॉक्स में डेटा तुरंत भर दें
-        if (nameInput) nameInput.value = savedName;
-        if (emailInput) emailInput.value = "Demotest@gmail.com";
-        if (passInput) passInput.value = "Demo&1412@";
-
-        // 2. बटन को हाईलाइट करें और ऑटो-क्लिक करें
-        if (submitBtn) {
-            submitBtn.classList.remove('bg-[#0B0B3B]');
-            submitBtn.classList.add('bg-emerald-600', 'animate-pulse');
-            submitBtn.innerHTML = '<span>🚀 Start Your Test Now →</span>';
-
-            // 0.4 सेकंड में नेचुरल क्लिक
-            setTimeout(() => {
-                submitBtn.click();
-            }, 400);
-        }
-    }
-});
-</script>
 </body>
 </html>
