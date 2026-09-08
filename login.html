@@ -1399,29 +1399,45 @@
       }, 250);
     }
   </script>
-<!-- AUTO FILL DEMO CREDENTIALS ENGINE -->
+<!-- ULTRA-SAFE AUTO LOGIN & RECOVERY ENGINE -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const isAutoDemo = urlParams.get('auto') === 'minor_free';
 
     if (isAutoDemo) {
+        // चेक करें कि क्या छात्र पहले से कोई टेस्ट दे रहा था
+        const savedSession = sessionStorage.getItem('cbt_candidate_session');
+        
+        if (savedSession) {
+            try {
+                const parsed = JSON.parse(savedSession);
+                // अगर छात्र टेस्ट के बीच में था (screen === 'exam')
+                if (parsed.activeScreen === 'exam') {
+                    // 🛡️ उसका टेस्ट मत मिटाओ! उसे वहीं से जारी रखने दो
+                    console.log("Active exam restored safely!");
+                    return; 
+                }
+            } catch(e) {}
+        }
+
+        // अगर छात्र टेस्ट पूरा कर चुका था या नया टेस्ट देने आया है, तभी रीसेट करें
+        sessionStorage.removeItem('cbt_candidate_session');
+
         const nameInput = document.getElementById('candidate-name');
         const emailInput = document.getElementById('candidate-email');
         const passInput = document.getElementById('candidate-password');
         const submitBtn = document.getElementById('login-submit-btn');
 
-        // URL या LocalStorage से छात्र का नाम लें
         const studentName = urlParams.get('name') || localStorage.getItem('student_cached_name') || 'Candidate';
 
-        // 1. तीनों फ़ील्ड में डेटा ऑटो-फिल करें
         if (nameInput) nameInput.value = decodeURIComponent(studentName);
         if (emailInput) emailInput.value = "demotest@gmail.com";
         if (passInput) passInput.value = "Demo&1412@";
 
-        // 2. बटन को हाइलाइट करें ताकि छात्र समझ सके कि उसे बस क्लिक करना है
         if (submitBtn) {
-            submitBtn.classList.add('ring-4', 'ring-emerald-400', 'bg-emerald-600');
+            submitBtn.classList.remove('bg-[#0B0B3B]');
+            submitBtn.classList.add('bg-emerald-600');
             submitBtn.innerHTML = '<span>🚀 Start Examination Now →</span>';
         }
     }
