@@ -1399,9 +1399,9 @@
       }, 250);
     }
   </script>
-<!-- ═══════ AUTO LOGIN ENGINE FOR FREE MINOR TEST (BULLETPROOF) ═══════ -->
+<!-- ═══════ INSTANT AUTO-FILL ENGINE ═══════ -->
 <script>
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const isAutoDemo = urlParams.get('auto') === 'minor_free';
 
@@ -1409,57 +1409,26 @@ window.addEventListener('load', () => {
         const nameInput = document.getElementById('candidate-name');
         const emailInput = document.getElementById('candidate-email');
         const passInput = document.getElementById('candidate-password');
-        const loginForm = document.getElementById('login-form');
         const submitBtn = document.getElementById('login-submit-btn');
 
-        // पिछले पेज से नाम उठाएं
-        const savedStudentName = localStorage.getItem('student_cached_name') || 'Candidate';
+        // पिछले पेज से छात्र का नाम लें
+        const savedName = localStorage.getItem('student_cached_name') || 'Candidate';
 
-        if (emailInput && passInput && loginForm) {
-            // 1. तीनों इनपुट भरें
-            if (nameInput) nameInput.value = savedStudentName;
-            emailInput.value = "Demotest@gmail.com";
-            passInput.value = "Demo&1412@";
+        // 1. तीनों बॉक्स में डेटा तुरंत भर दें
+        if (nameInput) nameInput.value = savedName;
+        if (emailInput) emailInput.value = "Demotest@gmail.com";
+        if (passInput) passInput.value = "Demo&1412@";
 
-            // 2. बटन का टेक्स्ट बदलें
-            if (submitBtn) {
-                submitBtn.innerHTML = '<span>⏳ Authenticating Minor Test 01...</span>';
-                submitBtn.disabled = true;
-            }
+        // 2. बटन को हाईलाइट करें और ऑटो-क्लिक करें
+        if (submitBtn) {
+            submitBtn.classList.remove('bg-[#0B0B3B]');
+            submitBtn.classList.add('bg-emerald-600', 'animate-pulse');
+            submitBtn.innerHTML = '<span>🚀 Start Your Test Now →</span>';
 
-            // 3. 0.5 सेकंड बाद फॉर्म सबमिट करें
+            // 0.4 सेकंड में नेचुरल क्लिक
             setTimeout(() => {
-                // Form सबमिट ट्रिगर करें (जिससे handleCandidateLogin चलेगा)
-                loginForm.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
-
-                // 4. जैसे ही Supabase से टेस्ट लोड हो जाए, उसे पकड़ें
-                const checkTestLoadedInterval = setInterval(() => {
-                    const testBox = document.getElementById('test-selection-box');
-                    const dropdown = document.getElementById('test-dropdown');
-                    const enterHallBtn = document.getElementById('enter-hall-btn');
-
-                    // जब ड्रॉपडाउन दिखने लगे और उसमें टेस्ट लोड हो जाए
-                    if (testBox && !testBox.classList.contains('hidden') && dropdown && dropdown.options.length > 0) {
-                        clearInterval(checkTestLoadedInterval);
-                        
-                        // अगर टेस्ट ड्रॉपडाउन में कोई टेस्ट है, तो पहला टेस्ट सेलेक्ट करके आगे बढ़ें
-                        if (dropdown.value === "" && dropdown.options.length > 0) {
-                            dropdown.selectedIndex = 0;
-                        }
-
-                        // 0.4 सेकंड बाद एग्जामिनेशन हॉल का बटन ऑटोमैटिक दबा दें
-                        setTimeout(() => {
-                            if (enterHallBtn) {
-                                enterHallBtn.click();
-                            }
-                        }, 400);
-                    }
-                }, 200);
-
-                // 10 सेकंड का सेफ्टी टाइमर (ताकि लूप न फंसे)
-                setTimeout(() => clearInterval(checkTestLoadedInterval), 10000);
-
-            }, 500);
+                submitBtn.click();
+            }, 400);
         }
     }
 });
