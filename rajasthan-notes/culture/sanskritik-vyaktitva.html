@@ -1451,7 +1451,7 @@
             </div>
 
             <!-- Claim Offer Button -->
-            <button onclick="proceedTo/paymentPage()" class="w-full py-4 text-white font-poppins font-extrabold text-sm sm:text-base rounded-2xl shadow-xl transition-all hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary cursor-pointer">
+            <button onclick="proceedToPaymentPage()" class="w-full py-4 text-white font-poppins font-extrabold text-sm sm:text-base rounded-2xl shadow-xl transition-all hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary cursor-pointer">
                 <span>Claim Offer @ ₹19 &amp; Unlock Tests →</span>
             </button>
         </div>
@@ -1693,7 +1693,7 @@
             }
         }
 
-        function proceedTo/paymentPage() {
+        function proceedToPaymentPage() {
             const courseTag = "rajasthan-culture-vyaktitva-(₹19)";
             window.location.href = `/payment?course=${encodeURIComponent(courseTag)}`;
         }
