@@ -1566,7 +1566,7 @@
 
     </main>
 
-    <!-- ═══════ FREE TEST INSTRUCTIONS MODAL (POPUP) ═══════ -->
+ <!-- ═══════ FREE TEST INSTRUCTIONS MODAL (POPUP) ═══════ -->
     <div id="demoModal" class="fixed inset-0 z-[9999] hidden flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm transition-opacity duration-300">
         <div class="relative w-full max-w-lg bg-white dark:bg-[#1a1a2e] border border-slate-100 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl transform transition-all scale-95 opacity-0 duration-300" id="modalContainer">
             
@@ -1578,43 +1578,32 @@
             <!-- Header -->
             <div class="flex items-center gap-3 mb-5">
                 <div class="w-10 h-10 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl shrink-0">
-                    <i class="fa-solid fa-flask"></i>
+                    <i class="fa-solid fa-unlock-keyhole"></i>
                 </div>
                 <div>
-                    <h3 id="modalExamTitle" class="font-poppins font-extrabold text-lg sm:text-xl text-dark dark:text-white">CET 10+2 Free Test Instructions</h3>
-                    <p class="text-xs text-muted dark:text-slate-400">Master Exam Login Credentials</p>
+                    <h3 id="modalExamTitle" class="font-poppins font-extrabold text-lg sm:text-xl text-dark dark:text-white">Minor Test 01 Access</h3>
+                    <p class="text-xs text-muted dark:text-slate-400">फ्री टेस्ट शुरू करने के लिए विवरण भरें</p>
                 </div>
             </div>
 
-            <!-- Credentials Box -->
-            <div class="bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-4 mb-5 space-y-2.5 font-mono text-xs">
-                <div class="flex items-center justify-between pb-2 border-b border-slate-200/60 dark:border-slate-800/80">
-                    <span class="text-slate-500 dark:text-slate-400 font-sans font-semibold">Candidate Full Name:</span>
-                    <span class="font-bold text-primary font-sans">Apna Name Likhe</span>
+            <!-- LEAD FORM -->
+            <form id="leadCaptureForm" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-dark dark:text-slate-200 mb-1">पूरा नाम (Candidate Full Name)</label>
+                    <input type="text" id="studentName" required placeholder="उदा. Ramesh Kumar" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/60 text-xs font-semibold text-dark dark:text-white focus:outline-none focus:border-primary">
                 </div>
-                <div class="flex items-center justify-between pb-2 border-b border-slate-200/60 dark:border-slate-800/80">
-                    <span class="text-slate-500 dark:text-slate-400 font-sans font-semibold">Institutional Email:</span>
-                    <span class="font-bold text-dark dark:text-white select-all">Demotest@gmail.com</span>
-                </div>
-                <div class="flex items-center justify-between">
-                    <span class="text-slate-500 dark:text-slate-400 font-sans font-semibold">Access Password:</span>
-                    <span class="font-bold text-dark dark:text-white select-all">Demo&amp;1412@</span>
-                </div>
-            </div>
 
-            <!-- Guidance Message -->
-            <div class="bg-amber-50 dark:bg-amber-950/40 border border-amber-200/60 dark:border-amber-800/50 rounded-2xl p-4 mb-6 flex items-start gap-3">
-                <i class="fa-solid fa-circle-info text-amber-500 mt-0.5 text-base shrink-0"></i>
-                <p class="text-xs text-amber-900 dark:text-amber-200 leading-relaxed font-manrope font-semibold">
-                    "नीचे दिए गए बटन पर क्लिक करके आप हमारे Exam Login Portal पर पहुँचेंगे। ऊपर दिये ID &amp; Password को लिख लेवें और वहाँ ऊपर दिए गए आईडी-पासवर्ड डालकर आप सीधे परीक्षा पोर्टल का अनुभव ले सकते हैं।"
-                </p>
-            </div>
+                <div>
+                    <label class="block text-xs font-bold text-dark dark:text-slate-200 mb-1">WhatsApp मोबाइल नंबर</label>
+                    <input type="tel" id="studentPhone" required maxlength="10" placeholder="10 अंकों का मोबाइल नंबर" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/60 text-xs font-semibold text-dark dark:text-white focus:outline-none focus:border-primary">
+                    <span class="text-[10px] text-slate-400 mt-1 block">⚠️ 10 अंकों का मान्य नंबर दर्ज करें। रिजल्ट व आंसर-की इसी नंबर पर भेजी जाएगी।</span>
+                </div>
 
-            <!-- Direct Proceed Button to login.html -->
-            <a href="login" class="w-full py-3.5 px-6 rounded-2xl font-poppins font-extrabold text-sm text-white bg-gradient-to-r from-primary to-secondary hover:opacity-95 transition-all shadow-premium flex items-center justify-center gap-2 group">
-                <span>Proceed to Exam Login Portal</span>
-                <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
-            </a>
+                <button type="submit" id="submitLeadBtn" class="w-full mt-2 py-3.5 px-6 rounded-2xl font-poppins font-extrabold text-xs text-white bg-gradient-to-r from-primary to-secondary hover:opacity-95 transition-all shadow-premium flex items-center justify-center gap-2 cursor-pointer">
+                    <span id="submitLeadText">Unlock Minor Test 01 (Free)</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </button>
+            </form>
 
         </div>
     </div>
@@ -2004,6 +1993,129 @@ document.addEventListener('DOMContentLoaded', () => {
                     newsletterBtn.classList.replace('bg-emerald-600', 'bg-primary');
                     if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
                 }, 4000);
+            }
+        });
+    }
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 👇 यहाँ अपना Google Apps Script URL पेस्ट करें
+    const GOOGLE_SCRIPT_LEAD_URL = 'https://script.google.com/macros/s/AKfycbzmH57BoEv2LJu7AJHNTVPxNqXDOcvt9tuoyuBvFNotyohfzsnAZGt2GbomNwH-MLvAmw/exec';
+
+    let currentSelectedExam = 'Rajasthan Mock Test';
+    const demoModal = document.getElementById('demoModal');
+    const modalContainer = document.getElementById('modalContainer');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modalExamTitle = document.getElementById('modalExamTitle');
+    const openModalBtns = document.querySelectorAll('.open-demo-modal');
+
+    const leadForm = document.getElementById('leadCaptureForm');
+    const submitLeadBtn = document.getElementById('submitLeadBtn');
+    const submitLeadText = document.getElementById('submitLeadText');
+    const nameInput = document.getElementById('studentName');
+    const phoneInput = document.getElementById('studentPhone');
+
+    // कौन-कौन से टेस्ट यूजर अनलॉक कर चुका है उसकी लिस्ट
+    function getUnlockedExams() {
+        const saved = localStorage.getItem('unlocked_exams_list');
+        return saved ? JSON.parse(saved) : [];
+    }
+
+    function saveUnlockedExam(examName) {
+        let list = getUnlockedExams();
+        if (!list.includes(examName)) {
+            list.push(examName);
+            localStorage.setItem('unlocked_exams_list', JSON.stringify(list));
+        }
+    }
+
+    // Modal ओपन करने का लॉजिक
+    openModalBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentSelectedExam = btn.dataset.title || 'Rajasthan Mock Test';
+            modalExamTitle.textContent = currentSelectedExam;
+
+            const unlockedList = getUnlockedExams();
+
+            // 🎯 नियम 1: अगर छात्र इस एग्जाम को पहले अनलॉक कर चुका है, तो दोबारा शीट में डेटा नहीं जाएगा, सीधा लॉगिन पर जाएगा
+            if (unlockedList.includes(currentSelectedExam)) {
+                const savedName = localStorage.getItem('student_cached_name') || '';
+                window.location.href = "login?auto=minor_free&name=" + encodeURIComponent(savedName);
+                return;
+            }
+
+            // 🎯 नियम 2: अगर नया एग्जाम है, तो फॉर्म खुलेगा (नाम/नंबर पहले से भरा मिलेगा ताकि आसानी हो)
+            const prevName = localStorage.getItem('student_cached_name');
+            const prevPhone = localStorage.getItem('student_cached_phone');
+            if (prevName) nameInput.value = prevName;
+            if (prevPhone) phoneInput.value = prevPhone;
+
+            demoModal.classList.remove('hidden');
+            setTimeout(() => {
+                modalContainer.classList.remove('scale-95', 'opacity-0');
+                modalContainer.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        });
+    });
+
+    const closeModal = () => {
+        modalContainer.classList.remove('scale-100', 'opacity-100');
+        modalContainer.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => { demoModal.classList.add('hidden'); }, 250);
+    };
+
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    if (demoModal) {
+        demoModal.addEventListener('click', (e) => {
+            if (e.target === demoModal) closeModal();
+        });
+    }
+
+    // फॉर्म सबमिट होने पर Google Sheet में एंट्री और लॉगिन पर रीडायरेक्ट
+    if (leadForm) {
+        leadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nameVal = nameInput.value.trim();
+            const phoneVal = phoneInput.value.trim();
+
+            // स्ट्रिक्ट मोबाइल नंबर चेक (6,7,8,9 से शुरू और ठीक 10 अंक)
+            if (!/^[6-9]\d{9}$/.test(phoneVal)) {
+                alert("कृपया 10 अंकों का सही भारतीय मोबाइल नंबर दर्ज करें (शुरुआत 6, 7, 8 या 9 से होनी चाहिए)!");
+                phoneInput.focus();
+                return;
+            }
+
+            submitLeadBtn.disabled = true;
+            submitLeadText.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Unlocking Test...';
+
+            const formData = new URLSearchParams();
+            formData.append('name', nameVal);
+            formData.append('phone', phoneVal);
+            formData.append('exam', currentSelectedExam);
+
+            // Google Sheet में भेजना
+            fetch(GOOGLE_SCRIPT_LEAD_URL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => { finishAndGo(); })
+            .catch(() => { finishAndGo(); });
+
+            function finishAndGo() {
+                // डेटा ब्राउज़र में याद रखें ताकि डुप्लीकेट एंट्री न हो
+                localStorage.setItem('student_cached_name', nameVal);
+                localStorage.setItem('student_cached_phone', phoneVal);
+                saveUnlockedExam(currentSelectedExam);
+
+                submitLeadText.innerHTML = '<i class="fa-solid fa-circle-check mr-2"></i> Opening Login...';
+
+                setTimeout(() => {
+                    window.location.href = "login?auto=minor_free&name=" + encodeURIComponent(nameVal);
+                }, 500);
             }
         });
     }
