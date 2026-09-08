@@ -1399,50 +1399,67 @@
       }, 250);
     }
   </script>
-<!-- ═══════ AUTO LOGIN ENGINE FOR FREE MINOR TEST (100% FIXED) ═══════ -->
+<!-- ═══════ AUTO LOGIN ENGINE FOR FREE MINOR TEST (BULLETPROOF) ═══════ -->
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const isAutoDemo = urlParams.get('auto') === 'minor_free';
 
     if (isAutoDemo) {
-        // 1. आपके लॉगिन पेज के असली IDs
         const nameInput = document.getElementById('candidate-name');
         const emailInput = document.getElementById('candidate-email');
         const passInput = document.getElementById('candidate-password');
+        const loginForm = document.getElementById('login-form');
         const submitBtn = document.getElementById('login-submit-btn');
 
-        // पिछले पेज से छात्र का नाम उठाएं (अगर उपलब्ध हो)
-        const savedStudentName = localStorage.getItem('student_cached_name') || 'Demo Candidate';
+        // पिछले पेज से नाम उठाएं
+        const savedStudentName = localStorage.getItem('student_cached_name') || 'Candidate';
 
-        if (emailInput && passInput) {
-            // 2. तीनों इनपुट बॉक्स भरें
+        if (emailInput && passInput && loginForm) {
+            // 1. तीनों इनपुट भरें
             if (nameInput) nameInput.value = savedStudentName;
             emailInput.value = "Demotest@gmail.com";
             passInput.value = "Demo&1412@";
 
-            // 3. बटन पर लोडिंग दिखाएं
+            // 2. बटन का टेक्स्ट बदलें
             if (submitBtn) {
-                submitBtn.innerHTML = '<span>⏳ Logging into Exam Hub...</span>';
+                submitBtn.innerHTML = '<span>⏳ Authenticating Minor Test 01...</span>';
                 submitBtn.disabled = true;
             }
 
-            // 4. Supabase लॉगिन फंक्शन को सीधे कॉल करें
-            setTimeout(async () => {
-                const fakeEvent = { preventDefault: () => {} };
-                
-                // आपके मुख्य लॉगिन फंक्शन को चलाएं
-                await handleCandidateLogin(fakeEvent);
+            // 3. 0.5 सेकंड बाद फॉर्म सबमिट करें
+            setTimeout(() => {
+                // Form सबमिट ट्रिगर करें (जिससे handleCandidateLogin चलेगा)
+                loginForm.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
 
-                // 5. जैसे ही टेस्ट लिस्ट लोड हो, 0.5 सेकंड में ऑटोमैटिक 'Enter Examination Hall' बटन दबा दें
-                setTimeout(() => {
+                // 4. जैसे ही Supabase से टेस्ट लोड हो जाए, उसे पकड़ें
+                const checkTestLoadedInterval = setInterval(() => {
+                    const testBox = document.getElementById('test-selection-box');
+                    const dropdown = document.getElementById('test-dropdown');
                     const enterHallBtn = document.getElementById('enter-hall-btn');
-                    if (enterHallBtn) {
-                        proceedToExamInstructions();
-                    }
-                }, 600);
 
-            }, 400);
+                    // जब ड्रॉपडाउन दिखने लगे और उसमें टेस्ट लोड हो जाए
+                    if (testBox && !testBox.classList.contains('hidden') && dropdown && dropdown.options.length > 0) {
+                        clearInterval(checkTestLoadedInterval);
+                        
+                        // अगर टेस्ट ड्रॉपडाउन में कोई टेस्ट है, तो पहला टेस्ट सेलेक्ट करके आगे बढ़ें
+                        if (dropdown.value === "" && dropdown.options.length > 0) {
+                            dropdown.selectedIndex = 0;
+                        }
+
+                        // 0.4 सेकंड बाद एग्जामिनेशन हॉल का बटन ऑटोमैटिक दबा दें
+                        setTimeout(() => {
+                            if (enterHallBtn) {
+                                enterHallBtn.click();
+                            }
+                        }, 400);
+                    }
+                }, 200);
+
+                // 10 सेकंड का सेफ्टी टाइमर (ताकि लूप न फंसे)
+                setTimeout(() => clearInterval(checkTestLoadedInterval), 10000);
+
+            }, 500);
         }
     }
 });
