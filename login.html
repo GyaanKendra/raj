@@ -1399,5 +1399,42 @@
       }, 250);
     }
   </script>
+	<!-- ═══════ AUTO LOGIN ENGINE FOR FREE MINOR TEST ═══════ -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Check karein ki kya user hamare free demo popup se aaya hai?
+    const urlParams = new URLSearchParams(window.location.search);
+    const isAutoDemo = urlParams.get('auto') === 'minor_free';
+
+    if (isAutoDemo) {
+        // 2. Apne Login Form ke Input dhoondein
+        const emailInput = document.querySelector('input[type="email"]') || document.getElementById('email') || document.querySelector('input[name="email"]');
+        const passInput = document.querySelector('input[type="password"]') || document.getElementById('password') || document.querySelector('input[name="password"]');
+        const submitBtn = document.querySelector('button[type="submit"]') || document.getElementById('loginBtn');
+        const loginForm = document.querySelector('form');
+
+        if (emailInput && passInput) {
+            // Master ID-Password automatically fill karein
+            emailInput.value = "Demotest@gmail.com";
+            passInput.value = "Demo&1412@";
+
+            // Screen par loader ya message dikhayein
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Starting Your Exam...';
+            }
+
+            // 3. 0.3 second ke andar form automatically submit ho jayega
+            setTimeout(() => {
+                if (loginForm && loginForm.requestSubmit) {
+                    loginForm.requestSubmit();
+                } else if (submitBtn) {
+                    submitBtn.click();
+                }
+            }, 300);
+        }
+    }
+});
+</script>
 </body>
 </html>
