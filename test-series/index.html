@@ -1566,80 +1566,55 @@
 
     </main>
 
-<!-- ═══════ MINOR TEST 01 ACCESS MODAL ═══════ -->
-    <div id="demoModal" class="fixed inset-0 z-[9999] hidden flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md transition-opacity duration-300">
-        <div class="relative w-full max-w-lg bg-white dark:bg-[#16162a] border border-slate-100 dark:border-slate-800 rounded-[28px] p-6 sm:p-7 shadow-2xl transform transition-all scale-95 opacity-0 duration-300 overflow-hidden" id="modalContainer">
+    <!-- ═══════ FREE TEST INSTRUCTIONS MODAL (POPUP) ═══════ -->
+    <div id="demoModal" class="fixed inset-0 z-[9999] hidden flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm transition-opacity duration-300">
+        <div class="relative w-full max-w-lg bg-white dark:bg-[#1a1a2e] border border-slate-100 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl transform transition-all scale-95 opacity-0 duration-300" id="modalContainer">
             
-            <!-- Glow Accent -->
-            <div class="absolute -top-10 -right-10 w-36 h-36 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-2xl pointer-events-none"></div>
-
             <!-- Close Button -->
-            <button id="closeModalBtn" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-rose-50 dark:hover:bg-rose-950/40 text-slate-400 hover:text-rose-500 transition-colors flex items-center justify-center text-sm z-10" aria-label="Close Modal">
+            <button id="closeModalBtn" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-rose-100 dark:hover:bg-rose-950/50 text-slate-500 hover:text-rose-500 transition-colors flex items-center justify-center text-sm" aria-label="Close Modal">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <!-- Card Header -->
-            <div class="flex items-start gap-3.5 mb-5">
-                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-primary to-secondary text-white flex items-center justify-center text-xl shadow-premium shrink-0">
-                    <i class="fa-solid fa-file-signature"></i>
+            <!-- Header -->
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-10 h-10 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl shrink-0">
+                    <i class="fa-solid fa-flask"></i>
                 </div>
                 <div>
-                    <div class="flex items-center gap-2 mb-1">
-                        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 border border-emerald-200/50 dark:border-emerald-800/40">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> Real Minor Test 01
-                        </span>
-                        <span class="text-[10px] font-bold text-slate-400 font-mono">100% FREE</span>
-                    </div>
-                    <h3 id="modalExamTitle" class="font-poppins font-black text-lg sm:text-xl text-dark dark:text-white leading-tight">Rajasthan Exam</h3>
+                    <h3 id="modalExamTitle" class="font-poppins font-extrabold text-lg sm:text-xl text-dark dark:text-white">CET 10+2 Free Test Instructions</h3>
+                    <p class="text-xs text-muted dark:text-slate-400">Master Exam Login Credentials</p>
                 </div>
             </div>
 
-            <!-- Value Chips -->
-            <div class="grid grid-cols-3 gap-2 mb-5">
-                <div class="bg-slate-50 dark:bg-slate-900/80 border border-slate-100 dark:border-slate-800/80 rounded-xl p-2 text-center">
-                    <i class="fa-regular fa-clock text-primary text-xs mb-0.5 block"></i>
-                    <span class="text-[10px] font-extrabold text-slate-600 dark:text-slate-300 block">Real Timer</span>
+            <!-- Credentials Box -->
+            <div class="bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-4 mb-5 space-y-2.5 font-mono text-xs">
+                <div class="flex items-center justify-between pb-2 border-b border-slate-200/60 dark:border-slate-800/80">
+                    <span class="text-slate-500 dark:text-slate-400 font-sans font-semibold">Candidate Full Name:</span>
+                    <span class="font-bold text-primary font-sans">Apna Name Likhe</span>
                 </div>
-                <div class="bg-slate-50 dark:bg-slate-900/80 border border-slate-100 dark:border-slate-800/80 rounded-xl p-2 text-center">
-                    <i class="fa-solid fa-chart-pie text-secondary text-xs mb-0.5 block"></i>
-                    <span class="text-[10px] font-extrabold text-slate-600 dark:text-slate-300 block">State Rank</span>
+                <div class="flex items-center justify-between pb-2 border-b border-slate-200/60 dark:border-slate-800/80">
+                    <span class="text-slate-500 dark:text-slate-400 font-sans font-semibold">Institutional Email:</span>
+                    <span class="font-bold text-dark dark:text-white select-all">Demotest@gmail.com</span>
                 </div>
-                <div class="bg-slate-50 dark:bg-slate-900/80 border border-slate-100 dark:border-slate-800/80 rounded-xl p-2 text-center">
-                    <i class="fa-solid fa-circle-check text-emerald-500 text-xs mb-0.5 block"></i>
-                    <span class="text-[10px] font-extrabold text-slate-600 dark:text-slate-300 block">Solutions</span>
+                <div class="flex items-center justify-between">
+                    <span class="text-slate-500 dark:text-slate-400 font-sans font-semibold">Access Password:</span>
+                    <span class="font-bold text-dark dark:text-white select-all">Demo&amp;1412@</span>
                 </div>
             </div>
 
-            <!-- LEAD FORM -->
-            <form id="leadCaptureForm" class="space-y-3.5">
-                <div>
-                    <label class="block text-xs font-extrabold text-dark dark:text-slate-200 mb-1.5">
-                        अभ्यर्थी का पूरा नाम (Candidate Name)
-                    </label>
-                    <div class="relative">
-                        <i class="fa-regular fa-user absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-                        <input type="text" id="studentName" required placeholder="उदा. Ramesh Kumar" class="w-full pl-9 pr-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700/80 bg-slate-50/50 dark:bg-slate-900/60 text-xs font-semibold text-dark dark:text-white placeholder-slate-400 focus:outline-none focus:border-primary transition-colors">
-                    </div>
-                </div>
+            <!-- Guidance Message -->
+            <div class="bg-amber-50 dark:bg-amber-950/40 border border-amber-200/60 dark:border-amber-800/50 rounded-2xl p-4 mb-6 flex items-start gap-3">
+                <i class="fa-solid fa-circle-info text-amber-500 mt-0.5 text-base shrink-0"></i>
+                <p class="text-xs text-amber-900 dark:text-amber-200 leading-relaxed font-manrope font-semibold">
+                    "नीचे दिए गए बटन पर क्लिक करके आप हमारे Exam Login Portal पर पहुँचेंगे। ऊपर दिये ID &amp; Password को लिख लेवें और वहाँ ऊपर दिए गए आईडी-पासवर्ड डालकर आप सीधे परीक्षा पोर्टल का अनुभव ले सकते हैं।"
+                </p>
+            </div>
 
-                <div>
-                    <label class="block text-xs font-extrabold text-dark dark:text-slate-200 mb-1.5">
-                        WhatsApp नंबर (For Result &amp; Rank)
-                    </label>
-                    <div class="relative">
-                        <i class="fa-brands fa-whatsapp absolute left-3.5 top-1/2 -translate-y-1/2 text-emerald-500 text-sm"></i>
-                        <input type="tel" id="studentPhone" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10 अंकों का WhatsApp नंबर" class="w-full pl-9 pr-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700/80 bg-slate-50/50 dark:bg-slate-900/60 text-xs font-semibold text-dark dark:text-white placeholder-slate-400 focus:outline-none focus:border-primary transition-colors">
-                    </div>
-                    <span class="text-[10px] text-slate-400 mt-1.5 flex items-center gap-1 font-manrope">
-                        <i class="fa-solid fa-shield-halved text-emerald-500 text-[9px]"></i> आपका डेटा 100% सुरक्षित है।
-                    </span>
-                </div>
-
-                <button type="submit" id="submitLeadBtn" class="w-full mt-2 py-3.5 px-6 rounded-2xl font-poppins font-black text-xs uppercase tracking-wider text-white bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-95 transition-all shadow-premium hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-2 cursor-pointer">
-                    <span id="submitLeadText">Start Minor Test 01 Now</span>
-                    <i class="fa-solid fa-arrow-right text-[11px]"></i>
-                </button>
-            </form>
+            <!-- Direct Proceed Button to login.html -->
+            <a href="login" class="w-full py-3.5 px-6 rounded-2xl font-poppins font-extrabold text-sm text-white bg-gradient-to-r from-primary to-secondary hover:opacity-95 transition-all shadow-premium flex items-center justify-center gap-2 group">
+                <span>Proceed to Exam Login Portal</span>
+                <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+            </a>
 
         </div>
     </div>
@@ -2029,113 +2004,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     newsletterBtn.classList.replace('bg-emerald-600', 'bg-primary');
                     if (newsletterSuccessMsg) newsletterSuccessMsg.classList.add('hidden');
                 }, 4000);
-            }
-        });
-    }
-});
-
-
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // 👇 यहाँ अपना Step 1 से कॉपी किया हुआ Apps Script URL डालें
-    const LEAD_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzmH57BoEv2LJu7AJHNTVPxNqXDOcvt9tuoyuBvFNotyohfzsnAZGt2GbomNwH-MLvAmw/exec';
-
-    let currentSelectedExam = 'Rajasthan Mock Test';
-    const demoModal = document.getElementById('demoModal');
-    const modalContainer = document.getElementById('modalContainer');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    const modalExamTitle = document.getElementById('modalExamTitle');
-    const openModalBtns = document.querySelectorAll('.open-demo-modal');
-
-    const leadForm = document.getElementById('leadCaptureForm');
-    const submitLeadBtn = document.getElementById('submitLeadBtn');
-    const submitLeadText = document.getElementById('submitLeadText');
-    const nameInput = document.getElementById('studentName');
-    const phoneInput = document.getElementById('studentPhone');
-
-    // 1. Modal ओपन करना
-    openModalBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            currentSelectedExam = btn.dataset.title || 'Rajasthan Mock Test';
-            modalExamTitle.textContent = currentSelectedExam;
-
-            // अगर पहले से नाम/नंबर है तो भर दो
-            const prevName = localStorage.getItem('student_cached_name');
-            const prevPhone = localStorage.getItem('student_cached_phone');
-            if (prevName) nameInput.value = prevName;
-            if (prevPhone) phoneInput.value = prevPhone;
-
-            demoModal.classList.remove('hidden');
-            setTimeout(() => {
-                modalContainer.classList.remove('scale-95', 'opacity-0');
-                modalContainer.classList.add('scale-100', 'opacity-100');
-            }, 10);
-        });
-    });
-
-    // 2. Modal बंद करना
-    const closeModal = () => {
-        modalContainer.classList.remove('scale-100', 'opacity-100');
-        modalContainer.classList.add('scale-95', 'opacity-0');
-        setTimeout(() => { demoModal.classList.add('hidden'); }, 250);
-    };
-
-    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-    if (demoModal) {
-        demoModal.addEventListener('click', (e) => {
-            if (e.target === demoModal) closeModal();
-        });
-    }
-
-    // 3. फॉर्म सबमिट और Google Sheet में भेजना (100% Reliable Method)
-    if (leadForm) {
-        leadForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = nameInput.value.trim();
-            const phone = phoneInput.value.trim();
-
-            if (!/^[6-9]\d{9}$/.test(phone)) {
-                alert("कृपया 10 अंकों का सही भारतीय मोबाइल नंबर दर्ज करें!");
-                return;
-            }
-
-            // बटन को लोडिंग में डालें
-            submitLeadBtn.disabled = true;
-            submitLeadText.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Connecting to Exam Portal...';
-
-            // डेटा तैयार करें (ठीक आपके Newsletter वाले तरीके से)
-            const formData = new URLSearchParams();
-            formData.append('name', name);
-            formData.append('phone', phone);
-            formData.append('exam', currentSelectedExam);
-
-            // Sheet में भेजना
-            fetch(LEAD_SCRIPT_URL, {
-                method: 'POST',
-                body: formData,
-                mode: 'no-cors'
-            })
-            .then(() => {
-                finishAndRedirect();
-            })
-            .catch((err) => {
-                console.log('Submission complete:', err);
-                finishAndRedirect();
-            });
-
-            function finishAndRedirect() {
-                localStorage.setItem('student_cached_name', name);
-                localStorage.setItem('student_cached_phone', phone);
-
-                submitLeadText.innerHTML = '<i class="fa-solid fa-circle-check mr-2"></i> Unlocked! Opening Test...';
-
-                // 800ms रुककर लॉगिन पर भेजें ताकि Google Sheet का नेटवर्क कॉल पूरा हो सके
-                setTimeout(() => {
-                    window.location.href = "login?auto=minor_free";
-                }, 800);
             }
         });
     }
