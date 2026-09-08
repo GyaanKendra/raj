@@ -1399,6 +1399,33 @@
       }, 250);
     }
   </script>
+<!-- AUTO FILL DEMO CREDENTIALS ENGINE -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const isAutoDemo = urlParams.get('auto') === 'minor_free';
 
+    if (isAutoDemo) {
+        const nameInput = document.getElementById('candidate-name');
+        const emailInput = document.getElementById('candidate-email');
+        const passInput = document.getElementById('candidate-password');
+        const submitBtn = document.getElementById('login-submit-btn');
+
+        // URL या LocalStorage से छात्र का नाम लें
+        const studentName = urlParams.get('name') || localStorage.getItem('student_cached_name') || 'Candidate';
+
+        // 1. तीनों फ़ील्ड में डेटा ऑटो-फिल करें
+        if (nameInput) nameInput.value = decodeURIComponent(studentName);
+        if (emailInput) emailInput.value = "Demotest@gmail.com";
+        if (passInput) passInput.value = "Demo&1412@";
+
+        // 2. बटन को हाइलाइट करें ताकि छात्र समझ सके कि उसे बस क्लिक करना है
+        if (submitBtn) {
+            submitBtn.classList.add('ring-4', 'ring-emerald-400', 'bg-emerald-600');
+            submitBtn.innerHTML = '<span>🚀 Start Examination Now →</span>';
+        }
+    }
+});
+</script>
 </body>
 </html>
