@@ -77,7 +77,7 @@
         "@id": "https://rajshiksha.in/#organization"
       },
       "datePublished": "2026-08-01T08:00:00+05:30",
-      "dateModified": "2026-09-13T12:35:00+05:30",
+      "dateModified": "2026-09-13T18:24:00+05:30",
       "description": "Join the Rajasthan best online test series for REET, Patwar, VDO, RAS, Rajasthan SI, other Rajasthan and other competitive exams. real exam simulation and performance analytics. Start preparing today!"
     },
     {
@@ -1552,152 +1552,154 @@
 			
         </section>
 		
-        <!-- Main Compact Dashboard Container -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start my-12 max-w-7xl mx-auto px-4">
+    <!-- Main Compact Dashboard Container -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start my-12 max-w-7xl mx-auto px-4">
 
-            <!-- ================= LEFT SIDE: COMPACT DAILY MCQ QUIZ ================= -->
-            <div id="premium-mcq-card" class="lg:col-span-7 bg-white dark:bg-[#1a1a2e] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
-                
-                <div class="p-4 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-900/50">
-                    <div>
-                        <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 tracking-wider uppercase">Live Practice</span>
-                        <h2 class="text-lg font-bold text-slate-900 dark:text-white">Daily MCQ Quiz</h2>
-                    </div>
-                    
-                    <div class="flex items-center space-x-2">
-                        <div id="mcq-timer-box" class="flex items-center bg-rose-50 dark:bg-rose-955 border border-rose-100 dark:border-rose-900/30 text-rose-600 dark:text-rose-400 px-2.5 py-1 rounded-full text-xs font-bold">
-                            <i class="fa-regular fa-clock mr-1"></i>
-                            <span id="mcq-timer-count">30s</span>
-                        </div>
-                        <button onclick="premiumMcqToggleBookmark()" class="p-1.5 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-400 transition-all">
-                            <i id="mcq-bookmark-icon" class="fa-regular fa-bookmark text-sm"></i>
-                        </button>
-                        <button onclick="premiumMcqShare()" class="p-1.5 border border-emerald-200 bg-emerald-50 dark:bg-emerald-950/20 text-emerald-600 dark:text-emerald-400 rounded-lg hover:bg-emerald-100 dark:hover:bg-emerald-900/40 transition-all">
-                            <i class="fa-brands fa-whatsapp text-sm font-bold"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="px-4 pt-3">
-                    <div class="flex justify-between items-center mb-1.5">
-                        <span class="text-[11px] font-semibold text-slate-400 uppercase">प्रगति तालिका</span>
-                        <span id="mcq-prog-text" class="text-xs font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-850 px-2 py-0.5 rounded">Q 1 of 3</span>
-                    </div>
-                    <div id="mcq-prog-line" class="flex items-center space-x-1.5 w-full h-1.5"></div>
-                </div>
-
-                <div class="p-4">
-                    <div class="mb-4">
-                        <h3 id="mcq-question-title" class="text-[15px] font-bold text-slate-950 dark:text-white leading-snug text-left">
-                            Loading Question...
-                        </h3>
-                    </div>
-
-                    <div id="mcq-options-container" class="space-y-2"></div>
-
-                    <div id="mcq-explanation-card" class="mt-4 bg-emerald-50 dark:bg-emerald-950/20 border-l-4 border-emerald-500 rounded-r-xl p-3 text-left" style="display: none;">
-                        <div class="flex items-center text-emerald-800 dark:text-emerald-400 font-bold text-xs uppercase mb-1">
-                            <i class="fa-solid fa-circle-info text-emerald-600 mr-1.5"></i>
-                            उत्तर की व्याख्या (Explanation)
-                        </div>
-                        <p id="mcq-explanation-desc" class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed"></p>
-                    </div>
-                </div>
-
-                <div class="p-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/30 flex justify-between items-center">
-                    <button id="mcq-prev-btn" onclick="premiumMcqPrev()" class="flex items-center px-3 py-1.5 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-semibold disabled:opacity-40 disabled:pointer-events-none">
-                        <i class="fa-solid fa-arrow-left mr-1"></i> पिछला
-                    </button>
-                    <button id="mcq-next-btn" onclick="premiumMcqNext()" class="flex items-center px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-semibold shadow-sm">
-                        अगला <i class="fa-solid fa-arrow-right ml-1"></i>
-                    </button>
-                </div>
-            </div>
-
-         <!-- ================= RIGHT SIDE: COMPACT DAILY GK ================= -->
-<div class="lg:col-span-5 space-y-4">
-
-    <div id="daily-gk-card" class="bg-white dark:bg-[#1a1a2e] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+    <!-- ================= LEFT SIDE: COMPACT DAILY MCQ QUIZ ================= -->
+    <div id="premium-mcq-card" class="lg:col-span-7 bg-white dark:bg-[#1a1a2e] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
         
-       <!-- Header -->
-<div class="p-4 bg-gradient-to-r from-slate-900 to-indigo-950 text-white flex justify-between items-center">
-    <div class="text-left">
-        <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-full uppercase">आज का विषय</span>
-        <h2 class="text-base font-bold mt-1">राजस्थान का भूगोल (Physical Geography)</h2>
-    </div>
-    <div class="bg-white/10 p-2 rounded-lg">
-        <i class="fa-solid fa-gem text-amber-300 text-sm"></i>
-    </div>
-</div>
-
-<div class="p-4 space-y-3">
-    <!-- Title -->
-    <h3 class="text-sm font-bold text-slate-900 dark:text-white flex items-center">
-        <span class="w-1 h-3 bg-indigo-600 rounded mr-1.5 inline-block"></span>
-        राजस्थान का भौतिक स्वरूप : थार मरुस्थल, अरावली, पूर्वी मैदान एवं हाड़ौती पठार
-    </h3>
-
-    <!-- Introduction Paragraph -->
-    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed text-justify">
-        भू-गर्भिक संरचना के अनुसार राजस्थान को <b>4 प्रमुख भौतिक प्रदेशों</b> में बांटा गया है। इनमें <b>अरावली</b> व <b>हाड़ौती पठार</b> प्राचीनतम <b>'गोंडवाना लैंड'</b> के अवशेष हैं, जबकि <b>थार मरुस्थल</b> और <b>पूर्वी मैदान</b> <b>'टेथिस सागर'</b> के अवशेष माने जाते हैं। राजस्थान का यह भौतिक विभाजन राज्य की जलवायु, मिट्टी, जैव-विविधता और अर्थव्यवस्था का आधार तय करता है।
-    </p>
-
-    <!-- Key Exam Points -->
-    <div class="bg-slate-50 dark:bg-slate-900 rounded-xl p-3 border border-slate-100 dark:border-slate-800 space-y-1.5 text-left">
-        <h4 class="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase flex items-center">
-            <i class="fa-solid fa-circle-info text-indigo-500 mr-1.5"></i> परीक्षा उपयोगी महत्वपूर्ण तथ्य (High Yield Facts)
-        </h4>
-        <ul class="space-y-1.5 text-sm text-slate-600 dark:text-slate-400">
-            <li class="flex items-start">
-                <i class="fa-solid fa-caret-right text-indigo-500 mt-0.5 mr-1.5 flex-shrink-0"></i>
-                <span><b>थार का मरुस्थल (उत्तर-पश्चिमी भाग):</b> यह राज्य के <b>61.11% क्षेत्रफल</b> पर विस्तृत है जहाँ <b>40% जनसंख्या</b> निवास करती है। जैसलमेर में भू-गर्भीय मीठे जल की पट्टी <b>'लाठी सीरीज'</b> और पौष्टिक <b>'सेवण घास'</b> पाई जाती है। वायु द्वारा बनने वाले अर्धचंद्राकार बालुका स्तूप को <b>'बरखान'</b> कहते हैं, जो सर्वाधिक गतिशील व हानिकारक होते हैं।</span>
-            </li>
-
-            <li class="flex items-start">
-                <i class="fa-solid fa-caret-right text-indigo-500 mt-0.5 mr-1.5 flex-shrink-0"></i>
-                <span><b>अरावली पर्वतीय प्रदेश (प्राचीनतम वलित पर्वत):</b> यह प्री-कैम्ब्रियन कल्प की पर्वतमाला है, जो राज्य के <b>9% क्षेत्रफल</b> पर है (जनसंख्या 10%)। कुल लंबाई <b>692 किमी</b> (राजस्थान में <b>550 किमी यानी 80%</b>) है। इसका सर्वोच्च शिखर <b>गुरुशिखर (1722 मी., सिरोही)</b> है, जिसे कर्नल टॉड ने <b>'संतों का शिखर'</b> कहा था।</span>
-            </li>
-
-            <li class="flex items-start">
-                <i class="fa-solid fa-caret-right text-indigo-500 mt-0.5 mr-1.5 flex-shrink-0"></i>
-                <span><b>पूर्वी मैदानी प्रदेश (सर्वाधिक जनघनत्व):</b> यह राज्य के <b>23% क्षेत्रफल</b> पर फैला है तथा यहाँ सर्वाधिक <b>39% जनसंख्या</b> रहती है। नदियों द्वारा लाई गई जलोढ़/दोमट मृदा के कारण यह राज्य का सबसे उपजाऊ भाग है। प्रतापगढ़ व बांसवाड़ा के बीच 56 गांवों/नालों का प्रवाह क्षेत्र <b>'छप्पन का मैदान'</b> कहलाता है।</span>
-            </li>
-
-            <li class="flex items-start">
-                <i class="fa-solid fa-caret-right text-indigo-500 mt-0.5 mr-1.5 flex-shrink-0"></i>
-                <span><b>दक्षिण-पूर्वी पठार (हाड़ौती का पठार):</b> यह राज्य के <b>6.89% क्षेत्रफल</b> पर विस्तृत है (जनसंख्या 11%)। यह क्षेत्र <b>काली मध्यम रेगुर मिट्टी (वर्टिसोल)</b> से समृद्ध है, जो कपास व सोयाबीन हेतु श्रेष्ठ है। यहाँ <b>मुकुंदरा की पहाड़ियाँ</b> और कोटा-सवाई माधोपुर क्षेत्र में <b>ग्रेट बाउंड्री फॉल्ट (GBF)</b> का विस्तार है।</span>
-            </li>
-
-            <li class="flex items-start">
-                <i class="fa-solid fa-caret-right text-indigo-500 mt-0.5 mr-1.5 flex-shrink-0"></i>
-                <span><b>महत्वपूर्ण भौगोलिक शब्दावली:</b> सिरोही क्षेत्र की तीव्र ढाल वाली उबड़-खाबड़ पहाड़ियाँ <b>'भाकर'</b>, उदयपुर में तश्तरीनुमा पहाड़ियों की श्रृंखला <b>'गिरवा'</b>, पथरीला/चट्टानी मरुस्थल <b>'हम्मादा'</b> तथा 18 करोड़ वर्ष पुराने काष्ठ अवशेष <b>'आकल वुड फॉसिल पार्क'</b> (जैसलमेर) कहलाते हैं।</span>
-            </li>
-        </ul>
-    </div>
-    
-    <!-- Streak Box -->
-    <div class="flex items-center justify-between p-3 bg-amber-50/50 dark:bg-amber-950/10 border border-amber-100 dark:border-amber-900 rounded-xl">
-        <div class="flex items-center space-x-2 text-left">
-            <i class="fa-solid fa-fire text-amber-600 text-base"></i>
+        <div class="p-4 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-900/50">
             <div>
-                <h4 class="text-sm font-bold text-slate-900 dark:text-white">ज्ञान स्ट्राइक</h4>
-                <p class="text-xs text-slate-500 dark:text-slate-400">आज का विषय पूरा करें</p>
+                <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 tracking-wider uppercase">Live Practice</span>
+                <h2 class="text-lg font-bold text-slate-900 dark:text-white">Daily MCQ Quiz</h2>
+            </div>
+            
+            <div class="flex items-center space-x-2">
+                <div id="mcq-timer-box" class="flex items-center bg-rose-50 dark:bg-rose-950 border border-rose-100 dark:border-rose-900/30 text-rose-600 dark:text-rose-400 px-2.5 py-1 rounded-full text-xs font-bold">
+                    <i class="fa-regular fa-clock mr-1"></i>
+                    <span id="mcq-timer-count">30s</span>
+                </div>
+                <button onclick="premiumMcqToggleBookmark()" class="p-1.5 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-400 transition-all">
+                    <i id="mcq-bookmark-icon" class="fa-regular fa-bookmark text-sm"></i>
+                </button>
+                <button onclick="premiumMcqShare()" class="p-1.5 border border-emerald-200 bg-emerald-50 dark:bg-emerald-950/20 text-emerald-600 dark:text-emerald-400 rounded-lg hover:bg-emerald-100 dark:hover:bg-emerald-900/40 transition-all">
+                    <i class="fa-brands fa-whatsapp text-sm font-bold"></i>
+                </button>
             </div>
         </div>
-        <button id="gk-read-btn" onclick="increaseGkStreak()" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-all shadow-sm">
-            मैंने पढ़ा
-        </button>
-    </div>
-</div>
 
-<!-- Next Topic Footer -->
-<div class="p-3 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 text-center">
-    <p class="text-xs text-slate-500 dark:text-slate-400">
-        कल का विषय: <span class="font-bold text-indigo-600 dark:text-indigo-400">'राजस्थान का अपवाह तंत्र — अरब सागर, बंगाल की खाड़ी एवं आंतरिक नदियाँ'</span>
-    </p>
-</div>
-
+        <div class="px-4 pt-3">
+            <div class="flex justify-between items-center mb-1.5">
+                <span class="text-[11px] font-semibold text-slate-400 uppercase">प्रगति तालिका</span>
+                <span id="mcq-prog-text" class="text-xs font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">Q 1 of 3</span>
+            </div>
+            <div id="mcq-prog-line" class="flex items-center space-x-1.5 w-full h-1.5"></div>
         </div>
+
+        <div class="p-4">
+            <div class="mb-4">
+                <h3 id="mcq-question-title" class="text-[15px] font-bold text-slate-950 dark:text-white leading-snug text-left">
+                    Loading Question...
+                </h3>
+            </div>
+
+            <div id="mcq-options-container" class="space-y-2"></div>
+
+            <div id="mcq-explanation-card" class="mt-4 bg-emerald-50 dark:bg-emerald-950/20 border-l-4 border-emerald-500 rounded-r-xl p-3 text-left" style="display: none;">
+                <div class="flex items-center text-emerald-800 dark:text-emerald-400 font-bold text-xs uppercase mb-1">
+                    <i class="fa-solid fa-circle-info text-emerald-600 mr-1.5"></i>
+                    उत्तर की व्याख्या (Explanation)
+                </div>
+                <p id="mcq-explanation-desc" class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed"></p>
+            </div>
+        </div>
+
+        <div class="p-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/30 flex justify-between items-center">
+            <button id="mcq-prev-btn" onclick="premiumMcqPrev()" class="flex items-center px-3 py-1.5 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-semibold disabled:opacity-40 disabled:pointer-events-none">
+                <i class="fa-solid fa-arrow-left mr-1"></i> पिछला
+            </button>
+            <button id="mcq-next-btn" onclick="premiumMcqNext()" class="flex items-center px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-semibold shadow-sm">
+                अगला <i class="fa-solid fa-arrow-right ml-1"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- ================= RIGHT SIDE: COMPACT DAILY GK ================= -->
+    <div class="lg:col-span-5 space-y-4">
+        <div id="daily-gk-card" class="bg-white dark:bg-[#1a1a2e] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+            
+            <!-- Header -->
+            <div class="p-4 bg-gradient-to-r from-slate-900 to-indigo-950 text-white flex justify-between items-center">
+                <div class="text-left">
+                    <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-full uppercase">आज का विषय</span>
+                    <h2 class="text-base font-bold mt-1">राजस्थान का भूगोल (Physical Geography)</h2>
+                </div>
+                <div class="bg-white/10 p-2 rounded-lg">
+                    <i class="fa-solid fa-gem text-amber-300 text-sm"></i>
+                </div>
+            </div>
+
+            <div class="p-4 space-y-3">
+                <!-- Title -->
+                <h3 class="text-sm font-bold text-slate-900 dark:text-white flex items-center">
+                    <span class="w-1 h-3 bg-indigo-600 rounded mr-1.5 inline-block"></span>
+                    राजस्थान का भौतिक स्वरूप : थार मरुस्थल, अरावली, पूर्वी मैदान एवं हाड़ौती पठार
+                </h3>
+
+                <!-- Introduction Paragraph -->
+                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed text-justify">
+                    भू-गर्भिक संरचना के अनुसार राजस्थान को <b>4 प्रमुख भौतिक प्रदेशों</b> में बांटा गया है। इनमें <b>अरावली</b> व <b>हाड़ौती पठार</b> प्राचीनतम <b>'गोंडवाना लैंड'</b> के अवशेष हैं, जबकि <b>थार मरुस्थल</b> और <b>पूर्वी मैदान</b> <b>'टेथिस सागर'</b> के अवशेष माने जाते हैं। राजस्थान का यह भौतिक विभाजन राज्य की जलवायु, मिट्टी, जैव-विविधता और अर्थव्यवस्था का आधार तय करता है।
+                </p>
+
+                <!-- Key Exam Points -->
+                <div class="bg-slate-50 dark:bg-slate-900 rounded-xl p-3 border border-slate-100 dark:border-slate-800 space-y-1.5 text-left">
+                    <h4 class="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase flex items-center">
+                        <i class="fa-solid fa-circle-info text-indigo-500 mr-1.5"></i> परीक्षा उपयोगी महत्वपूर्ण तथ्य (High Yield Facts)
+                    </h4>
+                    <ul class="space-y-1.5 text-sm text-slate-600 dark:text-slate-400">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-caret-right text-indigo-500 mt-0.5 mr-1.5 flex-shrink-0"></i>
+                            <span><b>थार का मरुस्थल (उत्तर-पश्चिमी भाग):</b> यह राज्य के <b>61.11% क्षेत्रफल</b> पर विस्तृत है जहाँ <b>40% जनसंख्या</b> निवास करती है। जैसलमेर में भू-गर्भीय मीठे जल की पट्टी <b>'लाठी सीरीज'</b> और पौष्टिक <b>'सेवण घास'</b> पाई जाती है। वायु द्वारा बनने वाले अर्धचंद्राकार बालुका स्तूप को <b>'बरखान'</b> कहते हैं, जो सर्वाधिक गतिशील व हानिकारक होते हैं।</span>
+                        </li>
+
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-caret-right text-indigo-500 mt-0.5 mr-1.5 flex-shrink-0"></i>
+                            <span><b>अरावली पर्वतीय प्रदेश (प्राचीनतम वलित पर्वत):</b> यह प्री-कैम्ब्रियन कल्प की पर्वतमाला है, जो राज्य के <b>9% क्षेत्रफल</b> पर है (जनसंख्या 10%)। कुल लंबाई <b>692 किमी</b> (राजस्थान में <b>550 किमी यानी 80%</b>) है। इसका सर्वोच्च शिखर <b>गुरुशिखर (1722 मी., सिरोही)</b> है, जिसे कर्नल टॉड ने <b>'संतों का शिखर'</b> कहा था।</span>
+                        </li>
+
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-caret-right text-indigo-500 mt-0.5 mr-1.5 flex-shrink-0"></i>
+                            <span><b>पूर्वी मैदानी प्रदेश (सर्वाधिक जनघनत्व):</b> यह राज्य के <b>23% क्षेत्रफल</b> पर फैला है तथा यहाँ सर्वाधिक <b>39% जनसंख्या</b> रहती है। नदियों द्वारा लाई गई जलोढ़/दोमट मृदा के कारण यह राज्य का सबसे उपजाऊ भाग है। प्रतापगढ़ व बांसवाड़ा के बीच 56 गांवों/नालों का प्रवाह क्षेत्र <b>'छप्पन का मैदान'</b> कहलाता है।</span>
+                        </li>
+
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-caret-right text-indigo-500 mt-0.5 mr-1.5 flex-shrink-0"></i>
+                            <span><b>दक्षिण-पूर्वी पठार (हाड़ौती का पठार):</b> यह राज्य के <b>6.89% क्षेत्रफल</b> पर विस्तृत है (जनसंख्या 11%)। यह क्षेत्र <b>काली मध्यम रेगुर मिट्टी (वर्टिसोल)</b> से समृद्ध है, जो कपास व सोयाबीन हेतु श्रेष्ठ है। यहाँ <b>मुकुंदरा की पहाड़ियाँ</b> और कोटा-सवाई माधोपुर क्षेत्र में <b>ग्रेट बाउंड्री फॉल्ट (GBF)</b> का विस्तार है।</span>
+                        </li>
+
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-caret-right text-indigo-500 mt-0.5 mr-1.5 flex-shrink-0"></i>
+                            <span><b>महत्वपूर्ण भौगोलिक शब्दावली:</b> सिरोही क्षेत्र की तीव्र ढाल वाली उबड़-खाबड़ पहाड़ियाँ <b>'भाकर'</b>, उदयपुर में तश्तरीनुमा पहाड़ियों की श्रृंखला <b>'गिरवा'</b>, पथरीला/चट्टानी मरुस्थल <b>'हम्मादा'</b> तथा 18 करोड़ वर्ष पुराने काष्ठ अवशेष <b>'आकल वुड फॉसिल पार्क'</b> (जैसलमेर) कहलाते हैं।</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Streak Box -->
+                <div class="flex items-center justify-between p-3 bg-amber-50/50 dark:bg-amber-950/10 border border-amber-100 dark:border-amber-900 rounded-xl">
+                    <div class="flex items-center space-x-2 text-left">
+                        <i class="fa-solid fa-fire text-amber-600 text-base"></i>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900 dark:text-white">ज्ञान स्ट्राइक</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">आज का विषय पूरा करें</p>
+                        </div>
+                    </div>
+                    <button id="gk-read-btn" onclick="increaseGkStreak()" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-all shadow-sm">
+                        मैंने पढ़ा
+                    </button>
+                </div>
+            </div>
+
+            <!-- Next Topic Footer (अब सही जगह पर Daily GK Card के अंदर) -->
+            <div class="p-3 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 text-center">
+                <p class="text-xs text-slate-500 dark:text-slate-400">
+                    कल का विषय: <span class="font-bold text-indigo-600 dark:text-indigo-400">'राजस्थान का अपवाह तंत्र — अरब सागर, बंगाल की खाड़ी एवं आंतरिक नदियाँ'</span>
+                </p>
+            </div>
+
+        </div> <!-- #daily-gk-card बंद -->
+    </div> <!-- lg:col-span-5 बंद -->
+
+</div> <!-- Main Container बंद -->
 
         <!-- ─── ABOUT US ─── -->
         <section id="about" class="py-20 bg-white dark:bg-[#0f0f1a] relative overflow-hidden">
@@ -1816,22 +1818,24 @@
                     </div>
 
                     <!-- Card 2: Rajasthan Polity -->
-             <!--       <div class="note-card bg-white dark:bg-[#1a1a2e] rounded-3xl p-7 border border-slate-100 dark:border-slate-800 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 flex flex-col group reveal reveal-delay-2" data-category="rajasthan">
+                    <div class="note-card bg-white dark:bg-[#1a1a2e] rounded-3xl p-7 border border-slate-100 dark:border-slate-800 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 flex flex-col group reveal reveal-delay-2" data-category="rajasthan">
                         <div class="flex items-start justify-between mb-4">
                             <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-secondary to-accent text-white flex items-center justify-center text-2xl shadow-md transition-transform group-hover:scale-105 duration-300">
                                 <i class="fa-solid fa-gavel"></i>
                             </div>
                             <span class="badge-rajasthan text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Rajasthan</span>
                         </div>
-                        <h3 class="font-poppins font-extrabold text-xl text-slate-800 dark:text-white mb-2 leading-snug text-left">Rajasthan Polity Notes</h3>
+
+                        <h3 class="font-poppins font-extrabold text-xl text-slate-800 dark:text-white mb-2 leading-snug text-left">
+			<a href="rajasthan-notes/polity/" class="hover:text-primary transition-colors">Rajasthan Polity Notes</a></h3>
                         <p class="text-sm text-muted dark:text-slate-400 font-inter leading-relaxed flex-grow text-left text-justify">Complete governance framework — constitution, administration, local bodies, and legislative structure of Rajasthan.</p>
                         <div class="mt-5 flex items-center justify-between">
-                            <span class="text-xs font-bold text-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 px-2.5 py-0.5 rounded-full">2+ Topics</span>
-                            <a href="#plans" class="inline-flex items-center gap-1.5 text-sm font-extrabold text-primary hover:text-primary/80 transition-colors group">
+                            <span class="text-xs font-bold text-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 px-2.5 py-0.5 rounded-full">20+ Topics</span>
+                            <a href="rajasthan-notes/polity/" class="inline-flex items-center gap-1.5 text-sm font-extrabold text-primary hover:text-primary/80 transition-colors group">
                                 Read <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
                             </a>
                         </div>
-                    </div>-->
+                    </div>
 
                     <!-- Card 3: Rajasthan Culture -->
                     <div class="note-card bg-white dark:bg-[#1a1a2e] rounded-3xl p-7 border border-slate-100 dark:border-slate-800 shadow-subtleCard hover:shadow-cardHover transition-all duration-300 flex flex-col group reveal reveal-delay-3" data-category="rajasthan">
