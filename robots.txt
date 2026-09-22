@@ -2,5 +2,10 @@ User-agent: *
 Allow: /
 Disallow: /payment
 
+Disallow: /feed/
+Disallow: /comments/
+Disallow: /tag/
+Disallow: */feed/
+
 # Sitemap Location
 Sitemap: https://rajshiksha.in/sitemap.xml
