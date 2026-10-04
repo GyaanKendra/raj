@@ -7,6 +7,8 @@ Disallow: /feed/
 Disallow: /comments/
 Disallow: /tag/
 Disallow: */feed/
+Disallow: /assets/images/favicon*
+Disallow: /favicon.ico
 
 # Sitemap Location
 Sitemap: https://rajshiksha.in/sitemap.xml
