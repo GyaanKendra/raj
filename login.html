@@ -715,9 +715,27 @@
         return;
       }
 
-      const isAdmin = candData.role === 'admin';
-      const isDemoAccount = candData.role === 'demo' || candData.email.toLowerCase().includes('demo');
-      const currentDeviceId = getOrCreateDeviceId();
+const isAdmin = candData.role === 'admin';
+
+      // 👇👇👇 सिर्फ ये नई लाइनें बीच में ADD हुईं (कुछ हटा नहीं) 👇👇👇
+      if (!isAdmin && candData.expiry_date) {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const expireDate = new Date(candData.expiry_date);
+        expireDate.setHours(0, 0, 0, 0);
+
+        if (today > expireDate) {
+          submitBtn.innerText = "Authenticate & Load Tests →";
+          submitBtn.disabled = false;
+          alert("❌ Validity Expired: आपका कोर्स एक्सेस समाप्त (Expired) हो चुका है!\n\nकृपया रीन्यू कराने के लिए Rajshiksha Support / Admin से संपर्क करें।");
+          return;
+        }
+      }
+      // 👆👆👆 बस यहाँ तक नया कोड जुड़ा है 👆👆👆
+
+const isDemoAccount = candData.role === 'demo' || candData.email.toLowerCase().includes('demo');
+	const currentDeviceId = getOrCreateDeviceId();
 
       if (!isAdmin && !isDemoAccount) {
         const registeredDevice = candData.device_id;
